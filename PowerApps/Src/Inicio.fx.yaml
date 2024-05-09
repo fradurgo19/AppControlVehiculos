@@ -1,0 +1,107 @@
+Inicio As screen:
+    Fill: =RGBA(241, 241, 241, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |-
+        =Set(_selectedTutorial, {Row: 1, Title: "Lista Gestión Vehícular", Image: HomeIcon});ClearCollect(ListaPrestamoVehiculosLocal,ListaPrestamoVehiculos);Refresh(ListaPrestamoVehiculos)
+    Orientation: =If(Inicio.Width < Inicio.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= Inicio.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Image15 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =682
+        Image: =giphy4
+        Visible: =varCargar
+        Width: =1366
+        Y: =60
+        ZIndex: =1
+
+    Label1_8 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(101, 128, 187, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        FontWeight: =FontWeight.Bold
+        Height: =76
+        Size: =30
+        Text: ="Bienvenido a la App"
+        Width: =640
+        X: =352
+        Y: =100
+        ZIndex: =5
+
+    ButtonCanvas3 As Botón:
+        BasePaletteColor: =RGBA(249, 83, 109, 1)
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =80
+        OnSelect: =Set(varCargar, true);Set(varTiempo, true)
+        Text: ="Ingresar"
+        Width: =208
+        X: =568
+        Y: =662
+        ZIndex: =6
+
+    Timer1 As timer:
+        AutoStart: =varTiempo
+        Color: =RGBA(255,255,255,1)
+        Duration: =5000
+        Fill: =RGBA(62,96,170,1)
+        Height: =70
+        OnTimerEnd: =Set(varCargar,false);Navigate(ListaGestion,ScreenTransition.Fade)
+        Visible: =false
+        Width: =280
+        X: =532
+        Y: =462
+        ZIndex: =7
+
+    GroupBackground_7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        BienvenidaFondo_2 As rectangle:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =BienvenidaFondo_2.BorderColor
+            Height: =60
+            Width: =1366
+            ZIndex: =2
+
+        Bienvenida_2 As label:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =Bienvenida_2.BorderColor
+            Font: =Font.'Segoe UI'
+            Height: =32
+            HoverBorderColor: =Bienvenida_2.BorderColor
+            HoverColor: =Bienvenida_2.Color
+            HoverFill: =Bienvenida_2.Fill
+            LineHeight: =0
+            PressedBorderColor: =Bienvenida_2.BorderColor
+            PressedColor: =Bienvenida_2.Color
+            PressedFill: =Bienvenida_2.Fill
+            Size: =18
+            Text: ="Control de Transporte"
+            Width: =350
+            X: =14
+            Y: =14
+            ZIndex: =3
+
+        ImageLogo_2 As image:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            FocusedBorderColor: =ImageLogo_2.BorderColor
+            Height: =60
+            Image: =Logo
+            Width: =276
+            X: =1090
+            ZIndex: =4
+

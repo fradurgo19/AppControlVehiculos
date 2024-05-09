@@ -1,0 +1,110 @@
+{
+  "3e990f5f-a334-4e3e-960b-5ba326f81694": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Planner",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/planner/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_planner",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Planner"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "3e990f5f-a334-4e3e-960b-5ba326f81694"
+  },
+  "631c0fb0-c91e-4afb-8b11-cba5d6872f5e": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuarios de Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "631c0fb0-c91e-4afb-8b11-cba5d6872f5e"
+  },
+  "7492cf69-cc78-477d-9fc8-986387722984": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneNote (Empresa)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1666/1.0.1666.3495/onenote/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onenote",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "OneNote(Business)"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7492cf69-cc78-477d-9fc8-986387722984"
+  },
+  "88440dcb-31dd-4475-b013-ba3ac5e68e51": {
+    "appActions": [
+      "SendEmailV2"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office\u00A0365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365",
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "88440dcb-31dd-4475-b013-ba3ac5e68e51"
+  },
+  "a4e563c8-f3dc-4e3e-b390-0912bd4e4097": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1682/1.0.1682.3675/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://partequipos2.sharepoint.com/sites/servicioposventa": {
+        "dataSources": {
+          "ListaPrestamoVehiculos": {
+            "tableName": "1ae64fdd-a4f9-477f-bb0d-bbfa17c8d7ed"
+          },
+          "ListaTanqueos": {
+            "tableName": "22b151b9-c345-42c4-bec5-84148d2decf6"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "ListaPrestamoVehiculos",
+      "ListaTanqueos"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a4e563c8-f3dc-4e3e-b390-0912bd4e4097"
+  }
+}

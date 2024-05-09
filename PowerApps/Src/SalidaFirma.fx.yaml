@@ -1,0 +1,981 @@
+SalidaFirma As screen:
+    Fill: =RGBA(241, 241, 241, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |-
+        =Set(_selectedTutorial, {Row: 7, Title: "Salida y Firma", Image: 'space_rocket-3'})
+    Orientation: =If(SalidaFirma.Width < SalidaFirma.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= SalidaFirma.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Image4 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =132
+        Image: =Substitute(PenInput1.Image,"""","")
+        Width: =421
+        X: =289
+        Y: =528
+        ZIndex: =1
+
+    CanvasMain_6 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =708
+        Width: =If(IsExpand, 900, 757)
+        X: =If(!IsExpand, 200, 50)
+        Y: =60
+        ZIndex: =8
+
+        DataCardMain_6 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            PageTitle_9 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =PageTitle_9.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                HoverBorderColor: =PageTitle_9.BorderColor
+                HoverColor: =PageTitle_9.Color
+                HoverFill: =PageTitle_9.Fill
+                PressedBorderColor: =PageTitle_9.BorderColor
+                PressedColor: =PageTitle_9.Color
+                PressedFill: =PageTitle_9.Fill
+                Size: =15
+                Text: |-
+                    ="Fotos y Recibe/Entrega a Satisfacción:"
+                Width: =610
+                X: =29
+                Y: =13
+                ZIndex: =1
+
+            PopupLightboxControl_1 As group:
+                Height: =5
+                Width: =5
+                X: =-189
+                Y: =-60
+                ZIndex: =5
+
+                RectangleOverlay_1 As rectangle:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Fill: =RGBA(0, 0, 0, .6)
+                    FocusedBorderColor: =RectangleOverlay_1.BorderColor
+                    FocusedBorderThickness: =4
+                    Height: =Parent.Height
+                    Visible: =ShowPopupLightBox
+                    Width: =Parent.Width
+                    ZIndex: =4
+
+                RectanglePopupBox_1 As rectangle:
+                    BorderColor: =RGBA(204, 204, 204, 1)
+                    BorderThickness: =1
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderColor: =RectanglePopupBox_1.BorderColor
+                    FocusedBorderThickness: =4
+                    Height: =400
+                    Visible: =ShowPopupLightBox
+                    Width: =400
+                    X: =175
+                    Y: =155
+                    ZIndex: =6
+
+                ButtonClose_1 As button:
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(116, 39, 116, 1)
+                    FocusedBorderColor: =ButtonClose_1.BorderColor
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                    OnSelect: |-
+                        =UpdateContext({ShowPopupLightBox:false})
+                    RadiusBottomLeft: =1
+                    RadiusBottomRight: =1
+                    RadiusTopLeft: =1
+                    RadiusTopRight: =1
+                    Size: =10.5
+                    Text: ="Close"
+                    Visible: =ShowPopupLightBox
+                    Width: =80
+                    X: =333
+                    Y: =505
+                    ZIndex: =7
+
+                iconClose_1 As icon.Cancel:
+                    AccessibleLabel: ="Close pop-up lightbox"
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(116, 39, 116, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(244, 244, 244, 1)
+                    FocusedBorderColor: =iconClose_1.BorderColor
+                    FocusedBorderThickness: =4
+                    Height: =20
+                    Icon: =Icon.Cancel
+                    OnSelect: |-
+                        =UpdateContext({ShowPopupLightBox:false})
+                    Visible: =ShowPopupLightBox
+                    Width: =20
+                    X: =533
+                    Y: =177
+                    ZIndex: =8
+
+                LabelBoxTitle_1 As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderColor: =LabelBoxTitle_1.BorderColor
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =31
+                    HoverBorderColor: =LabelBoxTitle_1.BorderColor
+                    HoverColor: =LabelBoxTitle_1.Color
+                    HoverFill: =LabelBoxTitle_1.Fill
+                    PressedBorderColor: =LabelBoxTitle_1.BorderColor
+                    PressedColor: =LabelBoxTitle_1.Color
+                    PressedFill: =LabelBoxTitle_1.Fill
+                    Size: =13
+                    Text: ="Sample Content Here"
+                    Visible: =ShowPopupLightBox
+                    Width: =273
+                    X: =236
+                    Y: =264
+                    ZIndex: =9
+
+                LabelBoxContent_1 As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderColor: =LabelBoxContent_1.BorderColor
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =68
+                    HoverBorderColor: =LabelBoxContent_1.BorderColor
+                    HoverColor: =LabelBoxContent_1.Color
+                    HoverFill: =LabelBoxContent_1.Fill
+                    PressedBorderColor: =LabelBoxContent_1.BorderColor
+                    PressedColor: =LabelBoxContent_1.Color
+                    PressedFill: =LabelBoxContent_1.Fill
+                    Size: =10
+                    Text: ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis ac enim vel porta."
+                    Visible: =ShowPopupLightBox
+                    Width: =282
+                    X: =236
+                    Y: =315
+                    ZIndex: =10
+
+            Label3_52 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =33
+                Size: =12
+                Text: |-
+                    ="2. Firma Recibe a satisfacción:"
+                Width: =496
+                X: =37
+                Y: =308
+                ZIndex: =11
+
+            TextInput1_42 As text:
+                BorderColor: =Color.DarkSlateGray
+                BorderThickness: =2
+                Color: =RGBA(0, 0, 0, 1)
+                Default: =""
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderThickness: =4
+                Height: =72
+                HintText: |-
+                    ="Observaciones o Aclaraciones de quien entrega o recibe:"
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                Mode: =TextMode.MultiLine
+                Size: =12
+                Width: =460
+                X: =72
+                Y: =375
+                ZIndex: =13
+
+            PenInput1 As inkControl:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =217
+                Width: =460
+                X: =72
+                Y: =458
+                ZIndex: =23
+
+            Label3_53 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                Size: =12
+                Text: |-
+                    ="1. Adjunte las fotografías necesarias de la revisión:"
+                Width: =503
+                X: =29
+                Y: =53
+                ZIndex: =24
+
+            Label8_5 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                Size: =12
+                Text: |-
+                    ="Todos los campos son obligatorios:"
+                Width: =327
+                X: =75
+                Y: =96
+                ZIndex: =25
+
+    Video1_7 As videoPlayback:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Fill: =RGBA(100, 118, 132, 1)
+        FocusedBorderColor: =Video1_7.BorderColor
+        Height: =214
+        Media: |-
+            ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+        Visible: =IsShowResourcesTab
+        Width: =366
+        X: =975+0
+        Y: =300+0
+        ZIndex: =17
+
+    Label1_15 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label1_15.BorderColor
+        Height: =79
+        HoverBorderColor: =Label1_15.BorderColor
+        HoverColor: =Label1_15.Color
+        HoverFill: =Label1_15.Fill
+        PaddingBottom: =0
+        PaddingLeft: =23.5
+        PaddingRight: =20
+        PressedBorderColor: =Label1_15.BorderColor
+        PressedColor: =Label1_15.Color
+        PressedFill: =Label1_15.Fill
+        Size: =11
+        Text: |-
+            ="PARTEQUIPOS:"
+        Visible: =IsShowResourcesTab
+        Width: =409
+        X: =957+0
+        Y: =184
+        ZIndex: =18
+
+    Label1_16 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label1_16.BorderColor
+        FontWeight: =FontWeight.Bold
+        Height: =33
+        HoverBorderColor: =Label1_16.BorderColor
+        HoverColor: =Label1_16.Color
+        HoverFill: =Label1_16.Fill
+        PaddingLeft: =23.5
+        PaddingRight: =20
+        PressedBorderColor: =Label1_16.BorderColor
+        PressedColor: =Label1_16.Color
+        PressedFill: =Label1_16.Fill
+        Size: =12
+        Text: |-
+            ="Conoce la empresa:"
+        Visible: =IsShowResourcesTab
+        Width: =409
+        X: =957+0
+        Y: =267+0
+        ZIndex: =19
+
+    Label2_7 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label2_7.BorderColor
+        Height: =58
+        HoverBorderColor: =Label2_7.BorderColor
+        HoverColor: =Label2_7.Color
+        HoverFill: =Label2_7.Fill
+        OnSelect: |-
+            =Launch("https://www.youtube.com/watch?v=uwG1Og4f0Vo")
+        PressedBorderColor: =Label2_7.BorderColor
+        PressedColor: =Label2_7.Color
+        PressedFill: =Label2_7.Fill
+        Size: =10
+        TabIndex: =0
+        Text: |-
+            ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+        Tooltip: ="Select to launch video in new tab"
+        Underline: =true
+        Visible: =IsShowResourcesTab
+        Width: =366
+        X: =975+0
+        Y: =514+0
+        ZIndex: =20
+
+    Button3_1 As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(152, 208, 70, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =100
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: |-
+            =Set(
+                varimagen,
+                JSON(
+                    PenInput1.Image, 
+                    JSONFormat.IncludeBinaryData
+                ) 
+            );
+            
+            Set(
+                CamposObligatoriosVacios,
+                IsBlank(DataCardValue1.SelectedDate) || IsBlank(DataCardValue66.Text) || IsBlank(DataCardValue2.Text) || IsBlank(DataCardValue3.Text) || IsBlank(DataCardValue4.Text) || IsBlank(DataCardValue5.Text) || IsBlank(DataCardValue6.Text) || IsBlank(DataCardValue7.SelectedDate) || IsBlank(DataCardValue73.Text) || IsBlank(DataCardValue76.Text) || IsBlank(DataCardValue8.Selected) || IsBlank(DataCardValue11.Selected) || IsBlank(DataCardValue49.Selected) || IsBlank(TextInput1_42.Text)|| IsBlank(PenInput1.Image)
+            );
+            
+            If(
+                CamposObligatoriosVacios,
+                Notify("No se envío la revisión, Por favor vuelva a ingresar los campos, todos son obligatorios.", NotificationType.Error), 
+                Patch(
+                    ListaPrestamoVehiculos,
+                    Defaults(ListaPrestamoVehiculos),
+                    {
+                        FechaSolicitud: DataCardValue1.SelectedDate,
+                        NombreSolicitante: DataCardValue66.Text,
+                        TelefonoSolicitante: DataCardValue2.Text,
+                        Empresa: DataCardValue3.Text,
+                        Destino: DataCardValue4.Text,
+                        OT: DataCardValue5.Text,
+                        MotivodeTransporte: DataCardValue6.Text,
+                        FechaDeSalida: DataCardValue7.SelectedDate,
+                        Marca: DataCardValue72.Text,
+                        KMsSalida: DataCardValue73.Text,
+                        Placa: DataCardValue76.Text,
+                        KMsTanqueo: DataCardValue8.Selected,
+                        Sede: DataCardValue11.Selected,
+                        EXTERIOR_x003a_L_x00e1_minas_x00: Dropdown2.Selected,
+                        ObservacionesEXTERIORL_x00e1_min: TextInput1.Text,
+                        EXTERIOR_x003a_Llantas_x002f_Rin: Dropdown2_1.Selected,
+                        ObservacionesEXTERIOR_x003a_Llan: TextInput1_1.Text,
+                        EXTERIOR_x003a_FarosDelanteros_x: Dropdown2_2.Selected,
+                        ObservacionesEXTERIOR_x003a_Faro: TextInput1_2.Text,
+                        EXTERIOR_x003a_Vidrios_x002f_Ven: Dropdown2_3.Selected,
+                        ObservacionesEXTERIOR_x003a_Vidr: TextInput1_3.Text,
+                        EXTERIOR_x003a_Espejosretrovisor: Dropdown2_4.Selected,
+                        ObservacionesEXTERIOR_x003a_Espe: TextInput1_4.Text,
+                        EXTERIOR_x003a_Cargaconpresi_x00: Dropdown2_5.Selected,
+                        ObservacionesEXTERIOR_x003a_Exti: TextInput1_5.Text,
+                        INTERIOR_x003a_Tablero_x002f_Tes: Dropdown2_6.Selected,
+                        ObservacionesINTERIOR_x003a_Tabl: TextInput1_6.Text,
+                        INTERIOR_x003a_Mandos_x002f_Peda: Dropdown2_7.Selected,
+                        ObservacionesINTERIOR_x003a_Mand: TextInput1_7.Text,
+                        INTERIOR_x003a_CinturonesdeSegur: Dropdown2_8.Selected,
+                        ObservacionesINTERIOR_x003a_Cint: TextInput1_8.Text,
+                        INTERIOR_x003a_Espejosretrovisor: Dropdown2_9.Selected,
+                        ObservacionesINTERIOR_x003a_Espe: TextInput1_9.Text,
+                        INTERIOR_x003a_BocinayPitodeReve: Dropdown2_10.Selected,
+                        ObservacionesINTERIOR_x003a_Boci: TextInput1_10.Text,
+                        INTERIOR_x003a_LucesDelanteras_x: Dropdown2_11.Selected,
+                        ObservacionesINTERIOR_x003a_Luce: TextInput1_11.Text,
+                        MOTOR_x003a_L_x00ed_quidodeFreno: Dropdown2_12.Selected,
+                        ObservacionesMOTOR_x003a_L_x00ed: TextInput1_12.Text,
+                        MOTOR_x003a_AceitedeMotor: Dropdown2_13.Selected,
+                        ObservacionesMOTOR_x003a_Aceited: TextInput1_13.Text,
+                        MOTOR_x003a_LiquidodeEmbrague: Dropdown2_14.Selected,
+                        ObservacionesMOTOR_x003a_Liquido: TextInput1_14.Text,
+                        MOTOR_x003a_Refrigerante: Dropdown2_15.Selected,
+                        ObservacionesMOTOR_x003a_Refrige: TextInput1_15.Text,
+                        MOTOR_x003a_Liquidodedirecci_x00: Dropdown2_18.Selected,
+                        ObservacionesMOTOR_x003a_Liquido0: TextInput1_18.Text,
+                        MOTOR_x003a_Liquidolimpiabrisas: Dropdown2_16.Selected,
+                        ObservacionesMOTOR_x003a_Liquido1: TextInput1_16.Text,
+                        MOTOR_x003a_Correas: Dropdown2_17.Selected,
+                        ObservacionesMOTOR_x003a_Correas: TextInput1_17.Text,
+                        MOTOR_x003a_Cableado: Dropdown2_19.Selected,
+                        ObservacionesMOTOR_x003a_Cablead: TextInput1_19.Text,
+                        MOTOR_x003a_Mangueras: Dropdown2_28.Selected,
+                        ObservacionesMOTOR_x003a_Manguer: TextInput1_28.Text,
+                        INTERIOR_x003a_Documentaci_x00f3: Dropdown2_20.Selected,
+                        ObservacionesINTERIOR_x003a_Docu: TextInput1_20.Text,
+                        ObservacionesINTERIOR_x003a_Docu0: Dropdown2_21.Selected,
+                        ObservacionesINTERIOR_x003a_Docu1: TextInput1_21.Text,
+                        INTERIOR_x003a_EquipodePrevenci_: Dropdown2_22.SelectedText,
+                        ObservacionesINTERIOR_x003a_Equi: TextInput1_22.Text,
+                        INTERIOR_x003a_EquipoSeguridad_x: Dropdown2_23.Selected,
+                        ObservaINTERIOR_x003a_EquipoSegu: TextInput1_23.Text,
+                        Firma: Image4.Image,
+                        ObservaFirma: TextInput1_42.Text,
+                        Gestion: DataCardValue49.Selected
+                    },
+                    Form2Adjunto.Updates
+                )
+            );
+            
+            
+            Reset(Dropdown2);
+            Reset(TextInput1);
+            Reset(Dropdown2_1);
+            Reset(TextInput1_1);
+            Reset(Dropdown2_2);
+            Reset(TextInput1_2);
+            Reset(Dropdown2_3);
+            Reset(TextInput1_3);
+            Reset(Dropdown2_4);
+            Reset(TextInput1_4);
+            Reset(Dropdown2_5);
+            Reset(TextInput1_5);
+            Reset(Dropdown2_6);
+            Reset(TextInput1_6);
+            Reset(Dropdown2_7);
+            Reset(TextInput1_7);
+            Reset(Dropdown2_8);
+            Reset(TextInput1_8);
+            Reset(Dropdown2_9);
+            Reset(TextInput1_9);
+            Reset(Dropdown2_10);
+            Reset(TextInput1_10);
+            Reset(Dropdown2_11);
+            Reset(TextInput1_11);
+            Reset(Dropdown2_12);
+            Reset(TextInput1_12);
+            Reset(Dropdown2_13);
+            Reset(TextInput1_13);
+            Reset(Dropdown2_14);
+            Reset(TextInput1_14);
+            Reset(Dropdown2_15);
+            Reset(TextInput1_15);
+            Reset(Dropdown2_18);
+            Reset(TextInput1_18);
+            Reset(Dropdown2_16);
+            Reset(TextInput1_16);
+            Reset(Dropdown2_17);
+            Reset(TextInput1_17);
+            Reset(TextInput1_16);
+            Reset(Dropdown2_19);
+            Reset(TextInput1_19);
+            Reset(Dropdown2_28);
+            Reset(TextInput1_28);
+            Reset(Dropdown2_20);
+            Reset(TextInput1_20);
+            Reset(Dropdown2_21);
+            Reset(TextInput1_21);
+            Reset(Dropdown2_22);
+            Reset(TextInput1_22);
+            Reset(Dropdown2_23);
+            Reset(TextInput1_23);
+            Reset(TextInput1_42);
+            Reset(PenInput1);
+            ResetForm(Form2Adjunto);
+            ResetForm(Form1);
+            ResetForm(Form1_1);
+            Navigate(Correcto, ScreenTransition.None)
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =15
+        Text: ="Enviar Revisión"
+        Width: =176
+        X: =754
+        Y: =634
+        ZIndex: =21
+
+    Form2Adjunto As form:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DataSource: =ListaPrestamoVehiculos
+        DefaultMode: =FormMode.New
+        Height: =195
+        SnapToColumns: =false
+        Width: =564
+        X: =237
+        Y: =157
+        ZIndex: =22
+
+        "'Datos adjuntos_DataCard2' As typedDataCard.attachmentsEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.'{Attachments}'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'{Attachments}')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =181
+            Required: =false
+            Update: =DataCardValue10.Attachments
+            Width: =564
+            X: =0
+            Y: =
+            ZIndex: =1
+
+            DataCardValue10 As attachments:
+                AddAttachmentText: ="Adjuntar fotografías de la revisión "
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =4
+                Height: =114
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                IsInDataCard: =true
+                ItemColor: =RGBA(255, 255, 255, 1)
+                ItemFill: =RGBA(100, 118, 132, 1)
+                ItemHoverColor: =RGBA(0, 0, 0, 1)
+                ItemHoverFill: =RGBA(205, 209, 213, 1)
+                Items: =Parent.Default
+                MaxAttachments: =7
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(32, 54, 71, 1)
+                Tooltip: =Parent.DisplayName
+                Width: =445
+                X: =42
+                Y: =44
+                ZIndex: =2
+
+            ErrorMessage10 As label:
+                AutoHeight: =true
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10.Y + DataCardValue10.Height
+                ZIndex: =3
+
+            StarVisible10 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =
+                Size: =13
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =
+                ZIndex: =4
+
+    Icon1_5 As icon.Reload:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =49
+        Icon: =Icon.Reload
+        OnSelect: =Reset(TextInput1_42); Reset(PenInput1);ResetForm(Form2Adjunto)
+        X: =886
+        Y: =70
+        ZIndex: =23
+
+    Icon2_6 As icon.Leave:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =26
+        Icon: =Icon.Leave
+        OnSelect: =Exit()
+        Width: =42
+        X: =997
+        Y: =14
+        ZIndex: =24
+
+    Label6_6 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        OnSelect: =Exit()
+        Size: =13
+        Text: ="Salir"
+        Width: =55
+        X: =942
+        Y: =7
+        ZIndex: =25
+
+    Image8_5 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =39
+        Image: =HomeIcon
+        OnSelect: |-
+            =Navigate(
+                ListaGestion,
+                ScreenTransition.None
+            )
+        Width: =62
+        X: =302
+        Y: =10
+        ZIndex: =26
+
+    GroupNavigation_6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =35
+
+        GalleryNavigation_6 As gallery.galleryVertical:
+            '#CopilotOverlayLabel': ="Filtrada"
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =GalleryNavigation_6.BorderColor
+            DisabledFill: =GalleryNavigation_6.Fill
+            Fill: =RGBA(0,0,0,0)
+            Height: =628
+            HoverBorderColor: =GalleryNavigation_6.BorderColor
+            HoverFill: =GalleryNavigation_6.Fill
+            Items: =NavigationMenu
+            Layout: =Layout.Vertical
+            LoadingSpinnerColor: =GalleryNavigation_6.BorderColor
+            OnSelect: |-
+                =Set(_selectedTutorial, ThisItem);
+                If(
+                    ThisItem.Row = 1, Navigate(ListaGestion, BorderStyle.None),
+                    ThisItem.Row = 2, Navigate('Datos Solictante y Firma', BorderStyle.None),
+                    ThisItem.Row = 3, Navigate('Datos Vehículo', BorderStyle.None),
+                    ThisItem.Row = 4, Navigate('Inspección y Observaciones', BorderStyle.None),
+                    ThisItem.Row = 5, Navigate('Inspeccion Adicional', BorderStyle.None),
+                    ThisItem.Row = 6, Navigate(PrevenTanqueo, BorderStyle.None),
+                    ThisItem.Row = 7, Navigate(SalidaFirma, BorderStyle.None)
+                );
+            PressedBorderColor: =GalleryNavigation_6.BorderColor
+            PressedFill: =GalleryNavigation_6.Fill
+            ShowScrollbar: =false
+            TemplateFill: =If(ThisItem.Row = _selectedTutorial.Row, RGBA(220, 220, 220, 1), RGBA(0,0,0,0))
+            TemplatePadding: =0
+            TemplateSize: =83
+            Width: =216
+            X: =1
+            Y: =119
+            ZIndex: =2
+
+            Image1_6 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderColor: =Image1_6.BorderColor
+                Height: =69
+                Image: =ThisItem.Image
+                OnSelect: =Select(Parent)
+                PaddingBottom: =12
+                PaddingTop: =12
+                Width: =45
+                X: =13
+                Y: =13
+                ZIndex: =1
+
+            Label4_6 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =Label4_6.BorderColor
+                FocusedBorderThickness: =2
+                Height: =82
+                HoverBorderColor: =Label4_6.BorderColor
+                HoverColor: =Label4_6.Color
+                HoverFill: =Label4_6.Fill
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =Label4_6.BorderColor
+                PressedColor: =Label4_6.Color
+                PressedFill: =Label4_6.Fill
+                Size: =13
+                TabIndex: =0
+                Text: =ThisItem.Title
+                Width: =158
+                X: =58
+                ZIndex: =2
+
+            Rectangle1_6 As rectangle:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Fill: =RGBA(116, 39, 116, 1)
+                FocusedBorderColor: =Rectangle1_6.BorderColor
+                Height: =20
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.Row = _selectedTutorial.Row
+                Width: =4
+                X: =11
+                Y: =11
+                ZIndex: =3
+
+        iconHamburgerMenu_12 As icon.Hamburger:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            FocusedBorderColor: =iconHamburgerMenu_12.BorderColor
+            Height: =16
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(IsExpand, !IsExpand)
+            TabIndex: =0
+            Width: =17
+            X: =26
+            Y: =76+0
+            ZIndex: =3
+
+        Rectangle2_6 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =Rectangle2_6.BorderColor
+            Height: =707
+            Width: =1
+            X: =216
+            Y: =61+0
+            ZIndex: =4
+
+    GroupBackground_6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =39
+
+        WelcomeScreenTitleBackground_6 As rectangle:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =WelcomeScreenTitleBackground_6.BorderColor
+            Height: =60
+            Width: =1366
+            ZIndex: =5
+
+        WelcomeScreenTitle_6 As label:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =WelcomeScreenTitle_6.BorderColor
+            Font: =Font.'Segoe UI'
+            Height: =32
+            HoverBorderColor: =WelcomeScreenTitle_6.BorderColor
+            HoverColor: =WelcomeScreenTitle_6.Color
+            HoverFill: =WelcomeScreenTitle_6.Fill
+            LineHeight: =0
+            PressedBorderColor: =WelcomeScreenTitle_6.BorderColor
+            PressedColor: =WelcomeScreenTitle_6.Color
+            PressedFill: =WelcomeScreenTitle_6.Fill
+            Size: =18
+            Text: ="Control de Transporte"
+            Width: =350
+            X: =14
+            Y: =14
+            ZIndex: =6
+
+        ImagePowerAppsLogo_6 As image:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            FocusedBorderColor: =ImagePowerAppsLogo_6.BorderColor
+            Height: =60
+            Image: =Logo
+            Width: =276
+            X: =1090
+            ZIndex: =7
+
+    GroupDetailsPanel_1 As group:
+        Height: =5
+        Width: =5
+        X: =-906
+        Y: =-20
+        ZIndex: =42
+
+        RectangleDetailsBackground_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0.16)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =RectangleDetailsBackground_1.BorderColor
+            Height: =708
+            Width: =420
+            X: =946
+            Y: =60
+            ZIndex: =9
+
+        LabelDetalisTitle_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetalisTitle_1.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Lighter
+            HoverBorderColor: =LabelDetalisTitle_1.BorderColor
+            HoverColor: =LabelDetalisTitle_1.Color
+            HoverFill: =LabelDetalisTitle_1.Fill
+            PressedBorderColor: =LabelDetalisTitle_1.BorderColor
+            PressedColor: =LabelDetalisTitle_1.Color
+            PressedFill: =LabelDetalisTitle_1.Fill
+            Size: =15
+            Text: |-
+                ="Detalles:"
+            X: =975
+            Y: =82
+            ZIndex: =10
+
+        LabelDetailsSteps_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetailsSteps_1.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsSteps_1.BorderColor
+            HoverColor: =LabelDetailsSteps_1.Color
+            HoverFill: =LabelDetailsSteps_1.Fill
+            OnSelect: |-
+                =UpdateContext({IsShowResourcesTab: false})
+            PressedBorderColor: =LabelDetailsSteps_1.BorderColor
+            PressedColor: =LabelDetailsSteps_1.Color
+            PressedFill: =LabelDetailsSteps_1.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Pasos"
+            Width: =59
+            X: =979
+            Y: =130
+            ZIndex: =11
+
+        LabelDetailsResources_1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetailsResources_1.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsResources_1.BorderColor
+            HoverColor: =LabelDetailsResources_1.Color
+            HoverFill: =LabelDetailsResources_1.Fill
+            OnSelect: |-
+                =UpdateContext({IsShowResourcesTab: true})
+            PressedBorderColor: =LabelDetailsResources_1.BorderColor
+            PressedColor: =LabelDetailsResources_1.Color
+            PressedFill: =LabelDetailsResources_1.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Recursos"
+            Width: =98
+            X: =1038
+            Y: =130
+            ZIndex: =12
+
+        RectangleTab1_1 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab1_1.BorderColor
+            Height: =2
+            Visible: =!IsShowResourcesTab
+            Width: =LabelDetailsSteps_1.Width - 15
+            X: =983
+            Y: =168
+            ZIndex: =13
+
+        RectangleTab2_1 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab2_1.BorderColor
+            Height: =2
+            Visible: =IsShowResourcesTab
+            Width: =LabelDetailsResources_1.Width - 23
+            X: =LabelDetailsResources_1.X + 13
+            Y: =168
+            ZIndex: =14
+
+        HtmlTextFunctionPanelSteps_1 As htmlViewer:
+            Font: =Font.'Segoe UI'
+            Height: =596
+            HoverBorderColor: =HtmlTextFunctionPanelSteps_1.BorderColor
+            HtmlText: |-
+                ="
+                <div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                    <div style=""width: 85%; margin: 10px 0 20px;"">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong> </div>
+                  
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >1</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong> Adjunte por favor las fotografías de la revisión:</strong> Todas las que considere.<br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >2</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong>Satisfacción de la verificación e indique observaciones:</strong> Según considere.<br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                  
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >3</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong>Solo oprima enviar cuando este seguro de la verificación:</strong> Revise cada pestaña por favor. <br /><br />
+                         </div>
+                    <div style=""clear: both""></div>
+                
+                    
+                "
+            PressedBorderColor: =HtmlTextFunctionPanelSteps_1.BorderColor
+            Visible: =!IsShowResourcesTab
+            Width: =420
+            X: =946
+            Y: =172
+            ZIndex: =15
+
+        HtmlTextFunctionPanelResources_1 As htmlViewer:
+            Font: =Font.'Segoe UI'
+            Height: =195
+            HoverBorderColor: =HtmlTextFunctionPanelResources_1.BorderColor
+            HtmlText: |-
+                ="
+                <div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                  
+                    <div style=""margin: 20px 0; font-weight: bold;"">Soporte:</div>
+                    <ul> 
+                      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>
+                      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>
+                      <li><a href=''>Add a data connection in PowerApps</a></li>
+                      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>
+                    </ul>
+                  </div>"
+            PressedBorderColor: =HtmlTextFunctionPanelResources_1.BorderColor
+            Visible: =IsShowResourcesTab
+            Width: =420
+            X: =946
+            Y: =572
+            ZIndex: =16
+

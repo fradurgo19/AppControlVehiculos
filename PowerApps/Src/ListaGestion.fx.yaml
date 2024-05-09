@@ -1,0 +1,1395 @@
+ListaGestion As screen:
+    Fill: =RGBA(241, 241, 241, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |-
+        =Set(_selectedTutorial, {Row: 1, Title: "Lista Gestión Vehícular", Image: HomeIcon});ClearCollect(ListaPrestamoVehiculosLocal,ListaPrestamoVehiculos);Refresh(ListaPrestamoVehiculos)
+    Orientation: =If(ListaGestion.Width < ListaGestion.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= ListaGestion.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    GroupBackground As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        BienvenidaFondo As rectangle:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =BienvenidaFondo.BorderColor
+            Height: =60
+            Width: =1366
+            ZIndex: =4
+
+        Bienvenida As label:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =Bienvenida.BorderColor
+            Font: =Font.'Segoe UI'
+            Height: =32
+            HoverBorderColor: =Bienvenida.BorderColor
+            HoverColor: =Bienvenida.Color
+            HoverFill: =Bienvenida.Fill
+            LineHeight: =0
+            PressedBorderColor: =Bienvenida.BorderColor
+            PressedColor: =Bienvenida.Color
+            PressedFill: =Bienvenida.Fill
+            Size: =18
+            Text: ="Control de Transporte"
+            Width: =350
+            X: =14
+            Y: =14
+            ZIndex: =5
+
+        ImageLogo As image:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            FocusedBorderColor: =ImageLogo.BorderColor
+            Height: =60
+            Image: =Logo
+            Width: =276
+            X: =1090
+            ZIndex: =7
+
+    GroupNavigation As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        GalleryNavigation As gallery.galleryVertical:
+            '#CopilotOverlayLabel': ="Filtrada"
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =GalleryNavigation.BorderColor
+            DisabledFill: =GalleryNavigation.Fill
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =GalleryNavigation.BorderColor
+            HoverFill: =GalleryNavigation.Fill
+            Items: =NavigationMenu
+            Layout: =Layout.Vertical
+            LoadingSpinnerColor: =GalleryNavigation.BorderColor
+            OnSelect: |-
+                =Set(_selectedTutorial, ThisItem);
+                If(
+                    ThisItem.Row = 1, Navigate(ListaGestion, BorderStyle.None),
+                    ThisItem.Row = 2, Navigate('Datos Solictante y Firma', BorderStyle.None),
+                    ThisItem.Row = 3, Navigate('Datos Vehículo', BorderStyle.None),
+                    ThisItem.Row = 4, Navigate('Inspección y Observaciones', BorderStyle.None),
+                    ThisItem.Row = 5, Navigate('Inspeccion Adicional', BorderStyle.None),
+                    ThisItem.Row = 6, Navigate(PrevenTanqueo, BorderStyle.None),
+                    ThisItem.Row = 7, Navigate(SalidaFirma, BorderStyle.None)
+                );
+            PressedBorderColor: =GalleryNavigation.BorderColor
+            PressedFill: =GalleryNavigation.Fill
+            ShowScrollbar: =false
+            TemplateFill: =If(ThisItem.Row = _selectedTutorial.Row, RGBA(220, 220, 220, 1), RGBA(0,0,0,0))
+            TemplatePadding: =0
+            TemplateSize: =80
+            Width: =216
+            X: =0+0
+            Y: =109+0
+            ZIndex: =1
+
+            Image1 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderColor: =Image1.BorderColor
+                Height: =54
+                Image: =ThisItem.Image
+                OnSelect: =Select(Parent)
+                PaddingBottom: =12
+                PaddingTop: =12
+                Width: =72
+                ZIndex: =1
+
+            Label4 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =Label4.BorderColor
+                FocusedBorderThickness: =2
+                Height: =80
+                HoverBorderColor: =Label4.BorderColor
+                HoverColor: =Label4.Color
+                HoverFill: =Label4.Fill
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =Label4.BorderColor
+                PressedColor: =Label4.Color
+                PressedFill: =Label4.Fill
+                Size: =13
+                TabIndex: =0
+                Text: =ThisItem.Title
+                Width: =161
+                X: =55
+                ZIndex: =2
+
+            Rectangle1 As rectangle:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Fill: =RGBA(116, 39, 116, 1)
+                FocusedBorderColor: =Rectangle1.BorderColor
+                Height: =20
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.Row = _selectedTutorial.Row
+                Width: =4
+                X: =11
+                Y: =11
+                ZIndex: =3
+
+        iconHamburgerMenu_6 As icon.Hamburger:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            FocusedBorderColor: =iconHamburgerMenu_6.BorderColor
+            Height: =16
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(IsExpand, !IsExpand)
+            TabIndex: =0
+            Width: =17
+            X: =26
+            Y: =76+0
+            ZIndex: =2
+
+        Rectangle2_5 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =Rectangle2_5.BorderColor
+            Height: =707
+            Width: =1
+            X: =216
+            Y: =61+0
+            ZIndex: =3
+
+    Video1_6 As videoPlayback:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Fill: =RGBA(100, 118, 132, 1)
+        FocusedBorderColor: =Video1_6.BorderColor
+        Height: =214
+        Media: |-
+            ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+        Visible: =IsShowResourcesTab
+        Width: =366
+        X: =975+0
+        Y: =300+0
+        ZIndex: =17
+
+    GroupDetailsPanel_6 As group:
+        Height: =5
+        Width: =5
+        X: =-906
+        Y: =-20
+        ZIndex: =17
+
+        RectangleDetailsBackground_6 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0.16)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =RectangleDetailsBackground_6.BorderColor
+            Height: =708
+            Width: =441
+            X: =925
+            Y: =60
+            ZIndex: =9
+
+        LabelDetalisTitle_6 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetalisTitle_6.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Lighter
+            HoverBorderColor: =LabelDetalisTitle_6.BorderColor
+            HoverColor: =LabelDetalisTitle_6.Color
+            HoverFill: =LabelDetalisTitle_6.Fill
+            PressedBorderColor: =LabelDetalisTitle_6.BorderColor
+            PressedColor: =LabelDetalisTitle_6.Color
+            PressedFill: =LabelDetalisTitle_6.Fill
+            Size: =15
+            Text: ="Detalles"
+            Width: =157
+            X: =955
+            Y: =82
+            ZIndex: =10
+
+        LabelDetailsSteps_6 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetailsSteps_6.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsSteps_6.BorderColor
+            HoverColor: =LabelDetailsSteps_6.Color
+            HoverFill: =LabelDetailsSteps_6.Fill
+            OnSelect: |-
+                =UpdateContext({IsShowResourcesTab: false})
+            PressedBorderColor: =LabelDetailsSteps_6.BorderColor
+            PressedColor: =LabelDetailsSteps_6.Color
+            PressedFill: =LabelDetailsSteps_6.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Pasos"
+            Width: =62
+            X: =960
+            Y: =130
+            ZIndex: =11
+
+        LabelDetailsResources_6 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetailsResources_6.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsResources_6.BorderColor
+            HoverColor: =LabelDetailsResources_6.Color
+            HoverFill: =LabelDetailsResources_6.Fill
+            OnSelect: |-
+                =UpdateContext({IsShowResourcesTab: true})
+            PressedBorderColor: =LabelDetailsResources_6.BorderColor
+            PressedColor: =LabelDetailsResources_6.Color
+            PressedFill: =LabelDetailsResources_6.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Recursos"
+            Width: =103
+            X: =1022
+            Y: =130
+            ZIndex: =12
+
+        RectangleTab1_6 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab1_6.BorderColor
+            Height: =2
+            Visible: =!IsShowResourcesTab
+            Width: =46
+            X: =964
+            Y: =168
+            ZIndex: =13
+
+        RectangleTab2_6 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab2_6.BorderColor
+            Height: =2
+            Visible: =IsShowResourcesTab
+            Width: =79
+            X: =1035
+            Y: =168
+            ZIndex: =14
+
+        HtmlTextFunctionPanelSteps_6 As htmlViewer:
+            Font: =Font.'Segoe UI'
+            Height: =596
+            HoverBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
+            HtmlText: |-
+                ="
+                <div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                    <div style=""width: 85%; margin: 10px 0 20px;"">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong> Por favor siga el paso a paso: </div>
+                  
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >1</div>
+                    <div style=""float: left; width: 75%; "">
+                        Es necesario <strong>verificar los últimos registros</strong> de gestión de vehículos.  <br />
+                        
+                        <em></em>
+                    
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >2</div>
+                    <div style=""float: left; width: 75%; "">
+                         Utilice cada uno de los <strong>filtros según la necesidad.</strong>
+                        <br />
+                        <em></em>
+                
+                    </div>
+                    <div style=""clear: both""></div>
+                  
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >3</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong> Puede verificar por fecha, sede o placa.</strong>
+                        <br />
+                        <em></em>
+                        </em>
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >4</div>
+                    <div style=""float: left; width: 75%; "">
+                        Verifique cada registro en verificación o tanqueo con la <strong>flecha a la derecha de cada registro.</strong>
+                        <br />
+                        <em></em>
+                            <pre style=""font-size: " & StepsPanelCodeFontSize & "pt; white-space: pre-wrap; word-break: break-all"">
+                            </pre>
+                        </em>
+                    </div>
+                    <div style=""clear: both""></div>
+                    
+                    <div style=""clear: both""></div>
+                </div>
+                
+                "
+            PressedBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
+            Size: =14
+            Visible: =!IsShowResourcesTab
+            Width: =441
+            X: =924
+            Y: =168
+            ZIndex: =15
+
+        HtmlTextFunctionPanelResources_6 As htmlViewer:
+            Font: =Font.'Segoe UI'
+            Height: =195
+            HoverBorderColor: =HtmlTextFunctionPanelResources_6.BorderColor
+            HtmlText: |-
+                ="
+                <div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                  
+                    <div style=""margin: 20px 0; font-weight: bold;"">Soporte:</div>
+                    <ul> 
+                      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>
+                      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>
+                      <li><a href=''>Add a data connection in PowerApps</a></li>
+                      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>
+                    </ul>
+                  </div>"
+            PressedBorderColor: =HtmlTextFunctionPanelResources_6.BorderColor
+            Visible: =IsShowResourcesTab
+            Width: =441
+            X: =925
+            Y: =572
+            ZIndex: =16
+
+    Label1_12 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label1_12.BorderColor
+        Height: =95
+        HoverBorderColor: =Label1_12.BorderColor
+        HoverColor: =Label1_12.Color
+        HoverFill: =Label1_12.Fill
+        PaddingBottom: =0
+        PaddingLeft: =23.5
+        PaddingRight: =20
+        PressedBorderColor: =Label1_12.BorderColor
+        PressedColor: =Label1_12.Color
+        PressedFill: =Label1_12.Fill
+        Size: =11
+        Text: |-
+            ="PARTEQUIPOS:"
+        Visible: =IsShowResourcesTab
+        Width: =409
+        X: =957+0
+        Y: =170+0
+        ZIndex: =18
+
+    Label1_13 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label1_13.BorderColor
+        FontWeight: =FontWeight.Bold
+        Height: =33
+        HoverBorderColor: =Label1_13.BorderColor
+        HoverColor: =Label1_13.Color
+        HoverFill: =Label1_13.Fill
+        PaddingLeft: =23.5
+        PaddingRight: =20
+        PressedBorderColor: =Label1_13.BorderColor
+        PressedColor: =Label1_13.Color
+        PressedFill: =Label1_13.Fill
+        Size: =12
+        Text: |-
+            ="Conoce la empresa:"
+        Visible: =IsShowResourcesTab
+        Width: =409
+        X: =957+0
+        Y: =267+0
+        ZIndex: =19
+
+    Label2_6 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label2_6.BorderColor
+        Height: =58
+        HoverBorderColor: =Label2_6.BorderColor
+        HoverColor: =Label2_6.Color
+        HoverFill: =Label2_6.Fill
+        OnSelect: |-
+            =Launch("https://www.youtube.com/watch?v=uwG1Og4f0Vo")
+        PressedBorderColor: =Label2_6.BorderColor
+        PressedColor: =Label2_6.Color
+        PressedFill: =Label2_6.Fill
+        Size: =10
+        TabIndex: =0
+        Text: |-
+            ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+        Tooltip: ="Select to launch video in new tab"
+        Underline: =true
+        Visible: =IsShowResourcesTab
+        Width: =366
+        X: =975+0
+        Y: =514+0
+        ZIndex: =20
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtrada"
+        BorderThickness: =1
+        DelayItemLoading: =true
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =186
+        Items: |-
+            =Sort(
+                Filter(
+                    ListaPrestamoVehiculos,
+                    (StartsWith(Placa, Buscar.Text) || IsBlank(Buscar.Text))&&
+                    (Gestion.Value = ComboBox1.Selected.Value || IsBlank(ComboBox1.Selected.Value)) && (Sede.Value = ComboBox2.Selected.Value || IsBlank(ComboBox2.Selected.Value)) && (FechaSolicitud >= FechaInicio.SelectedDate || IsBlank(FechaInicio.SelectedDate)) && (FechaSolicitud <= FechaFin.SelectedDate || IsBlank(FechaFin.SelectedDate))
+                ),
+                Modified,
+                SortOrder.Descending
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowNavigation: =true
+        TemplatePadding: =0
+        TemplateSize: =146
+        Width: =691
+        X: =233
+        Y: =243
+        ZIndex: =21
+
+        Image7 As image:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =37
+            Image: =ThisItem.Firma
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =25
+            Y: =96
+            ZIndex: =1
+
+        Title1 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =45
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.NombreSolicitante
+            Tooltip: ="Nombre Solicitante"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =118
+            X: =137
+            Y: =88
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =55
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Destino
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =114
+            X: =268
+            Y: =83
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Fill: =RGBA(214, 221, 224, 1)
+            Height: =71
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate(Imprimir1)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =62
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =25
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =138
+            ZIndex: =5
+
+        Rectangle3 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(32, 54, 71, 1)
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Subtitle1_1 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Placa
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =81
+            X: =28
+            Y: =25
+            ZIndex: =7
+
+        Subtitle1_2 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.FechaSolicitud
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =129
+            X: =139
+            Y: =25
+            ZIndex: =8
+
+        Subtitle1_3 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =27
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.OT
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =114
+            X: =286
+            Y: =25
+            ZIndex: =9
+
+        Subtitle1_4 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.Sede.Value
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =126
+            X: =386
+            Y: =25
+            ZIndex: =10
+
+        Image7_2 As image:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =42
+            Image: =First(ThisItem.'{Attachments}').Value
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =73
+            X: =383
+            Y: =80
+            ZIndex: =11
+
+        Subtitle1_8 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Fecha:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =136
+            ZIndex: =12
+
+        Subtitle1_10 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Placa:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =28
+            ZIndex: =13
+
+        Subtitle1_11 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="OT:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =286
+            ZIndex: =14
+
+        Subtitle1_12 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Sede:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =68
+            X: =388
+            ZIndex: =15
+
+        Subtitle1_13 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Firma:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =25
+            Y: =57
+            ZIndex: =16
+
+        Subtitle1_14 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Solicitante:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =92
+            X: =139
+            Y: =57
+            ZIndex: =17
+
+        Subtitle1_15 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Destino:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =73
+            X: =273
+            Y: =55
+            ZIndex: =18
+
+        Subtitle1_16 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Foto:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =73
+            X: =383
+            Y: =52
+            ZIndex: =19
+
+        Subtitle1_22 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Gestión:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =73
+            X: =496
+            Y: =52
+            ZIndex: =20
+
+        Subtitle1_7 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =50
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.Gestion.Value
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =97
+            X: =496
+            Y: =77
+            ZIndex: =21
+
+    FechaInicio As datepicker:
+        BorderColor: =RGBA(122, 138, 143, 1)
+        CalendarHeaderFill: =RGBA(101,128,187,1)
+        Color: =RGBA(47, 41, 43, 1)
+        DefaultDate: |
+            =DateAdd(Today(), -Day(Today()) + 1)
+        DisabledBorderColor: =RGBA(189, 49, 51, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        Format: ="dd-mm-yyyy"
+        Height: =30
+        HoverDateFill: =RGBA(190,202,226,1)
+        IconFill: =ColorFade(RGBA(255,255,255,1), -5%)
+        OnSelect: =
+        SelectedDateFill: =RGBA(62,96,170,1)
+        Size: =15
+        StartYear: =2000
+        Width: =193
+        X: =233
+        Y: =167
+        ZIndex: =22
+
+    FechaFin As datepicker:
+        BorderColor: =RGBA(122, 138, 143, 1)
+        CalendarHeaderFill: =RGBA(101,128,187,1)
+        Color: =RGBA(47, 41, 43, 1)
+        DisabledBorderColor: =RGBA(189, 49, 51, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        Format: ="dd-mm-yyyy"
+        Height: =28
+        HoverDateFill: =RGBA(190,202,226,1)
+        IconFill: =ColorFade(RGBA(255,255,255,1), -5%)
+        OnSelect: =
+        SelectedDateFill: =RGBA(62,96,170,1)
+        Size: =15
+        Width: =186
+        X: =426
+        Y: =167
+        ZIndex: =23
+
+    Label5 As label:
+        BorderColor: =RGBA(101, 128, 187, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =32
+        Size: =15
+        Text: ="Fecha Inicio"
+        Width: =193
+        X: =233
+        Y: =135
+        ZIndex: =24
+
+    Label5_1 As label:
+        BorderColor: =RGBA(101, 128, 187, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =33
+        Size: =15
+        Text: ="Fecha Fin"
+        Width: =186
+        X: =426
+        Y: =136
+        ZIndex: =25
+
+    ComboBox1 As combobox:
+        BorderColor: =RGBA(122, 138, 143, 1)
+        ChevronBackground: =RGBA(0, 0, 0, 1)
+        ChevronDisabledBackground: =RGBA(189, 49, 51, 1)
+        ChevronDisabledFill: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        ChevronFill: =ColorFade(RGBA(255,255,255,1), -5%)
+        ChevronHoverBackground: =RGBA(189, 49, 51, 1)
+        ChevronHoverFill: =ColorFade(RGBA(255,255,255,1), -5%)
+        DisabledBorderColor: =RGBA(189, 49, 51, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        DisplayFields: =["Value"]
+        Height: =28
+        HoverColor: =RGBA(47, 41, 43, 1)
+        HoverFill: =ColorFade(RGBA(190, 202, 226, 1), 30%)
+        IsSearchable: =false
+        Items: =Choices(ListaPrestamoVehiculos.Gestion)
+        PressedColor: =RGBA(255,255,255,1)
+        PressedFill: =RGBA(224, 86, 6, 1)
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(255,255,255,1)
+        SelectionFill: =RGBA(189, 49, 51, 1)
+        SelectMultiple: =false
+        Size: =14
+        TabIndex: =-1
+        Tooltip: ="Despacho o entrega"
+        Width: =165
+        X: =612
+        Y: =167
+        ZIndex: =27
+
+    ComboBox2 As combobox:
+        BorderColor: =RGBA(122, 138, 143, 1)
+        ChevronBackground: =RGBA(0, 0, 0, 1)
+        ChevronDisabledBackground: =RGBA(159, 167, 165, 1)
+        ChevronDisabledFill: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        ChevronFill: =ColorFade(RGBA(255,255,255,1), -5%)
+        ChevronHoverBackground: =RGBA(189, 49, 51, 1)
+        ChevronHoverFill: =ColorFade(RGBA(255,255,255,1), -5%)
+        DisabledBorderColor: =RGBA(159, 167, 165, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        DisplayFields: =["Value"]
+        Height: =30
+        HoverColor: =RGBA(47, 41, 43, 1)
+        HoverFill: =ColorFade(RGBA(190, 202, 226, 1), 30%)
+        IsSearchable: =false
+        Items: =Choices(ListaPrestamoVehiculos.Sede)
+        PressedColor: =RGBA(255,255,255,1)
+        PressedFill: =RGBA(233, 79, 76, 1)
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(255,255,255,1)
+        SelectionFill: =RGBA(189, 49, 51, 1)
+        SelectMultiple: =false
+        Size: =14
+        Tooltip: ="Sede"
+        Width: =148
+        X: =777
+        Y: =167
+        ZIndex: =29
+
+    Buscar As text:
+        BorderColor: =RGBA(122, 138, 143, 1)
+        BorderThickness: =2
+        Color: =RGBA(47, 41, 43, 1)
+        Default: =
+        DisabledBorderColor: =RGBA(159, 167, 165, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+        FocusedBorderThickness: =4
+        Height: =28
+        HintText: ="Buscar por Placa"
+        HoverBorderColor: =RGBA(101, 128, 187, 1)
+        HoverColor: =RGBA(47, 41, 43, 1)
+        HoverFill: =ColorFade(RGBA(190, 202, 226, 1), 30%)
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        Size: =15
+        Width: =221
+        X: =483
+        Y: =81
+        ZIndex: =30
+
+    PageTitle_11 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =PageTitle_11.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =49
+        HoverBorderColor: =PageTitle_11.BorderColor
+        HoverColor: =PageTitle_11.Color
+        HoverFill: =PageTitle_11.Fill
+        PressedBorderColor: =PageTitle_11.BorderColor
+        PressedColor: =PageTitle_11.Color
+        PressedFill: =PageTitle_11.Fill
+        Size: =15
+        Text: |-
+            ="Gestión Vehículos:"
+        Width: =243
+        X: =268
+        Y: =68
+        ZIndex: =31
+
+    Label5_2 As label:
+        BorderColor: =RGBA(101, 128, 187, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =33
+        Size: =15
+        Text: ="Sede"
+        Width: =148
+        X: =777
+        Y: =136
+        ZIndex: =32
+
+    Label5_3 As label:
+        BorderColor: =RGBA(101, 128, 187, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =34
+        Size: =15
+        Text: ="Gestión"
+        Width: =165
+        X: =612
+        Y: =135
+        ZIndex: =33
+
+    "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtrada"
+        BorderThickness: =1
+        DelayItemLoading: =true
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =223
+        Items: |-
+            =Sort(
+                Filter(
+                    ListaTanqueos,
+                    (StartsWith(Placa, Buscar.Text) || IsBlank(Buscar.Text))&&
+                    (FechaTanqueo1 >= FechaInicio.SelectedDate || IsBlank(FechaInicio.SelectedDate)) && (FechaTanqueo1 <= FechaFin.SelectedDate || IsBlank(FechaFin.SelectedDate))
+                ),
+                Modified,
+                SortOrder.Descending
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowNavigation: =true
+        TemplatePadding: =0
+        TemplateSize: =140
+        Width: =691
+        X: =233
+        Y: =484
+        ZIndex: =34
+
+        Title1_1 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =22
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.ValorTanqueo1
+            Tooltip: ="Nombre Solicitante"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =95
+            X: =165
+            Y: =110
+            ZIndex: =2
+
+        Subtitle1_9 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.CantidadTanqueoGalones1
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =145
+            X: =327
+            Y: =31
+            ZIndex: =3
+
+        NextArrow1_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Fill: =RGBA(214, 221, 224, 1)
+            Height: =68
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate(Imprimir1_1)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =62
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =28
+            ZIndex: =4
+
+        Separator1_1 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle3_1 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(32, 54, 71, 1)
+            Height: =Parent.TemplateHeight - Separator1_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Subtitle1_5 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.Placa
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =117
+            X: =17
+            Y: =31
+            ZIndex: =7
+
+        Subtitle1_6 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.FechaTanqueo1
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =117
+            X: =165
+            Y: =33
+            ZIndex: =8
+
+        Image9 As image:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =46
+            Image: =ThisItem.FotoTanqueo1
+            OnSelect: =Select(Parent)
+            Width: =73
+            X: =517
+            Y: =33
+            ZIndex: =10
+
+        Subtitle1_17 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Placa:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =35
+            Y: =3
+            ZIndex: =11
+
+        Subtitle1_18 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Fecha:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =165
+            Y: =3
+            ZIndex: =12
+
+        Subtitle1_19 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =22
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="CantidadTanqueo:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =151
+            X: =332
+            Y: =3
+            ZIndex: =13
+
+        Subtitle1_20 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Foto:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =534
+            ZIndex: =14
+
+        Subtitle1_21 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Valor:"
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =56
+            X: =165
+            Y: =61
+            ZIndex: =15
+
+    PageTitle_13 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =PageTitle_13.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =31
+        HoverBorderColor: =PageTitle_13.BorderColor
+        HoverColor: =PageTitle_13.Color
+        HoverFill: =PageTitle_13.Fill
+        PressedBorderColor: =PageTitle_13.BorderColor
+        PressedColor: =PageTitle_13.Color
+        PressedFill: =PageTitle_13.Fill
+        Size: =15
+        Text: |-
+            ="Verificación:"
+        Width: =148
+        X: =225
+        Y: =212
+        ZIndex: =35
+
+    PageTitle_14 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =PageTitle_14.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =36
+        HoverBorderColor: =PageTitle_14.BorderColor
+        HoverColor: =PageTitle_14.Color
+        HoverFill: =PageTitle_14.Fill
+        PressedBorderColor: =PageTitle_14.BorderColor
+        PressedColor: =PageTitle_14.Color
+        PressedFill: =PageTitle_14.Fill
+        Size: =15
+        Text: |-
+            ="Tanqueos:"
+        Width: =123
+        X: =223
+        Y: =429
+        ZIndex: =36
+
+    Icon2 As icon.Leave:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =26
+        Icon: =Icon.Leave
+        OnSelect: =Exit()
+        Width: =42
+        X: =997
+        Y: =14
+        ZIndex: =37
+
+    Label6 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        OnSelect: =Exit()
+        Size: =13
+        Text: ="Salir"
+        Width: =55
+        X: =942
+        Y: =7
+        ZIndex: =38
+
+    Icon1_6 As icon.Reload:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =40
+        Icon: =Icon.Reload
+        OnSelect: =Reset(FechaInicio);Reset(FechaFin);Reset(ComboBox1);Reset(ComboBox2);Reset(Buscar)
+        Width: =52
+        X: =871
+        Y: =61
+        ZIndex: =39
+

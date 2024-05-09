@@ -1,0 +1,1093 @@
+"'Inspeccion Adicional' As screen":
+    Fill: =RGBA(241, 241, 241, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |-
+        =Set(_selectedTutorial,  {Row: 5, Title: "Salida", Image: OneNoteLogo16}) 
+    Orientation: =If('Inspeccion Adicional'.Width < 'Inspeccion Adicional'.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= 'Inspeccion Adicional'.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    CanvasMain_4 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =708
+        Width: =If(IsExpand, 900, 757)
+        X: =If(!IsExpand, 200, 50)
+        Y: =60
+        ZIndex: =7
+
+        DataCardMain_4 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 10
+            Width: =757
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            PageTitle_4 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =PageTitle_4.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                Height: =36
+                HoverBorderColor: =PageTitle_4.BorderColor
+                HoverColor: =PageTitle_4.Color
+                HoverFill: =PageTitle_4.Fill
+                PressedBorderColor: =PageTitle_4.BorderColor
+                PressedColor: =PageTitle_4.Color
+                PressedFill: =PageTitle_4.Fill
+                Size: =15
+                Text: |-
+                    ="MOTOR:"
+                Width: =117
+                X: =29
+                Y: =27
+                ZIndex: =1
+
+    Label1_6 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label1_6.BorderColor
+        Height: =95
+        HoverBorderColor: =Label1_6.BorderColor
+        HoverColor: =Label1_6.Color
+        HoverFill: =Label1_6.Fill
+        PaddingBottom: =0
+        PaddingLeft: =23.5
+        PaddingRight: =20
+        PressedBorderColor: =Label1_6.BorderColor
+        PressedColor: =Label1_6.Color
+        PressedFill: =Label1_6.Fill
+        Size: =11
+        Text: |-
+            ="PARTEQUIPOS: "
+        Visible: =IsShowResourcesTab
+        Width: =409
+        X: =957+0
+        Y: =170+0
+        ZIndex: =17
+
+    Label3_12 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Size: =12
+        Text: |-
+            ="1. Líquido de Frenos:"
+        Width: =163
+        X: =219
+        Y: =143
+        ZIndex: =20
+
+    Dropdown2_12 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =32
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =163
+        X: =218
+        Y: =196
+        ZIndex: =21
+
+    TextInput1_12 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =30
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =162
+        X: =220
+        Y: =248
+        ZIndex: =22
+
+    Dropdown2_13 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =32
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =163
+        X: =401
+        Y: =195
+        ZIndex: =23
+
+    TextInput1_13 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =30
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =162
+        X: =403
+        Y: =247
+        ZIndex: =24
+
+    Dropdown2_14 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =32
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =163
+        X: =589
+        Y: =197
+        ZIndex: =25
+
+    TextInput1_14 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =30
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =162
+        X: =591
+        Y: =249
+        ZIndex: =26
+
+    GroupBackground_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        WelcomeScreenTitleBackground_4 As rectangle:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =WelcomeScreenTitleBackground_4.BorderColor
+            Height: =60
+            Width: =1366
+            ZIndex: =4
+
+        WelcomeScreenTitle_4 As label:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =WelcomeScreenTitle_4.BorderColor
+            Font: =Font.'Segoe UI'
+            Height: =32
+            HoverBorderColor: =WelcomeScreenTitle_4.BorderColor
+            HoverColor: =WelcomeScreenTitle_4.Color
+            HoverFill: =WelcomeScreenTitle_4.Fill
+            LineHeight: =0
+            PressedBorderColor: =WelcomeScreenTitle_4.BorderColor
+            PressedColor: =WelcomeScreenTitle_4.Color
+            PressedFill: =WelcomeScreenTitle_4.Fill
+            Size: =18
+            Text: ="Control de Transporte"
+            Width: =350
+            X: =14
+            Y: =14
+            ZIndex: =5
+
+        ImagePowerAppsLogo_4 As image:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            FocusedBorderColor: =ImagePowerAppsLogo_4.BorderColor
+            Height: =60
+            Image: =Logo
+            Width: =276
+            X: =1090
+            ZIndex: =6
+
+    Label3_13 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =59
+        Size: =12
+        Text: |-
+            ="2. Aceite de Motor:"
+        Width: =163
+        X: =401
+        Y: =135
+        ZIndex: =27
+
+    Label3_14 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =51
+        Size: =12
+        Text: |-
+            ="3. Liquido de Embrague:"
+        Width: =163
+        X: =589
+        Y: =135
+        ZIndex: =28
+
+    Label3_15 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =30
+        Size: =12
+        Text: |-
+            ="4. Refrigerante:"
+        Width: =163
+        X: =762
+        Y: =153
+        ZIndex: =29
+
+    Dropdown2_15 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =32
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =163
+        X: =768
+        Y: =199
+        ZIndex: =30
+
+    TextInput1_15 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =30
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =162
+        X: =770
+        Y: =251
+        ZIndex: =31
+
+    Label3_16 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =51
+        Size: =12
+        Text: |-
+            ="6. Liquido limpiabrisas:"
+        X: =410
+        Y: =604
+        ZIndex: =32
+
+    Dropdown2_16 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =36
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =150
+        X: =410
+        Y: =658
+        ZIndex: =33
+
+    TextInput1_16 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =34
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =149
+        X: =412
+        Y: =710
+        ZIndex: =34
+
+    Label3_17 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        Size: =12
+        Text: |-
+            ="7. Correas/Mangueras:"
+        X: =593
+        Y: =572
+        ZIndex: =35
+
+    Dropdown2_17 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =36
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =150
+        X: =592
+        Y: =655
+        ZIndex: =36
+
+    TextInput1_17 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =34
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =149
+        X: =594
+        Y: =707
+        ZIndex: =37
+
+    Label3_18 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =54
+        Size: =12
+        Text: |-
+            ="5. Liquido de dirección:"
+        Width: =164
+        X: =220
+        Y: =605
+        ZIndex: =38
+
+    Dropdown2_18 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =38
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =163
+        X: =220
+        Y: =659
+        ZIndex: =39
+
+    TextInput1_18 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =36
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =162
+        X: =222
+        Y: =712
+        ZIndex: =40
+
+    Label3_19 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =51
+        Size: =12
+        Text: |-
+            ="8. Cableado/ Batería:"
+        Width: =164
+        X: =775
+        Y: =595
+        ZIndex: =41
+
+    Dropdown2_19 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =36
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =150
+        X: =773
+        Y: =655
+        ZIndex: =42
+
+    GroupDetailsPanel_4 As group:
+        Height: =5
+        Width: =5
+        X: =-906
+        Y: =-20
+        ZIndex: =42
+
+        RectangleDetailsBackground_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0.16)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =RectangleDetailsBackground_4.BorderColor
+            Height: =708
+            Width: =420
+            X: =946
+            Y: =60
+            ZIndex: =8
+
+        LabelDetalisTitle_4 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetalisTitle_4.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Lighter
+            HoverBorderColor: =LabelDetalisTitle_4.BorderColor
+            HoverColor: =LabelDetalisTitle_4.Color
+            HoverFill: =LabelDetalisTitle_4.Fill
+            PressedBorderColor: =LabelDetalisTitle_4.BorderColor
+            PressedColor: =LabelDetalisTitle_4.Color
+            PressedFill: =LabelDetalisTitle_4.Fill
+            Size: =15
+            Text: |-
+                ="Detalles:"
+            X: =975
+            Y: =82
+            ZIndex: =9
+
+        LabelDetailsSteps_4 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetailsSteps_4.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsSteps_4.BorderColor
+            HoverColor: =LabelDetailsSteps_4.Color
+            HoverFill: =LabelDetailsSteps_4.Fill
+            OnSelect: |-
+                =UpdateContext({IsShowResourcesTab: false})
+            PressedBorderColor: =LabelDetailsSteps_4.BorderColor
+            PressedColor: =LabelDetailsSteps_4.Color
+            PressedFill: =LabelDetailsSteps_4.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: |-
+                ="Pasos:"
+            Width: =59
+            X: =979
+            Y: =130
+            ZIndex: =10
+
+        LabelDetailsResources_4 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =LabelDetailsResources_4.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsResources_4.BorderColor
+            HoverColor: =LabelDetailsResources_4.Color
+            HoverFill: =LabelDetailsResources_4.Fill
+            OnSelect: |-
+                =UpdateContext({IsShowResourcesTab: true})
+            PressedBorderColor: =LabelDetailsResources_4.BorderColor
+            PressedColor: =LabelDetailsResources_4.Color
+            PressedFill: =LabelDetailsResources_4.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Resources"
+            Width: =98
+            X: =1038
+            Y: =130
+            ZIndex: =11
+
+        RectangleTab1_4 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab1_4.BorderColor
+            Height: =2
+            Visible: =!IsShowResourcesTab
+            Width: =LabelDetailsSteps_4.Width - 15
+            X: =983
+            Y: =168
+            ZIndex: =12
+
+        RectangleTab2_4 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab2_4.BorderColor
+            Height: =2
+            Visible: =IsShowResourcesTab
+            Width: =LabelDetailsResources_4.Width - 23
+            X: =LabelDetailsResources_4.X + 13
+            Y: =168
+            ZIndex: =13
+
+        HtmlTextFunctionPanelSteps_4 As htmlViewer:
+            Font: =Font.'Segoe UI'
+            Height: =590
+            HoverBorderColor: =HtmlTextFunctionPanelSteps_4.BorderColor
+            HtmlText: |-
+                ="
+                <div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                    <div style=""width: 85%; margin: 10px 0 20px;"">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>
+                  
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >1</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong> Líquido de Frenos:</strong> A nivel del depósito.<br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >2</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong>Aceite de Motor:</strong> A nivel de la aguja y sin impurezas.<br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                  
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >3</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong>Liquido de Embrague:</strong> A nivel establecido en el depósito.
+                 <br /><br />
+                         </div>
+                    <div style=""clear: both""></div>
+                
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >4</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong>Refrigerante:</strong> A nivel establecido en el depósito.<br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >5</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong> Liquido de dirección:</strong> En el nivel establecido en el depósito. <br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >6</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong>Liquido limpiabrisas:</strong> En el nivel establecido en el depósito. <br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                 <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >7</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong> Correas/Mangueras:</strong> Estado estándar en ambas caras y tensión / sin rupturas ni desgaste, conectadas con abrazaderas. <br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                     <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >8</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong>Cableado/Batería:</strong> Sin desgaste y conectados/Con soporte, sin corrosión, bornes sin sulfatar y conectados. <br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >9</div>
+                    <div style=""float: left; width: 75%; "">
+                        <strong> Otros:</strong> Describa estado de otros componentes si lo ve necesario. <br /><br />
+                    </div>
+                    <div style=""clear: both""></div>
+                
+                "
+            PressedBorderColor: =HtmlTextFunctionPanelSteps_4.BorderColor
+            Visible: =!IsShowResourcesTab
+            Width: =420
+            X: =932
+            Y: =175
+            ZIndex: =14
+
+        HtmlTextFunctionPanelResources_4 As htmlViewer:
+            Font: =Font.'Segoe UI'
+            Height: =195
+            HoverBorderColor: =HtmlTextFunctionPanelResources_4.BorderColor
+            HtmlText: |-
+                ="
+                <div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                  
+                    <div style=""margin: 20px 0; font-weight: bold;"">Soporte:</div>
+                    <ul> 
+                      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>
+                      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>
+                      <li><a href=''>Add a data connection in PowerApps</a></li>
+                      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>
+                    </ul>
+                  </div>"
+            PressedBorderColor: =HtmlTextFunctionPanelResources_4.BorderColor
+            Visible: =IsShowResourcesTab
+            Width: =420
+            X: =946
+            Y: =572
+            ZIndex: =15
+
+    TextInput1_19 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =34
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =149
+        X: =775
+        Y: =707
+        ZIndex: =43
+
+    Image3 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =269
+        Image: =MOTOR
+        Width: =508
+        X: =412
+        Y: =303
+        ZIndex: =44
+
+    Label1_7 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label1_7.BorderColor
+        FontWeight: =FontWeight.Bold
+        Height: =33
+        HoverBorderColor: =Label1_7.BorderColor
+        HoverColor: =Label1_7.Color
+        HoverFill: =Label1_7.Fill
+        PaddingLeft: =23.5
+        PaddingRight: =20
+        PressedBorderColor: =Label1_7.BorderColor
+        PressedColor: =Label1_7.Color
+        PressedFill: =Label1_7.Fill
+        Size: =12
+        Text: |-
+            ="Conoce la empresa:"
+        Visible: =IsShowResourcesTab
+        Width: =409
+        X: =957+0
+        Y: =267+0
+        ZIndex: =45
+
+    GroupNavigation_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =45
+
+        GalleryNavigation_4 As gallery.galleryVertical:
+            '#CopilotOverlayLabel': ="Filtrada"
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =GalleryNavigation_4.BorderColor
+            DisabledFill: =GalleryNavigation_4.Fill
+            Fill: =RGBA(0,0,0,0)
+            HoverBorderColor: =GalleryNavigation_4.BorderColor
+            HoverFill: =GalleryNavigation_4.Fill
+            Items: =NavigationMenu
+            Layout: =Layout.Vertical
+            LoadingSpinnerColor: =GalleryNavigation_4.BorderColor
+            OnSelect: |-
+                =Set(_selectedTutorial, ThisItem);
+                If(
+                    ThisItem.Row = 1, Navigate(ListaGestion, BorderStyle.None),
+                    ThisItem.Row = 2, Navigate('Datos Solictante y Firma', BorderStyle.None),
+                    ThisItem.Row = 3, Navigate('Datos Vehículo', BorderStyle.None),
+                    ThisItem.Row = 4, Navigate('Inspección y Observaciones', BorderStyle.None),
+                    ThisItem.Row = 5, Navigate('Inspeccion Adicional', BorderStyle.None),
+                    ThisItem.Row = 6, Navigate(PrevenTanqueo, BorderStyle.None),
+                    ThisItem.Row = 7, Navigate(SalidaFirma, BorderStyle.None)
+                );
+            PressedBorderColor: =GalleryNavigation_4.BorderColor
+            PressedFill: =GalleryNavigation_4.Fill
+            ShowScrollbar: =false
+            TemplateFill: =If(ThisItem.Row = _selectedTutorial.Row, RGBA(220, 220, 220, 1), RGBA(0,0,0,0))
+            TemplatePadding: =0
+            TemplateSize: =85
+            Width: =215
+            X: =0+0
+            Y: =109+0
+            ZIndex: =1
+
+            Image1_4 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderColor: =Image1_4.BorderColor
+                Height: =52
+                Image: =ThisItem.Image
+                OnSelect: =Select(Parent)
+                PaddingBottom: =12
+                PaddingTop: =12
+                Width: =39
+                X: =11
+                ZIndex: =1
+
+            Label4_4 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =Label4_4.BorderColor
+                FocusedBorderThickness: =2
+                Height: =84
+                HoverBorderColor: =Label4_4.BorderColor
+                HoverColor: =Label4_4.Color
+                HoverFill: =Label4_4.Fill
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =Label4_4.BorderColor
+                PressedColor: =Label4_4.Color
+                PressedFill: =Label4_4.Fill
+                Size: =13
+                TabIndex: =0
+                Text: =ThisItem.Title
+                Width: =161
+                X: =54
+                ZIndex: =2
+
+            Rectangle1_4 As rectangle:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Fill: =RGBA(116, 39, 116, 1)
+                FocusedBorderColor: =Rectangle1_4.BorderColor
+                Height: =20
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.Row = _selectedTutorial.Row
+                Width: =4
+                X: =11
+                Y: =11
+                ZIndex: =3
+
+        iconHamburgerMenu_10 As icon.Hamburger:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            FocusedBorderColor: =iconHamburgerMenu_10.BorderColor
+            Height: =16
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(IsExpand, !IsExpand)
+            TabIndex: =0
+            Width: =17
+            X: =26
+            Y: =76+0
+            ZIndex: =2
+
+        Rectangle2_1 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =Rectangle2_1.BorderColor
+            Height: =707
+            Width: =1
+            X: =215
+            Y: =61+0
+            ZIndex: =3
+
+    Video1_3 As videoPlayback:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Fill: =RGBA(100, 118, 132, 1)
+        FocusedBorderColor: =Video1_3.BorderColor
+        Height: =214
+        Media: |-
+            ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+        Visible: =IsShowResourcesTab
+        Width: =366
+        X: =975+0
+        Y: =300+0
+        ZIndex: =46
+
+    Label2_3 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =Label2_3.BorderColor
+        Height: =58
+        HoverBorderColor: =Label2_3.BorderColor
+        HoverColor: =Label2_3.Color
+        HoverFill: =Label2_3.Fill
+        OnSelect: |-
+            =Launch("https://www.youtube.com/watch?v=uwG1Og4f0Vo")
+        PressedBorderColor: =Label2_3.BorderColor
+        PressedColor: =Label2_3.Color
+        PressedFill: =Label2_3.Fill
+        Size: =10
+        TabIndex: =0
+        Text: |-
+            ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+        Tooltip: ="Select to launch video in new tab"
+        Underline: =true
+        Visible: =IsShowResourcesTab
+        Width: =366
+        X: =975+0
+        Y: =514+0
+        ZIndex: =47
+
+    Icon1_3 As icon.Reload:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =49
+        Icon: =Icon.Reload
+        OnSelect: =Reset(Dropdown2_12); Reset(TextInput1_12); Reset(Dropdown2_13); Reset(TextInput1_13); Reset(Dropdown2_14); Reset(TextInput1_14); Reset(Dropdown2_15); Reset(TextInput1_15); Reset(Dropdown2_16); Reset(TextInput1_16); Reset(Dropdown2_17); Reset(TextInput1_17);Reset(Dropdown2_18); Reset(TextInput1_18);Reset(Dropdown2_19); Reset(TextInput1_19);Reset(Dropdown2_28); Reset(TextInput1_28);
+        X: =875
+        Y: =65
+        ZIndex: =48
+
+    Label3_28 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =51
+        Size: =12
+        Text: |-
+            ="9. Otros:"
+        Width: =164
+        X: =222
+        Y: =352
+        ZIndex: =49
+
+    Dropdown2_28 As dropdown:
+        BorderColor: =Color.DarkSlateGray
+        ChevronBackground: =Color.DarkSlateGray
+        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =36
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Items: =Opciones
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(32, 54, 71, 1)
+        SelectionFill: =RGBA(100, 118, 132, 1)
+        Width: =150
+        X: =220
+        Y: =412
+        ZIndex: =50
+
+    TextInput1_28 As text:
+        BorderColor: =Color.DarkSlateGray
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Height: =34
+        HintText: ="Observaciones"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        Mode: =TextMode.MultiLine
+        Size: =11
+        Width: =149
+        X: =222
+        Y: =464
+        ZIndex: =51
+
+    Icon2_4 As icon.Leave:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =26
+        Icon: =Icon.Leave
+        OnSelect: =Exit()
+        Width: =42
+        X: =997
+        Y: =14
+        ZIndex: =52
+
+    Label6_4 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        OnSelect: =Exit()
+        Size: =13
+        Text: ="Salir"
+        Width: =55
+        X: =942
+        Y: =7
+        ZIndex: =53
+
+    Image8_3 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =39
+        Image: =HomeIcon
+        OnSelect: |-
+            =Navigate(
+                ListaGestion,
+                ScreenTransition.None
+            )
+        Width: =62
+        X: =302
+        Y: =10
+        ZIndex: =54
+
+    Label8_3 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(255, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =27
+        Size: =12
+        Text: |-
+            ="Todos los campos son obligatorios:"
+        Width: =442
+        X: =394
+        Y: =87
+        ZIndex: =55
+

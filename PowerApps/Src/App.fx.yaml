@@ -1,0 +1,22 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |+
+        =Concurrent(
+            Set(StepsPanelCodeFontSize, 10),
+            Set(_selectedTutorial, {Row: 1, Title: "Lista  Gestión Vehícular", Image: HomeIcon}),
+            ClearCollect(NavigationMenu,{Row: 1, Title: "Lista  Gestión Vehícular", Image: HomeIcon}, {Row: 2, Title: "Datos Solictante y Vehículo", Image: PeopleIcon}, {Row: 3, Title: "Inspección EXTERIOR", Image: volquete}, {Row: 4, Title: "Inspección INTERIOR", Image: Diagnostico}, {Row: 5, Title: "Inspección MOTOR", Image: Camioneta}, {Row: 6, Title: "Equipo de Prevención y Seguridad / Tanqueo", Image: PopUpIcon},{Row: 7, Title: "Salida y Firma", Image: 'space_rocket-3'})
+        );
+        ClearCollect(Opciones, ["","Estándar, el elemento opera de manera segura.","Semiestándar, Ofrece y manteniene un nivel aceptable de seguridad en el recorrido.", "Subestándar, compromete la seguridad del recorrido.","NA"]);
+        ClearCollect(ListaPrestamoVehiculosLocal,ListaPrestamoVehiculos);
+        
+        
+    StartScreen: =
+    Theme: =PlatinumTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

@@ -1,0 +1,1013 @@
+"Imprimir1_1 As screen.'printableLayout_A4Landscape_ver1.0'":
+    Height: =794
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    Width: =1123
+
+    PrintButton1_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 134, 208, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Height: =32
+        OnSelect: =Print();Navigate(ListaGestion,ScreenTransition.None)
+        Size: =13
+        TabIndex: =0
+        Text: ="Imprimir"
+        Visible: =Not(Parent.Printing)
+        Width: =96
+        X: =Parent.Width - Self.Width - 25
+        Y: =25
+        ZIndex: =2
+
+    FormViewer1_1 As formViewer:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        BorderThickness: =1
+        DataSource: =ListaTanqueos
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =634
+        Item: =Gallery2_1.Selected
+        NumberOfColumns: =6
+        Width: =1058
+        X: =40
+        Y: =86
+        ZIndex: =3
+
+        Placa_DataCard4 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Placa"
+            Default: =ThisItem.Placa
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,Placa)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+            DataCardKey104 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue101.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue101 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey104.X + DataCardKey104.Width
+                Y: =10
+                ZIndex: =2
+
+        FechaTanqueo1_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FechaTanqueo1"
+            Default: =ThisItem.FechaTanqueo1
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =2
+            Y: =0
+            ZIndex: =4
+
+            DataCardKey105 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =37
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue102.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue102 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =41
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =148
+                X: =DataCardKey105.X + DataCardKey105.Width
+                Y: =10
+                ZIndex: =2
+
+        CantidadTanqueoGalones1_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CantidadTanqueoGalones1"
+            Default: =ThisItem.CantidadTanqueoGalones1
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =4
+            Y: =0
+            ZIndex: =4
+
+            DataCardKey106 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue103.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue103 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey106.X + DataCardKey106.Width
+                Y: =10
+                ZIndex: =2
+
+        ValorTanqueo1_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ValorTanqueo1"
+            Default: =ThisItem.ValorTanqueo1
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =1
+            ZIndex: =4
+
+            DataCardKey107 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue104.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue104 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey107.X + DataCardKey107.Width
+                Y: =10
+                ZIndex: =2
+
+        KMsTanquear1_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="KMsTanquear1"
+            Default: =ThisItem.KMsTanquear1
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =2
+            Y: =1
+            ZIndex: =4
+
+            DataCardKey108 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue105.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue105 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey108.X + DataCardKey108.Width
+                Y: =10
+                ZIndex: =2
+
+        FotoTanqueo1_DataCard1 As typedDataCard.largeImageViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FotoTanqueo1"
+            Default: =ThisItem.FotoTanqueo1
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =50
+            Required: =false
+            Width: =352
+            X: =4
+            Y: =1
+            ZIndex: =4
+
+            DataCardKey109 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue106.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue106 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =155
+                Image: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey109.X + DataCardKey109.Width
+                Y: =10
+                ZIndex: =2
+
+        FechaTanqueo2_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FechaTanqueo2"
+            Default: =ThisItem.FechaTanqueo2
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo2)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =2
+            ZIndex: =4
+
+            DataCardKey110 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =144
+                Wrap: =false
+                X: =1
+                Y: =10 + (DataCardValue107.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue107 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey110.X + DataCardKey110.Width
+                Y: =10
+                ZIndex: =2
+
+        CantidadTanqueoGalones2_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CantidadTanqueoGalones2"
+            Default: =ThisItem.CantidadTanqueoGalones2
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones2)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =2
+            Y: =2
+            ZIndex: =4
+
+            DataCardKey111 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue108.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue108 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey111.X + DataCardKey111.Width
+                Y: =10
+                ZIndex: =2
+
+        ValorTanqueo2_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ValorTanqueo2"
+            Default: =ThisItem.ValorTanqueo2
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo2)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =4
+            Y: =2
+            ZIndex: =4
+
+            DataCardKey112 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue109.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue109 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey112.X + DataCardKey112.Width
+                Y: =10
+                ZIndex: =2
+
+        KMsTanquear2_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="KMsTanquear2"
+            Default: =ThisItem.KMsTanquear2
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear2)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =3
+            ZIndex: =4
+
+            DataCardKey113 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =47
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =137
+                Wrap: =false
+                X: =8
+                Y: =10 + (DataCardValue110.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue110 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey113.X + DataCardKey113.Width
+                Y: =10
+                ZIndex: =2
+
+        FotoTanqueo2_DataCard1 As typedDataCard.largeImageViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FotoTanqueo2"
+            Default: =ThisItem.FotoTanqueo2
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo2)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =704
+            X: =2
+            Y: =3
+            ZIndex: =4
+
+            DataCardKey114 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue111.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue111 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =155
+                Image: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey114.X + DataCardKey114.Width
+                Y: =10
+                ZIndex: =2
+
+        FechaTanqueo3_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FechaTanqueo3"
+            Default: =ThisItem.FechaTanqueo3
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo3)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =84
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =4
+            ZIndex: =4
+
+            DataCardKey115 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =146
+                Wrap: =false
+                Y: =10 + (DataCardValue112.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue112 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey115.X + DataCardKey115.Width
+                Y: =10
+                ZIndex: =2
+
+        CantidadTanqueoGalones3_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CantidadTanqueoGalones3"
+            Default: =ThisItem.CantidadTanqueoGalones3
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones3)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =2
+            Y: =4
+            ZIndex: =4
+
+            DataCardKey116 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue113.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue113 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey116.X + DataCardKey116.Width
+                Y: =10
+                ZIndex: =2
+
+        ValorTanqueo3_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ValorTanqueo3"
+            Default: =ThisItem.ValorTanqueo3
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo3)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =4
+            Y: =4
+            ZIndex: =4
+
+            DataCardKey117 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue114.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue114 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey117.X + DataCardKey117.Width
+                Y: =10
+                ZIndex: =2
+
+        KMsTanquear3_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="KMsTanquear3"
+            Default: =ThisItem.KMsTanquear3
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear3)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =5
+            ZIndex: =4
+
+            DataCardKey118 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue115.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue115 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey118.X + DataCardKey118.Width
+                Y: =10
+                ZIndex: =2
+
+        FotoTanqueo3_DataCard1 As typedDataCard.largeImageViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FotoTanqueo3"
+            Default: =ThisItem.FotoTanqueo3
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo3)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =704
+            X: =2
+            Y: =5
+            ZIndex: =4
+
+            DataCardKey119 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =116
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =134
+                Wrap: =false
+                X: =12
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue116 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =155
+                Image: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey119.X + DataCardKey119.Width
+                Y: =10
+                ZIndex: =2
+
+        FechaTanqueo4_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FechaTanqueo4"
+            Default: =ThisItem.FechaTanqueo4
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo4)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =6
+            ZIndex: =4
+
+            DataCardKey120 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =30
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =143
+                Wrap: =false
+                X: =3
+                Y: =10 + (DataCardValue117.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue117 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey120.X + DataCardKey120.Width
+                Y: =10
+                ZIndex: =2
+
+        CantidadTanqueoGalones4_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CantidadTanqueoGalones4"
+            Default: =ThisItem.CantidadTanqueoGalones4
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones4)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =2
+            Y: =6
+            ZIndex: =4
+
+            DataCardKey121 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue118.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue118 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey121.X + DataCardKey121.Width
+                Y: =10
+                ZIndex: =2
+
+        ValorTanqueo4_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ValorTanqueo4"
+            Default: =ThisItem.ValorTanqueo4
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo4)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =4
+            Y: =6
+            ZIndex: =4
+
+            DataCardKey122 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue119.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue119 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey122.X + DataCardKey122.Width
+                Y: =10
+                ZIndex: =2
+
+        KMsTanquear4_DataCard1 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="KMsTanquear4"
+            Default: =ThisItem.KMsTanquear4
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear4)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =352
+            X: =0
+            Y: =7
+            ZIndex: =4
+
+            DataCardKey123 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue120.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue120 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =13
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey123.X + DataCardKey123.Width
+                Y: =10
+                ZIndex: =2
+
+        FotoTanqueo4_DataCard1 As typedDataCard.largeImageViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FotoTanqueo4"
+            Default: =ThisItem.FotoTanqueo4
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo4)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =704
+            X: =2
+            Y: =7
+            ZIndex: =4
+
+            DataCardKey124 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue121.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue121 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                Height: =155
+                Image: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey124.X + DataCardKey124.Width
+                Y: =10
+                ZIndex: =2
+
+    PageTitle_12 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =PageTitle_12.BorderColor
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        HoverBorderColor: =PageTitle_12.BorderColor
+        HoverColor: =PageTitle_12.Color
+        HoverFill: =PageTitle_12.Fill
+        PressedBorderColor: =PageTitle_12.BorderColor
+        PressedColor: =PageTitle_12.Color
+        PressedFill: =PageTitle_12.Fill
+        Size: =15
+        Text: |-
+            ="Control Vehículos:"
+        Width: =223
+        X: =29
+        Y: =13
+        ZIndex: =4
+
+    NewExpenseBackIcon_5 As icon.ChevronLeft:
+        BorderColor: =RGBA(101, 128, 187, 1)
+        DisabledBorderColor: =RGBA(159, 167, 165, 1)
+        DisabledColor: =RGBA(193, 193, 193, 0.95)
+        DisabledFill: =NewExpenseBackIcon_5.Fill
+        FocusedBorderColor: =NewExpenseBackIcon_5.BorderColor
+        FocusedBorderThickness: =0
+        Height: =30
+        HoverBorderColor: =ColorFade(NewExpenseBackIcon_5.BorderColor, 20%)
+        HoverColor: =ColorFade(NewExpenseBackIcon_5.Color, 20%)
+        HoverFill: =NewExpenseBackIcon_5.Fill
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Correcto,ScreenTransition.None)
+        PressedBorderColor: =ColorFade(NewExpenseBackIcon_5.BorderColor, -20%)
+        PressedColor: =ColorFade(NewExpenseBackIcon_5.Color, -20%)
+        PressedFill: =NewExpenseBackIcon_5.Fill
+        Width: =31
+        X: =279
+        Y: =27
+        ZIndex: =5
+
