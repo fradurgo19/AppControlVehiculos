@@ -357,7 +357,7 @@ SalidaFirma As screen:
             
             Set(
                 CamposObligatoriosVacios,
-                IsBlank(DataCardValue1.SelectedDate) || IsBlank(DataCardValue66.Text) || IsBlank(DataCardValue2.Text) || IsBlank(DataCardValue3.Text) || IsBlank(DataCardValue4.Text) || IsBlank(DataCardValue5.Text) || IsBlank(DataCardValue6.Text) || IsBlank(DataCardValue7.SelectedDate) || IsBlank(DataCardValue73.Text) || IsBlank(DataCardValue76.Text) || IsBlank(DataCardValue8.Selected) || IsBlank(DataCardValue11.Selected) || IsBlank(DataCardValue49.Selected) || IsBlank(TextInput1_42.Text)|| IsBlank(PenInput1.Image)
+                IsBlank(DataCardValue1.SelectedDate) || IsBlank(DataCardValue66.Text) || IsBlank(DataCardValue2.Text) || IsBlank(DataCardValue3.Text) || IsBlank(DataCardValue4.Text) || IsBlank(DataCardValue5.Text) || IsBlank(DataCardValue6.Text) || IsBlank(DataCardValue7.SelectedDate) || IsBlank(DataCardValue73.Text) || IsBlank(DataCardValue76.Selected) || IsBlank(DataCardValue8.Selected) || IsBlank(DataCardValue11.Selected) || IsBlank(DataCardValue49.Selected) || IsBlank(TextInput1_42.Text)|| IsBlank(PenInput1.Image)
             );
             
             If(
@@ -377,7 +377,7 @@ SalidaFirma As screen:
                         FechaDeSalida: DataCardValue7.SelectedDate,
                         Marca: DataCardValue72.Text,
                         KMsSalida: DataCardValue73.Text,
-                        Placa: DataCardValue76.Text,
+                        Placa: DataCardValue76.Selected,
                         KMsTanqueo: DataCardValue8.Selected,
                         Sede: DataCardValue11.Selected,
                         EXTERIOR_x003a_L_x00e1_minas_x00: Dropdown2.Selected,

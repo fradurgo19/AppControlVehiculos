@@ -1338,7 +1338,7 @@
         Y: =508
         ZIndex: =55
 
-        Placa_DataCard3 As typedDataCard.textualEditCard:
+        Placa_DataCard5 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="Placa"
@@ -1349,13 +1349,13 @@
             Height: =50
             MaxLength: =DataSourceInfo([@ListaPrestamoVehiculos], DataSourceInfo.MaxLength, Placa)
             Required: =false
-            Update: =DataCardValue21.Text
+            Update: =DataCardValue74.Text
             Width: =225
             X: =1
             Y: =1
             ZIndex: =1
 
-            DataCardKey21 As label:
+            DataCardKey74 As label:
                 AutoHeight: =true
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
@@ -1368,7 +1368,7 @@
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue21 As text:
+            DataCardValue74 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 BorderThickness: =2
                 Color: =RGBA(0, 0, 0, 1)
@@ -1392,10 +1392,10 @@
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                Y: =DataCardKey74.Y + DataCardKey74.Height + 5
                 ZIndex: =2
 
-            ErrorMessage62 As label:
+            ErrorMessage63 As label:
                 AutoHeight: =true
                 Color: =RGBA(168, 0, 0, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
@@ -1410,20 +1410,20 @@
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue21.Y + DataCardValue21.Height
+                Y: =DataCardValue74.Y + DataCardValue74.Height
                 ZIndex: =3
 
-            StarVisible62 As label:
+            StarVisible63 As label:
                 Align: =Align.Center
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =DataCardKey21.Height
+                Height: =DataCardKey74.Height
                 Size: =13
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                 Width: =30
                 Wrap: =false
-                Y: =DataCardKey21.Y
+                Y: =DataCardKey74.Y
                 ZIndex: =4
 
         Marca_DataCard3 As typedDataCard.textualEditCard:
