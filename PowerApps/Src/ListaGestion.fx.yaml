@@ -457,7 +457,7 @@ ListaGestion As screen:
                     (StartsWith(Placa, Buscar.Text) || IsBlank(Buscar.Text))&&
                     (Gestion.Value = ComboBox1.Selected.Value || IsBlank(ComboBox1.Selected.Value)) && (Sede.Value = ComboBox2.Selected.Value || IsBlank(ComboBox2.Selected.Value)) && (FechaSolicitud >= FechaInicio.SelectedDate || IsBlank(FechaInicio.SelectedDate)) && (FechaSolicitud <= FechaFin.SelectedDate || IsBlank(FechaFin.SelectedDate))
                 ),
-                Modified,
+                Modificado,
                 SortOrder.Descending
             )
         Layout: =Layout.Vertical
@@ -570,7 +570,7 @@ ListaGestion As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =12
-            Text: =ThisItem.Placa
+            Text: =ThisItem.Placa.Value
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =81
@@ -640,7 +640,7 @@ ListaGestion As screen:
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)
             Height: =42
-            Image: =First(ThisItem.'{Attachments}').Value
+            Image: =First(ThisItem.'Datos adjuntos').Value
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =8
             RadiusBottomRight: =8

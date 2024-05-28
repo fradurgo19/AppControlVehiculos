@@ -127,9 +127,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="{Attachments}"
-            Default: =ThisItem.'{Attachments}'
+            Default: =ThisItem.'Datos adjuntos'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'{Attachments}')
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Datos adjuntos')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =173
             Required: =false
@@ -453,9 +453,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MotivodeTransporte"
-            Default: =ThisItem.MotivodeTransporte
+            Default: =ThisItem.MotivoDeTransporte
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MotivodeTransporte)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MotivoDeTransporte)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -501,9 +501,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="FechaDeSalida"
-            Default: =ThisItem.FechaDeSalida
+            Default: =ThisItem.FechaDeSalidaLlegada
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,FechaDeSalida)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,FechaDeSalidaLlegada)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -783,9 +783,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="KMsTanqueo"
-            Default: =ThisItem.KMsTanqueo
+            Default: =ThisItem.NivelTanqueo
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,KMsTanqueo)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,NivelTanqueo)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -826,12 +826,12 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].KMsTanqueo)
+                Items: =Choices([@ListaPrestamoVehiculos].NivelTanqueo)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.KMsTanqueo,DataCardValue23.SearchText)
+                SearchItems: =Choices(ListaPrestamoVehiculos.NivelTanqueo,DataCardValue23.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -875,9 +875,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="EXTERIOR_x003a_L_x00e1_minas_x00"
-            Default: =ThisItem.EXTERIOR_x003a_L_x00e1_minas_x00
+            Default: =ThisItem.EXTERIORLáminasPuertas
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,EXTERIOR_x003a_L_x00e1_minas_x00)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,EXTERIORLáminasPuertas)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -918,12 +918,12 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].EXTERIOR_x003a_L_x00e1_minas_x00)
+                Items: =Choices([@ListaPrestamoVehiculos].EXTERIORLáminasPuertas)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIOR_x003a_L_x00e1_minas_x00,DataCardValue24.SearchText)
+                SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIORLáminasPuertas,DataCardValue24.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -967,9 +967,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesEXTERIORL_x00e1_min"
-            Default: =ThisItem.ObservacionesEXTERIORL_x00e1_min
+            Default: =ThisItem.'Observaciones EXTERIOR Láminas / Puertas'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesEXTERIORL_x00e1_min)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones EXTERIOR Láminas / Puertas')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1015,9 +1015,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="EXTERIOR_x003a_Llantas_x002f_Rin"
-            Default: =ThisItem.EXTERIOR_x003a_Llantas_x002f_Rin
+            Default: |-
+                =ThisItem.'EXTERIOR: Llantas / Rines / Pernos / Llanta de repuesto'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,EXTERIOR_x003a_Llantas_x002f_Rin)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'EXTERIOR: Llantas / Rines / Pernos / Llanta de repuesto')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1058,12 +1060,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].EXTERIOR_x003a_Llantas_x002f_Rin)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'EXTERIOR: Llantas / Rines / Pernos / Llanta de repuesto')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIOR_x003a_Llantas_x002f_Rin,DataCardValue26.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'EXTERIOR: Llantas / Rines / Pernos / Llanta de repuesto',DataCardValue26.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -1107,9 +1111,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesEXTERIOR_x003a_Llan"
-            Default: =ThisItem.ObservacionesEXTERIOR_x003a_Llan
+            Default: |-
+                =ThisItem.'Observaciones EXTERIOR: Llantas / Rines / Pernos / Llanta de repuesto'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesEXTERIOR_x003a_Llan)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones EXTERIOR: Llantas / Rines / Pernos / Llanta de repuesto')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1155,9 +1161,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="EXTERIOR_x003a_Vidrios_x002f_Ven"
-            Default: =ThisItem.EXTERIOR_x003a_Vidrios_x002f_Ven
+            Default: |-
+                =ThisItem.'EXTERIOR: Vidrios / Ventanas / Limpiabrisas'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,EXTERIOR_x003a_Vidrios_x002f_Ven)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'EXTERIOR: Vidrios / Ventanas / Limpiabrisas')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1198,12 +1206,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].EXTERIOR_x003a_Vidrios_x002f_Ven)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'EXTERIOR: Vidrios / Ventanas / Limpiabrisas')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIOR_x003a_Vidrios_x002f_Ven,DataCardValue28.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'EXTERIOR: Vidrios / Ventanas / Limpiabrisas',DataCardValue28.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -1247,9 +1257,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesEXTERIOR_x003a_Vidr"
-            Default: =ThisItem.ObservacionesEXTERIOR_x003a_Vidr
+            Default: |-
+                =ThisItem.'Observaciones EXTERIOR: Vidrios / Ventanas / Limpiabrisas'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesEXTERIOR_x003a_Vidr)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones EXTERIOR: Vidrios / Ventanas / Limpiabrisas')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1295,9 +1307,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="EXTERIOR_x003a_Espejosretrovisor"
-            Default: =ThisItem.EXTERIOR_x003a_Espejosretrovisor
+            Default: |-
+                =ThisItem.'EXTERIOR: Espejos retrovisores'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,EXTERIOR_x003a_Espejosretrovisor)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'EXTERIOR: Espejos retrovisores')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1338,12 +1352,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].EXTERIOR_x003a_Espejosretrovisor)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'EXTERIOR: Espejos retrovisores')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIOR_x003a_Espejosretrovisor,DataCardValue47.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'EXTERIOR: Espejos retrovisores',DataCardValue47.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -1387,9 +1403,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesEXTERIOR_x003a_Espe"
-            Default: =ThisItem.ObservacionesEXTERIOR_x003a_Espe
+            Default: |-
+                =ThisItem.'Observaciones EXTERIOR: Espejos retrovisores'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesEXTERIOR_x003a_Espe)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones EXTERIOR: Espejos retrovisores')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1435,9 +1453,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="EXTERIOR_x003a_Cargaconpresi_x00"
-            Default: =ThisItem.EXTERIOR_x003a_Cargaconpresi_x00
+            Default: |-
+                =ThisItem.'EXTERIOR: Extintor / Válvula / Manómetro'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,EXTERIOR_x003a_Cargaconpresi_x00)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'EXTERIOR: Extintor / Válvula / Manómetro')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1477,12 +1497,14 @@
                 Fill: =RGBA(0, 0, 0, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].EXTERIOR_x003a_Cargaconpresi_x00)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'EXTERIOR: Extintor / Válvula / Manómetro')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIOR_x003a_Cargaconpresi_x00,DataCardValue50.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'EXTERIOR: Extintor / Válvula / Manómetro',DataCardValue50.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -1526,9 +1548,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesEXTERIOR_x003a_Exti"
-            Default: =ThisItem.ObservacionesEXTERIOR_x003a_Exti
+            Default: |-
+                =ThisItem.'Observaciones EXTERIOR: Extintor / Válvula / Manómetro'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesEXTERIOR_x003a_Exti)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones EXTERIOR: Extintor / Válvula / Manómetro')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1574,9 +1598,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_Tablero_x002f_Tes"
-            Default: =ThisItem.INTERIOR_x003a_Tablero_x002f_Tes
+            Default: |-
+                =ThisItem.'INTERIOR: Tablero / Testigos'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_Tablero_x002f_Tes)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Tablero / Testigos')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1617,12 +1643,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_Tablero_x002f_Tes)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Tablero / Testigos')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_Tablero_x002f_Tes,DataCardValue52.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Tablero / Testigos',DataCardValue52.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -1666,9 +1694,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Tabl"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Tabl
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Tablero / Testigos'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Tabl)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Tablero / Testigos')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1714,9 +1744,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_Mandos_x002f_Peda"
-            Default: =ThisItem.INTERIOR_x003a_Mandos_x002f_Peda
+            Default: |-
+                =ThisItem.'INTERIOR: Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo '
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_Mandos_x002f_Peda)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo ')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1757,12 +1789,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_Mandos_x002f_Peda)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo ')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_Mandos_x002f_Peda,DataCardValue54.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo ',DataCardValue54.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -1806,9 +1840,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Mand"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Mand
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo '
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Mand)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo ')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1854,9 +1890,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_CinturonesdeSegur"
-            Default: =ThisItem.INTERIOR_x003a_CinturonesdeSegur
+            Default: |-
+                =ThisItem.'INTERIOR: Cinturones de Seguridad / Hebillas / Candados'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_CinturonesdeSegur)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Cinturones de Seguridad / Hebillas / Candados')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1897,12 +1935,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_CinturonesdeSegur)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Cinturones de Seguridad / Hebillas / Candados')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_CinturonesdeSegur,DataCardValue56.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Cinturones de Seguridad / Hebillas / Candados',DataCardValue56.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -1946,9 +1986,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Cint"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Cint
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Cinturones de Seguridad / Hebillas / Candados'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Cint)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Cinturones de Seguridad / Hebillas / Candados')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -1994,9 +2036,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_Espejosretrovisor"
-            Default: =ThisItem.INTERIOR_x003a_Espejosretrovisor
+            Default: |-
+                =ThisItem.'INTERIOR: Espejos retrovisores'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_Espejosretrovisor)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Espejos retrovisores')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -2037,12 +2081,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_Espejosretrovisor)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Espejos retrovisores')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_Espejosretrovisor,DataCardValue58.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Espejos retrovisores',DataCardValue58.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -2086,9 +2132,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Espe"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Espe
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Espejos retrovisores'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Espe)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Espejos retrovisores')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -2134,9 +2182,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_BocinayPitodeReve"
-            Default: =ThisItem.INTERIOR_x003a_BocinayPitodeReve
+            Default: |-
+                =ThisItem.'INTERIOR: Bocina y Pito de Reversa'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_BocinayPitodeReve)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Bocina y Pito de Reversa')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -2177,12 +2227,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_BocinayPitodeReve)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Bocina y Pito de Reversa')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_BocinayPitodeReve,DataCardValue60.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Bocina y Pito de Reversa',DataCardValue60.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -2226,9 +2278,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Boci"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Boci
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Bocina y Pito de Reversa'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Boci)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Bocina y Pito de Reversa')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -2274,9 +2328,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_EquipodePrevenci_"
-            Default: =ThisItem.INTERIOR_x003a_EquipodePrevenci_
+            Default: |-
+                =ThisItem.'INTERIOR: Equipo de Prevención y Seguridad botiquín, gato, cruceta, triángulos, tacos,.'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_EquipodePrevenci_)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Equipo de Prevención y Seguridad botiquín, gato, cruceta, triángulos, tacos,.')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -2317,12 +2373,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_EquipodePrevenci_)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Equipo de Prevención y Seguridad botiquín, gato, cruceta, triángulos, tacos,.')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_EquipodePrevenci_,DataCardValue62.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Equipo de Prevención y Seguridad botiquín, gato, cruceta, triángulos, tacos,.',DataCardValue62.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -2366,9 +2424,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Equi"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Equi
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Equipo de Prevención y Seguridad'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Equi)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Equipo de Prevención y Seguridad')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -2414,9 +2474,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_Documentaci_x00f3"
-            Default: =ThisItem.INTERIOR_x003a_Documentaci_x00f3
+            Default: |-
+                =ThisItem.'INTERIOR: Documentación SOAT'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_Documentaci_x00f3)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Documentación SOAT')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -2457,12 +2519,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_Documentaci_x00f3)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Documentación SOAT')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_Documentaci_x00f3,DataCardValue64.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Documentación SOAT',DataCardValue64.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -2506,9 +2570,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Docu"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Docu
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Documentación SOAT'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Docu)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Documentación SOAT')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -2554,9 +2620,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_L_x00ed_quidodeFreno"
-            Default: =ThisItem.MOTOR_x003a_L_x00ed_quidodeFreno
+            Default: |-
+                =ThisItem.'MOTOR: Líquido de Frenos'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_L_x00ed_quidodeFreno)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Líquido de Frenos')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -2597,12 +2665,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_L_x00ed_quidodeFreno)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Líquido de Frenos')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_L_x00ed_quidodeFreno,DataCardValue67.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Líquido de Frenos',DataCardValue67.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -2646,9 +2716,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_L_x00ed"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_L_x00ed
+            Default: |-
+                =ThisItem.'Observaciones MOTOR: Líquido de Frenos'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_L_x00ed)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones MOTOR: Líquido de Frenos')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -2694,9 +2766,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_AceitedeMotor"
-            Default: =ThisItem.MOTOR_x003a_AceitedeMotor
+            Default: |-
+                =ThisItem.'MOTOR: Aceite de Motor'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_AceitedeMotor)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Aceite de Motor')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -2737,12 +2811,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_AceitedeMotor)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Aceite de Motor')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_AceitedeMotor,DataCardValue69.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Aceite de Motor',DataCardValue69.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -2786,9 +2862,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Aceited"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Aceited
+            Default: |-
+                =ThisItem.'Observaciones MOTOR: Aceite de Motor'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Aceited)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones MOTOR: Aceite de Motor')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -2834,9 +2912,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_LiquidodeEmbrague"
-            Default: =ThisItem.MOTOR_x003a_LiquidodeEmbrague
+            Default: |-
+                =ThisItem.'MOTOR: Liquido de Embrague'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_LiquidodeEmbrague)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Liquido de Embrague')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -2877,12 +2957,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_LiquidodeEmbrague)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Liquido de Embrague')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_LiquidodeEmbrague,DataCardValue71.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Liquido de Embrague',DataCardValue71.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -2926,9 +3008,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Liquido"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Liquido
+            Default: |-
+                =ThisItem.'Observaciones MOTOR: Liquido de Embrague'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Liquido)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones MOTOR: Liquido de Embrague')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -2974,9 +3058,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_Refrigerante"
-            Default: =ThisItem.MOTOR_x003a_Refrigerante
+            Default: |-
+                =ThisItem.'MOTOR: Refrigerante'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_Refrigerante)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Refrigerante')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -3017,12 +3103,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_Refrigerante)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Refrigerante')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_Refrigerante,DataCardValue77.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Refrigerante',DataCardValue77.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -3066,9 +3154,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Refrige"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Refrige
+            Default: |-
+                =ThisItem.'Observaciones MOTOR: Refrigerante'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Refrige)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones MOTOR: Refrigerante')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -3114,9 +3204,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_Liquidodedirecci_x00"
-            Default: =ThisItem.MOTOR_x003a_Liquidodedirecci_x00
+            Default: |-
+                =ThisItem.'MOTOR: Liquido de dirección'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_Liquidodedirecci_x00)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Liquido de dirección')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -3157,12 +3249,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_Liquidodedirecci_x00)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Liquido de dirección')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_Liquidodedirecci_x00,DataCardValue79.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Liquido de dirección',DataCardValue79.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -3206,9 +3300,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Liquido0"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Liquido0
+            Default: |-
+                =ThisItem.'Observaciones MOTOR: Liquido de dirección'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Liquido0)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones MOTOR: Liquido de dirección')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -3254,9 +3350,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_Liquidolimpiabrisas"
-            Default: =ThisItem.MOTOR_x003a_Liquidolimpiabrisas
+            Default: |-
+                =ThisItem.'MOTOR: Liquido limpiabrisas'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_Liquidolimpiabrisas)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Liquido limpiabrisas')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -3297,12 +3395,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_Liquidolimpiabrisas)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Liquido limpiabrisas')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_Liquidolimpiabrisas,DataCardValue81.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Liquido limpiabrisas',DataCardValue81.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -3346,9 +3446,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Liquido1"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Liquido1
+            Default: |-
+                =ThisItem.'Observaciones MOTOR: Liquido limpiabrisas'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Liquido1)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones MOTOR: Liquido limpiabrisas')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -3394,9 +3496,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_Correas"
-            Default: =ThisItem.MOTOR_x003a_Correas
+            Default: |-
+                =ThisItem.'MOTOR: Correas Mangueras'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_Correas)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Correas Mangueras')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -3437,12 +3541,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_Correas)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Correas Mangueras')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_Correas,DataCardValue84.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Correas Mangueras',DataCardValue84.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -3486,9 +3592,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Correas"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Correas
+            Default: |-
+                =ThisItem.'Observaciones MOTOR: Correas Mangueras'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Correas)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones MOTOR: Correas Mangueras')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -3534,9 +3642,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_Mangueras"
-            Default: =ThisItem.MOTOR_x003a_Mangueras
+            Default: =ThisItem.Otros
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_Mangueras)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,Otros)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -3577,12 +3685,12 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_Mangueras)
+                Items: =Choices([@ListaPrestamoVehiculos].Otros)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_Mangueras,DataCardValue86.SearchText)
+                SearchItems: =Choices(ListaPrestamoVehiculos.Otros,DataCardValue86.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -3626,9 +3734,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Manguer"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Manguer
+            Default: =ThisItem.'Observaciones Otros'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Manguer)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones Otros')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -3674,9 +3782,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MOTOR_x003a_Cableado"
-            Default: =ThisItem.MOTOR_x003a_Cableado
+            Default: |-
+                =ThisItem.'MOTOR: Cableado Bateria'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MOTOR_x003a_Cableado)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'MOTOR: Cableado Bateria')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -3717,12 +3827,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].MOTOR_x003a_Cableado)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'MOTOR: Cableado Bateria')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.MOTOR_x003a_Cableado,DataCardValue88.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'MOTOR: Cableado Bateria',DataCardValue88.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -3766,9 +3878,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesMOTOR_x003a_Cablead"
-            Default: =ThisItem.ObservacionesMOTOR_x003a_Cablead
+            Default: |-
+                =ThisItem.'Observa MOTOR: Cableado Bateria'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesMOTOR_x003a_Cablead)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observa MOTOR: Cableado Bateria')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -3814,9 +3928,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Docu0"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Docu0
+            Default: |-
+                =ThisItem.' INTERIOR: Documentación Tecnomecánica'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Docu0)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,' INTERIOR: Documentación Tecnomecánica')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -3856,12 +3972,14 @@
                 Fill: =RGBA(0, 0, 0, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].ObservacionesINTERIOR_x003a_Docu0)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].' INTERIOR: Documentación Tecnomecánica')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.ObservacionesINTERIOR_x003a_Docu0,DataCardValue90.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.' INTERIOR: Documentación Tecnomecánica',DataCardValue90.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -3905,9 +4023,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Docu1"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Docu1
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Documentación Tecnomecánica'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Docu1)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Documentación Tecnomecánica')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -4001,9 +4121,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="EXTERIOR_x003a_FarosDelanteros_x"
-            Default: =ThisItem.EXTERIOR_x003a_FarosDelanteros_x
+            Default: |-
+                =ThisItem.'EXTERIOR: Faros Delanteros / Traseros'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,EXTERIOR_x003a_FarosDelanteros_x)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'EXTERIOR: Faros Delanteros / Traseros')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -4044,12 +4166,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].EXTERIOR_x003a_FarosDelanteros_x)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'EXTERIOR: Faros Delanteros / Traseros')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIOR_x003a_FarosDelanteros_x,DataCardValue93.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'EXTERIOR: Faros Delanteros / Traseros',DataCardValue93.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -4093,9 +4217,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesEXTERIOR_x003a_Faro"
-            Default: =ThisItem.ObservacionesEXTERIOR_x003a_Faro
+            Default: |-
+                =ThisItem.'Observaciones EXTERIOR: Faros Delanteros / Traseros'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesEXTERIOR_x003a_Faro)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones EXTERIOR: Faros Delanteros / Traseros')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -4141,9 +4267,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_LucesDelanteras_x"
-            Default: =ThisItem.INTERIOR_x003a_LucesDelanteras_x
+            Default: |-
+                =ThisItem.'INTERIOR: Luces Delanteras / Traseras / Direccionales / Freno / Reversa'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_LucesDelanteras_x)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR: Luces Delanteras / Traseras / Direccionales / Freno / Reversa')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -4184,12 +4312,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_LucesDelanteras_x)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR: Luces Delanteras / Traseras / Direccionales / Freno / Reversa')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_LucesDelanteras_x,DataCardValue95.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR: Luces Delanteras / Traseras / Direccionales / Freno / Reversa',DataCardValue95.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -4233,9 +4363,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservacionesINTERIOR_x003a_Luce"
-            Default: =ThisItem.ObservacionesINTERIOR_x003a_Luce
+            Default: |-
+                =ThisItem.'Observaciones INTERIOR: Luces Delanteras / Traseras / Direccionales / Freno / Reversa'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservacionesINTERIOR_x003a_Luce)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'Observaciones INTERIOR: Luces Delanteras / Traseras / Direccionales / Freno / Reversa')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -4281,9 +4413,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="INTERIOR_x003a_EquipoSeguridad_x"
-            Default: =ThisItem.INTERIOR_x003a_EquipoSeguridad_x
+            Default: |-
+                =ThisItem.'INTERIOR:EquipoSeguridad:Cables de ignición, herramienta y linterna'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,INTERIOR_x003a_EquipoSeguridad_x)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'INTERIOR:EquipoSeguridad:Cables de ignición, herramienta y linterna')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -4324,12 +4458,14 @@
                 FontWeight: =FontWeight.Bold
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
-                Items: =Choices([@ListaPrestamoVehiculos].INTERIOR_x003a_EquipoSeguridad_x)
+                Items: |-
+                    =Choices([@ListaPrestamoVehiculos].'INTERIOR:EquipoSeguridad:Cables de ignición, herramienta y linterna')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.INTERIOR_x003a_EquipoSeguridad_x,DataCardValue97.SearchText)
+                SearchItems: |-
+                    =Choices(ListaPrestamoVehiculos.'INTERIOR:EquipoSeguridad:Cables de ignición, herramienta y linterna',DataCardValue97.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
                 Size: =13
@@ -4373,9 +4509,11 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="ObservaINTERIOR_x003a_EquipoSegu"
-            Default: =ThisItem.ObservaINTERIOR_x003a_EquipoSegu
+            Default: |-
+                =ThisItem.'ObservaINTERIOR:EquipoSeguridad:Cables de ignición, herramienta y linterna'
             DisplayMode: =DisplayMode.View
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,ObservaINTERIOR_x003a_EquipoSegu)
+            DisplayName: |-
+                =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,'ObservaINTERIOR:EquipoSeguridad:Cables de ignición, herramienta y linterna')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
@@ -4640,7 +4778,7 @@
         BorderColor: =RGBA(32, 54, 71, 1)
         DelayItemLoading: =true
         Height: =118
-        Items: =Gallery2.Selected.'{Attachments}'
+        Items: =Gallery2.Selected.'Datos adjuntos'
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
         TemplateSize: =Min(440, Self.Height - 60)

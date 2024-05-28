@@ -843,12 +843,12 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="MotivodeTransporte"
-            Default: =ThisItem.MotivodeTransporte
+            Default: =ThisItem.MotivoDeTransporte
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MotivodeTransporte)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,MotivoDeTransporte)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =104
-            MaxLength: =DataSourceInfo([@ListaPrestamoVehiculos], DataSourceInfo.MaxLength, MotivodeTransporte)
+            MaxLength: =DataSourceInfo([@ListaPrestamoVehiculos], DataSourceInfo.MaxLength, MotivoDeTransporte)
             Required: =false
             Update: =DataCardValue6.Text
             Width: =227
@@ -934,9 +934,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="FechaDeSalida"
-            Default: =ThisItem.FechaDeSalida
+            Default: =ThisItem.FechaDeSalidaLlegada
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,FechaDeSalida)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,FechaDeSalidaLlegada)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1606,9 +1606,9 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="KMsTanqueo"
-            Default: =ThisItem.KMsTanqueo
+            Default: =ThisItem.NivelTanqueo
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,KMsTanqueo)
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,NivelTanqueo)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1649,7 +1649,7 @@
                 HoverFill: =RGBA(205, 209, 213, 1)
                 InputTextPlaceholder: ="Nivel"
                 IsSearchable: =false
-                Items: =Choices([@ListaPrestamoVehiculos].KMsTanqueo)
+                Items: =Choices([@ListaPrestamoVehiculos].NivelTanqueo)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(32, 54, 71, 1)
