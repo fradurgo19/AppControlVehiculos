@@ -595,7 +595,7 @@
             BorderColor: =RGBA(32, 54, 71, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="Placa"
-            Default: =ThisItem.Placa
+            Default: =ThisItem.Placa.Value
             DisplayMode: =DisplayMode.View
             DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,Placa)
             Fill: =RGBA(0, 0, 0, 0)
