@@ -34,12 +34,19 @@ Inicio As screen:
         ZIndex: =5
 
     ButtonCanvas3 As Botón:
+        Align: =""
         BasePaletteColor: =RGBA(249, 83, 109, 1)
+        BorderStyle: =""
         DisplayMode: =DisplayMode.Edit
         FontColor: =
         Height: =80
+        Icon: =""
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
         OnSelect: =Set(varCargar, true);Set(varTiempo, true)
         Text: ="Ingresar"
+        VerticalAlign: =""
         Width: =208
         X: =568
         Y: =662

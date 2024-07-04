@@ -1070,7 +1070,7 @@ ListaGestion As screen:
                     (StartsWith(Placa, Buscar.Text) || IsBlank(Buscar.Text))&&
                     (FechaTanqueo1 >= FechaInicio.SelectedDate || IsBlank(FechaInicio.SelectedDate)) && (FechaTanqueo1 <= FechaFin.SelectedDate || IsBlank(FechaFin.SelectedDate))
                 ),
-                Modified,
+                Modificado,
                 SortOrder.Descending
             )
         Layout: =Layout.Vertical

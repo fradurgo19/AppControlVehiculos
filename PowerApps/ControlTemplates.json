@@ -54,7 +54,7 @@
     "Name": "PowerApps_CoreControls_ButtonCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "Botón",
-    "Version": "0.0.29"
+    "Version": "0.0.42"
   },
   "button": {
     "CustomGroupControlTemplateName": "",
@@ -180,7 +180,7 @@
     "LastModifiedTimestamp": "0",
     "Name": "formViewer",
     "OverridableProperties": {},
-    "Version": "2.3.3"
+    "Version": "2.3.4"
   },
   "gallery": {
     "CustomGroupControlTemplateName": "",
@@ -415,6 +415,6 @@
     "LastModifiedTimestamp": "0",
     "Name": "videoPlayback",
     "OverridableProperties": {},
-    "Version": "2.4.0"
+    "Version": "2.4.1"
   }
 }
