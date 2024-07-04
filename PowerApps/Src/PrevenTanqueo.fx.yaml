@@ -524,6 +524,99 @@ PrevenTanqueo As screen:
         Y: =332
         ZIndex: =26
 
+        Placa_DataCard2 As typedDataCard.comboBoxEditCard:
+            BorderColor: =RGBA(152, 208, 70, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DataField: ="Placa"
+            Default: =ThisItem.Placa
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,Placa)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue30.Selected
+            Width: =236
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey34 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue30.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue30 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(100, 118, 132, 1)
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: =Parent.Default
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =36
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                InputTextPlaceholder: ="Buscar Placa"
+                Items: =Choices([@ListaTanqueos].Placa)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(32, 54, 71, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(ListaTanqueos.Placa,DataCardValue30.SearchText)
+                SelectionFill: =RGBA(100, 118, 132, 1)
+                SelectMultiple: =false
+                Size: =10
+                Tooltip: =Parent.DisplayName
+                Width: =128
+                X: =78
+                Y: =6
+                ZIndex: =2
+
+            ErrorMessage34 As label:
+                AutoHeight: =true
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue30.Y + DataCardValue30.Height
+                ZIndex: =3
+
+            StarVisible34 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =DataCardKey34.Height
+                Size: =13
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey34.Y
+                ZIndex: =4
+
         FechaTanqueo1_DataCard2 As typedDataCard.dateEditCard:
             BorderColor: =RGBA(152, 208, 70, 1)
             BorderStyle: =BorderStyle.Solid
@@ -537,7 +630,7 @@ PrevenTanqueo As screen:
             Required: =false
             Update: =DataCardValue31.SelectedDate
             Width: =235
-            X: =0
+            X: =2
             Y: =0
             ZIndex: =27
 
@@ -621,7 +714,7 @@ PrevenTanqueo As screen:
             Required: =false
             Update: =Value(DataCardValue32.Text)
             Width: =235
-            X: =2
+            X: =4
             Y: =0
             ZIndex: =27
 
