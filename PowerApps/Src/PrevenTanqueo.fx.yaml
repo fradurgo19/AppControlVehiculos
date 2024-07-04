@@ -550,7 +550,7 @@ PrevenTanqueo As screen:
                 Text: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
-                X: =30
+                X: =8
                 Y: =10 + (DataCardValue30.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -581,7 +581,7 @@ PrevenTanqueo As screen:
                 SelectMultiple: =false
                 Size: =10
                 Tooltip: =Parent.DisplayName
-                Width: =128
+                Width: =139
                 X: =78
                 Y: =6
                 ZIndex: =2

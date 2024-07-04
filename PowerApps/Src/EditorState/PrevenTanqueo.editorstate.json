@@ -2394,7 +2394,7 @@
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "DataCardKey34",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6906,7 +6906,7 @@
       "MetaDataIDKey": "%FieldName.ID%",
       "Name": "DataCardKey50",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8470,7 +8470,7 @@
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue30",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12748,7 +12748,7 @@
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue43",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15209,7 +15209,7 @@
       "MetaDataIDKey": "%ErrorMessage.ID%",
       "Name": "ErrorMessage34",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21147,7 +21147,7 @@
       "MetaDataIDKey": "",
       "Name": "FechaTanqueo1_DataCard2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22905,7 +22905,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupBackground_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 28,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22957,7 +22957,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupDetailsPanel",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 26,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23009,7 +23009,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupNavigation_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 27,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31864,7 +31864,7 @@
       "MetaDataIDKey": "",
       "Name": "Placa_DataCard2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -33339,7 +33339,7 @@
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible34",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -37851,7 +37851,7 @@
       "MetaDataIDKey": "%FieldRequired.ID%",
       "Name": "StarVisible50",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

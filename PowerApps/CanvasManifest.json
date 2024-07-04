@@ -97,7 +97,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 3,
+    "BindingErrorCount": 1,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -120,7 +120,7 @@
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "c9f1fd2f-7634-4224-a3f9-f92069ae4bfc",
+    "AppName": "Control Transporte",
     "BackgroundColor": "rgba(255, 255, 0, 1)",
     "IconColor": "#000000",
     "IconName": "CheckList",
