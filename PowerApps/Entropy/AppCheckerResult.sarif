@@ -616,47 +616,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ListaGestion.Gallery2_1.Subtitle1_5.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "ListaGestion.Gallery2_1.Subtitle1_5.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 6,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".Placa"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "ListaGestion",
-                "type": "ListaGestion.Gallery2_1.Subtitle1_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Record"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Imprimir1_1.FormViewer1_1.Placa_DataCard4.Default"
                 }
               ],

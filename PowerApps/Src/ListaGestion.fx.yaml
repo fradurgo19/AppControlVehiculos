@@ -1167,7 +1167,7 @@ ListaGestion As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: =ThisItem.Placa
+            Text: =ThisItem.Placa.Value
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =117
