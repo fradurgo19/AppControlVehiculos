@@ -855,6 +855,24 @@ ListaGestion As screen:
             Y: =77
             ZIndex: =21
 
+        Subtitle1_23 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: =ThisItem.Modelo.Value
+            Tooltip: ="Destino"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =126
+            X: =473
+            ZIndex: =22
+
     FechaInicio As datepicker:
         BorderColor: =RGBA(122, 138, 143, 1)
         CalendarHeaderFill: =RGBA(101,128,187,1)
