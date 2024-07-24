@@ -1697,7 +1697,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "criticalErrorLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "Form2Adjunto": {
@@ -10529,7 +10529,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "TextInput1_42": {

@@ -812,7 +812,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey105": {
@@ -1087,7 +1087,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey106": {
@@ -1362,7 +1362,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey107": {
@@ -1637,7 +1637,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey108": {
@@ -1912,7 +1912,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey109": {
@@ -2187,7 +2187,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey110": {
@@ -2462,7 +2462,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey111": {
@@ -2737,7 +2737,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey112": {
@@ -3012,7 +3012,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey113": {
@@ -3287,7 +3287,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey114": {
@@ -3562,7 +3562,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey115": {
@@ -3837,7 +3837,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey116": {
@@ -4112,7 +4112,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey117": {
@@ -4387,7 +4387,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey118": {
@@ -4662,7 +4662,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey119": {
@@ -4937,7 +4937,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey120": {
@@ -5212,7 +5212,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey121": {
@@ -5487,7 +5487,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey122": {
@@ -5762,7 +5762,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey123": {
@@ -6037,7 +6037,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardKey124": {
@@ -6312,7 +6312,7 @@
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "accentLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "DataCardValue101": {
@@ -14756,7 +14756,17 @@
         },
         "Size",
         "TabIndex",
-        "Visible"
+        "Visible",
+        "LineHeight",
+        "BorderThickness",
+        "FocusedBorderThickness",
+        "Italic",
+        "Underline",
+        "Strikethrough",
+        "PaddingTop",
+        "PaddingRight",
+        "PaddingBottom",
+        "PaddingLeft"
       ],
       "HasDynamicProperties": false,
       "IsAutoGenerated": false,
@@ -14928,12 +14938,62 @@
           "RuleProviderType": "Unknown"
         },
         {
+          "Category": "Design",
+          "PropertyName": "LineHeight",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "BorderThickness",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "FocusedBorderThickness",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Italic",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Underline",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Strikethrough",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PaddingTop",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PaddingRight",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PaddingBottom",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "PaddingLeft",
+          "RuleProviderType": "Unknown"
+        },
+        {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
           "RuleProviderType": "Unknown"
         }
       ],
-      "StyleName": "linkLabelStyle",
+      "StyleName": "defaultLabelStyle",
       "Type": "ControlInfo"
     },
     "ValorTanqueo1_DataCard1": {
