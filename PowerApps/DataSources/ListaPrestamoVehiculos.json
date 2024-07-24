@@ -71,6 +71,8 @@
       "KMsTanqueo": "NivelTanqueo",
       "KMsTanqueo#Id": "NivelTanqueo Id",
       "Marca": "Marca",
+      "MarcaModelo": "Modelo",
+      "MarcaModelo#Id": "Modelo Id",
       "Modified": "Modificado",
       "MotivodeTransporte": "MotivoDeTransporte",
       "MOTOR_x003a_AceitedeMotor": "MOTOR: Aceite de Motor",
