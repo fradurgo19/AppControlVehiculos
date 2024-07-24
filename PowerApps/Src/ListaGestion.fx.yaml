@@ -593,7 +593,7 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =129
-            X: =139
+            X: =244
             Y: =25
             ZIndex: =8
 
@@ -612,7 +612,7 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =114
-            X: =286
+            X: =391
             Y: =25
             ZIndex: =9
 
@@ -631,7 +631,7 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =126
-            X: =386
+            X: =491
             Y: =25
             ZIndex: =10
 
@@ -668,7 +668,7 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =56
-            X: =136
+            X: =241
             ZIndex: =12
 
         Subtitle1_10 As label:
@@ -708,7 +708,7 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =56
-            X: =286
+            X: =391
             ZIndex: =14
 
         Subtitle1_12 As label:
@@ -728,7 +728,7 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =68
-            X: =388
+            X: =493
             ZIndex: =15
 
         Subtitle1_13 As label:
@@ -859,7 +859,7 @@ ListaGestion As screen:
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =30
+            Height: =48
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -869,8 +869,8 @@ ListaGestion As screen:
             Text: =ThisItem.Modelo.Value
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
-            Width: =126
-            X: =473
+            Width: =134
+            X: =97
             ZIndex: =22
 
     FechaInicio As datepicker:
