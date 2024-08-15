@@ -766,6 +766,7 @@
                     </ul>
                   </div>"
             PressedBorderColor: =HtmlTextFunctionPanelResources_2.BorderColor
+            Size: =13
             Visible: =IsShowResourcesTab
             Width: =441
             X: =925

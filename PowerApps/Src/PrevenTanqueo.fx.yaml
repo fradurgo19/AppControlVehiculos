@@ -1456,6 +1456,7 @@ PrevenTanqueo As screen:
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps.BorderColor
+            Size: =13
             Visible: =!IsShowResourcesTab
             Width: =420
             X: =946
@@ -1479,6 +1480,7 @@ PrevenTanqueo As screen:
                     </ul>
                   </div>"
             PressedBorderColor: =HtmlTextFunctionPanelResources.BorderColor
+            Size: =13
             Visible: =IsShowResourcesTab
             Width: =420
             X: =946

@@ -24,6 +24,7 @@
             <p><strong>_selectedTutorial</strong> - Currently selected left navigation menu item
             "
         PressedBorderColor: =HtmlTextCollectionsAndVariables.BorderColor
+        Size: =13
         Width: =1366
         ZIndex: =2
 
