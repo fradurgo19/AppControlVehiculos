@@ -12,7 +12,7 @@ Organiza y supervisa todos tus vehículos con facilidad. ¡Un control total a tu
 
 Personaliza perfiles y agiliza las firmas con solo unos toques. ¡Haz que la burocracia sea cosa del pasado!
 
-![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122616.png)
+![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122510.png)
 
 ## 📊 Datos Vehículo
 
