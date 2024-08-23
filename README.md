@@ -12,7 +12,7 @@ Organiza y supervisa todos tus vehículos con facilidad. ¡Un control total a tu
 
 Personaliza perfiles y agiliza las firmas con solo unos toques. ¡Haz que la burocracia sea cosa del pasado!
 
-![Datos Solicitante y Firma](ruta/a/tu/imagen_datos_solicitante_firma.png) <!-- Reemplaza "ruta/a/tu/imagen_datos_solicitante_firma.png" con la URL de la imagen -->
+![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122616.png)
 
 ## 📊 Datos Vehículo
 
