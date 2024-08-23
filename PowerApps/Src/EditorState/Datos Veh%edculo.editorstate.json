@@ -2222,7 +2222,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupBackground_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 43,
+      "ParentIndex": 44,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2274,7 +2274,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupDetailsPanel_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 44,
+      "ParentIndex": 43,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
