@@ -54,6 +54,7 @@ I am particularly passionate about Data Science and continuously seek to expand 
 <img src="https://img.shields.io/badge/-Power%20Apps-2F6C8F?style=flat&logo=powerapps&logoColor=white"> <br />
 <img src="https://img.shields.io/badge/-Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black"> <br />
 <img src="https://img.shields.io/badge/-Python%203-black?style=flat&logo=python&logoColor=white"> <br />
+<img src="https://img.shields.io/badge/-VBA-8A2C2A?style=flat&logo=visualstudiocode&logoColor=white"> <br />
 <img src="https://img.shields.io/badge/-MongoDB-de6c1e?style=flat" > <img src="https://img.shields.io/badge/-SQL-5466b8?style=flat&logo=sql&logoColor=white" > <br />
 <img src="https://img.shields.io/badge/-Numpy-0d7963?style=flat&logo=flask&logoColor=white"> <img src="https://img.shields.io/badge/-SKlearn-161616?style=flat&logo=react&logoColor=00d9ff"> <br/>
 <img src="https://img.shields.io/badge/-C%20&%20C++-659ad2?style=flat&logo=c%2B%2B&logoColor=ffffff"> 
