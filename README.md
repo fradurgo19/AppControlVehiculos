@@ -6,7 +6,7 @@ Descubre nuestra increíble app en Power Apps, diseñada para simplificar cada p
 
 Organiza y supervisa todos tus vehículos con facilidad. ¡Un control total a tu alcance!
 
-![Lista Gestión Vehicular](ruta/a/tu/imagen_lista_gestion_vehicular.png) <!-- Reemplaza "ruta/a/tu/imagen_lista_gestion_vehicular.png" con la URL de la imagen -->
+![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122437.png)
 
 ## 👥 Datos Solicitante y Firma
 
