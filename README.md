@@ -41,7 +41,7 @@ Agrega imágenes del aplicativo para mostrar cómo se ve la interfaz y las funci
 
 ### 👋 My Name is Frank Duran
 
-*Industrial Engineer \| Power Platform and Data Analyst*
+*Industrial Engineer Specializing in Power Platform & Data Analytics*
 
 <em>I am an Industrial engineer from <a href="https://www.ecci.edu.co/"><b>Escuela colombiana de carreras industriales University</b></a>. I firmly believe that **no amount of knowledge is enough knowledge**. 🧠</em>
 
