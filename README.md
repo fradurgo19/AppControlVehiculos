@@ -24,7 +24,7 @@ Accede a información detallada y mantén tus vehículos en la cima de su rendim
 
 Examina cada detalle y realiza observaciones precisas. ¡Nada pasa desapercibido!
 
-![Inspección y Observaciones](ruta/a/tu/imagen_inspeccion_observaciones.png) <!-- Reemplaza "ruta/a/tu/imagen_inspeccion_observaciones.png" con la URL de la imagen -->
+![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122522.png)
 
 
 ---
