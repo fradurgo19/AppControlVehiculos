@@ -6,7 +6,7 @@ Descubre nuestra increíble app en Power Apps, diseñada para simplificar cada p
 
 Organiza y supervisa todos tus vehículos con facilidad. ¡Un control total a tu alcance!
 
-![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122437.png)
+![Captura de Pantalla](PowerApps/Assets/Images/Captura de pantalla 2024-08-23 122458.png)
 
 ## 👥 Datos Solicitante y Firma
 
