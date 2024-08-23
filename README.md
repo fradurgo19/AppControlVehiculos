@@ -12,13 +12,13 @@ Organiza y supervisa todos tus vehículos con facilidad. ¡Un control total a tu
 
 Personaliza perfiles y agiliza las firmas con solo unos toques. ¡Haz que la burocracia sea cosa del pasado!
 
-![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122510.png)
+![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122616.png)
 
 ## 📊 Datos Vehículo
 
 Accede a información detallada y mantén tus vehículos en la cima de su rendimiento. ¡La inteligencia al servicio de tu flota!
 
-![Datos Vehículo](ruta/a/tu/imagen_datos_vehiculo.png) <!-- Reemplaza "ruta/a/tu/imagen_datos_vehiculo.png" con la URL de la imagen -->
+![Captura de Pantalla](PowerApps/Assets/Images/Captura%20de%20pantalla%202024-08-23%20122510.png)
 
 ## 🔍 Inspección y Observaciones
 
