@@ -2,8 +2,32 @@ PrevenTanqueo As screen:
     Fill: =RGBA(241, 241, 241, 1)
     Height: =Max(App.Height, App.DesignHeight)
     LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
-    OnVisible: |-
-        =Set(_selectedTutorial, {Row: 6, Title: "Adicional", Image: PopUpIcon})
+    OnVisible: |+
+        =Set(_selectedTutorial, {Row: 6, Title: "Adicional", Image: PopUpIcon});
+        
+        If(
+            First(ColeccionVehiculos).FechaVencimientoSOAT <= Today() + 7, 
+            Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
+        );
+        
+        If(
+            First(ColeccionVehiculos).FechaVencimientoTecnoMecanica <= Today() + 7, 
+            Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
+        );
+        
+        ClearCollect(
+            ColeccionVehiculos,
+            AddColumns(
+                Filter(
+                    'Lista de Vehiculos', 
+                    Placa = DataCardValue21.Selected.Value // Usamos DataCardValue21 para seleccionar la placa
+                ),
+                FechaVencimientoSOAT, field_25, // Fecha de vencimiento SOAT de la lista 'Lista de Vehiculos'
+                FechaVencimientoTecnoMecanica, field_29, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
+                FechaSolicitud, LookUp('ListaPrestamoVehiculos', Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
+            )
+        )
+        
     Orientation: =If(PrevenTanqueo.Width < PrevenTanqueo.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= PrevenTanqueo.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -172,13 +196,13 @@ PrevenTanqueo As screen:
                 Color: =RGBA(0, 0, 0, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =41
+                Height: =30
                 Size: =12
                 Text: |-
                     ="1. SOAT:"
                 Width: =163
                 X: =24
-                Y: =87
+                Y: =80
                 ZIndex: =11
 
             Dropdown2_20 As dropdown:
@@ -200,7 +224,7 @@ PrevenTanqueo As screen:
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 Width: =163
                 X: =23
-                Y: =140
+                Y: =189
                 ZIndex: =12
 
             TextInput1_20 As text:
@@ -220,7 +244,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =25
-                Y: =192
+                Y: =241
                 ZIndex: =13
 
             Dropdown2_21 As dropdown:
@@ -242,7 +266,7 @@ PrevenTanqueo As screen:
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 Width: =163
                 X: =206
-                Y: =139
+                Y: =188
                 ZIndex: =14
 
             TextInput1_21 As text:
@@ -262,7 +286,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =208
-                Y: =191
+                Y: =240
                 ZIndex: =15
 
             Dropdown2_22 As dropdown:
@@ -284,7 +308,7 @@ PrevenTanqueo As screen:
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 Width: =163
                 X: =394
-                Y: =141
+                Y: =190
                 ZIndex: =16
 
             TextInput1_22 As text:
@@ -304,7 +328,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =396
-                Y: =193
+                Y: =242
                 ZIndex: =17
 
             Label3_21 As label:
@@ -312,7 +336,7 @@ PrevenTanqueo As screen:
                 Color: =RGBA(0, 0, 0, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =49
+                Height: =30
                 Size: =12
                 Text: |-
                     ="2. Tecnomecánica:"
@@ -330,9 +354,9 @@ PrevenTanqueo As screen:
                 Size: =12
                 Text: |-
                     ="3. Extintor, Botiquín, Gato hidra, cruceta, triángulos y tacos:"
-                Width: =173
-                X: =389
-                Y: =21
+                Width: =168
+                X: =394
+                Y: =56
                 ZIndex: =19
 
             Label3_23 As label:
@@ -344,9 +368,8 @@ PrevenTanqueo As screen:
                 Size: =12
                 Text: |-
                     ="4. Cables de ignición, herramienta y linterna:"
-                Width: =163
-                X: =562
-                Y: =27
+                X: =575
+                Y: =69
                 ZIndex: =20
 
             Dropdown2_23 As dropdown:
@@ -368,7 +391,7 @@ PrevenTanqueo As screen:
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 Width: =163
                 X: =573
-                Y: =143
+                Y: =192
                 ZIndex: =21
 
             TextInput1_23 As text:
@@ -388,7 +411,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =575
-                Y: =195
+                Y: =244
                 ZIndex: =22
 
             PageTitle_8 As label:
@@ -433,6 +456,92 @@ PrevenTanqueo As screen:
                 X: =276
                 Y: =276
                 ZIndex: =36
+
+            TextCanvas1 As Texto:
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(255, 255, 0, 1)
+                FontColor: =RGBA(215, 58, 60, 1)
+                Height: =26
+                Text: =First(ColeccionVehiculos).FechaVencimientoSOAT
+                Width: =138
+                X: =30
+                Y: =109
+                ZIndex: =37
+
+            TextCanvas1_1 As Texto:
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(255, 255, 0, 1)
+                FontColor: =RGBA(215, 58, 60, 1)
+                Height: =25
+                Text: =First(ColeccionVehiculos).FechaVencimientoTecnoMecanica
+                Width: =137
+                X: =213
+                Y: =110
+                ZIndex: =38
+
+            ButtonCanvas1 As Botón:
+                BasePaletteColor: =RGBA(8, 222, 8, 1)
+                DisplayMode: =DisplayMode.Edit
+                Height: =26
+                OnSelect: |-
+                    =Patch(
+                        'Lista de Vehiculos',
+                        LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value), 
+                        {
+                            field_25: DatePickerSOAT.SelectedDate, 
+                            field_29: DatePickerTecnoMecanica.SelectedDate
+                        }
+                    );
+                    
+                    // Restablecer los DatePickers
+                    UpdateContext({ResetSOAT: true}); 
+                    UpdateContext({ResetTecnoMecanica: true});
+                    
+                    // Mostrar notificación de éxito
+                    Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
+                Text: ="Actualizar"
+                Width: =87
+                X: =161
+                Y: =151
+                ZIndex: =41
+
+            DatePickerSOAT As datepicker:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DefaultDate: =DateValue(TextCanvas1.Text)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =28
+                HoverDateFill: =RGBA(205, 209, 213, 1)
+                IconBackground: =RGBA(100, 118, 132, 1)
+                Reset: =ResetSOAT
+                SelectedDateFill: =RGBA(100, 118, 132, 1)
+                Size: =9
+                Width: =143
+                X: =18
+                Y: =149
+                ZIndex: =42
+
+            DatePickerTecnoMecanica As datepicker:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DefaultDate: =DateValue(TextCanvas1_1.Text)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =28
+                HoverDateFill: =RGBA(205, 209, 213, 1)
+                IconBackground: =RGBA(100, 118, 132, 1)
+                Reset: =ResetTecnoMecanica
+                SelectedDateFill: =RGBA(100, 118, 132, 1)
+                Size: =9
+                Width: =143
+                X: =248
+                Y: =150
+                ZIndex: =43
 
     Video1_4 As videoPlayback:
         BorderColor: =RGBA(32, 54, 71, 1)

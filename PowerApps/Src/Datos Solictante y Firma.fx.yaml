@@ -2,8 +2,21 @@
     Fill: =RGBA(241, 241, 241, 1)
     Height: =Max(App.Height, App.DesignHeight)
     LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
-    OnVisible: |-
-        =Set(_selectedTutorial, {Row: 2, Title: "Datos Solictante y Firma", Image: PeopleIcon})
+    OnVisible: |
+        =Set(_selectedTutorial, {Row: 2, Title: "Datos Solictante y Firma", Image: PeopleIcon});
+        
+        ClearCollect(
+            ColeccionVehiculos,
+            AddColumns(
+                Filter(
+                    'Lista de Vehiculos', 
+                    Placa = DataCardValue21.Selected.Value // Usamos DataCardValue21 para seleccionar la placa
+                ),
+                FechaVencimientoSOAT, field_25, // Fecha de vencimiento SOAT de la lista 'Lista de Vehiculos'
+                FechaVencimientoTecnoMecanica, field_29, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
+                FechaSolicitud, LookUp('ListaPrestamoVehiculos', Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
+            )
+        )
     Orientation: =If('Datos Solictante y Firma'.Width < 'Datos Solictante y Firma'.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= 'Datos Solictante y Firma'.Width)
     Width: =Max(App.Width, App.DesignWidth)

@@ -90,6 +90,9 @@
     "datasets": {
       "https://partequipos2.sharepoint.com/sites/servicioposventa": {
         "dataSources": {
+          "Lista de Vehiculos": {
+            "tableName": "5f067ee4-28af-4659-974a-24949c34c3f8"
+          },
           "ListaPrestamoVehiculos": {
             "tableName": "1ae64fdd-a4f9-477f-bb0d-bbfa17c8d7ed"
           },
@@ -101,7 +104,8 @@
     },
     "dataSources": [
       "ListaPrestamoVehiculos",
-      "ListaTanqueos"
+      "ListaTanqueos",
+      "Lista de Vehiculos"
     ],
     "dependencies": {},
     "dependents": [],
