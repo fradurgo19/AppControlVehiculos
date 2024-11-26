@@ -637,7 +637,7 @@ ListaGestion As screen:
             Text: =ThisItem.Sede.Value
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
-            Width: =126
+            Width: =102
             X: =491
             Y: =25
             ZIndex: =10
