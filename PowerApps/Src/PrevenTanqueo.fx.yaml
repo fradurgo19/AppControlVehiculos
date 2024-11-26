@@ -255,7 +255,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =25
-                Y: =241
+                Y: =234
                 ZIndex: =13
 
             Dropdown2_21 As dropdown:
@@ -297,7 +297,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =208
-                Y: =240
+                Y: =233
                 ZIndex: =15
 
             Dropdown2_22 As dropdown:
@@ -339,7 +339,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =396
-                Y: =242
+                Y: =235
                 ZIndex: =17
 
             Label3_21 As label:
@@ -422,7 +422,7 @@ PrevenTanqueo As screen:
                 Size: =11
                 Width: =162
                 X: =575
-                Y: =244
+                Y: =237
                 ZIndex: =22
 
             PageTitle_8 As label:
