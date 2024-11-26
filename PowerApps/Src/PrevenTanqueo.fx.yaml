@@ -21,13 +21,21 @@ PrevenTanqueo As screen:
         );
         
         If(
-            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoSOAT <= Today() + 7, 
-            Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
+            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoSOAT < Today(), 
+            Notify("El SOAT está vencido", NotificationType.Error), // Si la fecha es anterior a hoy, muestra "vencido"
+            If(
+                LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoSOAT <= Today() + 7, 
+                Notify("El SOAT está por vencer en 7 días", NotificationType.Warning) // Si está por vencer en 7 días, muestra "por vencer"
+            )
         );
         
         If(
-            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoTecnoMecanica <= Today() + 7, 
-            Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
+            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoTecnoMecanica < Today(), 
+            Notify("La TecnoMecánica está vencida", NotificationType.Error), // Si la fecha es anterior a hoy, muestra "vencido"
+            If(
+                LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoTecnoMecanica <= Today() + 7, 
+                Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning) // Si está por vencer en 7 días, muestra "por vencer"
+            )
         )
         
         
