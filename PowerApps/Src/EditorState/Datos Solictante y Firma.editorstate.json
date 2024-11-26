@@ -4916,7 +4916,14 @@
         "PaddingRight",
         "PaddingBottom",
         "PaddingLeft",
-        "Size",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Size",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Italic"
       ],
       "HasDynamicProperties": false,
@@ -8338,7 +8345,14 @@
         "PaddingRight",
         "PaddingBottom",
         "PaddingLeft",
-        "Size",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Size",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Italic"
       ],
       "HasDynamicProperties": false,

@@ -455,7 +455,7 @@ ListaGestion As screen:
             =Sort(
                 Filter(
                     ListaPrestamoVehiculos,
-                    (StartsWith(Placa.Value, Buscar.Text) || IsBlank(Buscar.Text))&&
+                    Buscar.Text in Placa.Value &&
                     (Gestion.Value = ComboBox1.Selected.Value || IsBlank(ComboBox1.Selected.Value)) && (Sede.Value = ComboBox2.Selected.Value || IsBlank(ComboBox2.Selected.Value)) && (FechaSolicitud >= FechaInicio.SelectedDate || IsBlank(FechaInicio.SelectedDate)) && (FechaSolicitud <= FechaFin.SelectedDate || IsBlank(FechaFin.SelectedDate))
                 ),
                 Creado,
