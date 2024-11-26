@@ -512,7 +512,7 @@ ListaGestion As screen:
             DisabledColor: =RGBA(166, 166, 166, 1)
             Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =55
+            Height: =50
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -646,7 +646,7 @@ ListaGestion As screen:
             BorderColor: =RGBA(32, 54, 71, 1)
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)
-            Height: =42
+            Height: =53
             Image: |
                 =Last(ThisItem.'Datos adjuntos').Value
             OnSelect: =Select(Parent)
@@ -654,8 +654,8 @@ ListaGestion As screen:
             RadiusBottomRight: =8
             RadiusTopLeft: =8
             RadiusTopRight: =8
-            Width: =73
-            X: =383
+            Width: =79
+            X: =391
             Y: =80
             ZIndex: =11
 
