@@ -58,7 +58,7 @@ PrevenTanqueo As screen:
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =Parent.Height
-            Width: =Parent.Width
+            Width: =757
             X: =0
             Y: =0
             ZIndex: =1
