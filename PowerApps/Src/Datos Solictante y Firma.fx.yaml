@@ -12,8 +12,8 @@
                     'Lista de Vehiculos', 
                     Placa = DataCardValue21.Selected.Value // Usamos DataCardValue21 para seleccionar la placa
                 ),
-                FechaVencimientoSOAT, field_25, // Fecha de vencimiento SOAT de la lista 'Lista de Vehiculos'
-                FechaVencimientoTecnoMecanica, field_29, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
+                FechaVencimientoSOAT, 'Vencimiento SOAT', // Fecha de vencimiento SOAT de la lista 'Lista de Vehiculos'
+                FechaVencimientoTecnoMecanica, Tecnomecanica, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
                 FechaSolicitud, LookUp('ListaPrestamoVehiculos', Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
             )
         )
