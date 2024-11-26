@@ -196,11 +196,11 @@ PrevenTanqueo As screen:
                 Color: =RGBA(0, 0, 0, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =30
+                Height: =29
                 Size: =12
                 Text: |-
                     ="1. SOAT:"
-                Width: =163
+                Width: =101
                 X: =24
                 Y: =80
                 ZIndex: =11
@@ -341,7 +341,7 @@ PrevenTanqueo As screen:
                 Text: |-
                     ="2. Tecnomecánica:"
                 Width: =163
-                X: =206
+                X: =227
                 Y: =79
                 ZIndex: =18
 
@@ -355,7 +355,7 @@ PrevenTanqueo As screen:
                 Text: |-
                     ="3. Extintor, Botiquín, Gato hidra, cruceta, triángulos y tacos:"
                 Width: =168
-                X: =394
+                X: =415
                 Y: =56
                 ZIndex: =19
 
@@ -368,7 +368,7 @@ PrevenTanqueo As screen:
                 Size: =12
                 Text: |-
                     ="4. Cables de ignición, herramienta y linterna:"
-                X: =575
+                X: =596
                 Y: =69
                 ZIndex: =20
 
@@ -463,8 +463,8 @@ PrevenTanqueo As screen:
                 FontColor: =RGBA(215, 58, 60, 1)
                 Height: =26
                 Text: =First(ColeccionVehiculos).FechaVencimientoSOAT
-                Width: =138
-                X: =30
+                Width: =176
+                X: =18
                 Y: =109
                 ZIndex: =37
 
@@ -474,8 +474,8 @@ PrevenTanqueo As screen:
                 FontColor: =RGBA(215, 58, 60, 1)
                 Height: =25
                 Text: =First(ColeccionVehiculos).FechaVencimientoTecnoMecanica
-                Width: =137
-                X: =213
+                Width: =163
+                X: =227
                 Y: =110
                 ZIndex: =38
 
@@ -501,8 +501,8 @@ PrevenTanqueo As screen:
                     Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
                 Text: ="Actualizar"
                 Width: =87
-                X: =161
-                Y: =151
+                X: =132
+                Y: =80
                 ZIndex: =41
 
             DatePickerSOAT As datepicker:
@@ -513,15 +513,15 @@ PrevenTanqueo As screen:
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
-                Height: =28
+                Height: =30
                 HoverDateFill: =RGBA(205, 209, 213, 1)
                 IconBackground: =RGBA(100, 118, 132, 1)
                 Reset: =ResetSOAT
                 SelectedDateFill: =RGBA(100, 118, 132, 1)
                 Size: =9
-                Width: =143
-                X: =18
-                Y: =149
+                Width: =169
+                X: =25
+                Y: =142
                 ZIndex: =42
 
             DatePickerTecnoMecanica As datepicker:
@@ -539,8 +539,8 @@ PrevenTanqueo As screen:
                 SelectedDateFill: =RGBA(100, 118, 132, 1)
                 Size: =9
                 Width: =143
-                X: =248
-                Y: =150
+                X: =227
+                Y: =143
                 ZIndex: =43
 
     Video1_4 As videoPlayback:
