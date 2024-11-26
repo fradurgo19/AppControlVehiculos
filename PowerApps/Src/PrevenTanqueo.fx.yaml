@@ -5,15 +5,7 @@ PrevenTanqueo As screen:
     OnVisible: |+
         =Set(_selectedTutorial, {Row: 6, Title: "Adicional", Image: PopUpIcon});
         
-        If(
-            First(ColeccionVehiculos).FechaVencimientoSOAT <= Today() + 7, 
-            Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
-        );
         
-        If(
-            First(ColeccionVehiculos).FechaVencimientoTecnoMecanica <= Today() + 7, 
-            Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
-        );
         
         ClearCollect(
             ColeccionVehiculos,
@@ -26,7 +18,18 @@ PrevenTanqueo As screen:
                 FechaVencimientoTecnoMecanica, field_29, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
                 FechaSolicitud, LookUp('ListaPrestamoVehiculos', Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
             )
+        );
+        
+        If(
+            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoSOAT <= Today() + 7, 
+            Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
+        );
+        
+        If(
+            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoTecnoMecanica <= Today() + 7, 
+            Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
         )
+        
         
     Orientation: =If(PrevenTanqueo.Width < PrevenTanqueo.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= PrevenTanqueo.Width)
