@@ -172,7 +172,7 @@ PrevenTanqueo As screen:
                 Color: =RGBA(0, 0, 0, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =50
+                Height: =41
                 Size: =12
                 Text: |-
                     ="1. SOAT:"
@@ -312,7 +312,7 @@ PrevenTanqueo As screen:
                 Color: =RGBA(0, 0, 0, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =59
+                Height: =49
                 Size: =12
                 Text: |-
                     ="2. Tecnomecánica:"
@@ -331,8 +331,8 @@ PrevenTanqueo As screen:
                 Text: |-
                     ="3. Extintor, Botiquín, Gato hidra, cruceta, triángulos y tacos:"
                 Width: =173
-                X: =383
-                Y: =24
+                X: =389
+                Y: =21
                 ZIndex: =19
 
             Label3_23 As label:
@@ -345,8 +345,8 @@ PrevenTanqueo As screen:
                 Text: |-
                     ="4. Cables de ignición, herramienta y linterna:"
                 Width: =163
-                X: =567
-                Y: =50
+                X: =562
+                Y: =27
                 ZIndex: =20
 
             Dropdown2_23 As dropdown:
@@ -398,7 +398,7 @@ PrevenTanqueo As screen:
                 FocusedBorderColor: =PageTitle_8.BorderColor
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Lighter
-                Height: =26
+                Height: =43
                 HoverBorderColor: =PageTitle_8.BorderColor
                 HoverColor: =PageTitle_8.Color
                 HoverFill: =PageTitle_8.Fill
@@ -410,7 +410,7 @@ PrevenTanqueo As screen:
                     ="Tanqueo:"
                 Width: =118
                 X: =25
-                Y: =237
+                Y: =276
                 ZIndex: =35
 
             PageTitle_15 As label:
@@ -420,7 +420,7 @@ PrevenTanqueo As screen:
                 FocusedBorderColor: =PageTitle_15.BorderColor
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Bold
-                Height: =27
+                Height: =45
                 HoverBorderColor: =PageTitle_15.BorderColor
                 HoverColor: =PageTitle_15.Color
                 HoverFill: =PageTitle_15.Fill
@@ -431,7 +431,7 @@ PrevenTanqueo As screen:
                 Text: ="Si son varios tanqueos, clic botón Rojo, Enviar si Diligencia y volver a diligenciar"
                 Width: =461
                 X: =276
-                Y: =237
+                Y: =276
                 ZIndex: =36
 
     Video1_4 As videoPlayback:
@@ -538,11 +538,11 @@ PrevenTanqueo As screen:
         BorderThickness: =1
         DataSource: =ListaTanqueos
         DefaultMode: =FormMode.New
-        Height: =422
+        Height: =362
         NumberOfColumns: =6
         Width: =710
         X: =232
-        Y: =332
+        Y: =392
         ZIndex: =26
 
         Placa_DataCard2 As typedDataCard.comboBoxEditCard:
@@ -1088,7 +1088,7 @@ PrevenTanqueo As screen:
         Text: ="Enviar si diligencia"
         Width: =129
         X: =340
-        Y: =293
+        Y: =349
         ZIndex: =27
 
     Icon2_5 As icon.Leave:
