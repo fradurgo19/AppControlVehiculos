@@ -29,7 +29,7 @@ ListaGestion As screen:
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderColor: =Bienvenida.BorderColor
             Font: =Font.'Segoe UI'
-            Height: =32
+            Height: =39
             HoverBorderColor: =Bienvenida.BorderColor
             HoverColor: =Bienvenida.Color
             HoverFill: =Bienvenida.Fill
@@ -39,7 +39,7 @@ ListaGestion As screen:
             PressedFill: =Bienvenida.Fill
             Size: =18
             Text: ="Control de Transporte"
-            Width: =350
+            Width: =254
             X: =14
             Y: =14
             ZIndex: =5
@@ -1412,4 +1412,28 @@ ListaGestion As screen:
         X: =871
         Y: =61
         ZIndex: =39
+
+    TextCanvas2 As Texto:
+        DisplayMode: =DisplayMode.Edit
+        Height: =31
+        Size: =10
+        Text: |-
+            ="Versión: " & App.StudioVersion & ": Se agrega VALIDACIÓN Y MODIFICACIÓN DE FECHAS DE VENCIMIENTO DEL SOAT Y TECNO."
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =501
+        X: =421
+        Y: =27
+        ZIndex: =40
+
+    TextCanvas3 As Texto:
+        DisplayMode: =DisplayMode.Edit
+        Height: =27
+        Size: =10
+        Text: |-
+            ="Última actualización: " & Text(LookUp(ListaPrestamoVehiculos, ID = Max(ListaPrestamoVehiculos, ID)).Modificado, "[$-es-ES]dd/mm/yyyy")
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =303
+        X: =421
+        Y: =0
+        ZIndex: =41
 
