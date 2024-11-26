@@ -1418,7 +1418,7 @@ ListaGestion As screen:
         Height: =31
         Size: =10
         Text: |-
-            ="Versión: " & App.StudioVersion & ": Se agrega VALIDACIÓN Y MODIFICACIÓN DE FECHAS DE VENCIMIENTO DEL SOAT Y TECNO."
+            ="Versión: " & App.StudioVersion & ": Se agrega VALIDACIÓN Y MODIFICACIÓN DE FECHAS PARA VENCIMIENTO DEL SOAT Y TECNO."
         Weight: ='TextCanvas.Weight'.Bold
         Width: =501
         X: =421
