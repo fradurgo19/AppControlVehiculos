@@ -488,8 +488,9 @@ ListaGestion As screen:
             ZIndex: =1
 
         Title1 As label:
-            Color: =RGBA(50, 49, 48, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =45
             OnSelect: =Select(Parent)
@@ -507,8 +508,9 @@ ListaGestion As screen:
             ZIndex: =2
 
         Subtitle1 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =55
             OnSelect: =Select(Parent)
@@ -561,8 +563,9 @@ ListaGestion As screen:
             ZIndex: =6
 
         Subtitle1_1 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =30
             OnSelect: =Select(Parent)
@@ -580,8 +583,9 @@ ListaGestion As screen:
             ZIndex: =7
 
         Subtitle1_2 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =23
             OnSelect: =Select(Parent)
@@ -599,10 +603,11 @@ ListaGestion As screen:
             ZIndex: =8
 
         Subtitle1_3 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =27
+            Height: =23
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -612,16 +617,17 @@ ListaGestion As screen:
             Text: =ThisItem.OT
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
-            Width: =114
+            Width: =79
             X: =391
             Y: =25
             ZIndex: =9
 
         Subtitle1_4 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =30
+            Height: =23
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -654,9 +660,9 @@ ListaGestion As screen:
             ZIndex: =11
 
         Subtitle1_8 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -674,9 +680,9 @@ ListaGestion As screen:
             ZIndex: =12
 
         Subtitle1_10 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -694,9 +700,9 @@ ListaGestion As screen:
             ZIndex: =13
 
         Subtitle1_11 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -714,9 +720,9 @@ ListaGestion As screen:
             ZIndex: =14
 
         Subtitle1_12 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -734,9 +740,9 @@ ListaGestion As screen:
             ZIndex: =15
 
         Subtitle1_13 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -755,9 +761,9 @@ ListaGestion As screen:
             ZIndex: =16
 
         Subtitle1_14 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -776,9 +782,9 @@ ListaGestion As screen:
             ZIndex: =17
 
         Subtitle1_15 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -797,9 +803,9 @@ ListaGestion As screen:
             ZIndex: =18
 
         Subtitle1_16 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -818,9 +824,9 @@ ListaGestion As screen:
             ZIndex: =19
 
         Subtitle1_22 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -839,8 +845,9 @@ ListaGestion As screen:
             ZIndex: =20
 
         Subtitle1_7 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =50
             OnSelect: =Select(Parent)
@@ -1104,8 +1111,9 @@ ListaGestion As screen:
         ZIndex: =34
 
         Title1_1 As label:
-            Color: =RGBA(50, 49, 48, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =22
             OnSelect: =Select(Parent)
@@ -1118,13 +1126,14 @@ ListaGestion As screen:
             Tooltip: ="Nombre Solicitante"
             VerticalAlign: =VerticalAlign.Top
             Width: =95
-            X: =165
-            Y: =110
+            X: =164
+            Y: =96
             ZIndex: =2
 
         Subtitle1_9 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =24
             OnSelect: =Select(Parent)
@@ -1137,7 +1146,7 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =145
-            X: =327
+            X: =338
             Y: =31
             ZIndex: =3
 
@@ -1177,8 +1186,9 @@ ListaGestion As screen:
             ZIndex: =6
 
         Subtitle1_5 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =30
             OnSelect: =Select(Parent)
@@ -1191,15 +1201,16 @@ ListaGestion As screen:
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
             Width: =117
-            X: =17
+            X: =26
             Y: =31
             ZIndex: =7
 
         Subtitle1_6 As label:
-            Color: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =30
+            Height: =27
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -1209,9 +1220,9 @@ ListaGestion As screen:
             Text: =ThisItem.FechaTanqueo1
             Tooltip: ="Destino"
             VerticalAlign: =VerticalAlign.Top
-            Width: =117
-            X: =165
-            Y: =33
+            Width: =148
+            X: =167
+            Y: =28
             ZIndex: =8
 
         Image9 As image:
@@ -1227,9 +1238,9 @@ ListaGestion As screen:
             ZIndex: =10
 
         Subtitle1_17 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -1248,9 +1259,9 @@ ListaGestion As screen:
             ZIndex: =11
 
         Subtitle1_18 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -1269,9 +1280,9 @@ ListaGestion As screen:
             ZIndex: =12
 
         Subtitle1_19 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =22
             OnSelect: =Select(Parent)
@@ -1290,9 +1301,9 @@ ListaGestion As screen:
             ZIndex: =13
 
         Subtitle1_20 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
@@ -1310,9 +1321,9 @@ ListaGestion As screen:
             ZIndex: =14
 
         Subtitle1_21 As label:
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =25
             OnSelect: =Select(Parent)
