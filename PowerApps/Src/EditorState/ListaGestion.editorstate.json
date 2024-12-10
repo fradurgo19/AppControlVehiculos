@@ -3146,7 +3146,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupBackground",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 37,
+      "ParentIndex": 38,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3198,7 +3198,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupDetailsPanel_6",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 38,
+      "ParentIndex": 37,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

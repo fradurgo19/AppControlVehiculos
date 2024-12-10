@@ -884,7 +884,7 @@ PrevenTanqueo As screen:
                 FocusedBorderThickness: =4
                 Format: =TextFormat.Number
                 Height: =37
-                HintText: ="Use punto"
+                HintText: ="Use coma"
                 HoverBorderColor: =RGBA(32, 54, 71, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)

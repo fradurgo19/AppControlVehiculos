@@ -2133,7 +2133,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupBackground_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 43,
+      "ParentIndex": 45,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2185,7 +2185,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupDetailsPanel_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 44,
+      "ParentIndex": 43,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2237,7 +2237,7 @@
       "MetaDataIDKey": "",
       "Name": "GroupNavigation_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 45,
+      "ParentIndex": 44,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
