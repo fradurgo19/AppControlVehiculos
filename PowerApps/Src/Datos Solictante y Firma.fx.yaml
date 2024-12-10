@@ -14,7 +14,7 @@
                 ),
                 FechaVencimientoSOAT, 'Vencimiento SOAT', // Fecha de vencimiento SOAT de la lista 'Lista de Vehiculos'
                 FechaVencimientoTecnoMecanica, Tecnomecanica, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
-                FechaSolicitud, LookUp('ListaPrestamoVehiculos', Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
+                FechaSolicitud, LookUp(ListaPrestamoVehiculos, Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
             )
         )
     Orientation: =If('Datos Solictante y Firma'.Width < 'Datos Solictante y Firma'.Height, Layout.Vertical, Layout.Horizontal)

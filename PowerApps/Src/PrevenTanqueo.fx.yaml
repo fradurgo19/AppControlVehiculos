@@ -16,7 +16,7 @@ PrevenTanqueo As screen:
                 ),
                 FechaVencimientoSOAT, 'Vencimiento SOAT', // Fecha de vencimiento SOAT de la lista 'Lista de Vehiculos'
                 FechaVencimientoTecnoMecanica, Tecnomecanica, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
-                FechaSolicitud, LookUp('ListaPrestamoVehiculos', Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
+                FechaSolicitud, LookUp(ListaPrestamoVehiculos, Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
             )
         );
         
@@ -884,6 +884,7 @@ PrevenTanqueo As screen:
                 FocusedBorderThickness: =4
                 Format: =TextFormat.Number
                 Height: =37
+                HintText: ="Use punto"
                 HoverBorderColor: =RGBA(32, 54, 71, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
@@ -972,6 +973,7 @@ PrevenTanqueo As screen:
                 FocusedBorderThickness: =4
                 Format: =TextFormat.Number
                 Height: =37
+                HintText: ="Sin comas y puntos"
                 HoverBorderColor: =RGBA(32, 54, 71, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
@@ -1060,6 +1062,7 @@ PrevenTanqueo As screen:
                 FocusedBorderThickness: =4
                 Format: =TextFormat.Number
                 Height: =37
+                HintText: ="Sin comas y puntos"
                 HoverBorderColor: =RGBA(32, 54, 71, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
