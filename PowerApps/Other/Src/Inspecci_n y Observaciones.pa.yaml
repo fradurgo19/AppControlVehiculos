@@ -1,0 +1,742 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Inspección y Observaciones:
+    Properties:
+      Fill: =RGBA(241, 241, 241, 1)
+      Height: =Max(App.Height, App.DesignHeight)
+      LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+      OnVisible: |-
+        =Set(_selectedTutorial,  {Row: 4, Title: "Inspección y Observaciones", Image: OutlookLogo16});
+        Set(ColeccionGenerada, false)
+      Width: =Max(App.Width, App.DesignWidth)
+    Children:
+      - GalleryNavigation_3:
+          Control: Gallery@2.15.0
+          Variant: Vertical
+          Group: GroupNavigation_3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DelayItemLoading: =false
+            Fill: =RGBA(0,0,0,0)
+            Items: =NavigationMenu
+            LoadingSpinner: =LoadingSpinner.None
+            LoadingSpinnerColor: =GalleryNavigation_3.BorderColor
+            OnSelect: |-
+              =Set(_selectedTutorial, ThisItem);
+              If(
+                  ThisItem.Row = 1, Navigate(ListaGestion, BorderStyle.None),
+                  ThisItem.Row = 2, Navigate('Datos Solictante y Firma', BorderStyle.None),
+                  ThisItem.Row = 3, Navigate('Datos Vehículo', BorderStyle.None),
+                  ThisItem.Row = 4, Navigate('Inspección y Observaciones', BorderStyle.None),
+                  ThisItem.Row = 5, Navigate('Inspeccion Adicional', BorderStyle.None),
+                  ThisItem.Row = 6, Navigate(PrevenTanqueo, BorderStyle.None),
+                  ThisItem.Row = 7, Navigate(SalidaFirma, BorderStyle.None)
+              );
+            ShowScrollbar: =false
+            TemplateFill: =If(ThisItem.Row = _selectedTutorial.Row, RGBA(220, 220, 220, 1), RGBA(0,0,0,0))
+            TemplatePadding: =0
+            TemplateSize: =80
+            Width: =228
+            X: =0+0
+            Y: =109+0
+          Children:
+            - Image1_3:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  FocusedBorderColor: =Image1_3.BorderColor
+                  Height: =52
+                  Image: =ThisItem.Image
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =12
+                  PaddingTop: =12
+                  Width: =39
+                  X: =11
+            - Label4_3:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  FocusedBorderColor: =Label4_3.BorderColor
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Open Sans'
+                  Height: =78
+                  HoverBorderColor: =Label4_3.BorderColor
+                  HoverColor: =Label4_3.Color
+                  HoverFill: =Label4_3.Fill
+                  OnSelect: =Select(Parent)
+                  PressedBorderColor: =Label4_3.BorderColor
+                  PressedColor: =Label4_3.Color
+                  PressedFill: =Label4_3.Fill
+                  TabIndex: =0
+                  Text: =ThisItem.Title
+                  Width: =160
+                  X: =60
+            - Rectangle1_3:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  Fill: =RGBA(116, 39, 116, 1)
+                  FocusedBorderColor: =Rectangle1_3.BorderColor
+                  Height: =20
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.Row = _selectedTutorial.Row
+                  Width: =4
+                  X: =11
+                  Y: =11
+      - iconHamburgerMenu_9:
+          Control: Classic/Icon@2.5.0
+          Group: GroupNavigation_3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(51, 51, 51, 1)
+            FocusedBorderColor: =iconHamburgerMenu_9.BorderColor
+            Height: =16
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(IsExpand, !IsExpand)
+            TabIndex: =0
+            Width: =18
+            X: =27
+            Y: =76+0
+      - Rectangle2:
+          Control: Rectangle@2.3.0
+          Group: GroupNavigation_3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =Rectangle2.BorderColor
+            Height: =707
+            Width: =1
+            X: =228
+            Y: =61+0
+      - WelcomeScreenTitleBackground_3:
+          Control: Rectangle@2.3.0
+          Group: GroupBackground_3
+          Properties:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =WelcomeScreenTitleBackground_3.BorderColor
+            Height: =60
+            Width: =1366
+      - WelcomeScreenTitle_3:
+          Control: Label@2.5.1
+          Group: GroupBackground_3
+          Properties:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            FocusedBorderColor: =WelcomeScreenTitle_3.BorderColor
+            Font: =Font.'Segoe UI'
+            Height: =32
+            HoverBorderColor: =WelcomeScreenTitle_3.BorderColor
+            HoverColor: =WelcomeScreenTitle_3.Color
+            HoverFill: =WelcomeScreenTitle_3.Fill
+            LineHeight: =0
+            PressedBorderColor: =WelcomeScreenTitle_3.BorderColor
+            PressedColor: =WelcomeScreenTitle_3.Color
+            PressedFill: =WelcomeScreenTitle_3.Fill
+            Size: =18
+            Text: ="Control de Transporte"
+            Width: =350
+            X: =14
+            Y: =14
+      - ImagePowerAppsLogo_3:
+          Control: Image@2.2.3
+          Group: GroupBackground_3
+          Properties:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            FocusedBorderColor: =ImagePowerAppsLogo_3.BorderColor
+            Height: =60
+            Image: =Logo
+            Width: =276
+            X: =1090
+      - PageTitle_7:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =PageTitle_7.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =42
+            HoverBorderColor: =PageTitle_7.BorderColor
+            HoverColor: =PageTitle_7.Color
+            HoverFill: =PageTitle_7.Fill
+            PressedBorderColor: =PageTitle_7.BorderColor
+            PressedColor: =PageTitle_7.Color
+            PressedFill: =PageTitle_7.Fill
+            Size: =15
+            Text: ="INTERIOR:"
+            Width: =134
+            X: =If(!IsExpand, 230, 80)
+            Y: =63
+      - RectangleDetailsBackground_3:
+          Control: Rectangle@2.3.0
+          Group: GroupDetailsPanel_3
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0.16)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =RectangleDetailsBackground_3.BorderColor
+            Height: =708
+            Width: =441
+            X: =925
+            Y: =60
+      - LabelDetalisTitle_3:
+          Control: Label@2.5.1
+          Group: GroupDetailsPanel_3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =LabelDetalisTitle_3.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Lighter
+            HoverBorderColor: =LabelDetalisTitle_3.BorderColor
+            HoverColor: =LabelDetalisTitle_3.Color
+            HoverFill: =LabelDetalisTitle_3.Fill
+            PressedBorderColor: =LabelDetalisTitle_3.BorderColor
+            PressedColor: =LabelDetalisTitle_3.Color
+            PressedFill: =LabelDetalisTitle_3.Fill
+            Size: =15
+            Text: ="Detalles"
+            Width: =157
+            X: =955
+            Y: =82
+      - LabelDetailsSteps_3:
+          Control: Label@2.5.1
+          Group: GroupDetailsPanel_3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+            FocusedBorderColor: =LabelDetailsSteps_3.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsSteps_3.BorderColor
+            HoverColor: =LabelDetailsSteps_3.Color
+            HoverFill: =LabelDetailsSteps_3.Fill
+            OnSelect: |-
+              =UpdateContext({IsShowResourcesTab: false})
+            PressedBorderColor: =LabelDetailsSteps_3.BorderColor
+            PressedColor: =LabelDetailsSteps_3.Color
+            PressedFill: =LabelDetailsSteps_3.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Pasos"
+            Width: =62
+            X: =960
+            Y: =130
+      - LabelDetailsResources_3:
+          Control: Label@2.5.1
+          Group: GroupDetailsPanel_3
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+            FocusedBorderColor: =LabelDetailsResources_3.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsResources_3.BorderColor
+            HoverColor: =LabelDetailsResources_3.Color
+            HoverFill: =LabelDetailsResources_3.Fill
+            OnSelect: |-
+              =UpdateContext({IsShowResourcesTab: true})
+            PressedBorderColor: =LabelDetailsResources_3.BorderColor
+            PressedColor: =LabelDetailsResources_3.Color
+            PressedFill: =LabelDetailsResources_3.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Recursos"
+            Width: =103
+            X: =1022
+            Y: =130
+      - RectangleTab1_3:
+          Control: Rectangle@2.3.0
+          Group: GroupDetailsPanel_3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab1_3.BorderColor
+            Height: =2
+            Visible: =!IsShowResourcesTab
+            Width: =46
+            X: =964
+            Y: =168
+      - RectangleTab2_3:
+          Control: Rectangle@2.3.0
+          Group: GroupDetailsPanel_3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab2_3.BorderColor
+            Height: =2
+            Visible: =IsShowResourcesTab
+            Width: =79
+            X: =1035
+            Y: =168
+      - HtmlTextFunctionPanelSteps_3:
+          Control: HtmlViewer@2.1.0
+          Group: GroupDetailsPanel_3
+          Properties:
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            Font: =Font.'Segoe UI'
+            Height: =596
+            HoverBorderColor: =HtmlTextFunctionPanelSteps_3.BorderColor
+            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Tablero / Testigos:</strong> Los testigos deben encender.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo:</strong> Deben estar fijos y funcionales.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Cinturones de Seguridad / Hebillas / Candados:</strong> Un cinturón por silla, sin desgaste. La hebilla debe enganchar con el candado.\n <br /><br />\n         </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Espejos retrovisores:</strong> Estables, uno en el centro, sin rupturas ni fisuras.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >5</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Bocina / Pito de Reversa:</strong> Debe sonar y escucharse a 50 metros de distancia/Debe sonar cuando se active el cambio de retroceso. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >6</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Luces Delanteras / Traseras / Direccionales / Freno / Reversa:</strong> Deben encender todas las luces bajas, medias, altas, direccionales, parqueo, freno y reversa. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n\n\""
+            Size: =14
+            Visible: =!IsShowResourcesTab
+            Width: =441
+            X: =924
+            Y: =170
+      - HtmlTextFunctionPanelResources_3:
+          Control: HtmlViewer@2.1.0
+          Group: GroupDetailsPanel_3
+          Properties:
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            Font: =Font.'Segoe UI'
+            Height: =195
+            HoverBorderColor: =HtmlTextFunctionPanelResources_3.BorderColor
+            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
+            Visible: =IsShowResourcesTab
+            Width: =441
+            X: =925
+            Y: =572
+      - Label3_6:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =39
+            Size: =12
+            Text: ="1. Tablero / Testigos:"
+            Width: =173
+            X: =258
+            Y: =207
+      - Dropdown2_6:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =41
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =174
+            X: =257
+            Y: =253
+      - TextInput1_6:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =39
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =172
+            X: =259
+            Y: =305
+      - Dropdown2_7:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =41
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =174
+            X: =505
+            Y: =161
+      - TextInput1_7:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =39
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =172
+            X: =507
+            Y: =213
+      - Dropdown2_8:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =41
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =174
+            X: =732
+            Y: =280
+      - TextInput1_8:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =39
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =172
+            X: =734
+            Y: =332
+      - Label3_7:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =12
+            Text: |-
+              ="2. Mandos / Pedales y Barra de Cambio / 4x4/ Freno de Parqueo: "
+            Width: =346
+            X: =407
+            Y: =110
+      - Label3_8:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =76
+            Size: =12
+            Text: ="3. Cinturones de Seguridad / Hebillas / Candados:"
+            Width: =173
+            X: =732
+            Y: =188
+      - Label3_9:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =39
+            Size: =12
+            Text: ="4. Espejo retrovisor:"
+            Width: =173
+            X: =727
+            Y: =486
+      - Dropdown2_9:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =41
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =174
+            X: =733
+            Y: =532
+      - TextInput1_9:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =39
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =172
+            X: =735
+            Y: =584
+      - Label3_10:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =49
+            Size: =12
+            Text: ="5. Bocina y Pito de Reversa:"
+            Width: =189
+            X: =490
+            Y: =601
+      - Dropdown2_10:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =35
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =174
+            X: =495
+            Y: =661
+      - TextInput1_10:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =33
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =172
+            X: =497
+            Y: =713
+      - Label3_11:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =77
+            Size: =12
+            Text: ="6. Luces Delanteras / Traseras / Direccionales / Freno / Reversa:"
+            Width: =189
+            X: =242
+            Y: =478
+      - Dropdown2_11:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =35
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =174
+            X: =254
+            Y: =566
+      - TextInput1_11:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =33
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =172
+            X: =256
+            Y: =618
+      - Image2:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =282
+            Image: =INETERIT
+            Width: =226
+            X: =466
+            Y: =291
+      - Icon1_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =49
+            Icon: =Icon.Reload
+            OnSelect: =Reset(Dropdown2_6); Reset(TextInput1_6); Reset(Dropdown2_7); Reset(TextInput1_7); Reset(Dropdown2_8); Reset(TextInput1_8); Reset(Dropdown2_9); Reset(TextInput1_9); Reset(Dropdown2_10); Reset(TextInput1_10); Reset(Dropdown2_11); Reset(TextInput1_11);
+            X: =860
+            Y: =61
+      - Video1_2:
+          Control: Video@2.4.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            FocusedBorderColor: =Video1_2.BorderColor
+            Height: =214
+            Media: ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+            Visible: =IsShowResourcesTab
+            Width: =366
+            X: =975+0
+            Y: =300+0
+      - Label1_4:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =Label1_4.BorderColor
+            Font: =Font.'Open Sans'
+            Height: =95
+            HoverBorderColor: =Label1_4.BorderColor
+            HoverColor: =Label1_4.Color
+            HoverFill: =Label1_4.Fill
+            PaddingBottom: =0
+            PaddingLeft: =23.5
+            PaddingRight: =20
+            PressedBorderColor: =Label1_4.BorderColor
+            PressedColor: =Label1_4.Color
+            PressedFill: =Label1_4.Fill
+            Size: =11
+            Text: ="PARTEQUIPOS:"
+            Visible: =IsShowResourcesTab
+            Width: =409
+            X: =957+0
+            Y: =170+0
+      - Label1_5:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =Label1_5.BorderColor
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            HoverBorderColor: =Label1_5.BorderColor
+            HoverColor: =Label1_5.Color
+            HoverFill: =Label1_5.Fill
+            PaddingLeft: =23.5
+            PaddingRight: =20
+            PressedBorderColor: =Label1_5.BorderColor
+            PressedColor: =Label1_5.Color
+            PressedFill: =Label1_5.Fill
+            Size: =12
+            Text: ="Conoce la empresa:"
+            Visible: =IsShowResourcesTab
+            Width: =409
+            X: =957+0
+            Y: =267+0
+      - Label2_2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =Label2_2.BorderColor
+            Font: =Font.'Open Sans'
+            Height: =58
+            HoverBorderColor: =Label2_2.BorderColor
+            HoverColor: =Label2_2.Color
+            HoverFill: =Label2_2.Fill
+            OnSelect: =Launch("https://www.youtube.com/watch?v=uwG1Og4f0Vo")
+            PressedBorderColor: =Label2_2.BorderColor
+            PressedColor: =Label2_2.Color
+            PressedFill: =Label2_2.Fill
+            Size: =10
+            TabIndex: =0
+            Text: ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+            Tooltip: ="Select to launch video in new tab"
+            Underline: =true
+            Visible: =IsShowResourcesTab
+            Width: =366
+            X: =975+0
+            Y: =514+0
+      - Icon2_3:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =26
+            Icon: =Icon.Leave
+            OnSelect: =Exit()
+            Width: =42
+            X: =997
+            Y: =14
+      - Label6_3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            OnSelect: =Exit()
+            Text: ="Salir"
+            Width: =55
+            X: =942
+            Y: =7
+      - Image8_2:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =39
+            Image: =HomeIcon
+            OnSelect: |-
+              =Navigate(
+                  ListaGestion,
+                  ScreenTransition.None
+              )
+            Width: =62
+            X: =302
+            Y: =10
+      - Label8_2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 0, 0, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =22
+            Text: ="Todos los campos son obligatorios:"
+            Width: =432
+            X: =368
+            Y: =70

@@ -1,0 +1,1020 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Imprimir1_1:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      Height: =794
+      LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+      Width: =1123
+    Children:
+      - PrintButton1_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 134, 208, 1)
+            Font: =Font.'Open Sans'
+            Height: =32
+            OnSelect: =Print();Navigate(ListaGestion,ScreenTransition.None)
+            TabIndex: =0
+            Text: ="Imprimir"
+            Visible: =Not(Parent.Printing)
+            Width: =96
+            X: =Parent.Width - Self.Width - 25
+            Y: =25
+      - FormViewer1_1:
+          Control: FormViewer@2.3.4
+          Layout: Horizontal
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderThickness: =1
+            DataSource: =ListaTanqueos
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =634
+            Item: =Gallery2_1.Selected
+            NumberOfColumns: =6
+            Width: =1058
+            X: =40
+            Y: =86
+          Children:
+            - Placa_DataCard4:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="Placa"
+                  Default: =ThisItem.Placa.Value
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,Placa)
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =0
+                Children:
+                  - DataCardKey104:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue101.Height / 2) - (Self.Height / 2)
+                  - DataCardValue101:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey104.X + DataCardKey104.Width
+                        Y: =10
+            - FechaTanqueo1_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FechaTanqueo1"
+                  Default: =ThisItem.FechaTanqueo1
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo1)
+                  Required: =false
+                  Width: =352
+                  X: =2
+                  Y: =0
+                Children:
+                  - DataCardKey105:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =37
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue102.Height / 2) - (Self.Height / 2)
+                  - DataCardValue102:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =41
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =148
+                        X: =DataCardKey105.X + DataCardKey105.Width
+                        Y: =10
+            - CantidadTanqueoGalones1_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="CantidadTanqueoGalones1"
+                  Default: =ThisItem.CantidadTanqueoGalones1
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones1)
+                  Required: =false
+                  Width: =352
+                  X: =4
+                  Y: =0
+                Children:
+                  - DataCardKey106:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue103.Height / 2) - (Self.Height / 2)
+                  - DataCardValue103:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey106.X + DataCardKey106.Width
+                        Y: =10
+            - ValorTanqueo1_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="ValorTanqueo1"
+                  Default: =ThisItem.ValorTanqueo1
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo1)
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =1
+                Children:
+                  - DataCardKey107:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue104.Height / 2) - (Self.Height / 2)
+                  - DataCardValue104:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey107.X + DataCardKey107.Width
+                        Y: =10
+            - KMsTanquear1_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="KMsTanquear1"
+                  Default: =ThisItem.KMsTanquear1
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear1)
+                  Required: =false
+                  Width: =352
+                  X: =2
+                  Y: =1
+                Children:
+                  - DataCardKey108:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue105.Height / 2) - (Self.Height / 2)
+                  - DataCardValue105:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey108.X + DataCardKey108.Width
+                        Y: =10
+            - FotoTanqueo1_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicLargeImageView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FotoTanqueo1"
+                  Default: =ThisItem.FotoTanqueo1
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Required: =false
+                  Width: =352
+                  X: =4
+                  Y: =1
+                Children:
+                  - DataCardKey109:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue106.Height / 2) - (Self.Height / 2)
+                  - DataCardValue106:
+                      Control: Image@2.2.3
+                      MetadataKey: FieldValue
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Height: =155
+                        Image: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey109.X + DataCardKey109.Width
+                        Y: =10
+            - FechaTanqueo2_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FechaTanqueo2"
+                  Default: =ThisItem.FechaTanqueo2
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo2)
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =2
+                Children:
+                  - DataCardKey110:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =144
+                        Wrap: =false
+                        X: =1
+                        Y: =10 + (DataCardValue107.Height / 2) - (Self.Height / 2)
+                  - DataCardValue107:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey110.X + DataCardKey110.Width
+                        Y: =10
+            - CantidadTanqueoGalones2_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="CantidadTanqueoGalones2"
+                  Default: =ThisItem.CantidadTanqueoGalones2
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones2)
+                  Required: =false
+                  Width: =352
+                  X: =2
+                  Y: =2
+                Children:
+                  - DataCardKey111:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue108.Height / 2) - (Self.Height / 2)
+                  - DataCardValue108:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey111.X + DataCardKey111.Width
+                        Y: =10
+            - ValorTanqueo2_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="ValorTanqueo2"
+                  Default: =ThisItem.ValorTanqueo2
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo2)
+                  Required: =false
+                  Width: =352
+                  X: =4
+                  Y: =2
+                Children:
+                  - DataCardKey112:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue109.Height / 2) - (Self.Height / 2)
+                  - DataCardValue109:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey112.X + DataCardKey112.Width
+                        Y: =10
+            - KMsTanquear2_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="KMsTanquear2"
+                  Default: =ThisItem.KMsTanquear2
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear2)
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =3
+                Children:
+                  - DataCardKey113:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =47
+                        Text: =Parent.DisplayName
+                        Width: =137
+                        Wrap: =false
+                        X: =8
+                        Y: =10 + (DataCardValue110.Height / 2) - (Self.Height / 2)
+                  - DataCardValue110:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey113.X + DataCardKey113.Width
+                        Y: =10
+            - FotoTanqueo2_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicLargeImageView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FotoTanqueo2"
+                  Default: =ThisItem.FotoTanqueo2
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo2)
+                  Required: =false
+                  Width: =704
+                  X: =2
+                  Y: =3
+                Children:
+                  - DataCardKey114:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue111.Height / 2) - (Self.Height / 2)
+                  - DataCardValue111:
+                      Control: Image@2.2.3
+                      MetadataKey: FieldValue
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Height: =155
+                        Image: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey114.X + DataCardKey114.Width
+                        Y: =10
+            - FechaTanqueo3_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FechaTanqueo3"
+                  Default: =ThisItem.FechaTanqueo3
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo3)
+                  Height: =84
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =4
+                Children:
+                  - DataCardKey115:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =146
+                        Wrap: =false
+                        Y: =10 + (DataCardValue112.Height / 2) - (Self.Height / 2)
+                  - DataCardValue112:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey115.X + DataCardKey115.Width
+                        Y: =10
+            - CantidadTanqueoGalones3_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="CantidadTanqueoGalones3"
+                  Default: =ThisItem.CantidadTanqueoGalones3
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones3)
+                  Required: =false
+                  Width: =352
+                  X: =2
+                  Y: =4
+                Children:
+                  - DataCardKey116:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue113.Height / 2) - (Self.Height / 2)
+                  - DataCardValue113:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey116.X + DataCardKey116.Width
+                        Y: =10
+            - ValorTanqueo3_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="ValorTanqueo3"
+                  Default: =ThisItem.ValorTanqueo3
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo3)
+                  Required: =false
+                  Width: =352
+                  X: =4
+                  Y: =4
+                Children:
+                  - DataCardKey117:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue114.Height / 2) - (Self.Height / 2)
+                  - DataCardValue114:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey117.X + DataCardKey117.Width
+                        Y: =10
+            - KMsTanquear3_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="KMsTanquear3"
+                  Default: =ThisItem.KMsTanquear3
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear3)
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =5
+                Children:
+                  - DataCardKey118:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue115.Height / 2) - (Self.Height / 2)
+                  - DataCardValue115:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey118.X + DataCardKey118.Width
+                        Y: =10
+            - FotoTanqueo3_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicLargeImageView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FotoTanqueo3"
+                  Default: =ThisItem.FotoTanqueo3
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo3)
+                  Required: =false
+                  Width: =704
+                  X: =2
+                  Y: =5
+                Children:
+                  - DataCardKey119:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =116
+                        Text: =Parent.DisplayName
+                        Width: =134
+                        Wrap: =false
+                        X: =12
+                        Y: =10
+                  - DataCardValue116:
+                      Control: Image@2.2.3
+                      MetadataKey: FieldValue
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Height: =155
+                        Image: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey119.X + DataCardKey119.Width
+                        Y: =10
+            - FechaTanqueo4_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FechaTanqueo4"
+                  Default: =ThisItem.FechaTanqueo4
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FechaTanqueo4)
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =6
+                Children:
+                  - DataCardKey120:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =143
+                        Wrap: =false
+                        X: =3
+                        Y: =10 + (DataCardValue117.Height / 2) - (Self.Height / 2)
+                  - DataCardValue117:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey120.X + DataCardKey120.Width
+                        Y: =10
+            - CantidadTanqueoGalones4_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="CantidadTanqueoGalones4"
+                  Default: =ThisItem.CantidadTanqueoGalones4
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones4)
+                  Required: =false
+                  Width: =352
+                  X: =2
+                  Y: =6
+                Children:
+                  - DataCardKey121:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue118.Height / 2) - (Self.Height / 2)
+                  - DataCardValue118:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey121.X + DataCardKey121.Width
+                        Y: =10
+            - ValorTanqueo4_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="ValorTanqueo4"
+                  Default: =ThisItem.ValorTanqueo4
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,ValorTanqueo4)
+                  Required: =false
+                  Width: =352
+                  X: =4
+                  Y: =6
+                Children:
+                  - DataCardKey122:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue119.Height / 2) - (Self.Height / 2)
+                  - DataCardValue119:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey122.X + DataCardKey122.Width
+                        Y: =10
+            - KMsTanquear4_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="KMsTanquear4"
+                  Default: =ThisItem.KMsTanquear4
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,KMsTanquear4)
+                  Required: =false
+                  Width: =352
+                  X: =0
+                  Y: =7
+                Children:
+                  - DataCardKey123:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue120.Height / 2) - (Self.Height / 2)
+                  - DataCardValue120:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldValue
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey123.X + DataCardKey123.Width
+                        Y: =10
+            - FotoTanqueo4_DataCard1:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicLargeImageView
+                IsLocked: true
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="FotoTanqueo4"
+                  Default: =ThisItem.FotoTanqueo4
+                  DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,FotoTanqueo4)
+                  Required: =false
+                  Width: =704
+                  X: =2
+                  Y: =7
+                Children:
+                  - DataCardKey124:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =(Parent.Width - 60) * 0.4
+                        Wrap: =false
+                        X: =30
+                        Y: =10 + (DataCardValue121.Height / 2) - (Self.Height / 2)
+                  - DataCardValue121:
+                      Control: Image@2.2.3
+                      MetadataKey: FieldValue
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        Height: =155
+                        Image: =Parent.Default
+                        Width: =(Parent.Width - 60) * 0.6
+                        X: =DataCardKey124.X + DataCardKey124.Width
+                        Y: =10
+      - PageTitle_12:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =PageTitle_12.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            HoverBorderColor: =PageTitle_12.BorderColor
+            HoverColor: =PageTitle_12.Color
+            HoverFill: =PageTitle_12.Fill
+            PressedBorderColor: =PageTitle_12.BorderColor
+            PressedColor: =PageTitle_12.Color
+            PressedFill: =PageTitle_12.Fill
+            Size: =15
+            Text: ="Control Vehículos:"
+            Width: =223
+            X: =29
+            Y: =13
+      - NewExpenseBackIcon_5:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(101, 128, 187, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(159, 167, 165, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =NewExpenseBackIcon_5.Fill
+            FocusedBorderColor: =NewExpenseBackIcon_5.BorderColor
+            FocusedBorderThickness: =0
+            Height: =30
+            HoverBorderColor: =ColorFade(NewExpenseBackIcon_5.BorderColor, 20%)
+            HoverColor: =ColorFade(NewExpenseBackIcon_5.Color, 20%)
+            HoverFill: =NewExpenseBackIcon_5.Fill
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Correcto,ScreenTransition.None)
+            PressedBorderColor: =ColorFade(NewExpenseBackIcon_5.BorderColor, -20%)
+            PressedColor: =ColorFade(NewExpenseBackIcon_5.Color, -20%)
+            PressedFill: =NewExpenseBackIcon_5.Fill
+            Width: =31
+            X: =279
+            Y: =27

@@ -1,0 +1,125 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Collections and Variables:
+    Properties:
+      Fill: =RGBA(255,255,255,1)
+      Height: =Max(App.Height, App.DesignHeight)
+      LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+      Width: =Max(App.Width, App.DesignWidth)
+    Children:
+      - HtmlTextCollectionsAndVariables:
+          Control: HtmlViewer@2.1.0
+          Properties:
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            Font: =Font.'Open Sans'
+            Height: =507
+            HoverBorderColor: =HtmlTextCollectionsAndVariables.BorderColor
+            HtmlText: |-
+              ="
+              <h3>Collections</h3>
+              <p><strong>MyPlansItems</strong> - Store all Office 365 Planner's plans that you has subscribed</p>
+              <p><strong>MyOneNoteBookItems</strong> - Store all Office 365 OneNote's notebooks that you has created</p>
+              <p><strong>NavigationMenu</strong> - Collection of items for left menu in app</p>
+              <hr />
+
+              <h3>Global Variables</h3>
+              <p><strong>IsExpand</strong> - Determines whether the left menu is expand or collapse</p>
+              <p><strong>StepsPanelCodeFontSize</strong> - Set the font size for the code text of steps panel</p>
+              <p><strong>_selectedTutorial</strong> - Currently selected left navigation menu item
+              "
+            Width: =1366
+      - LabelStepsPanelCodeFontSize:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =LabelStepsPanelCodeFontSize.BorderColor
+            Font: =Font.'Open Sans'
+            Height: =63
+            HoverBorderColor: =LabelStepsPanelCodeFontSize.BorderColor
+            HoverColor: =LabelStepsPanelCodeFontSize.Color
+            HoverFill: =LabelStepsPanelCodeFontSize.Fill
+            PressedBorderColor: =LabelStepsPanelCodeFontSize.BorderColor
+            PressedColor: =LabelStepsPanelCodeFontSize.Color
+            PressedFill: =LabelStepsPanelCodeFontSize.Fill
+            Text: |-
+              ="StepsPanelCodeFontSize: " & StepsPanelCodeFontSize & "pt"
+            Width: =333
+            X: =25
+            Y: =667.5
+      - SliderStepsPanelCodeFontSize:
+          Control: Classic/Slider@2.1.0
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Default: =StepsPanelCodeFontSize
+            FocusedBorderColor: =SliderStepsPanelCodeFontSize.BorderColor
+            Max: =50
+            Min: =1
+            OnChange: =Set(StepsPanelCodeFontSize, SliderStepsPanelCodeFontSize.Value)
+            ValueFill: =RGBA(32, 54, 71, 1)
+            X: =541
+            Y: =678
+      - DataCardValue82:
+          Control: Attachments@2.3.0
+          Properties:
+            BorderColor: =
+            DisplayMode: =
+            Font: =Font.'Open Sans'
+            Height: =108
+            HoverFill: =RGBA(205, 209, 213, 1)
+            ItemColor: =RGBA(255, 255, 255, 1)
+            ItemFill: =RGBA(100, 118, 132, 1)
+            ItemHoverFill: =RGBA(205, 209, 213, 1)
+            MaxAttachments: =1
+            OnAddFile: "=Clear(ColImagenAdjunta);\nForAll(\n    Gallery1.AllItems,\n    Collect(\n        ColImagenAdjunta,\n        {\n            nombre: ThisRecord.Name,\n            \n            contenido: JSON(\n                Image5.Image,\n                JSONFormat.IncludeBinaryData\n            )\n        }\n    )\n)"
+            OnRemoveFile: "=Clear(ColImagenAdjunta);\nForAll(\n    Gallery1.AllItems,\n    Collect(\n        ColImagenAdjunta,\n        {\n            nombre: ThisRecord.Name,\n            \n            contenido: JSON(\n                Image5.Image,\n                JSONFormat.IncludeBinaryData\n            )\n        }\n    )\n)"
+            PaddingBottom: =5
+            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+            PaddingRight: =5
+            PaddingTop: =5
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            Tooltip: =
+            Width: =395
+            X: =503
+            Y: =362
+      - Gallery1:
+          Control: Gallery@2.15.0
+          Variant: Horizontal
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =144
+            Items: =DataCardValue82.Attachments
+            TemplatePadding: =1
+            TemplateSize: =282
+            Width: =296
+            WrapCount: =0
+            X: =20
+            Y: =20
+          Children:
+            - Image5:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  Height: =109
+                  Image: =ThisItem.Value
+                  OnSelect: =Select(Parent)
+                  Width: =230
+                  X: =52
+                  Y: =33
+      - Image5_1:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =109
+            Image: =
+            OnSelect: =
+            Width: =230
+            X: =1009
+            Y: =361

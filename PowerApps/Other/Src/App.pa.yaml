@@ -1,0 +1,21 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+App:
+  Properties:
+    OnStart: |+
+      =Concurrent(
+          Set(StepsPanelCodeFontSize, 10),
+          Set(_selectedTutorial, {Row: 1, Title: "Lista  Gestión Vehícular", Image: HomeIcon}),
+          ClearCollect(NavigationMenu,{Row: 1, Title: "Lista  Gestión Vehícular", Image: HomeIcon}, {Row: 2, Title: "Datos Solictante y Vehículo", Image: PeopleIcon}, {Row: 3, Title: "Inspección EXTERIOR", Image: volquete}, {Row: 4, Title: "Inspección INTERIOR", Image: Diagnostico}, {Row: 5, Title: "Inspección MOTOR", Image: Camioneta}, {Row: 6, Title: "Equipo de Prevención y Seguridad / Tanqueo", Image: PopUpIcon},{Row: 7, Title: "Salida y Firma", Image: 'space_rocket-3'})
+      );
+      ClearCollect(Opciones, ["","Estándar, el elemento opera de manera segura.","Semiestándar, Ofrece y manteniene un nivel aceptable de seguridad en el recorrido.", "Subestándar, compromete la seguridad del recorrido.","NA"]);
+      ClearCollect(ListaPrestamoVehiculosLocal,ListaPrestamoVehiculos);
+
+
+    Theme: =PlatinumTheme

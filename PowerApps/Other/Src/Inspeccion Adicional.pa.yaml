@@ -1,0 +1,898 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Inspeccion Adicional:
+    Properties:
+      Fill: =RGBA(241, 241, 241, 1)
+      Height: =Max(App.Height, App.DesignHeight)
+      LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+      OnVisible: "=Set(_selectedTutorial,  {Row: 5, Title: \"Salida\", Image: OneNoteLogo16}) "
+      Width: =Max(App.Width, App.DesignWidth)
+    Children:
+      - GalleryNavigation_4:
+          Control: Gallery@2.15.0
+          Variant: Vertical
+          Group: GroupNavigation_4
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DelayItemLoading: =false
+            Fill: =RGBA(0,0,0,0)
+            Items: =NavigationMenu
+            LoadingSpinner: =LoadingSpinner.None
+            LoadingSpinnerColor: =GalleryNavigation_4.BorderColor
+            OnSelect: |-
+              =Set(_selectedTutorial, ThisItem);
+              If(
+                  ThisItem.Row = 1, Navigate(ListaGestion, BorderStyle.None),
+                  ThisItem.Row = 2, Navigate('Datos Solictante y Firma', BorderStyle.None),
+                  ThisItem.Row = 3, Navigate('Datos Vehículo', BorderStyle.None),
+                  ThisItem.Row = 4, Navigate('Inspección y Observaciones', BorderStyle.None),
+                  ThisItem.Row = 5, Navigate('Inspeccion Adicional', BorderStyle.None),
+                  ThisItem.Row = 6, Navigate(PrevenTanqueo, BorderStyle.None),
+                  ThisItem.Row = 7, Navigate(SalidaFirma, BorderStyle.None)
+              );
+            ShowScrollbar: =false
+            TemplateFill: =If(ThisItem.Row = _selectedTutorial.Row, RGBA(220, 220, 220, 1), RGBA(0,0,0,0))
+            TemplatePadding: =0
+            TemplateSize: =85
+            Width: =215
+            X: =0+0
+            Y: =109+0
+          Children:
+            - Image1_4:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  FocusedBorderColor: =Image1_4.BorderColor
+                  Height: =52
+                  Image: =ThisItem.Image
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =12
+                  PaddingTop: =12
+                  Width: =39
+                  X: =11
+            - Label4_4:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  FocusedBorderColor: =Label4_4.BorderColor
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Open Sans'
+                  Height: =84
+                  HoverBorderColor: =Label4_4.BorderColor
+                  HoverColor: =Label4_4.Color
+                  HoverFill: =Label4_4.Fill
+                  OnSelect: =Select(Parent)
+                  PressedBorderColor: =Label4_4.BorderColor
+                  PressedColor: =Label4_4.Color
+                  PressedFill: =Label4_4.Fill
+                  TabIndex: =0
+                  Text: =ThisItem.Title
+                  Width: =161
+                  X: =54
+            - Rectangle1_4:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  Fill: =RGBA(116, 39, 116, 1)
+                  FocusedBorderColor: =Rectangle1_4.BorderColor
+                  Height: =20
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.Row = _selectedTutorial.Row
+                  Width: =4
+                  X: =11
+                  Y: =11
+      - iconHamburgerMenu_10:
+          Control: Classic/Icon@2.5.0
+          Group: GroupNavigation_4
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(51, 51, 51, 1)
+            FocusedBorderColor: =iconHamburgerMenu_10.BorderColor
+            Height: =16
+            Icon: =Icon.Hamburger
+            OnSelect: =Set(IsExpand, !IsExpand)
+            TabIndex: =0
+            Width: =17
+            X: =26
+            Y: =76+0
+      - Rectangle2_1:
+          Control: Rectangle@2.3.0
+          Group: GroupNavigation_4
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =Rectangle2_1.BorderColor
+            Height: =707
+            Width: =1
+            X: =215
+            Y: =61+0
+      - WelcomeScreenTitleBackground_4:
+          Control: Rectangle@2.3.0
+          Group: GroupBackground_4
+          Properties:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =WelcomeScreenTitleBackground_4.BorderColor
+            Height: =60
+            Width: =1366
+      - WelcomeScreenTitle_4:
+          Control: Label@2.5.1
+          Group: GroupBackground_4
+          Properties:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            FocusedBorderColor: =WelcomeScreenTitle_4.BorderColor
+            Font: =Font.'Segoe UI'
+            Height: =32
+            HoverBorderColor: =WelcomeScreenTitle_4.BorderColor
+            HoverColor: =WelcomeScreenTitle_4.Color
+            HoverFill: =WelcomeScreenTitle_4.Fill
+            LineHeight: =0
+            PressedBorderColor: =WelcomeScreenTitle_4.BorderColor
+            PressedColor: =WelcomeScreenTitle_4.Color
+            PressedFill: =WelcomeScreenTitle_4.Fill
+            Size: =18
+            Text: ="Control de Transporte"
+            Width: =350
+            X: =14
+            Y: =14
+      - ImagePowerAppsLogo_4:
+          Control: Image@2.2.3
+          Group: GroupBackground_4
+          Properties:
+            BorderColor: =RGBA(51, 51, 51, 1)
+            FocusedBorderColor: =ImagePowerAppsLogo_4.BorderColor
+            Height: =60
+            Image: =Logo
+            Width: =276
+            X: =1090
+      - CanvasMain_4:
+          Control: FluidGrid@2.3.0
+          Properties:
+            BorderThickness: =0
+            Height: =708
+            Width: =If(IsExpand, 900, 757)
+            X: =If(!IsExpand, 200, 50)
+            Y: =60
+          Children:
+            - DataCardMain_4:
+                Control: DataCard@1.0.2
+                Properties:
+                  Height: =Parent.Height - 10
+                  Width: =757
+                  X: =0
+                  Y: =0
+                Children:
+                  - PageTitle_4:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        FocusedBorderColor: =PageTitle_4.BorderColor
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Bold
+                        Height: =36
+                        HoverBorderColor: =PageTitle_4.BorderColor
+                        HoverColor: =PageTitle_4.Color
+                        HoverFill: =PageTitle_4.Fill
+                        PressedBorderColor: =PageTitle_4.BorderColor
+                        PressedColor: =PageTitle_4.Color
+                        PressedFill: =PageTitle_4.Fill
+                        Size: =15
+                        Text: ="MOTOR:"
+                        Width: =117
+                        X: =29
+                        Y: =27
+      - RectangleDetailsBackground_4:
+          Control: Rectangle@2.3.0
+          Group: GroupDetailsPanel_4
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0.16)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =RectangleDetailsBackground_4.BorderColor
+            Height: =708
+            Width: =420
+            X: =946
+            Y: =60
+      - LabelDetalisTitle_4:
+          Control: Label@2.5.1
+          Group: GroupDetailsPanel_4
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =LabelDetalisTitle_4.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Lighter
+            HoverBorderColor: =LabelDetalisTitle_4.BorderColor
+            HoverColor: =LabelDetalisTitle_4.Color
+            HoverFill: =LabelDetalisTitle_4.Fill
+            PressedBorderColor: =LabelDetalisTitle_4.BorderColor
+            PressedColor: =LabelDetalisTitle_4.Color
+            PressedFill: =LabelDetalisTitle_4.Fill
+            Size: =15
+            Text: ="Detalles:"
+            X: =975
+            Y: =82
+      - LabelDetailsSteps_4:
+          Control: Label@2.5.1
+          Group: GroupDetailsPanel_4
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+            FocusedBorderColor: =LabelDetailsSteps_4.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsSteps_4.BorderColor
+            HoverColor: =LabelDetailsSteps_4.Color
+            HoverFill: =LabelDetailsSteps_4.Fill
+            OnSelect: |-
+              =UpdateContext({IsShowResourcesTab: false})
+            PressedBorderColor: =LabelDetailsSteps_4.BorderColor
+            PressedColor: =LabelDetailsSteps_4.Color
+            PressedFill: =LabelDetailsSteps_4.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Pasos:"
+            Width: =59
+            X: =979
+            Y: =130
+      - LabelDetailsResources_4:
+          Control: Label@2.5.1
+          Group: GroupDetailsPanel_4
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+            FocusedBorderColor: =LabelDetailsResources_4.BorderColor
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            HoverBorderColor: =LabelDetailsResources_4.BorderColor
+            HoverColor: =LabelDetailsResources_4.Color
+            HoverFill: =LabelDetailsResources_4.Fill
+            OnSelect: |-
+              =UpdateContext({IsShowResourcesTab: true})
+            PressedBorderColor: =LabelDetailsResources_4.BorderColor
+            PressedColor: =LabelDetailsResources_4.Color
+            PressedFill: =LabelDetailsResources_4.Fill
+            Size: =10.5
+            TabIndex: =0
+            Text: ="Resources"
+            Width: =98
+            X: =1038
+            Y: =130
+      - RectangleTab1_4:
+          Control: Rectangle@2.3.0
+          Group: GroupDetailsPanel_4
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab1_4.BorderColor
+            Height: =2
+            Visible: =!IsShowResourcesTab
+            Width: =LabelDetailsSteps_4.Width - 15
+            X: =983
+            Y: =168
+      - RectangleTab2_4:
+          Control: Rectangle@2.3.0
+          Group: GroupDetailsPanel_4
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(116, 39, 116, 1)
+            FocusedBorderColor: =RectangleTab2_4.BorderColor
+            Height: =2
+            Visible: =IsShowResourcesTab
+            Width: =LabelDetailsResources_4.Width - 23
+            X: =LabelDetailsResources_4.X + 13
+            Y: =168
+      - HtmlTextFunctionPanelSteps_4:
+          Control: HtmlViewer@2.1.0
+          Group: GroupDetailsPanel_4
+          Properties:
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            Font: =Font.'Segoe UI'
+            Height: =590
+            HoverBorderColor: =HtmlTextFunctionPanelSteps_4.BorderColor
+            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Líquido de Frenos:</strong> A nivel del depósito.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Aceite de Motor:</strong> A nivel de la aguja y sin impurezas.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Liquido de Embrague:</strong> A nivel establecido en el depósito.\n <br /><br />\n         </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Refrigerante:</strong> A nivel establecido en el depósito.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >5</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Liquido de dirección:</strong> En el nivel establecido en el depósito. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >6</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Liquido limpiabrisas:</strong> En el nivel establecido en el depósito. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >7</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Correas/Mangueras:</strong> Estado estándar en ambas caras y tensión / sin rupturas ni desgaste, conectadas con abrazaderas. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n     <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >8</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Cableado/Batería:</strong> Sin desgaste y conectados/Con soporte, sin corrosión, bornes sin sulfatar y conectados. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >9</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Otros:</strong> Describa estado de otros componentes si lo ve necesario. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n\""
+            Visible: =!IsShowResourcesTab
+            Width: =420
+            X: =932
+            Y: =175
+      - HtmlTextFunctionPanelResources_4:
+          Control: HtmlViewer@2.1.0
+          Group: GroupDetailsPanel_4
+          Properties:
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            Font: =Font.'Segoe UI'
+            Height: =195
+            HoverBorderColor: =HtmlTextFunctionPanelResources_4.BorderColor
+            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
+            Visible: =IsShowResourcesTab
+            Width: =420
+            X: =946
+            Y: =572
+      - Label1_6:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =Label1_6.BorderColor
+            Font: =Font.'Open Sans'
+            Height: =95
+            HoverBorderColor: =Label1_6.BorderColor
+            HoverColor: =Label1_6.Color
+            HoverFill: =Label1_6.Fill
+            PaddingBottom: =0
+            PaddingLeft: =23.5
+            PaddingRight: =20
+            PressedBorderColor: =Label1_6.BorderColor
+            PressedColor: =Label1_6.Color
+            PressedFill: =Label1_6.Fill
+            Size: =11
+            Text: |-
+              ="PARTEQUIPOS: "
+            Visible: =IsShowResourcesTab
+            Width: =409
+            X: =957+0
+            Y: =170+0
+      - Label3_12:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Size: =12
+            Text: ="1. Líquido de Frenos:"
+            Width: =163
+            X: =219
+            Y: =143
+      - Dropdown2_12:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =32
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =163
+            X: =218
+            Y: =196
+      - TextInput1_12:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =30
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =162
+            X: =220
+            Y: =248
+      - Dropdown2_13:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =32
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =163
+            X: =401
+            Y: =195
+      - TextInput1_13:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =30
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =162
+            X: =403
+            Y: =247
+      - Dropdown2_14:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =32
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =163
+            X: =589
+            Y: =197
+      - TextInput1_14:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =30
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =162
+            X: =591
+            Y: =249
+      - Label3_13:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =59
+            Size: =12
+            Text: ="2. Aceite de Motor:"
+            Width: =163
+            X: =401
+            Y: =135
+      - Label3_14:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =12
+            Text: ="3. Liquido de Embrague:"
+            Width: =163
+            X: =589
+            Y: =135
+      - Label3_15:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =12
+            Text: ="4. Refrigerante:"
+            Width: =163
+            X: =762
+            Y: =153
+      - Dropdown2_15:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =32
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =163
+            X: =768
+            Y: =199
+      - TextInput1_15:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =30
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =162
+            X: =770
+            Y: =251
+      - Label3_16:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =12
+            Text: ="6. Liquido limpiabrisas:"
+            X: =410
+            Y: =604
+      - Dropdown2_16:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =36
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =150
+            X: =410
+            Y: =658
+      - TextInput1_16:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =34
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =149
+            X: =412
+            Y: =710
+      - Label3_17:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =80
+            Size: =12
+            Text: ="7. Correas/Mangueras:"
+            X: =593
+            Y: =572
+      - Dropdown2_17:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =36
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =150
+            X: =592
+            Y: =655
+      - TextInput1_17:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =34
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =149
+            X: =594
+            Y: =707
+      - Label3_18:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =54
+            Size: =12
+            Text: ="5. Liquido de dirección:"
+            Width: =164
+            X: =220
+            Y: =605
+      - Dropdown2_18:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =38
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =163
+            X: =220
+            Y: =659
+      - TextInput1_18:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =36
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =162
+            X: =222
+            Y: =712
+      - Label3_19:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =12
+            Text: ="8. Cableado/ Batería:"
+            Width: =164
+            X: =775
+            Y: =595
+      - Dropdown2_19:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =36
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =150
+            X: =773
+            Y: =655
+      - TextInput1_19:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =34
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =149
+            X: =775
+            Y: =707
+      - Image3:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =269
+            Image: =MOTOR
+            Width: =508
+            X: =412
+            Y: =303
+      - Label1_7:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =Label1_7.BorderColor
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            HoverBorderColor: =Label1_7.BorderColor
+            HoverColor: =Label1_7.Color
+            HoverFill: =Label1_7.Fill
+            PaddingLeft: =23.5
+            PaddingRight: =20
+            PressedBorderColor: =Label1_7.BorderColor
+            PressedColor: =Label1_7.Color
+            PressedFill: =Label1_7.Fill
+            Size: =12
+            Text: ="Conoce la empresa:"
+            Visible: =IsShowResourcesTab
+            Width: =409
+            X: =957+0
+            Y: =267+0
+      - Video1_3:
+          Control: Video@2.4.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            FocusedBorderColor: =Video1_3.BorderColor
+            Height: =214
+            Media: ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+            Visible: =IsShowResourcesTab
+            Width: =366
+            X: =975+0
+            Y: =300+0
+      - Label2_3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FocusedBorderColor: =Label2_3.BorderColor
+            Font: =Font.'Open Sans'
+            Height: =58
+            HoverBorderColor: =Label2_3.BorderColor
+            HoverColor: =Label2_3.Color
+            HoverFill: =Label2_3.Fill
+            OnSelect: =Launch("https://www.youtube.com/watch?v=uwG1Og4f0Vo")
+            PressedBorderColor: =Label2_3.BorderColor
+            PressedColor: =Label2_3.Color
+            PressedFill: =Label2_3.Fill
+            Size: =10
+            TabIndex: =0
+            Text: ="https://www.youtube.com/watch?v=jFa5AwmQATs"
+            Tooltip: ="Select to launch video in new tab"
+            Underline: =true
+            Visible: =IsShowResourcesTab
+            Width: =366
+            X: =975+0
+            Y: =514+0
+      - Icon1_3:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =49
+            Icon: =Icon.Reload
+            OnSelect: =Reset(Dropdown2_12); Reset(TextInput1_12); Reset(Dropdown2_13); Reset(TextInput1_13); Reset(Dropdown2_14); Reset(TextInput1_14); Reset(Dropdown2_15); Reset(TextInput1_15); Reset(Dropdown2_16); Reset(TextInput1_16); Reset(Dropdown2_17); Reset(TextInput1_17);Reset(Dropdown2_18); Reset(TextInput1_18);Reset(Dropdown2_19); Reset(TextInput1_19);Reset(Dropdown2_28); Reset(TextInput1_28);
+            X: =875
+            Y: =65
+      - Label3_28:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =51
+            Size: =12
+            Text: ="9. Otros:"
+            Width: =164
+            X: =222
+            Y: =352
+      - Dropdown2_28:
+          Control: Classic/DropDown@2.3.1
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            ChevronBackground: =Color.DarkSlateGray
+            ChevronFill: =RGBA(255, 255, 255, 1)
+            ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            ChevronHoverFill: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            Height: =36
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Items: =Opciones
+            Items.Value: =Value
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(32, 54, 71, 1)
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =RGBA(100, 118, 132, 1)
+            Size: =11
+            Width: =150
+            X: =220
+            Y: =412
+      - TextInput1_28:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =Color.DarkSlateGray
+            Default: =""
+            Font: =Font.'Open Sans'
+            Height: =34
+            HintText: ="Observaciones"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverFill: =RGBA(205, 209, 213, 1)
+            Mode: =TextMode.MultiLine
+            Size: =11
+            Width: =149
+            X: =222
+            Y: =464
+      - Icon2_4:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =26
+            Icon: =Icon.Leave
+            OnSelect: =Exit()
+            Width: =42
+            X: =997
+            Y: =14
+      - Label6_4:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            OnSelect: =Exit()
+            Text: ="Salir"
+            Width: =55
+            X: =942
+            Y: =7
+      - Image8_3:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =39
+            Image: =HomeIcon
+            OnSelect: |-
+              =Navigate(
+                  ListaGestion,
+                  ScreenTransition.None
+              )
+            Width: =62
+            X: =302
+            Y: =10
+      - Label8_3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 0, 0, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =27
+            Size: =12
+            Text: ="Todos los campos son obligatorios:"
+            Width: =442
+            X: =394
+            Y: =87
