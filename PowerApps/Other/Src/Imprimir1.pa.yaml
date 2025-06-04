@@ -40,7 +40,7 @@ Screens:
             Height: =731
             Item: =Gallery2.Selected
             NumberOfColumns: =12
-            Width: =1071
+            Width: =Parent.Width
             X: =13
             Y: =57
           Children:
