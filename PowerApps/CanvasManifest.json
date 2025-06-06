@@ -2,7 +2,7 @@
   "FormatVersion": "0.24",
   "Header": {
     "AnalysisOptions": {
-      "DataflowAnalysisEnabled": false,
+      "DataflowAnalysisEnabled": true,
       "DataflowAnalysisFlagStateToggledByUser": false
     },
     "DocVersion": "1.346",
@@ -26,7 +26,7 @@
       "commentgeneratedformulasv2": false,
       "consistentreturnschemafortabularfunctions": true,
       "copyandmerge": true,
-      "dataflowanalysisenabled": false,
+      "dataflowanalysisenabled": true,
       "datatablev2control": true,
       "dataverseactionsenabled": false,
       "delaycontrolrendering": false,
