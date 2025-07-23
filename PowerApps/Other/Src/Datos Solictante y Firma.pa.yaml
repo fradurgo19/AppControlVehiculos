@@ -1398,6 +1398,96 @@ Screens:
                         Width: =30
                         Wrap: =false
                         Y: =DataCardKey72.Y
+            - Placa_DataCard3:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicComboBoxEdit
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  DataField: ="Placa"
+                  Default: =ThisItem.Placa
+                  DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,Placa)
+                  Required: =false
+                  Update: =DataCardValue21.Selected
+                  Width: =225
+                  X: =2
+                  Y: =0
+                Children:
+                  - DataCardKey21:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldName
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                  - DataCardValue21:
+                      Control: Classic/ComboBox@2.4.0
+                      MetadataKey: FieldValue
+                      Properties:
+                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                        ChevronBackground: =RGBA(100, 118, 132, 1)
+                        ChevronFill: =RGBA(255, 255, 255, 1)
+                        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                        DefaultSelectedItems: =Parent.Default
+                        DisplayFields: =["Value"]
+                        DisplayMode: =Parent.DisplayMode
+                        Font: =Font.'Open Sans'
+                        HoverFill: =RGBA(205, 209, 213, 1)
+                        InputTextPlaceholder: ="PLACA"
+                        Items: =Choices([@ListaPrestamoVehiculos].Placa)
+                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(32, 54, 71, 1)
+                        SearchFields: =["Value"]
+                        SelectMultiple: =false
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(100, 118, 132, 1)
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                  - ErrorMessage62:
+                      Control: Label@2.5.1
+                      MetadataKey: ErrorMessage
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(168, 0, 0, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =10
+                        Live: =Live.Assertive
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =14
+                        Text: =Parent.Error
+                        Visible: =Parent.DisplayMode=DisplayMode.Edit
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardValue21.Y + DataCardValue21.Height
+                  - StarVisible62:
+                      Control: Label@2.5.1
+                      MetadataKey: FieldRequired
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =DataCardKey21.Height
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        Wrap: =false
+                        Y: =DataCardKey21.Y
             - KMsSalida_DataCard3:
                 Control: TypedDataCard@1.0.7
                 Variant: ClassicNumberEdit
@@ -1409,8 +1499,8 @@ Screens:
                   Required: =false
                   Update: =DataCardValue73.Text
                   Width: =221
-                  X: =2
-                  Y: =0
+                  X: =0
+                  Y: =1
                 Children:
                   - DataCardKey73:
                       Control: Label@2.5.1
@@ -1492,7 +1582,7 @@ Screens:
                   Required: =false
                   Update: =DataCardValue8.Selected
                   Width: =225
-                  X: =0
+                  X: =1
                   Y: =1
                 Children:
                   - DataCardKey8:
@@ -1583,7 +1673,7 @@ Screens:
                   Required: =false
                   Update: =DataCardValue11.Selected
                   Width: =225
-                  X: =1
+                  X: =2
                   Y: =1
                 Children:
                   - DataCardKey11:
@@ -1663,96 +1753,6 @@ Screens:
                         Width: =30
                         Wrap: =false
                         Y: =DataCardKey11.Y
-            - Placa_DataCard3:
-                Control: TypedDataCard@1.0.7
-                Variant: ClassicComboBoxEdit
-                Properties:
-                  BorderColor: =RGBA(32, 54, 71, 1)
-                  DataField: ="Placa"
-                  Default: =ThisItem.Placa
-                  DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,Placa)
-                  Required: =false
-                  Update: =DataCardValue21.Selected
-                  Width: =225
-                  X: =2
-                  Y: =1
-                Children:
-                  - DataCardKey21:
-                      Control: Label@2.5.1
-                      MetadataKey: FieldName
-                      Properties:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 1)
-                        Color: =RGBA(32, 54, 71, 1)
-                        Font: =Font.'Open Sans'
-                        Height: =34
-                        Text: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        Wrap: =false
-                        X: =30
-                        Y: =10
-                  - DataCardValue21:
-                      Control: Classic/ComboBox@2.4.0
-                      MetadataKey: FieldValue
-                      Properties:
-                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                        ChevronBackground: =RGBA(100, 118, 132, 1)
-                        ChevronFill: =RGBA(255, 255, 255, 1)
-                        ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
-                        ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                        DefaultSelectedItems: =Parent.Default
-                        DisplayFields: =["Value"]
-                        DisplayMode: =Parent.DisplayMode
-                        Font: =Font.'Open Sans'
-                        HoverFill: =RGBA(205, 209, 213, 1)
-                        InputTextPlaceholder: ="PLACA"
-                        Items: =Choices([@ListaPrestamoVehiculos].Placa)
-                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                        PressedColor: =RGBA(255, 255, 255, 1)
-                        PressedFill: =RGBA(32, 54, 71, 1)
-                        SearchFields: =["Value"]
-                        SelectMultiple: =false
-                        SelectionColor: =RGBA(255, 255, 255, 1)
-                        SelectionFill: =RGBA(100, 118, 132, 1)
-                        Tooltip: =Parent.DisplayName
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardKey21.Y + DataCardKey21.Height + 5
-                  - ErrorMessage62:
-                      Control: Label@2.5.1
-                      MetadataKey: ErrorMessage
-                      Properties:
-                        AutoHeight: =true
-                        BorderColor: =RGBA(0, 0, 0, 1)
-                        Color: =RGBA(168, 0, 0, 1)
-                        Font: =Font.'Open Sans'
-                        FontWeight: =FontWeight.Semibold
-                        Height: =10
-                        Live: =Live.Assertive
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Size: =14
-                        Text: =Parent.Error
-                        Visible: =Parent.DisplayMode=DisplayMode.Edit
-                        Width: =Parent.Width - 60
-                        X: =30
-                        Y: =DataCardValue21.Y + DataCardValue21.Height
-                  - StarVisible62:
-                      Control: Label@2.5.1
-                      MetadataKey: FieldRequired
-                      Properties:
-                        Align: =Align.Center
-                        BorderColor: =RGBA(0, 0, 0, 1)
-                        Color: =RGBA(32, 54, 71, 1)
-                        Font: =Font.'Open Sans'
-                        Height: =DataCardKey21.Height
-                        Text: ="*"
-                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                        Width: =30
-                        Wrap: =false
-                        Y: =DataCardKey21.Y
       - Icon1_2:
           Control: Classic/Icon@2.5.0
           Properties:

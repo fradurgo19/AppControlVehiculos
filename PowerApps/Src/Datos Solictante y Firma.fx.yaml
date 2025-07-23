@@ -1547,8 +1547,8 @@
             Required: =false
             Update: =DataCardValue73.Text
             Width: =221
-            X: =2
-            Y: =0
+            X: =0
+            Y: =1
             ZIndex: =1
 
             DataCardKey73 As label:
@@ -1634,7 +1634,7 @@
             Required: =false
             Update: =DataCardValue8.Selected
             Width: =225
-            X: =0
+            X: =1
             Y: =1
             ZIndex: =1
 
@@ -1727,7 +1727,7 @@
             Required: =false
             Update: =DataCardValue11.Selected
             Width: =225
-            X: =1
+            X: =2
             Y: =1
             ZIndex: =1
 
@@ -1820,7 +1820,7 @@
             Update: =DataCardValue21.Selected
             Width: =225
             X: =2
-            Y: =1
+            Y: =0
             ZIndex: =1
 
             DataCardKey21 As label:
