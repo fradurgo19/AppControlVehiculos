@@ -247,7 +247,7 @@ Screens:
             Width: =276
             X: =1090
       - Form1:
-          Control: Form@2.4.3
+          Control: Form@2.4.4
           Variant: Classic
           Layout: Vertical
           Properties:
@@ -1209,7 +1209,7 @@ Screens:
             X: =925
             Y: =572
       - Form1_1:
-          Control: Form@2.4.3
+          Control: Form@2.4.4
           Variant: Classic
           Layout: Vertical
           Properties:
