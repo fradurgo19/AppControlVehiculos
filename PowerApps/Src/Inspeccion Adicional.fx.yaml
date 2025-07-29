@@ -566,7 +566,7 @@
             BorderThickness: =1
             Fill: =RGBA(255, 255, 255, 1)
             FocusedBorderColor: =RectangleDetailsBackground_4.BorderColor
-            Height: =708
+            Height: =704
             Width: =420
             X: =946
             Y: =60
@@ -579,6 +579,7 @@
             FocusedBorderColor: =LabelDetalisTitle_4.BorderColor
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Lighter
+            Height: =35
             HoverBorderColor: =LabelDetalisTitle_4.BorderColor
             HoverColor: =LabelDetalisTitle_4.Color
             HoverFill: =LabelDetalisTitle_4.Fill
@@ -589,7 +590,7 @@
             Text: |-
                 ="Detalles:"
             X: =975
-            Y: =82
+            Y: =80
             ZIndex: =9
 
         LabelDetailsSteps_4 As label:
@@ -599,6 +600,7 @@
             FocusedBorderColor: =LabelDetailsSteps_4.BorderColor
             Font: =Font.'Segoe UI'
             FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            Height: =35
             HoverBorderColor: =LabelDetailsSteps_4.BorderColor
             HoverColor: =LabelDetailsSteps_4.Color
             HoverFill: =LabelDetailsSteps_4.Fill
@@ -613,7 +615,7 @@
                 ="Pasos:"
             Width: =59
             X: =979
-            Y: =130
+            Y: =121
             ZIndex: =10
 
         LabelDetailsResources_4 As label:
@@ -624,6 +626,7 @@
             FocusedBorderColor: =LabelDetailsResources_4.BorderColor
             Font: =Font.'Segoe UI'
             FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+            Height: =35
             HoverBorderColor: =LabelDetailsResources_4.BorderColor
             HoverColor: =LabelDetailsResources_4.Color
             HoverFill: =LabelDetailsResources_4.Fill
@@ -637,7 +640,7 @@
             Text: ="Resources"
             Width: =98
             X: =1038
-            Y: =130
+            Y: =121
             ZIndex: =11
 
         RectangleTab1_4 As rectangle:
@@ -647,9 +650,9 @@
             FocusedBorderColor: =RectangleTab1_4.BorderColor
             Height: =2
             Visible: =!IsShowResourcesTab
-            Width: =LabelDetailsSteps_4.Width - 15
+            Width: =44
             X: =983
-            Y: =168
+            Y: =154
             ZIndex: =12
 
         RectangleTab2_4 As rectangle:
@@ -659,14 +662,14 @@
             FocusedBorderColor: =RectangleTab2_4.BorderColor
             Height: =2
             Visible: =IsShowResourcesTab
-            Width: =LabelDetailsResources_4.Width - 23
+            Width: =75
             X: =LabelDetailsResources_4.X + 13
-            Y: =168
+            Y: =154
             ZIndex: =13
 
         HtmlTextFunctionPanelSteps_4 As htmlViewer:
             Font: =Font.'Segoe UI'
-            Height: =590
+            Height: =608
             HoverBorderColor: =HtmlTextFunctionPanelSteps_4.BorderColor
             HtmlText: |-
                 ="
@@ -730,16 +733,16 @@
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_4.BorderColor
-            Size: =10
+            Size: =8
             Visible: =!IsShowResourcesTab
             Width: =384
             X: =957
-            Y: =175
+            Y: =160
             ZIndex: =14
 
         HtmlTextFunctionPanelResources_4 As htmlViewer:
             Font: =Font.'Segoe UI'
-            Height: =195
+            Height: =169
             HoverBorderColor: =HtmlTextFunctionPanelResources_4.BorderColor
             HtmlText: |-
                 ="
@@ -758,7 +761,7 @@
             Visible: =IsShowResourcesTab
             Width: =420
             X: =946
-            Y: =572
+            Y: =504
             ZIndex: =15
 
     TextInput1_19 As text:

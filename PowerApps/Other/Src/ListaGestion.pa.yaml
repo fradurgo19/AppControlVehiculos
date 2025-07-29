@@ -162,8 +162,8 @@ Screens:
             Fill: =RGBA(255, 255, 255, 1)
             FocusedBorderColor: =RectangleDetailsBackground_6.BorderColor
             Height: =708
-            Width: =441
-            X: =925
+            Width: =421
+            X: =943
             Y: =60
       - LabelDetalisTitle_6:
           Control: Label@2.5.1
@@ -181,8 +181,8 @@ Screens:
             PressedFill: =LabelDetalisTitle_6.Fill
             Size: =15
             Text: ="Detalles"
-            Width: =157
-            X: =955
+            Width: =151
+            X: =942
             Y: =82
       - LabelDetailsSteps_6:
           Control: Label@2.5.1
@@ -204,8 +204,8 @@ Screens:
             Size: =10.5
             TabIndex: =0
             Text: ="Pasos"
-            Width: =62
-            X: =960
+            Width: =59
+            X: =942
             Y: =130
       - LabelDetailsResources_6:
           Control: Label@2.5.1
@@ -228,8 +228,8 @@ Screens:
             Size: =10.5
             TabIndex: =0
             Text: ="Recursos"
-            Width: =103
-            X: =1022
+            Width: =99
+            X: =942
             Y: =130
       - RectangleTab1_6:
           Control: Rectangle@2.3.0
@@ -241,8 +241,8 @@ Screens:
             FocusedBorderColor: =RectangleTab1_6.BorderColor
             Height: =2
             Visible: =!IsShowResourcesTab
-            Width: =46
-            X: =964
+            Width: =44
+            X: =942
             Y: =168
       - RectangleTab2_6:
           Control: Rectangle@2.3.0
@@ -254,22 +254,23 @@ Screens:
             FocusedBorderColor: =RectangleTab2_6.BorderColor
             Height: =2
             Visible: =IsShowResourcesTab
-            Width: =79
-            X: =1035
+            Width: =76
+            X: =942
             Y: =168
       - HtmlTextFunctionPanelSteps_6:
           Control: HtmlViewer@2.1.0
           Group: GroupDetailsPanel_6
           Properties:
+            AutoHeight: =true
             DisabledBorderColor: =RGBA(56, 56, 56, 1)
             Font: =Font.'Segoe UI'
             Height: =596
             HoverBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
             HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong> Por favor siga el paso a paso: </div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        Es necesario <strong>verificar los últimos registros</strong> de gestión de vehículos.  <br />\n        \n        <em></em>\n    \n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n         Utilice cada uno de los <strong>filtros según la necesidad.</strong>\n        <br />\n        <em></em>\n\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Puede verificar por fecha, sede o placa.</strong>\n        <br />\n        <em></em>\n        </em>\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n<div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        Verifique cada registro en verificación o tanqueo con la <strong>flecha a la derecha de cada registro.</strong>\n        <br />\n        <em></em>\n            <pre style=\"\"font-size: \" & StepsPanelCodeFontSize & \"pt; white-space: pre-wrap; word-break: break-all\"\">\n            </pre>\n        </em>\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n    \n    <div style=\"\"clear: both\"\"></div>\n</div>\n\n\""
-            Size: =10
+            Size: =8
             Visible: =!IsShowResourcesTab
-            Width: =441
-            X: =924
+            Width: =421
+            X: =942
             Y: =168
       - HtmlTextFunctionPanelResources_6:
           Control: HtmlViewer@2.1.0
@@ -281,8 +282,8 @@ Screens:
             HoverBorderColor: =HtmlTextFunctionPanelResources_6.BorderColor
             HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
             Visible: =IsShowResourcesTab
-            Width: =441
-            X: =925
+            Width: =421
+            X: =943
             Y: =572
       - Video1_6:
           Control: Video@2.4.1

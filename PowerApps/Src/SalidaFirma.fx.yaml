@@ -921,6 +921,7 @@ SalidaFirma As screen:
             ZIndex: =14
 
         HtmlTextFunctionPanelSteps_1 As htmlViewer:
+            AutoHeight: =true
             Font: =Font.'Segoe UI'
             Height: =596
             HoverBorderColor: =HtmlTextFunctionPanelSteps_1.BorderColor
@@ -950,7 +951,7 @@ SalidaFirma As screen:
                     
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_1.BorderColor
-            Size: =10
+            Size: =8
             Visible: =!IsShowResourcesTab
             Width: =420
             X: =946

@@ -1539,6 +1539,7 @@ PrevenTanqueo As screen:
             ZIndex: =14
 
         HtmlTextFunctionPanelSteps As htmlViewer:
+            AutoHeight: =true
             Font: =Font.'Segoe UI'
             Height: =596
             HoverBorderColor: =HtmlTextFunctionPanelSteps.BorderColor
@@ -1579,7 +1580,7 @@ PrevenTanqueo As screen:
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps.BorderColor
-            Size: =10
+            Size: =8
             Visible: =!IsShowResourcesTab
             Width: =420
             X: =946

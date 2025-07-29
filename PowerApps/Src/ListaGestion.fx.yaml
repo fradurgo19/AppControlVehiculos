@@ -193,8 +193,8 @@ ListaGestion As screen:
             Fill: =RGBA(255, 255, 255, 1)
             FocusedBorderColor: =RectangleDetailsBackground_6.BorderColor
             Height: =708
-            Width: =441
-            X: =925
+            Width: =421
+            X: =943
             Y: =60
             ZIndex: =9
 
@@ -213,8 +213,8 @@ ListaGestion As screen:
             PressedFill: =LabelDetalisTitle_6.Fill
             Size: =15
             Text: ="Detalles"
-            Width: =157
-            X: =955
+            Width: =151
+            X: =942
             Y: =82
             ZIndex: =10
 
@@ -236,8 +236,8 @@ ListaGestion As screen:
             Size: =10.5
             TabIndex: =0
             Text: ="Pasos"
-            Width: =62
-            X: =960
+            Width: =59
+            X: =942
             Y: =130
             ZIndex: =11
 
@@ -260,8 +260,8 @@ ListaGestion As screen:
             Size: =10.5
             TabIndex: =0
             Text: ="Recursos"
-            Width: =103
-            X: =1022
+            Width: =99
+            X: =942
             Y: =130
             ZIndex: =12
 
@@ -272,8 +272,8 @@ ListaGestion As screen:
             FocusedBorderColor: =RectangleTab1_6.BorderColor
             Height: =2
             Visible: =!IsShowResourcesTab
-            Width: =46
-            X: =964
+            Width: =44
+            X: =942
             Y: =168
             ZIndex: =13
 
@@ -284,12 +284,13 @@ ListaGestion As screen:
             FocusedBorderColor: =RectangleTab2_6.BorderColor
             Height: =2
             Visible: =IsShowResourcesTab
-            Width: =79
-            X: =1035
+            Width: =76
+            X: =942
             Y: =168
             ZIndex: =14
 
         HtmlTextFunctionPanelSteps_6 As htmlViewer:
+            AutoHeight: =true
             Font: =Font.'Segoe UI'
             Height: =596
             HoverBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
@@ -341,10 +342,10 @@ ListaGestion As screen:
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
-            Size: =10
+            Size: =8
             Visible: =!IsShowResourcesTab
-            Width: =441
-            X: =924
+            Width: =421
+            X: =942
             Y: =168
             ZIndex: =15
 
@@ -367,8 +368,8 @@ ListaGestion As screen:
             PressedBorderColor: =HtmlTextFunctionPanelResources_6.BorderColor
             Size: =13
             Visible: =IsShowResourcesTab
-            Width: =441
-            X: =925
+            Width: =421
+            X: =943
             Y: =572
             ZIndex: =16
 

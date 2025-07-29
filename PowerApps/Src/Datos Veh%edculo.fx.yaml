@@ -696,6 +696,7 @@
             ZIndex: =14
 
         HtmlTextFunctionPanelSteps_2 As htmlViewer:
+            AutoHeight: =true
             Font: =Font.'Segoe UI'
             Height: =596
             HoverBorderColor: =HtmlTextFunctionPanelSteps_2.BorderColor
@@ -742,7 +743,7 @@
                     <div style=""clear: both""></div>
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_2.BorderColor
-            Size: =10
+            Size: =8
             Visible: =!IsShowResourcesTab
             Width: =441
             X: =924

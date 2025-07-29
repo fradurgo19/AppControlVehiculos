@@ -1141,8 +1141,8 @@
             Fill: =RGBA(255, 255, 255, 1)
             FocusedBorderColor: =RectangleDetailsBackground_5.BorderColor
             Height: =708
-            Width: =441
-            X: =925
+            Width: =419
+            X: =922
             Y: =60
             ZIndex: =46
 
@@ -1161,8 +1161,8 @@
             PressedFill: =LabelDetalisTitle_5.Fill
             Size: =15
             Text: ="Detalles"
-            Width: =157
-            X: =955
+            Width: =149
+            X: =922
             Y: =82
             ZIndex: =47
 
@@ -1184,9 +1184,9 @@
             Size: =10.5
             TabIndex: =0
             Text: ="Pasos"
-            Width: =62
-            X: =960
-            Y: =130
+            Width: =58
+            X: =944
+            Y: =132
             ZIndex: =48
 
         LabelDetailsResources_5 As label:
@@ -1208,9 +1208,9 @@
             Size: =10.5
             TabIndex: =0
             Text: ="Recursos"
-            Width: =103
-            X: =1022
-            Y: =130
+            Width: =98
+            X: =997
+            Y: =133
             ZIndex: =49
 
         RectangleTab1_5 As rectangle:
@@ -1220,9 +1220,9 @@
             FocusedBorderColor: =RectangleTab1_5.BorderColor
             Height: =2
             Visible: =!IsShowResourcesTab
-            Width: =46
-            X: =964
-            Y: =168
+            Width: =43
+            X: =948
+            Y: =165
             ZIndex: =50
 
         RectangleTab2_5 As rectangle:
@@ -1230,14 +1230,15 @@
             BorderStyle: =BorderStyle.None
             Fill: =RGBA(116, 39, 116, 1)
             FocusedBorderColor: =RectangleTab2_5.BorderColor
-            Height: =2
+            Height: =0
             Visible: =IsShowResourcesTab
-            Width: =79
-            X: =1035
-            Y: =168
+            Width: =51
+            X: =1020
+            Y: =173
             ZIndex: =51
 
         HtmlTextFunctionPanelSteps_5 As htmlViewer:
+            AutoHeight: =true
             Font: =Font.'Segoe UI'
             Height: =596
             HoverBorderColor: =HtmlTextFunctionPanelSteps_5.BorderColor
@@ -1312,10 +1313,10 @@
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_5.BorderColor
-            Size: =10
+            Size: =8
             Visible: =!IsShowResourcesTab
-            Width: =441
-            X: =925
+            Width: =419
+            X: =922
             Y: =172
             ZIndex: =52
 
@@ -1338,8 +1339,8 @@
             PressedBorderColor: =HtmlTextFunctionPanelResources_5.BorderColor
             Size: =13
             Visible: =IsShowResourcesTab
-            Width: =441
-            X: =925
+            Width: =419
+            X: =922
             Y: =572
             ZIndex: =53
 
