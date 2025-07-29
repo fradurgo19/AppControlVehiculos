@@ -125,10 +125,10 @@
     "Id": "25a8186d-f903-4bfa-82d1-35c1c286e6d1",
     "LocalDatabaseReferences": "",
     "ManualOfflineProfileId": "",
-    "Name": "Q29udHJvbCBUcmFuc3BvcnRl.msapp",
+    "Name": "Control Transporte",
     "OriginatingVersion": "1.249",
     "ParserErrorCount": 0,
-    "ShowStatusBar": false
+    "ShowStatusBar": true
   },
   "PublishInfo": {
     "AppName": "Control Transporte",
