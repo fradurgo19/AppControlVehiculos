@@ -157,7 +157,7 @@ Screens:
           Properties:
             BorderThickness: =0
             Height: =708
-            Width: =If(IsExpand, 900, 757)
+            Width: =1166
             X: =If(!IsExpand, 200, 50)
             Y: =60
           Children:
@@ -165,7 +165,7 @@ Screens:
                 Control: DataCard@1.0.2
                 Properties:
                   Height: =Parent.Height - 10
-                  Width: =757
+                  Width: =1166
                   X: =0
                   Y: =0
                 Children:
@@ -188,139 +188,6 @@ Screens:
                         Width: =117
                         X: =29
                         Y: =27
-      - RectangleDetailsBackground_4:
-          Control: Rectangle@2.3.0
-          Group: GroupDetailsPanel_4
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 0.16)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderColor: =RectangleDetailsBackground_4.BorderColor
-            Height: =704
-            Width: =420
-            X: =946
-            Y: =60
-      - LabelDetalisTitle_4:
-          Control: Label@2.5.1
-          Group: GroupDetailsPanel_4
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            FocusedBorderColor: =LabelDetalisTitle_4.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Lighter
-            Height: =35
-            HoverBorderColor: =LabelDetalisTitle_4.BorderColor
-            HoverColor: =LabelDetalisTitle_4.Color
-            HoverFill: =LabelDetalisTitle_4.Fill
-            PressedBorderColor: =LabelDetalisTitle_4.BorderColor
-            PressedColor: =LabelDetalisTitle_4.Color
-            PressedFill: =LabelDetalisTitle_4.Fill
-            Size: =15
-            Text: ="Detalles:"
-            X: =975
-            Y: =80
-      - LabelDetailsSteps_4:
-          Control: Label@2.5.1
-          Group: GroupDetailsPanel_4
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
-            FocusedBorderColor: =LabelDetailsSteps_4.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            Height: =35
-            HoverBorderColor: =LabelDetailsSteps_4.BorderColor
-            HoverColor: =LabelDetailsSteps_4.Color
-            HoverFill: =LabelDetailsSteps_4.Fill
-            OnSelect: |-
-              =UpdateContext({IsShowResourcesTab: false})
-            PressedBorderColor: =LabelDetailsSteps_4.BorderColor
-            PressedColor: =LabelDetailsSteps_4.Color
-            PressedFill: =LabelDetailsSteps_4.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Pasos:"
-            Width: =59
-            X: =979
-            Y: =121
-      - LabelDetailsResources_4:
-          Control: Label@2.5.1
-          Group: GroupDetailsPanel_4
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
-            FocusedBorderColor: =LabelDetailsResources_4.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            Height: =35
-            HoverBorderColor: =LabelDetailsResources_4.BorderColor
-            HoverColor: =LabelDetailsResources_4.Color
-            HoverFill: =LabelDetailsResources_4.Fill
-            OnSelect: |-
-              =UpdateContext({IsShowResourcesTab: true})
-            PressedBorderColor: =LabelDetailsResources_4.BorderColor
-            PressedColor: =LabelDetailsResources_4.Color
-            PressedFill: =LabelDetailsResources_4.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Resources"
-            Width: =98
-            X: =1038
-            Y: =121
-      - RectangleTab1_4:
-          Control: Rectangle@2.3.0
-          Group: GroupDetailsPanel_4
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab1_4.BorderColor
-            Height: =2
-            Visible: =!IsShowResourcesTab
-            Width: =44
-            X: =983
-            Y: =154
-      - RectangleTab2_4:
-          Control: Rectangle@2.3.0
-          Group: GroupDetailsPanel_4
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab2_4.BorderColor
-            Height: =2
-            Visible: =IsShowResourcesTab
-            Width: =75
-            X: =LabelDetailsResources_4.X + 13
-            Y: =154
-      - HtmlTextFunctionPanelSteps_4:
-          Control: HtmlViewer@2.1.0
-          Group: GroupDetailsPanel_4
-          Properties:
-            DisabledBorderColor: =RGBA(56, 56, 56, 1)
-            Font: =Font.'Segoe UI'
-            Height: =608
-            HoverBorderColor: =HtmlTextFunctionPanelSteps_4.BorderColor
-            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Líquido de Frenos:</strong> A nivel del depósito.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Aceite de Motor:</strong> A nivel de la aguja y sin impurezas.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Liquido de Embrague:</strong> A nivel establecido en el depósito.\n <br /><br />\n         </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Refrigerante:</strong> A nivel establecido en el depósito.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >5</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Liquido de dirección:</strong> En el nivel establecido en el depósito. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >6</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Liquido limpiabrisas:</strong> En el nivel establecido en el depósito. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >7</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Correas/Mangueras:</strong> Estado estándar en ambas caras y tensión / sin rupturas ni desgaste, conectadas con abrazaderas. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n     <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >8</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Cableado/Batería:</strong> Sin desgaste y conectados/Con soporte, sin corrosión, bornes sin sulfatar y conectados. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >9</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Otros:</strong> Describa estado de otros componentes si lo ve necesario. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n\""
-            Size: =8
-            Visible: =!IsShowResourcesTab
-            Width: =384
-            X: =957
-            Y: =160
-      - HtmlTextFunctionPanelResources_4:
-          Control: HtmlViewer@2.1.0
-          Group: GroupDetailsPanel_4
-          Properties:
-            DisabledBorderColor: =RGBA(56, 56, 56, 1)
-            Font: =Font.'Segoe UI'
-            Height: =169
-            HoverBorderColor: =HtmlTextFunctionPanelResources_4.BorderColor
-            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
-            Visible: =IsShowResourcesTab
-            Width: =420
-            X: =946
-            Y: =504
       - Label1_6:
           Control: Label@2.5.1
           Properties:
@@ -887,16 +754,144 @@ Screens:
             Width: =62
             X: =302
             Y: =10
-      - Label8_3:
-          Control: Label@2.5.1
+      - Container6:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
           Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =RGBA(255, 0, 0, 1)
-            Font: =Font.'Open Sans'
-            FontWeight: =FontWeight.Bold
-            Height: =27
-            Size: =12
-            Text: ="Todos los campos son obligatorios:"
-            Width: =442
-            X: =394
-            Y: =87
+            Height: =708
+            Width: =424
+            X: =942
+            Y: =60
+          Children:
+            - RectangleDetailsBackground_4:
+                Control: Rectangle@2.3.0
+                Group: GroupDetailsPanel_4
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0.16)
+                  BorderThickness: =1
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FocusedBorderColor: =RectangleDetailsBackground_4.BorderColor
+                  Height: =708
+                  Width: =420
+                  X: =4
+            - LabelDetalisTitle_4:
+                Control: Label@2.5.1
+                Group: GroupDetailsPanel_4
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  FocusedBorderColor: =LabelDetalisTitle_4.BorderColor
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =38
+                  HoverBorderColor: =LabelDetalisTitle_4.BorderColor
+                  HoverColor: =LabelDetalisTitle_4.Color
+                  HoverFill: =LabelDetalisTitle_4.Fill
+                  PressedBorderColor: =LabelDetalisTitle_4.BorderColor
+                  PressedColor: =LabelDetalisTitle_4.Color
+                  PressedFill: =LabelDetalisTitle_4.Fill
+                  Size: =15
+                  Text: ="Detalles:"
+                  X: =33
+                  Y: =22
+            - LabelDetailsSteps_4:
+                Control: Label@2.5.1
+                Group: GroupDetailsPanel_4
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+                  FocusedBorderColor: =LabelDetailsSteps_4.BorderColor
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                  Height: =38
+                  HoverBorderColor: =LabelDetailsSteps_4.BorderColor
+                  HoverColor: =LabelDetailsSteps_4.Color
+                  HoverFill: =LabelDetailsSteps_4.Fill
+                  OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: false})
+                  PressedBorderColor: =LabelDetailsSteps_4.BorderColor
+                  PressedColor: =LabelDetailsSteps_4.Color
+                  PressedFill: =LabelDetailsSteps_4.Fill
+                  Size: =10.5
+                  TabIndex: =0
+                  Text: ="Pasos:"
+                  Width: =59
+                  X: =37
+                  Y: =67
+            - LabelDetailsResources_4:
+                Control: Label@2.5.1
+                Group: GroupDetailsPanel_4
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+                  FocusedBorderColor: =LabelDetailsResources_4.BorderColor
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                  Height: =38
+                  HoverBorderColor: =LabelDetailsResources_4.BorderColor
+                  HoverColor: =LabelDetailsResources_4.Color
+                  HoverFill: =LabelDetailsResources_4.Fill
+                  OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: true})
+                  PressedBorderColor: =LabelDetailsResources_4.BorderColor
+                  PressedColor: =LabelDetailsResources_4.Color
+                  PressedFill: =LabelDetailsResources_4.Fill
+                  Size: =10.5
+                  TabIndex: =0
+                  Text: ="Resources"
+                  Width: =98
+                  X: =96
+                  Y: =67
+            - RectangleTab1_4:
+                Control: Rectangle@2.3.0
+                Group: GroupDetailsPanel_4
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  BorderStyle: =BorderStyle.None
+                  Fill: =RGBA(116, 39, 116, 1)
+                  FocusedBorderColor: =RectangleTab1_4.BorderColor
+                  Height: =2
+                  Visible: =!IsShowResourcesTab
+                  Width: =44
+                  X: =41
+                  Y: =103
+            - RectangleTab2_4:
+                Control: Rectangle@2.3.0
+                Group: GroupDetailsPanel_4
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  BorderStyle: =BorderStyle.None
+                  Fill: =RGBA(116, 39, 116, 1)
+                  FocusedBorderColor: =RectangleTab2_4.BorderColor
+                  Height: =2
+                  Visible: =IsShowResourcesTab
+                  Width: =75
+                  X: =LabelDetailsResources_4.X + 13
+                  Y: =103
+            - HtmlTextFunctionPanelSteps_4:
+                Control: HtmlViewer@2.1.0
+                Group: GroupDetailsPanel_4
+                Properties:
+                  DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                  Font: =Font.'Segoe UI'
+                  Height: =588
+                  HoverBorderColor: =HtmlTextFunctionPanelSteps_4.BorderColor
+                  HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Líquido de Frenos:</strong> A nivel del depósito.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Aceite de Motor:</strong> A nivel de la aguja y sin impurezas.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Liquido de Embrague:</strong> A nivel establecido en el depósito.\n <br /><br />\n         </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Refrigerante:</strong> A nivel establecido en el depósito.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >5</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Liquido de dirección:</strong> En el nivel establecido en el depósito. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >6</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Liquido limpiabrisas:</strong> En el nivel establecido en el depósito. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >7</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Correas/Mangueras:</strong> Estado estándar en ambas caras y tensión / sin rupturas ni desgaste, conectadas con abrazaderas. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n     <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >8</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Cableado/Batería:</strong> Sin desgaste y conectados/Con soporte, sin corrosión, bornes sin sulfatar y conectados. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >9</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Otros:</strong> Describa estado de otros componentes si lo ve necesario. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n\""
+                  Size: =8
+                  Visible: =!IsShowResourcesTab
+                  Width: =420
+                  X: =4
+                  Y: =120
+            - HtmlTextFunctionPanelResources_4:
+                Control: HtmlViewer@2.1.0
+                Group: GroupDetailsPanel_4
+                Properties:
+                  DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                  Font: =Font.'Segoe UI'
+                  Height: =185
+                  HoverBorderColor: =HtmlTextFunctionPanelResources_4.BorderColor
+                  HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
+                  Visible: =IsShowResourcesTab
+                  Width: =420
+                  X: =4
+                  Y: =487

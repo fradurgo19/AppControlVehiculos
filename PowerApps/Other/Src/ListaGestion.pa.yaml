@@ -153,138 +153,6 @@ Screens:
             Image: =Logo
             Width: =276
             X: =1090
-      - RectangleDetailsBackground_6:
-          Control: Rectangle@2.3.0
-          Group: GroupDetailsPanel_6
-          Properties:
-            BorderColor: =RGBA(0, 0, 0, 0.16)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderColor: =RectangleDetailsBackground_6.BorderColor
-            Height: =708
-            Width: =421
-            X: =943
-            Y: =60
-      - LabelDetalisTitle_6:
-          Control: Label@2.5.1
-          Group: GroupDetailsPanel_6
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            FocusedBorderColor: =LabelDetalisTitle_6.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Lighter
-            HoverBorderColor: =LabelDetalisTitle_6.BorderColor
-            HoverColor: =LabelDetalisTitle_6.Color
-            HoverFill: =LabelDetalisTitle_6.Fill
-            PressedBorderColor: =LabelDetalisTitle_6.BorderColor
-            PressedColor: =LabelDetalisTitle_6.Color
-            PressedFill: =LabelDetalisTitle_6.Fill
-            Size: =15
-            Text: ="Detalles"
-            Width: =151
-            X: =942
-            Y: =82
-      - LabelDetailsSteps_6:
-          Control: Label@2.5.1
-          Group: GroupDetailsPanel_6
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
-            FocusedBorderColor: =LabelDetailsSteps_6.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            HoverBorderColor: =LabelDetailsSteps_6.BorderColor
-            HoverColor: =LabelDetailsSteps_6.Color
-            HoverFill: =LabelDetailsSteps_6.Fill
-            OnSelect: |-
-              =UpdateContext({IsShowResourcesTab: false})
-            PressedBorderColor: =LabelDetailsSteps_6.BorderColor
-            PressedColor: =LabelDetailsSteps_6.Color
-            PressedFill: =LabelDetailsSteps_6.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Pasos"
-            Width: =59
-            X: =942
-            Y: =130
-      - LabelDetailsResources_6:
-          Control: Label@2.5.1
-          Group: GroupDetailsPanel_6
-          Properties:
-            Align: =Align.Center
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
-            FocusedBorderColor: =LabelDetailsResources_6.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            HoverBorderColor: =LabelDetailsResources_6.BorderColor
-            HoverColor: =LabelDetailsResources_6.Color
-            HoverFill: =LabelDetailsResources_6.Fill
-            OnSelect: |-
-              =UpdateContext({IsShowResourcesTab: true})
-            PressedBorderColor: =LabelDetailsResources_6.BorderColor
-            PressedColor: =LabelDetailsResources_6.Color
-            PressedFill: =LabelDetailsResources_6.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Recursos"
-            Width: =99
-            X: =942
-            Y: =130
-      - RectangleTab1_6:
-          Control: Rectangle@2.3.0
-          Group: GroupDetailsPanel_6
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab1_6.BorderColor
-            Height: =2
-            Visible: =!IsShowResourcesTab
-            Width: =44
-            X: =942
-            Y: =168
-      - RectangleTab2_6:
-          Control: Rectangle@2.3.0
-          Group: GroupDetailsPanel_6
-          Properties:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab2_6.BorderColor
-            Height: =2
-            Visible: =IsShowResourcesTab
-            Width: =76
-            X: =942
-            Y: =168
-      - HtmlTextFunctionPanelSteps_6:
-          Control: HtmlViewer@2.1.0
-          Group: GroupDetailsPanel_6
-          Properties:
-            AutoHeight: =true
-            DisabledBorderColor: =RGBA(56, 56, 56, 1)
-            Font: =Font.'Segoe UI'
-            Height: =596
-            HoverBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
-            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong> Por favor siga el paso a paso: </div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        Es necesario <strong>verificar los últimos registros</strong> de gestión de vehículos.  <br />\n        \n        <em></em>\n    \n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n         Utilice cada uno de los <strong>filtros según la necesidad.</strong>\n        <br />\n        <em></em>\n\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Puede verificar por fecha, sede o placa.</strong>\n        <br />\n        <em></em>\n        </em>\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n<div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        Verifique cada registro en verificación o tanqueo con la <strong>flecha a la derecha de cada registro.</strong>\n        <br />\n        <em></em>\n            <pre style=\"\"font-size: \" & StepsPanelCodeFontSize & \"pt; white-space: pre-wrap; word-break: break-all\"\">\n            </pre>\n        </em>\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n    \n    <div style=\"\"clear: both\"\"></div>\n</div>\n\n\""
-            Size: =8
-            Visible: =!IsShowResourcesTab
-            Width: =421
-            X: =942
-            Y: =168
-      - HtmlTextFunctionPanelResources_6:
-          Control: HtmlViewer@2.1.0
-          Group: GroupDetailsPanel_6
-          Properties:
-            DisabledBorderColor: =RGBA(56, 56, 56, 1)
-            Font: =Font.'Segoe UI'
-            Height: =195
-            HoverBorderColor: =HtmlTextFunctionPanelResources_6.BorderColor
-            HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
-            Visible: =IsShowResourcesTab
-            Width: =421
-            X: =943
-            Y: =572
       - Video1_6:
           Control: Video@2.4.1
           Properties:
@@ -1350,3 +1218,143 @@ Screens:
             Weight: ='TextCanvas.Weight'.Bold
             Width: =303
             X: =421
+      - Container2:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Height: =707
+            Width: =421
+            X: =942
+            Y: =61
+          Children:
+            - RectangleDetailsBackground_6:
+                Control: Rectangle@2.3.0
+                Group: GroupDetailsPanel_6
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0.16)
+                  BorderThickness: =1
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FocusedBorderColor: =RectangleDetailsBackground_6.BorderColor
+                  Height: =707
+                  Width: =421
+            - LabelDetalisTitle_6:
+                Control: Label@2.5.1
+                Group: GroupDetailsPanel_6
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  FocusedBorderColor: =LabelDetalisTitle_6.BorderColor
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =43
+                  HoverBorderColor: =LabelDetalisTitle_6.BorderColor
+                  HoverColor: =LabelDetalisTitle_6.Color
+                  HoverFill: =LabelDetalisTitle_6.Fill
+                  PressedBorderColor: =LabelDetalisTitle_6.BorderColor
+                  PressedColor: =LabelDetalisTitle_6.Color
+                  PressedFill: =LabelDetalisTitle_6.Fill
+                  Size: =15
+                  Text: ="Detalles"
+                  Width: =151
+                  X: =13
+                  Y: =32
+            - LabelDetailsSteps_6:
+                Control: Label@2.5.1
+                Group: GroupDetailsPanel_6
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+                  FocusedBorderColor: =LabelDetailsSteps_6.BorderColor
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                  Height: =43
+                  HoverBorderColor: =LabelDetailsSteps_6.BorderColor
+                  HoverColor: =LabelDetailsSteps_6.Color
+                  HoverFill: =LabelDetailsSteps_6.Fill
+                  OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: false})
+                  PressedBorderColor: =LabelDetailsSteps_6.BorderColor
+                  PressedColor: =LabelDetailsSteps_6.Color
+                  PressedFill: =LabelDetailsSteps_6.Fill
+                  Size: =10.5
+                  TabIndex: =0
+                  Text: ="Pasos"
+                  Width: =59
+                  X: =38
+                  Y: =74
+            - LabelDetailsResources_6:
+                Control: Label@2.5.1
+                Group: GroupDetailsPanel_6
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+                  FocusedBorderColor: =LabelDetailsResources_6.BorderColor
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                  Height: =43
+                  HoverBorderColor: =LabelDetailsResources_6.BorderColor
+                  HoverColor: =LabelDetailsResources_6.Color
+                  HoverFill: =LabelDetailsResources_6.Fill
+                  OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: true})
+                  PressedBorderColor: =LabelDetailsResources_6.BorderColor
+                  PressedColor: =LabelDetailsResources_6.Color
+                  PressedFill: =LabelDetailsResources_6.Fill
+                  Size: =10.5
+                  TabIndex: =0
+                  Text: ="Recursos"
+                  Width: =99
+                  X: =129
+                  Y: =72
+            - RectangleTab1_6:
+                Control: Rectangle@2.3.0
+                Group: GroupDetailsPanel_6
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  BorderStyle: =BorderStyle.None
+                  Fill: =RGBA(116, 39, 116, 1)
+                  FocusedBorderColor: =RectangleTab1_6.BorderColor
+                  Height: =2
+                  Visible: =!IsShowResourcesTab
+                  Width: =44
+                  X: =45
+                  Y: =115
+            - RectangleTab2_6:
+                Control: Rectangle@2.3.0
+                Group: GroupDetailsPanel_6
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  BorderStyle: =BorderStyle.None
+                  Fill: =RGBA(116, 39, 116, 1)
+                  FocusedBorderColor: =RectangleTab2_6.BorderColor
+                  Height: =2
+                  Visible: =IsShowResourcesTab
+                  Width: =76
+                  X: =140
+                  Y: =117
+            - HtmlTextFunctionPanelSteps_6:
+                Control: HtmlViewer@2.1.0
+                Group: GroupDetailsPanel_6
+                Properties:
+                  AutoHeight: =true
+                  DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                  Font: =Font.'Segoe UI'
+                  Height: =371
+                  HoverBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
+                  HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong> Por favor siga el paso a paso: </div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        Es necesario <strong>verificar los últimos registros</strong> de gestión de vehículos.  <br />\n        \n        <em></em>\n    \n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n         Utilice cada uno de los <strong>filtros según la necesidad.</strong>\n        <br />\n        <em></em>\n\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Puede verificar por fecha, sede o placa.</strong>\n        <br />\n        <em></em>\n        </em>\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n<div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        Verifique cada registro en verificación o tanqueo con la <strong>flecha a la derecha de cada registro.</strong>\n        <br />\n        <em></em>\n            <pre style=\"\"font-size: \" & StepsPanelCodeFontSize & \"pt; white-space: pre-wrap; word-break: break-all\"\">\n            </pre>\n        </em>\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n    \n    <div style=\"\"clear: both\"\"></div>\n</div>\n\n\""
+                  Size: =8
+                  Visible: =!IsShowResourcesTab
+                  Width: =421
+                  Y: =115
+            - HtmlTextFunctionPanelResources_6:
+                Control: HtmlViewer@2.1.0
+                Group: GroupDetailsPanel_6
+                Properties:
+                  DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                  Font: =Font.'Segoe UI'
+                  Height: =206
+                  HoverBorderColor: =HtmlTextFunctionPanelResources_6.BorderColor
+                  HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
+                  Visible: =IsShowResourcesTab
+                  Width: =421
+                  Y: =501

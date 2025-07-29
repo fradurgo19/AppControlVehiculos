@@ -204,195 +204,6 @@
         Y: =207
         ZIndex: =29
 
-    GroupDetailsPanel_3 As group:
-        Height: =5
-        Width: =5
-        X: =-906
-        Y: =-20
-        ZIndex: =29
-
-        RectangleDetailsBackground_3 As rectangle:
-            BorderColor: =RGBA(0, 0, 0, 0.16)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderColor: =RectangleDetailsBackground_3.BorderColor
-            Height: =708
-            Width: =441
-            X: =925
-            Y: =60
-            ZIndex: =21
-
-        LabelDetalisTitle_3 As label:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =RGBA(0, 0, 0, 1)
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FocusedBorderColor: =LabelDetalisTitle_3.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Lighter
-            HoverBorderColor: =LabelDetalisTitle_3.BorderColor
-            HoverColor: =LabelDetalisTitle_3.Color
-            HoverFill: =LabelDetalisTitle_3.Fill
-            PressedBorderColor: =LabelDetalisTitle_3.BorderColor
-            PressedColor: =LabelDetalisTitle_3.Color
-            PressedFill: =LabelDetalisTitle_3.Fill
-            Size: =15
-            Text: ="Detalles"
-            Width: =157
-            X: =955
-            Y: =82
-            ZIndex: =22
-
-        LabelDetailsSteps_3 As label:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FocusedBorderColor: =LabelDetailsSteps_3.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            HoverBorderColor: =LabelDetailsSteps_3.BorderColor
-            HoverColor: =LabelDetailsSteps_3.Color
-            HoverFill: =LabelDetailsSteps_3.Fill
-            OnSelect: |-
-                =UpdateContext({IsShowResourcesTab: false})
-            PressedBorderColor: =LabelDetailsSteps_3.BorderColor
-            PressedColor: =LabelDetailsSteps_3.Color
-            PressedFill: =LabelDetailsSteps_3.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Pasos"
-            Width: =62
-            X: =960
-            Y: =130
-            ZIndex: =23
-
-        LabelDetailsResources_3 As label:
-            Align: =Align.Center
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FocusedBorderColor: =LabelDetailsResources_3.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            HoverBorderColor: =LabelDetailsResources_3.BorderColor
-            HoverColor: =LabelDetailsResources_3.Color
-            HoverFill: =LabelDetailsResources_3.Fill
-            OnSelect: |-
-                =UpdateContext({IsShowResourcesTab: true})
-            PressedBorderColor: =LabelDetailsResources_3.BorderColor
-            PressedColor: =LabelDetailsResources_3.Color
-            PressedFill: =LabelDetailsResources_3.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Recursos"
-            Width: =103
-            X: =1022
-            Y: =130
-            ZIndex: =24
-
-        RectangleTab1_3 As rectangle:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab1_3.BorderColor
-            Height: =2
-            Visible: =!IsShowResourcesTab
-            Width: =46
-            X: =964
-            Y: =168
-            ZIndex: =25
-
-        RectangleTab2_3 As rectangle:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab2_3.BorderColor
-            Height: =2
-            Visible: =IsShowResourcesTab
-            Width: =79
-            X: =1035
-            Y: =168
-            ZIndex: =26
-
-        HtmlTextFunctionPanelSteps_3 As htmlViewer:
-            Font: =Font.'Segoe UI'
-            Height: =596
-            HoverBorderColor: =HtmlTextFunctionPanelSteps_3.BorderColor
-            HtmlText: |-
-                ="
-                <div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
-                    <div style=""width: 85%; margin: 10px 0 20px;"">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>
-                  
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >1</div>
-                    <div style=""float: left; width: 75%; "">
-                        <strong> Tablero / Testigos:</strong> Los testigos deben encender.<br /><br />
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >2</div>
-                    <div style=""float: left; width: 75%; "">
-                        <strong>Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo:</strong> Deben estar fijos y funcionales.<br /><br />
-                    </div>
-                    <div style=""clear: both""></div>
-                  
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >3</div>
-                    <div style=""float: left; width: 75%; "">
-                        <strong>Cinturones de Seguridad / Hebillas / Candados:</strong> Un cinturón por silla, sin desgaste. La hebilla debe enganchar con el candado.
-                 <br /><br />
-                         </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >4</div>
-                    <div style=""float: left; width: 75%; "">
-                        <strong>Espejos retrovisores:</strong> Estables, uno en el centro, sin rupturas ni fisuras.<br /><br />
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >5</div>
-                    <div style=""float: left; width: 75%; "">
-                        <strong> Bocina / Pito de Reversa:</strong> Debe sonar y escucharse a 50 metros de distancia/Debe sonar cuando se active el cambio de retroceso. <br /><br />
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >6</div>
-                    <div style=""float: left; width: 75%; "">
-                        <strong>Luces Delanteras / Traseras / Direccionales / Freno / Reversa:</strong> Deben encender todas las luces bajas, medias, altas, direccionales, parqueo, freno y reversa. <br /><br />
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                
-                "
-            PressedBorderColor: =HtmlTextFunctionPanelSteps_3.BorderColor
-            Size: =8
-            Visible: =!IsShowResourcesTab
-            Width: =441
-            X: =924
-            Y: =170
-            ZIndex: =27
-
-        HtmlTextFunctionPanelResources_3 As htmlViewer:
-            Font: =Font.'Segoe UI'
-            Height: =195
-            HoverBorderColor: =HtmlTextFunctionPanelResources_3.BorderColor
-            HtmlText: |-
-                ="
-                <div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
-                  
-                    <div style=""margin: 20px 0; font-weight: bold;"">Soporte:</div>
-                    <ul> 
-                      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>
-                      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>
-                      <li><a href=''>Add a data connection in PowerApps</a></li>
-                      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>
-                    </ul>
-                  </div>"
-            PressedBorderColor: =HtmlTextFunctionPanelResources_3.BorderColor
-            Size: =13
-            Visible: =IsShowResourcesTab
-            Width: =441
-            X: =925
-            Y: =572
-            ZIndex: =28
-
     Dropdown2_6 As dropdown:
         BorderColor: =Color.DarkSlateGray
         ChevronBackground: =Color.DarkSlateGray
@@ -886,4 +697,208 @@
         X: =368
         Y: =70
         ZIndex: =59
+
+    Container5 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =708
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =442
+        X: =924
+        Y: =60
+        ZIndex: =60
+
+        GroupDetailsPanel_3 As group:
+            Height: =5
+            minimumHeight: =5
+            minimumWidth: =5
+            Visible: =true
+            Width: =5
+            X: =-924
+            Y: =-60
+            ZIndex: =9
+
+            RectangleDetailsBackground_3 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0.16)
+                BorderThickness: =1
+                Fill: =RGBA(255, 255, 255, 1)
+                FocusedBorderColor: =RectangleDetailsBackground_3.BorderColor
+                Height: =706
+                Width: =441
+                X: =1
+                ZIndex: =1
+
+            LabelDetalisTitle_3 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =LabelDetalisTitle_3.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Lighter
+                Height: =43
+                HoverBorderColor: =LabelDetalisTitle_3.BorderColor
+                HoverColor: =LabelDetalisTitle_3.Color
+                HoverFill: =LabelDetalisTitle_3.Fill
+                PressedBorderColor: =LabelDetalisTitle_3.BorderColor
+                PressedColor: =LabelDetalisTitle_3.Color
+                PressedFill: =LabelDetalisTitle_3.Fill
+                Size: =15
+                Text: ="Detalles"
+                Width: =157
+                X: =31
+                Y: =24
+                ZIndex: =2
+
+            LabelDetailsSteps_3 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =LabelDetailsSteps_3.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                Height: =43
+                HoverBorderColor: =LabelDetailsSteps_3.BorderColor
+                HoverColor: =LabelDetailsSteps_3.Color
+                HoverFill: =LabelDetailsSteps_3.Fill
+                OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: false})
+                PressedBorderColor: =LabelDetailsSteps_3.BorderColor
+                PressedColor: =LabelDetailsSteps_3.Color
+                PressedFill: =LabelDetailsSteps_3.Fill
+                Size: =10.5
+                TabIndex: =0
+                Text: ="Pasos"
+                Width: =62
+                X: =36
+                Y: =76
+                ZIndex: =3
+
+            LabelDetailsResources_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =LabelDetailsResources_3.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                Height: =43
+                HoverBorderColor: =LabelDetailsResources_3.BorderColor
+                HoverColor: =LabelDetailsResources_3.Color
+                HoverFill: =LabelDetailsResources_3.Fill
+                OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: true})
+                PressedBorderColor: =LabelDetailsResources_3.BorderColor
+                PressedColor: =LabelDetailsResources_3.Color
+                PressedFill: =LabelDetailsResources_3.Fill
+                Size: =10.5
+                TabIndex: =0
+                Text: ="Recursos"
+                Width: =103
+                X: =98
+                Y: =76
+                ZIndex: =4
+
+            RectangleTab1_3 As rectangle:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(116, 39, 116, 1)
+                FocusedBorderColor: =RectangleTab1_3.BorderColor
+                Height: =2
+                Visible: =!IsShowResourcesTab
+                Width: =46
+                X: =40
+                Y: =117
+                ZIndex: =5
+
+            RectangleTab2_3 As rectangle:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(116, 39, 116, 1)
+                FocusedBorderColor: =RectangleTab2_3.BorderColor
+                Height: =2
+                Visible: =IsShowResourcesTab
+                Width: =79
+                X: =111
+                Y: =117
+                ZIndex: =6
+
+            HtmlTextFunctionPanelSteps_3 As htmlViewer:
+                Font: =Font.'Segoe UI'
+                Height: =587
+                HoverBorderColor: =HtmlTextFunctionPanelSteps_3.BorderColor
+                HtmlText: |-
+                    ="
+                    <div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                        <div style=""width: 85%; margin: 10px 0 20px;"">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>
+                      
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >1</div>
+                        <div style=""float: left; width: 75%; "">
+                            <strong> Tablero / Testigos:</strong> Los testigos deben encender.<br /><br />
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >2</div>
+                        <div style=""float: left; width: 75%; "">
+                            <strong>Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo:</strong> Deben estar fijos y funcionales.<br /><br />
+                        </div>
+                        <div style=""clear: both""></div>
+                      
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >3</div>
+                        <div style=""float: left; width: 75%; "">
+                            <strong>Cinturones de Seguridad / Hebillas / Candados:</strong> Un cinturón por silla, sin desgaste. La hebilla debe enganchar con el candado.
+                     <br /><br />
+                             </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >4</div>
+                        <div style=""float: left; width: 75%; "">
+                            <strong>Espejos retrovisores:</strong> Estables, uno en el centro, sin rupturas ni fisuras.<br /><br />
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >5</div>
+                        <div style=""float: left; width: 75%; "">
+                            <strong> Bocina / Pito de Reversa:</strong> Debe sonar y escucharse a 50 metros de distancia/Debe sonar cuando se active el cambio de retroceso. <br /><br />
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >6</div>
+                        <div style=""float: left; width: 75%; "">
+                            <strong>Luces Delanteras / Traseras / Direccionales / Freno / Reversa:</strong> Deben encender todas las luces bajas, medias, altas, direccionales, parqueo, freno y reversa. <br /><br />
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                    
+                    "
+                Size: =8
+                Visible: =!IsShowResourcesTab
+                Width: =441
+                X: =1
+                Y: =119
+                ZIndex: =7
+
+            HtmlTextFunctionPanelResources_3 As htmlViewer:
+                Font: =Font.'Segoe UI'
+                Height: =211
+                HoverBorderColor: =HtmlTextFunctionPanelResources_3.BorderColor
+                HtmlText: |-
+                    ="
+                    <div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                      
+                        <div style=""margin: 20px 0; font-weight: bold;"">Soporte:</div>
+                        <ul> 
+                          <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>
+                          <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>
+                          <li><a href=''>Add a data connection in PowerApps</a></li>
+                          <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>
+                        </ul>
+                      </div>"
+                Size: =13
+                Visible: =IsShowResourcesTab
+                Width: =441
+                X: =1
+                Y: =495
+                ZIndex: =8
 

@@ -1128,222 +1128,6 @@
             Y: =87
             ZIndex: =45
 
-    GroupDetailsPanel_5 As group:
-        Height: =5
-        Width: =5
-        X: =-906
-        Y: =-20
-        ZIndex: =54
-
-        RectangleDetailsBackground_5 As rectangle:
-            BorderColor: =RGBA(0, 0, 0, 0.16)
-            BorderThickness: =1
-            Fill: =RGBA(255, 255, 255, 1)
-            FocusedBorderColor: =RectangleDetailsBackground_5.BorderColor
-            Height: =708
-            Width: =419
-            X: =922
-            Y: =60
-            ZIndex: =46
-
-        LabelDetalisTitle_5 As label:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =RGBA(0, 0, 0, 1)
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FocusedBorderColor: =LabelDetalisTitle_5.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Lighter
-            HoverBorderColor: =LabelDetalisTitle_5.BorderColor
-            HoverColor: =LabelDetalisTitle_5.Color
-            HoverFill: =LabelDetalisTitle_5.Fill
-            PressedBorderColor: =LabelDetalisTitle_5.BorderColor
-            PressedColor: =LabelDetalisTitle_5.Color
-            PressedFill: =LabelDetalisTitle_5.Fill
-            Size: =15
-            Text: ="Detalles"
-            Width: =149
-            X: =922
-            Y: =82
-            ZIndex: =47
-
-        LabelDetailsSteps_5 As label:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FocusedBorderColor: =LabelDetailsSteps_5.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            HoverBorderColor: =LabelDetailsSteps_5.BorderColor
-            HoverColor: =LabelDetailsSteps_5.Color
-            HoverFill: =LabelDetailsSteps_5.Fill
-            OnSelect: |-
-                =UpdateContext({IsShowResourcesTab: false})
-            PressedBorderColor: =LabelDetailsSteps_5.BorderColor
-            PressedColor: =LabelDetailsSteps_5.Color
-            PressedFill: =LabelDetailsSteps_5.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Pasos"
-            Width: =58
-            X: =944
-            Y: =132
-            ZIndex: =48
-
-        LabelDetailsResources_5 As label:
-            Align: =Align.Center
-            BorderColor: =RGBA(32, 54, 71, 1)
-            Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FocusedBorderColor: =LabelDetailsResources_5.BorderColor
-            Font: =Font.'Segoe UI'
-            FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
-            HoverBorderColor: =LabelDetailsResources_5.BorderColor
-            HoverColor: =LabelDetailsResources_5.Color
-            HoverFill: =LabelDetailsResources_5.Fill
-            OnSelect: |-
-                =UpdateContext({IsShowResourcesTab: true})
-            PressedBorderColor: =LabelDetailsResources_5.BorderColor
-            PressedColor: =LabelDetailsResources_5.Color
-            PressedFill: =LabelDetailsResources_5.Fill
-            Size: =10.5
-            TabIndex: =0
-            Text: ="Recursos"
-            Width: =98
-            X: =997
-            Y: =133
-            ZIndex: =49
-
-        RectangleTab1_5 As rectangle:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab1_5.BorderColor
-            Height: =2
-            Visible: =!IsShowResourcesTab
-            Width: =43
-            X: =948
-            Y: =165
-            ZIndex: =50
-
-        RectangleTab2_5 As rectangle:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.None
-            Fill: =RGBA(116, 39, 116, 1)
-            FocusedBorderColor: =RectangleTab2_5.BorderColor
-            Height: =0
-            Visible: =IsShowResourcesTab
-            Width: =51
-            X: =1020
-            Y: =173
-            ZIndex: =51
-
-        HtmlTextFunctionPanelSteps_5 As htmlViewer:
-            AutoHeight: =true
-            Font: =Font.'Segoe UI'
-            Height: =596
-            HoverBorderColor: =HtmlTextFunctionPanelSteps_5.BorderColor
-            HtmlText: |-
-                ="
-                <div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
-                    <div style=""width: 85%; margin: 10px 0 20px;"">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>
-                  
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >1</div>
-                    <div style=""float: left; width: 75%; "">
-                        Es necesario elegir la <strong>fecha exacta de la solicitud del servicio.</strong> 
-                        <br />
-                       
-                    
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >2</div>
-                    <div style=""float: left; width: 75%; "">
-                         Introduzca el <strong>nombre completo del solicitante.</strong>
-                        <br />
-                       
-                
-                    </div>
-                    <div style=""clear: both""></div>
-                  
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >3</div>
-                    <div style=""float: left; width: 75%; "">
-                        Introduzca el <strong>nombre de la empresa.</strong>
-                        <br />
-                        
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >4</div>
-                    <div style=""float: left; width: 75%; "">
-                        Introduzca el <strong>destino del servicio.</strong>
-                    <br />
-                    
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >5</div>
-                    <div style=""float: left; width: 75%; "">
-                         Introduzca la <strong>Orden de Trabajo (OT).</strong>
-                    <br />
-                   
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >6</div>
-                    <div style=""float: left; width: 75%; "">
-                         Introduzca el <strong>motivo de transporte.</strong>
-                    <br />
-                    
-                </div>
-                    <div style=""clear: both""></div>
-                
-                    <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >7</div>
-                    <div style=""float: left; width: 75%; "">
-                         Introduzca la <strong>fecha de salida o la fecha de llegada</strong> planificadas.
-                    <br />
-                    
-                </div>
-                           
-                    </div>
-                    <div style=""clear: both""></div>
-                
-                    
-                    <div style=""clear: both""></div>
-                </div>
-                
-                "
-            PressedBorderColor: =HtmlTextFunctionPanelSteps_5.BorderColor
-            Size: =8
-            Visible: =!IsShowResourcesTab
-            Width: =419
-            X: =922
-            Y: =172
-            ZIndex: =52
-
-        HtmlTextFunctionPanelResources_5 As htmlViewer:
-            Font: =Font.'Segoe UI'
-            Height: =195
-            HoverBorderColor: =HtmlTextFunctionPanelResources_5.BorderColor
-            HtmlText: |-
-                ="
-                <div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
-                  
-                    <div style=""margin: 20px 0; font-weight: bold;"">Soporte:</div>
-                    <ul> 
-                      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>
-                      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>
-                      <li><a href=''>Add a data connection in PowerApps</a></li>
-                      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>
-                    </ul>
-                  </div>"
-            PressedBorderColor: =HtmlTextFunctionPanelResources_5.BorderColor
-            Size: =13
-            Visible: =IsShowResourcesTab
-            Width: =419
-            X: =922
-            Y: =572
-            ZIndex: =53
-
     Form1_1 As form:
         BorderColor: =Color.Gray
         DataSource: =ListaPrestamoVehiculos
@@ -1534,6 +1318,97 @@
                 Width: =30
                 Wrap: =false
                 Y: =DataCardKey72.Y
+                ZIndex: =4
+
+        Placa_DataCard3 As typedDataCard.comboBoxEditCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Placa"
+            Default: =ThisItem.Placa
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,Placa)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue21.Selected
+            Width: =225
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey21 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =13
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue21 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(100, 118, 132, 1)
+                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: =Parent.Default
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                InputTextPlaceholder: ="PLACA"
+                Items: =Choices([@ListaPrestamoVehiculos].Placa)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(32, 54, 71, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(ListaPrestamoVehiculos.Placa,DataCardValue21.SearchText)
+                SelectionFill: =RGBA(100, 118, 132, 1)
+                SelectMultiple: =false
+                Size: =13
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                ZIndex: =2
+
+            ErrorMessage62 As label:
+                AutoHeight: =true
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue21.Y + DataCardValue21.Height
+                ZIndex: =3
+
+            StarVisible62 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =DataCardKey21.Height
+                Size: =13
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey21.Y
                 ZIndex: =4
 
         KMsSalida_DataCard3 As typedDataCard.numberEditCard:
@@ -1808,97 +1683,6 @@
                 Y: =DataCardKey11.Y
                 ZIndex: =4
 
-        Placa_DataCard3 As typedDataCard.comboBoxEditCard:
-            BorderColor: =RGBA(32, 54, 71, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="Placa"
-            Default: =ThisItem.Placa
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@ListaPrestamoVehiculos],DataSourceInfo.DisplayName,Placa)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue21.Selected
-            Width: =225
-            X: =2
-            Y: =0
-            ZIndex: =1
-
-            DataCardKey21 As label:
-                AutoHeight: =true
-                Color: =RGBA(32, 54, 71, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =34
-                Size: =13
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue21 As combobox:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =RGBA(100, 118, 132, 1)
-                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
-                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
-                ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
-                ChevronHoverFill: =RGBA(255, 255, 255, 1)
-                DefaultSelectedItems: =Parent.Default
-                DisabledBorderColor: =RGBA(166, 166, 166, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayFields: =["Value"]
-                DisplayMode: =Parent.DisplayMode
-                HoverColor: =RGBA(0, 0, 0, 1)
-                HoverFill: =RGBA(205, 209, 213, 1)
-                InputTextPlaceholder: ="PLACA"
-                Items: =Choices([@ListaPrestamoVehiculos].Placa)
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(32, 54, 71, 1)
-                SearchFields: =["Value"]
-                SearchItems: =Choices(ListaPrestamoVehiculos.Placa,DataCardValue21.SearchText)
-                SelectionFill: =RGBA(100, 118, 132, 1)
-                SelectMultiple: =false
-                Size: =13
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey21.Y + DataCardKey21.Height + 5
-                ZIndex: =2
-
-            ErrorMessage62 As label:
-                AutoHeight: =true
-                Color: =RGBA(168, 0, 0, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue21.Y + DataCardValue21.Height
-                ZIndex: =3
-
-            StarVisible62 As label:
-                Align: =Align.Center
-                Color: =RGBA(32, 54, 71, 1)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Height: =DataCardKey21.Height
-                Size: =13
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey21.Y
-                ZIndex: =4
-
     Icon1_2 As icon.Reload:
         BorderColor: =RGBA(32, 54, 71, 1)
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
@@ -2054,4 +1838,235 @@
         X: =272
         Y: =167
         ZIndex: =65
+
+    Container3 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =707
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =441
+        X: =925
+        Y: =61
+        ZIndex: =66
+
+        GroupDetailsPanel_5 As group:
+            Height: =5
+            minimumHeight: =5
+            minimumWidth: =5
+            Visible: =true
+            Width: =5
+            X: =-897
+            Y: =-60
+            ZIndex: =9
+
+            RectangleDetailsBackground_5 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0.16)
+                BorderThickness: =1
+                Fill: =RGBA(255, 255, 255, 1)
+                FocusedBorderColor: =RectangleDetailsBackground_5.BorderColor
+                Height: =704
+                Width: =440
+                X: =1
+                ZIndex: =1
+
+            LabelDetalisTitle_5 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =LabelDetalisTitle_5.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Lighter
+                Height: =41
+                HoverBorderColor: =LabelDetalisTitle_5.BorderColor
+                HoverColor: =LabelDetalisTitle_5.Color
+                HoverFill: =LabelDetalisTitle_5.Fill
+                PressedBorderColor: =LabelDetalisTitle_5.BorderColor
+                PressedColor: =LabelDetalisTitle_5.Color
+                PressedFill: =LabelDetalisTitle_5.Fill
+                Size: =15
+                Text: ="Detalles"
+                Width: =158
+                X: =1
+                Y: =22
+                ZIndex: =2
+
+            LabelDetailsSteps_5 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =If(IsShowResourcesTab, RGBA(102,102,102,1), RGBA(51,51,51,1))
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =LabelDetailsSteps_5.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(!IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                Height: =41
+                HoverBorderColor: =LabelDetailsSteps_5.BorderColor
+                HoverColor: =LabelDetailsSteps_5.Color
+                HoverFill: =LabelDetailsSteps_5.Fill
+                OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: false})
+                PressedBorderColor: =LabelDetailsSteps_5.BorderColor
+                PressedColor: =LabelDetailsSteps_5.Color
+                PressedFill: =LabelDetailsSteps_5.Fill
+                Size: =10.5
+                TabIndex: =0
+                Text: ="Pasos"
+                Width: =61
+                X: =24
+                Y: =73
+                ZIndex: =3
+
+            LabelDetailsResources_5 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =If(IsShowResourcesTab, RGBA(51,51,51,1), RGBA(102,102,102,1))
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderColor: =LabelDetailsResources_5.BorderColor
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(IsShowResourcesTab,FontWeight.Bold, FontWeight.Normal)
+                Height: =41
+                HoverBorderColor: =LabelDetailsResources_5.BorderColor
+                HoverColor: =LabelDetailsResources_5.Color
+                HoverFill: =LabelDetailsResources_5.Fill
+                OnSelect: |-
+                    =UpdateContext({IsShowResourcesTab: true})
+                PressedBorderColor: =LabelDetailsResources_5.BorderColor
+                PressedColor: =LabelDetailsResources_5.Color
+                PressedFill: =LabelDetailsResources_5.Fill
+                Size: =10.5
+                TabIndex: =0
+                Text: ="Recursos"
+                Width: =104
+                X: =80
+                Y: =74
+                ZIndex: =4
+
+            RectangleTab1_5 As rectangle:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(116, 39, 116, 1)
+                FocusedBorderColor: =RectangleTab1_5.BorderColor
+                Height: =2
+                Visible: =!IsShowResourcesTab
+                Width: =45
+                X: =28
+                Y: =107
+                ZIndex: =5
+
+            RectangleTab2_5 As rectangle:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(116, 39, 116, 1)
+                FocusedBorderColor: =RectangleTab2_5.BorderColor
+                Height: =0
+                Visible: =IsShowResourcesTab
+                Width: =54
+                X: =105
+                Y: =115
+                ZIndex: =6
+
+            HtmlTextFunctionPanelSteps_5 As htmlViewer:
+                AutoHeight: =true
+                Font: =Font.'Segoe UI'
+                Height: =331
+                HoverBorderColor: =HtmlTextFunctionPanelSteps_5.BorderColor
+                HtmlText: |-
+                    ="
+                    <div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                        <div style=""width: 85%; margin: 10px 0 20px;"">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>
+                      
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >1</div>
+                        <div style=""float: left; width: 75%; "">
+                            Es necesario elegir la <strong>fecha exacta de la solicitud del servicio.</strong> 
+                            <br />
+                           
+                        
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >2</div>
+                        <div style=""float: left; width: 75%; "">
+                             Introduzca el <strong>nombre completo del solicitante.</strong>
+                            <br />
+                           
+                    
+                        </div>
+                        <div style=""clear: both""></div>
+                      
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >3</div>
+                        <div style=""float: left; width: 75%; "">
+                            Introduzca el <strong>nombre de la empresa.</strong>
+                            <br />
+                            
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >4</div>
+                        <div style=""float: left; width: 75%; "">
+                            Introduzca el <strong>destino del servicio.</strong>
+                        <br />
+                        
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >5</div>
+                        <div style=""float: left; width: 75%; "">
+                             Introduzca la <strong>Orden de Trabajo (OT).</strong>
+                        <br />
+                       
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >6</div>
+                        <div style=""float: left; width: 75%; "">
+                             Introduzca el <strong>motivo de transporte.</strong>
+                        <br />
+                        
+                    </div>
+                        <div style=""clear: both""></div>
+                    
+                        <div style=""float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;"" >7</div>
+                        <div style=""float: left; width: 75%; "">
+                             Introduzca la <strong>fecha de salida o la fecha de llegada</strong> planificadas.
+                        <br />
+                        
+                    </div>
+                               
+                        </div>
+                        <div style=""clear: both""></div>
+                    
+                        
+                        <div style=""clear: both""></div>
+                    </div>
+                    
+                    "
+                Size: =8
+                Visible: =!IsShowResourcesTab
+                Width: =440
+                X: =1
+                Y: =98
+                ZIndex: =7
+
+            HtmlTextFunctionPanelResources_5 As htmlViewer:
+                Font: =Font.'Segoe UI'
+                Height: =198
+                HoverBorderColor: =HtmlTextFunctionPanelResources_5.BorderColor
+                HtmlText: |-
+                    ="
+                    <div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>
+                      
+                        <div style=""margin: 20px 0; font-weight: bold;"">Soporte:</div>
+                        <ul> 
+                          <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>
+                          <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>
+                          <li><a href=''>Add a data connection in PowerApps</a></li>
+                          <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>
+                        </ul>
+                      </div>"
+                Size: =13
+                Visible: =IsShowResourcesTab
+                Width: =440
+                X: =1
+                Y: =506
+                ZIndex: =8
 
