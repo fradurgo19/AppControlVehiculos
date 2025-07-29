@@ -341,7 +341,7 @@ ListaGestion As screen:
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_6.BorderColor
-            Size: =15
+            Size: =10
             Visible: =!IsShowResourcesTab
             Width: =441
             X: =924

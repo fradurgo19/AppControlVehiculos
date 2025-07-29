@@ -1579,7 +1579,7 @@ PrevenTanqueo As screen:
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps.BorderColor
-            Size: =13
+            Size: =10
             Visible: =!IsShowResourcesTab
             Width: =420
             X: =946

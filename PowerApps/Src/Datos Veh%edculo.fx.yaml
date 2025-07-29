@@ -742,7 +742,7 @@
                     <div style=""clear: both""></div>
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_2.BorderColor
-            Size: =14
+            Size: =10
             Visible: =!IsShowResourcesTab
             Width: =441
             X: =924

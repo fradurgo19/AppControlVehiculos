@@ -950,7 +950,7 @@ SalidaFirma As screen:
                     
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_1.BorderColor
-            Size: =13
+            Size: =10
             Visible: =!IsShowResourcesTab
             Width: =420
             X: =946

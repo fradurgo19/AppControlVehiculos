@@ -362,7 +362,7 @@
                 
                 "
             PressedBorderColor: =HtmlTextFunctionPanelSteps_3.BorderColor
-            Size: =14
+            Size: =10
             Visible: =!IsShowResourcesTab
             Width: =441
             X: =924
