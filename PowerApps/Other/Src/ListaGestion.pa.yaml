@@ -239,7 +239,7 @@ Screens:
             BorderColor: =RGBA(0, 0, 0, 1)
             BorderThickness: =1
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =186
+            Height: =293
             Items: |+
               =Sort(
                   Filter(
@@ -263,59 +263,58 @@ Screens:
             - Image7:
                 Control: Image@2.2.3
                 Properties:
-                  BorderColor: =RGBA(32, 54, 71, 1)
-                  Height: =45
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
+                  Height: =51
                   Image: =ThisItem.Firma
                   OnSelect: =Select(Parent)
-                  RadiusBottomLeft: =8
-                  RadiusBottomRight: =8
-                  RadiusTopLeft: =8
-                  RadiusTopRight: =8
-                  Width: =84
-                  X: =25
-                  Y: =88
+                  Width: =94
+                  X: =14
+                  Y: =82
             - Title1:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =45
+                  Height: =51
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =11
+                  Size: =9
                   Text: =ThisItem.NombreSolicitante
                   Tooltip: ="Nombre Solicitante"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =118
-                  X: =137
-                  Y: =88
+                  Width: =116
+                  X: =139
+                  Y: =82
             - Subtitle1:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =50
+                  Height: =53
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =9
                   Text: =ThisItem.Destino
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =114
-                  X: =268
-                  Y: =83
+                  Width: =96
+                  X: =273
+                  Y: =80
             - NextArrow1:
                 Control: Classic/Icon@2.5.0
                 Properties:
@@ -325,7 +324,7 @@ Screens:
                   DisabledBorderColor: =RGBA(56, 56, 56, 1)
                   DisabledColor: =RGBA(119, 119, 119, 1)
                   Fill: =RGBA(214, 221, 224, 1)
-                  Height: =71
+                  Height: =57
                   Icon: =Icon.ChevronRight
                   OnSelect: =Navigate(Imprimir1)
                   PaddingBottom: =16
@@ -333,7 +332,7 @@ Screens:
                   PaddingRight: =16
                   PaddingTop: =16
                   Tooltip: ="Ver los detalles del elemento"
-                  Width: =62
+                  Width: =51
                   X: =Parent.TemplateWidth - Self.Width - 12
                   Y: =25
             - Separator1:
@@ -358,28 +357,31 @@ Screens:
             - Subtitle1_1:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =30
+                  Height: =23
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =9
                   Text: =ThisItem.Placa.Value
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =81
-                  X: =28
+                  Width: =94
+                  X: =14
                   Y: =25
             - Subtitle1_2:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
                   Font: =Font.'Open Sans'
@@ -390,17 +392,18 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =11
+                  Size: =9
                   Text: =ThisItem.FechaSolicitud
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =164
-                  X: =209
+                  Width: =207
+                  X: =139
                   Y: =25
             - Subtitle1_3:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
                   Font: =Font.'Open Sans'
@@ -411,17 +414,18 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =9
                   Text: =ThisItem.OT
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =79
-                  X: =391
+                  X: =384
                   Y: =25
             - Subtitle1_4:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
                   Font: =Font.'Open Sans'
@@ -432,31 +436,28 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =11
+                  Size: =9
                   Text: =ThisItem.Sede.Value
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =102
-                  X: =491
+                  X: =496
                   Y: =25
             - Image7_2:
                 Control: Image@2.2.3
                 Properties:
-                  BorderColor: =RGBA(32, 54, 71, 1)
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Height: =53
-                  Image: =Last(FirstN(ThisItem.'Datos adjuntos', 3)).Value
+                  Image: =Last(FirstN(ThisItem.'Datos adjuntos', 2)).Value
                   OnSelect: =Select(Parent)
-                  RadiusBottomLeft: =8
-                  RadiusBottomRight: =8
-                  RadiusTopLeft: =8
-                  RadiusTopRight: =8
                   Width: =79
-                  X: =391
+                  X: =384
                   Y: =80
             - Subtitle1_8:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -466,16 +467,17 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Fecha:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =241
+                  Width: =207
+                  X: =139
             - Subtitle1_10:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -485,16 +487,17 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Placa:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =28
+                  Width: =94
+                  X: =14
             - Subtitle1_11:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -504,16 +507,17 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="OT:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =391
+                  Width: =79
+                  X: =384
             - Subtitle1_12:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -523,16 +527,17 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Sede:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =68
+                  Width: =105
                   X: =493
             - Subtitle1_13:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -542,17 +547,18 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Firma:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =25
+                  Width: =94
+                  X: =14
                   Y: =57
             - Subtitle1_14:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -562,77 +568,82 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Solicitante:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =92
+                  Width: =116
                   X: =139
                   Y: =57
             - Subtitle1_15:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =23
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Destino:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =73
+                  Width: =96
                   X: =273
-                  Y: =55
+                  Y: =57
             - Subtitle1_16:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =23
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Foto:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =73
+                  Width: =80
                   X: =383
-                  Y: =52
+                  Y: =57
             - Subtitle1_22:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =12
+                  Size: =10
                   Text: ="Gestión:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =73
+                  Width: =102
                   X: =496
-                  Y: =52
+                  Y: =57
             - Subtitle1_7:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderThickness: =1
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
                   Font: =Font.'Open Sans'
@@ -643,11 +654,10 @@ Screens:
                   PaddingLeft: =0
                   PaddingRight: =0
                   PaddingTop: =0
-                  Size: =11
+                  Size: =9
                   Text: =ThisItem.Gestion.Value
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =97
+                  Width: =102
                   X: =496
                   Y: =77
             - Subtitle1_23:
@@ -875,7 +885,7 @@ Screens:
             BorderColor: =RGBA(0, 0, 0, 1)
             BorderThickness: =1
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =223
+            Height: =171
             Items: |-
               =Sort(
                   Filter(
@@ -890,11 +900,12 @@ Screens:
             TemplateSize: =140
             Width: =691
             X: =233
-            Y: =484
+            Y: =572
           Children:
             - Title1_1:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
@@ -909,13 +920,13 @@ Screens:
                   Size: =11
                   Text: =ThisItem.ValorTanqueo1
                   Tooltip: ="Nombre Solicitante"
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =95
-                  X: =164
-                  Y: =96
+                  X: =165
+                  Y: =93
             - Subtitle1_9:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
@@ -930,10 +941,9 @@ Screens:
                   Size: =11
                   Text: =ThisItem.CantidadTanqueoGalones1
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =145
-                  X: =338
-                  Y: =31
+                  Width: =151
+                  X: =340
+                  Y: =29
             - NextArrow1_1:
                 Control: Classic/Icon@2.5.0
                 Properties:
@@ -976,6 +986,7 @@ Screens:
             - Subtitle1_5:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
@@ -990,13 +1001,13 @@ Screens:
                   Size: =11
                   Text: =ThisItem.Placa.Value
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
                   Width: =117
                   X: =26
                   Y: =31
             - Subtitle1_6:
                 Control: Label@2.5.1
                 Properties:
+                  Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   Color: =RGBA(255, 255, 255, 1)
                   Fill: =RGBA(0, 0, 0, 1)
@@ -1011,24 +1022,24 @@ Screens:
                   Size: =11
                   Text: =ThisItem.FechaTanqueo1
                   Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =148
-                  X: =167
+                  Width: =151
+                  X: =164
                   Y: =28
             - Image9:
                 Control: Image@2.2.3
                 Properties:
                   BorderColor: =RGBA(32, 54, 71, 1)
-                  Height: =46
+                  Height: =87
                   Image: =ThisItem.FotoTanqueo1
                   OnSelect: =Select(Parent)
                   Width: =73
                   X: =517
-                  Y: =33
+                  Y: =28
             - Subtitle1_17:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -1042,33 +1053,14 @@ Screens:
                   Text: ="Placa:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =35
-                  Y: =3
+                  Width: =117
+                  X: =26
+                  Y: =6
             - Subtitle1_18:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
-                  Fill: =RGBA(255, 255, 255, 1)
-                  Font: =Font.'Open Sans'
-                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
-                  OnSelect: =Select(Parent)
-                  PaddingBottom: =0
-                  PaddingLeft: =0
-                  PaddingRight: =0
-                  PaddingTop: =0
-                  Size: =12
-                  Text: ="Fecha:"
-                  Tooltip: ="Destino"
-                  VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =165
-                  Y: =3
-            - Subtitle1_19:
-                Control: Label@2.5.1
-                Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -1079,20 +1071,41 @@ Screens:
                   PaddingRight: =0
                   PaddingTop: =0
                   Size: =12
+                  Text: ="Fecha:"
+                  Tooltip: ="Destino"
+                  VerticalAlign: =VerticalAlign.Top
+                  X: =165
+                  Y: =6
+            - Subtitle1_19:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =23
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
                   Text: ="CantidadTanqueo:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
                   Width: =151
-                  X: =332
-                  Y: =3
+                  X: =340
+                  Y: =6
             - Subtitle1_20:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =22
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -1102,12 +1115,14 @@ Screens:
                   Text: ="Foto:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =534
+                  Width: =73
+                  X: =517
+                  Y: =6
             - Subtitle1_21:
                 Control: Label@2.5.1
                 Properties:
-                  BorderColor: =RGBA(0, 0, 0, 1)
+                  BorderColor: =RGBA(215, 58, 60, 1)
+                  BorderThickness: =1
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -1121,9 +1136,9 @@ Screens:
                   Text: ="Valor:"
                   Tooltip: ="Destino"
                   VerticalAlign: =VerticalAlign.Top
-                  Width: =56
-                  X: =165
-                  Y: =61
+                  Width: =95
+                  X: =164
+                  Y: =68
       - PageTitle_13:
           Control: Label@2.5.1
           Properties:
@@ -1141,7 +1156,7 @@ Screens:
             Size: =15
             Text: ="Verificación:"
             Width: =148
-            X: =225
+            X: =233
             Y: =212
       - PageTitle_14:
           Control: Label@2.5.1
@@ -1160,8 +1175,8 @@ Screens:
             Size: =15
             Text: ="Tanqueos:"
             Width: =123
-            X: =223
-            Y: =429
+            X: =233
+            Y: =536
       - Icon2:
           Control: Classic/Icon@2.5.0
           Properties:
