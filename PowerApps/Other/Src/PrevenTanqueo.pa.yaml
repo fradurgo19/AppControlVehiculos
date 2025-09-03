@@ -1293,6 +1293,8 @@ Screens:
             RadiusTopRight: =30
             Size: =10
             Text: ="Enviar si diligencia"
+            Visible: |+
+              =User().Email <> "mensajeria@partequipos.com"
             Width: =129
             X: =340
             Y: =349
