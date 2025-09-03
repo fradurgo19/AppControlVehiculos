@@ -255,7 +255,7 @@ Screens:
               )
 
             ShowNavigation: =true
-            TemplateSize: =128
+            TemplateSize: =122
             Width: =691
             X: =233
             Y: =243
@@ -270,15 +270,14 @@ Screens:
                   OnSelect: =Select(Parent)
                   Width: =94
                   X: =14
-                  Y: =82
+                  Y: =72
             - Title1:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   BorderThickness: =1
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(0, 0, 0, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =37
@@ -292,15 +291,14 @@ Screens:
                   Tooltip: ="Nombre Solicitante"
                   Width: =116
                   X: =139
-                  Y: =82
+                  Y: =72
             - Subtitle1:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   BorderThickness: =1
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(0, 0, 0, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =39
@@ -314,7 +312,7 @@ Screens:
                   Tooltip: ="Destino"
                   Width: =96
                   X: =273
-                  Y: =80
+                  Y: =70
             - NextArrow1:
                 Control: Classic/Icon@2.5.0
                 Properties:
@@ -341,8 +339,7 @@ Screens:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   BorderThickness: =1
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(0, 0, 0, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =23
@@ -356,15 +353,14 @@ Screens:
                   Tooltip: ="Destino"
                   Width: =94
                   X: =14
-                  Y: =25
+                  Y: =20
             - Subtitle1_2:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   BorderThickness: =1
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(0, 0, 0, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =23
@@ -378,15 +374,14 @@ Screens:
                   Tooltip: ="Destino"
                   Width: =207
                   X: =139
-                  Y: =25
+                  Y: =20
             - Subtitle1_3:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   BorderThickness: =1
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(0, 0, 0, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =23
@@ -400,15 +395,14 @@ Screens:
                   Tooltip: ="Destino"
                   Width: =79
                   X: =384
-                  Y: =25
+                  Y: =20
             - Subtitle1_4:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   BorderThickness: =1
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(0, 0, 0, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =23
@@ -422,7 +416,7 @@ Screens:
                   Tooltip: ="Destino"
                   Width: =105
                   X: =493
-                  Y: =25
+                  Y: =20
             - Image7_2:
                 Control: Image@2.2.3
                 Properties:
@@ -431,18 +425,19 @@ Screens:
                   Height: =39
                   Image: =Last(FirstN(ThisItem.'Datos adjuntos', 2)).Value
                   OnSelect: =Select(Parent)
-                  Width: =79
-                  X: =384
-                  Y: =80
+                  Width: =80
+                  X: =383
+                  Y: =70
             - Subtitle1_8:
                 Control: Label@2.5.1
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -459,10 +454,11 @@ Screens:
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -479,10 +475,11 @@ Screens:
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -499,10 +496,11 @@ Screens:
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -519,10 +517,11 @@ Screens:
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -534,16 +533,17 @@ Screens:
                   VerticalAlign: =VerticalAlign.Top
                   Width: =94
                   X: =14
-                  Y: =57
+                  Y: =51
             - Subtitle1_14:
                 Control: Label@2.5.1
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =25
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -555,16 +555,17 @@ Screens:
                   VerticalAlign: =VerticalAlign.Top
                   Width: =116
                   X: =139
-                  Y: =57
+                  Y: =51
             - Subtitle1_15:
                 Control: Label@2.5.1
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =23
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -576,16 +577,17 @@ Screens:
                   VerticalAlign: =VerticalAlign.Top
                   Width: =96
                   X: =273
-                  Y: =57
+                  Y: =51
             - Subtitle1_16:
                 Control: Label@2.5.1
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                  Height: =23
+                  Height: =20
                   OnSelect: =Select(Parent)
                   PaddingBottom: =0
                   PaddingLeft: =0
@@ -597,12 +599,13 @@ Screens:
                   VerticalAlign: =VerticalAlign.Top
                   Width: =80
                   X: =383
-                  Y: =57
+                  Y: =51
             - Subtitle1_22:
                 Control: Label@2.5.1
                 Properties:
                   BorderColor: =RGBA(215, 58, 60, 1)
                   BorderThickness: =1
+                  Color: =RGBA(215, 58, 60, 1)
                   Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -618,15 +621,14 @@ Screens:
                   VerticalAlign: =VerticalAlign.Top
                   Width: =102
                   X: =496
-                  Y: =57
+                  Y: =51
             - Subtitle1_7:
                 Control: Label@2.5.1
                 Properties:
                   Align: =Align.Center
                   BorderColor: =RGBA(0, 0, 0, 1)
                   BorderThickness: =1
-                  Color: =RGBA(255, 255, 255, 1)
-                  Fill: =RGBA(0, 0, 0, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
                   Font: =Font.'Open Sans'
                   FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                   Height: =37
@@ -640,7 +642,7 @@ Screens:
                   Tooltip: ="Destino"
                   Width: =102
                   X: =496
-                  Y: =77
+                  Y: =71
             - Subtitle1_23:
                 Control: Label@2.5.1
                 Properties:
@@ -668,7 +670,7 @@ Screens:
                   Height: =0.5
                   OnSelect: =Select(Parent)
                   Width: =691
-                  Y: =125
+                  Y: =115
       - FechaInicio:
           Control: Classic/DatePicker@2.6.0
           Properties:
