@@ -101,7 +101,6 @@
       "useexperimentalsqlconnector": false,
       "useguiddatatypes": false,
       "usenonblockingonstartrule": false,
-      "userdefinedfunctions": false,
       "userdefinedtypes": false,
       "webbarcodescanner": false,
       "zeroalltabindexes": false

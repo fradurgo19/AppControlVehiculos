@@ -460,8 +460,7 @@ ListaGestion As screen:
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)
             Height: =53
-            Image: |
-                =Last(ThisItem.'Datos adjuntos').Value
+            Image: =Last(FirstN(ThisItem.'Datos adjuntos', 3)).Value
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =8
             RadiusBottomRight: =8
