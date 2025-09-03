@@ -255,7 +255,7 @@ Screens:
               )
 
             ShowNavigation: =true
-            TemplateSize: =130
+            TemplateSize: =128
             Width: =691
             X: =233
             Y: =243
@@ -335,15 +335,6 @@ Screens:
                   Width: =51
                   X: =Parent.TemplateWidth - Self.Width - 12
                   Y: =25
-            - Rectangle3:
-                Control: Rectangle@2.3.0
-                Properties:
-                  BorderColor: =RGBA(32, 54, 71, 1)
-                  Fill: =RGBA(32, 54, 71, 1)
-                  Height: '=Parent.TemplateHeight '
-                  OnSelect: =Select(Parent)
-                  Visible: =ThisItem.IsSelected
-                  Width: =4
             - Subtitle1_1:
                 Control: Label@2.5.1
                 Properties:
@@ -668,6 +659,16 @@ Screens:
                   VerticalAlign: =VerticalAlign.Top
                   Width: =134
                   X: =97
+            - Rectangle3:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(32, 54, 71, 1)
+                  BorderThickness: =1
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Height: =0.5
+                  OnSelect: =Select(Parent)
+                  Width: =691
+                  Y: =125
       - FechaInicio:
           Control: Classic/DatePicker@2.6.0
           Properties:

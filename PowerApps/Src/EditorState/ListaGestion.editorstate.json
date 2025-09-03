@@ -3240,13 +3240,13 @@
       "MetaDataIDKey": "",
       "Name": "galleryTemplate3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
           "Category": "Design",
           "PropertyName": "TemplateFill",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "",
@@ -11189,7 +11189,14 @@
     "Rectangle3": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Fill",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Fill",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "DisabledFill",
         "PressedFill",
         "HoverFill",
@@ -11198,21 +11205,33 @@
         "FocusedBorderColor",
         "DisplayMode",
         "X",
-        "Y",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Y",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Width",
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Parent.TemplateHeight - Separator1.Height",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Height",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
         "OnSelect",
         "ZIndex",
-        "Visible",
-        "BorderThickness",
-        "TabIndex",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "FocusedBorderThickness"
       ],
       "HasDynamicProperties": false,
@@ -11223,10 +11242,10 @@
       "IsGroupControl": false,
       "IsLocked": false,
       "LayoutName": "",
-      "MetaDataIDKey": "%TemplateBrowseGalleryRectangle1.ID%",
+      "MetaDataIDKey": "",
       "Name": "Rectangle3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11287,7 +11306,7 @@
         {
           "Category": "Design",
           "PropertyName": "Height",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -11296,17 +11315,7 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Visible",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
           "PropertyName": "BorderThickness",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Design",
-          "PropertyName": "TabIndex",
           "RuleProviderType": "Unknown"
         },
         {
