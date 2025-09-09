@@ -260,20 +260,27 @@ ListaGestion As screen:
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
         Height: =293
-        Items: |+
-            =Sort(
-                Filter(
-                    ListaPrestamoVehiculos,
-                    (IsBlank(Buscar.Text) || Buscar.Text in Placa.Value) &&
-                    (Gestion.Value = ComboBox1.Selected.Value || IsBlank(ComboBox1.Selected.Value)) &&
-                    (Sede.Value = ComboBox2.Selected.Value || IsBlank(ComboBox2.Selected.Value)) &&
-                    (FechaSolicitud >= FechaInicio.SelectedDate || IsBlank(FechaInicio.SelectedDate)) &&
-                    (FechaSolicitud <= FechaFin.SelectedDate || IsBlank(FechaFin.SelectedDate))
-                ),
-                Creado,
-                SortOrder.Descending
+        Items: |
+            =With(
+                {
+                    BaseDatos: Filter(
+                        ListaPrestamoVehiculos,
+                        (Gestion.Value = ComboBox1.Selected.Value || IsBlank(ComboBox1.Selected.Value)) &&
+                        (Sede.Value = ComboBox2.Selected.Value || IsBlank(ComboBox2.Selected.Value)) &&
+                        (FechaSolicitud >= FechaInicio.SelectedDate || IsBlank(FechaInicio.SelectedDate)) &&
+                        (FechaSolicitud <= FechaFin.SelectedDate || IsBlank(FechaFin.SelectedDate))
+                    )
+                },
+                Sort(
+                    Filter(
+                        BaseDatos,
+                        IsBlank(Buscar.Text) || 
+                        StartsWith(Placa.Value, Buscar.Text)
+                    ),
+                    Creado,
+                    SortOrder.Descending
+                )
             )
-            
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowNavigation: =true
