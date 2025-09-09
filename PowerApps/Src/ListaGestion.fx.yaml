@@ -728,6 +728,7 @@ ListaGestion As screen:
         BorderColor: =RGBA(122, 138, 143, 1)
         CalendarHeaderFill: =RGBA(101,128,187,1)
         Color: =RGBA(47, 41, 43, 1)
+        DefaultDate: =DateAdd(Today(), 4)
         DisabledBorderColor: =RGBA(189, 49, 51, 1)
         DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
         DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
