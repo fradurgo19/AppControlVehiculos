@@ -1195,8 +1195,8 @@ ListaGestion As screen:
         PressedFill: =PageTitle_13.Fill
         Size: =15
         Text: |-
-            ="Verificación:"
-        Width: =148
+            ="Verifique Registros:"
+        Width: =234
         X: =233
         Y: =212
         ZIndex: =35

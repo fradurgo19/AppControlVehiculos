@@ -1155,8 +1155,8 @@ Screens:
             PressedColor: =PageTitle_13.Color
             PressedFill: =PageTitle_13.Fill
             Size: =15
-            Text: ="Verificación:"
-            Width: =148
+            Text: ="Verifique Registros:"
+            Width: =234
             X: =233
             Y: =212
       - PageTitle_14:

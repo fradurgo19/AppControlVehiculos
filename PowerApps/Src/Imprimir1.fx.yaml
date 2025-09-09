@@ -394,7 +394,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -442,7 +442,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -490,7 +490,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -536,7 +536,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -584,7 +584,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -632,7 +632,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -694,7 +694,7 @@
                 SearchItems: =Choices(ListaPrestamoVehiculos.Sede,DataCardValue20.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey20.Y + DataCardKey20.Height + 5
@@ -772,7 +772,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -834,7 +834,7 @@
                 SearchItems: =Choices(ListaPrestamoVehiculos.NivelTanqueo,DataCardValue23.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey23.Y + DataCardKey23.Height + 5
@@ -926,7 +926,7 @@
                 SearchItems: =Choices(ListaPrestamoVehiculos.EXTERIORLáminasPuertas,DataCardValue24.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey24.Y + DataCardKey24.Height + 5
@@ -1004,7 +1004,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -1070,7 +1070,7 @@
                     =Choices(ListaPrestamoVehiculos.'EXTERIOR: Llantas / Rines / Pernos / Llanta de repuesto',DataCardValue26.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey26.Y + DataCardKey26.Height + 5
@@ -1150,7 +1150,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -1216,7 +1216,7 @@
                     =Choices(ListaPrestamoVehiculos.'EXTERIOR: Vidrios / Ventanas / Limpiabrisas',DataCardValue28.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey28.Y + DataCardKey28.Height + 5
@@ -1296,7 +1296,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -1362,7 +1362,7 @@
                     =Choices(ListaPrestamoVehiculos.'EXTERIOR: Espejos retrovisores',DataCardValue47.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey30.Y + DataCardKey30.Height + 5
@@ -1422,7 +1422,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -1442,7 +1442,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -1472,7 +1472,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -1507,7 +1507,7 @@
                     =Choices(ListaPrestamoVehiculos.'EXTERIOR: Extintor / Válvula / Manómetro',DataCardValue50.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey33.Y + DataCardKey33.Height + 5
@@ -1567,7 +1567,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -1587,7 +1587,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -1617,7 +1617,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -1653,7 +1653,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Tablero / Testigos',DataCardValue52.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey56.Y + DataCardKey56.Height + 5
@@ -1733,7 +1733,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -1799,7 +1799,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Mandos / Pedales y Barra de Cambio / 4x4 Freno de Parqueo ',DataCardValue54.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey58.Y + DataCardKey58.Height + 5
@@ -1879,7 +1879,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -1945,7 +1945,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Cinturones de Seguridad / Hebillas / Candados',DataCardValue56.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey60.Y + DataCardKey60.Height + 5
@@ -2091,7 +2091,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Espejos retrovisores',DataCardValue58.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey62.Y + DataCardKey62.Height + 5
@@ -2237,7 +2237,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Bocina y Pito de Reversa',DataCardValue60.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey64.Y + DataCardKey64.Height + 5
@@ -2383,7 +2383,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Equipo de Prevención y Seguridad botiquín, gato, cruceta, triángulos, tacos,.',DataCardValue62.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey67.Y + DataCardKey67.Height + 5
@@ -2443,7 +2443,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -2493,7 +2493,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -2529,7 +2529,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Documentación SOAT',DataCardValue64.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey69.Y + DataCardKey69.Height + 5
@@ -2675,7 +2675,7 @@
                     =Choices(ListaPrestamoVehiculos.'MOTOR: Líquido de Frenos',DataCardValue67.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey71.Y + DataCardKey71.Height + 5
@@ -2785,7 +2785,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -2821,7 +2821,7 @@
                     =Choices(ListaPrestamoVehiculos.'MOTOR: Aceite de Motor',DataCardValue69.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey77.Y + DataCardKey77.Height + 5
@@ -2967,7 +2967,7 @@
                     =Choices(ListaPrestamoVehiculos.'MOTOR: Liquido de Embrague',DataCardValue71.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey79.Y + DataCardKey79.Height + 5
@@ -3077,7 +3077,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -3113,7 +3113,7 @@
                     =Choices(ListaPrestamoVehiculos.'MOTOR: Refrigerante',DataCardValue77.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey81.Y + DataCardKey81.Height + 5
@@ -3259,7 +3259,7 @@
                     =Choices(ListaPrestamoVehiculos.'MOTOR: Liquido de dirección',DataCardValue79.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey83.Y + DataCardKey83.Height + 5
@@ -3369,7 +3369,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -3515,7 +3515,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -3551,7 +3551,7 @@
                     =Choices(ListaPrestamoVehiculos.'MOTOR: Correas Mangueras',DataCardValue84.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey87.Y + DataCardKey87.Height + 5
@@ -3611,7 +3611,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -3659,7 +3659,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -3693,7 +3693,7 @@
                 SearchItems: =Choices(ListaPrestamoVehiculos.Otros,DataCardValue86.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey89.Y + DataCardKey89.Height + 5
@@ -3801,7 +3801,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -3837,7 +3837,7 @@
                     =Choices(ListaPrestamoVehiculos.'MOTOR: Cableado Bateria',DataCardValue88.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey91.Y + DataCardKey91.Height + 5
@@ -3947,7 +3947,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -3982,7 +3982,7 @@
                     =Choices(ListaPrestamoVehiculos.' INTERIOR: Documentación Tecnomecánica',DataCardValue90.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey93.Y + DataCardKey93.Height + 5
@@ -4110,7 +4110,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -4140,7 +4140,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -4176,7 +4176,7 @@
                     =Choices(ListaPrestamoVehiculos.'EXTERIOR: Faros Delanteros / Traseros',DataCardValue93.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey96.Y + DataCardKey96.Height + 5
@@ -4236,7 +4236,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -4256,7 +4256,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -4286,7 +4286,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -4322,7 +4322,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR: Luces Delanteras / Traseras / Direccionales / Freno / Reversa',DataCardValue95.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey98.Y + DataCardKey98.Height + 5
@@ -4382,7 +4382,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -4402,7 +4402,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -4432,7 +4432,7 @@
                 Color: =RGBA(32, 54, 71, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -4468,7 +4468,7 @@
                     =Choices(ListaPrestamoVehiculos.'INTERIOR:EquipoSeguridad:Cables de ignición, herramienta y linterna',DataCardValue97.SearchText)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 SelectMultiple: =false
-                Size: =13
+                Size: =9
                 Width: =Parent.Width - 60
                 X: =30
                 Y: =DataCardKey100.Y + DataCardKey100.Height + 5
@@ -4528,7 +4528,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -4548,7 +4548,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -4576,7 +4576,7 @@
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 Height: =34
                 PaddingBottom: =0
-                Size: =13
+                Size: =10
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 Wrap: =false
@@ -4596,7 +4596,7 @@
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Size: =13
+                Size: =9
                 Text: =Parent.Default
                 Width: =Parent.Width - 60
                 X: =30
@@ -4638,8 +4638,8 @@
                 DisplayMode: =Parent.DisplayMode
                 Height: =200
                 Image: =Parent.Default
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =241
+                X: =7
                 Y: =DataCardKey102.Y + DataCardKey102.Height + 5
                 ZIndex: =2
 
