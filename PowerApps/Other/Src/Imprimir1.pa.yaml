@@ -10,7 +10,7 @@ Screens:
   Imprimir1:
     Properties:
       Fill: =RGBA(255, 255, 255, 1)
-      Height: =794
+      Height: =1000
       LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
       Width: =1123
     Children:
@@ -37,7 +37,7 @@ Screens:
             BorderThickness: =1
             DataSource: =ListaPrestamoVehiculos
             Fill: =RGBA(255, 255, 255, 1)
-            Height: =731
+            Height: =935
             Item: =Gallery2.Selected
             NumberOfColumns: =12
             Width: =Parent.Width
@@ -68,6 +68,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -88,6 +89,7 @@ Screens:
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =9
                         Text: =Parent.Default
                         Width: =Parent.Width - 60
                         X: =30
@@ -211,6 +213,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -231,6 +234,7 @@ Screens:
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =9
                         Text: =Parent.Default
                         Width: =Parent.Width - 60
                         X: =30
@@ -259,6 +263,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -279,6 +284,7 @@ Screens:
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =9
                         Text: =Parent.Default
                         Width: =Parent.Width - 60
                         X: =30
@@ -307,6 +313,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -354,6 +361,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -401,6 +409,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -447,6 +456,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =31
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -493,6 +503,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -540,6 +551,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -588,6 +600,7 @@ Screens:
                         Color: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         Height: =34
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -680,6 +693,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -728,6 +742,7 @@ Screens:
                         Color: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         Height: =34
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -819,6 +834,7 @@ Screens:
                         Color: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         Height: =34
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -911,6 +927,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -961,6 +978,7 @@ Screens:
                         Color: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         Height: =34
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -1056,6 +1074,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -1106,6 +1125,7 @@ Screens:
                         Color: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         Height: =34
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -1201,6 +1221,7 @@ Screens:
                         Font: =Font.'Open Sans'
                         Height: =34
                         PaddingBottom: =0
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -1251,6 +1272,7 @@ Screens:
                         Color: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         Height: =34
+                        Size: =10
                         Text: =Parent.DisplayName
                         Width: =Parent.Width - 60
                         Wrap: =false
@@ -4479,6 +4501,7 @@ Screens:
                         Width: =Parent.Width - 60
                         Wrap: =false
                         X: =30
+                        Y: =10
                   - DataCardValue100:
                       Control: Label@2.5.1
                       MetadataKey: FieldValue
