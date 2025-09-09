@@ -554,7 +554,7 @@ Screens:
                         PressedColor: =PageTitle_15.Color
                         PressedFill: =PageTitle_15.Fill
                         Size: =10
-                        Text: ="Si son varios tanqueos, clic botón Rojo, Enviar si Diligencia y volver a diligenciar"
+                        Text: ="Si son varios tanqueos, clic botón Rojo,Oprimir si Diligencia Tanqueo y volver a diligenciar"
                         Width: =461
                         X: =276
                         Y: =276
@@ -1279,7 +1279,7 @@ Screens:
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             Fill: =RGBA(255, 0, 0, 1)
             Font: =Font.'Open Sans'
-            Height: =32
+            Height: =30
             HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
@@ -1291,13 +1291,13 @@ Screens:
             RadiusBottomRight: =30
             RadiusTopLeft: =30
             RadiusTopRight: =30
-            Size: =10
-            Text: ="Enviar si diligencia"
+            Size: =9
+            Text: ="Oprimir si diligenció Tanqueo"
             Visible: |
               =User().Email <> "mensajeria@partequipos.com"
-            Width: =129
-            X: =340
-            Y: =349
+            Width: =151
+            X: =320
+            Y: =350
       - Icon2_5:
           Control: Classic/Icon@2.5.0
           Properties:

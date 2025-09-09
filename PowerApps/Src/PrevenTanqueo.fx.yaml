@@ -462,7 +462,7 @@ PrevenTanqueo As screen:
                 PressedColor: =PageTitle_15.Color
                 PressedFill: =PageTitle_15.Fill
                 Size: =10
-                Text: ="Si son varios tanqueos, clic botón Rojo, Enviar si Diligencia y volver a diligenciar"
+                Text: ="Si son varios tanqueos, clic botón Rojo,Oprimir si Diligencia Tanqueo y volver a diligenciar"
                 Width: =461
                 X: =276
                 Y: =276
@@ -1231,7 +1231,7 @@ PrevenTanqueo As screen:
         DisabledFill: =RGBA(244, 244, 244, 1)
         Fill: =RGBA(255, 0, 0, 1)
         FontWeight: =FontWeight.Semibold
-        Height: =32
+        Height: =30
         HoverColor: =RGBA(255, 255, 255, 1)
         HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
         OnSelect: =SubmitForm(Form3);ResetForm(Form3);Navigate(Correcto)
@@ -1239,13 +1239,13 @@ PrevenTanqueo As screen:
         RadiusBottomRight: =30
         RadiusTopLeft: =30
         RadiusTopRight: =30
-        Size: =10
-        Text: ="Enviar si diligencia"
+        Size: =9
+        Text: ="Oprimir si diligenció Tanqueo"
         Visible: |
             =User().Email <> "mensajeria@partequipos.com"
-        Width: =129
-        X: =340
-        Y: =349
+        Width: =151
+        X: =320
+        Y: =350
         ZIndex: =27
 
     Icon2_5 As icon.Leave:
