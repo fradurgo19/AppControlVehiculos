@@ -469,6 +469,7 @@ PrevenTanqueo As screen:
                 ZIndex: =36
 
             TextCanvas1 As Texto:
+                BorderColor: =
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(255, 255, 0, 1)
                 FontColor: =RGBA(215, 58, 60, 1)
@@ -480,6 +481,7 @@ PrevenTanqueo As screen:
                 ZIndex: =37
 
             TextCanvas1_1 As Texto:
+                BorderColor: =
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(255, 255, 0, 1)
                 FontColor: =RGBA(215, 58, 60, 1)
@@ -531,6 +533,8 @@ PrevenTanqueo As screen:
             Container1 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Light
                 Height: =29
+                LayoutGridColumns: =6
+                LayoutGridRows: =6
                 RadiusBottomLeft: =4
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
@@ -546,10 +550,12 @@ PrevenTanqueo As screen:
                     Align: =""
                     Appearance: ="Primary"
                     BasePaletteColor: =RGBA(8, 222, 8, 1)
+                    BorderColor: =
                     BorderStyle: =""
                     ContentLanguage: =""
                     DisplayMode: =DisplayMode.Edit
                     Font: =""
+                    FontColor: =
                     FontItalic: =false
                     FontSize: =0
                     FontStrikethrough: =false
@@ -1308,6 +1314,8 @@ PrevenTanqueo As screen:
     Container7 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
         Height: =693
+        LayoutGridColumns: =6
+        LayoutGridRows: =6
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4

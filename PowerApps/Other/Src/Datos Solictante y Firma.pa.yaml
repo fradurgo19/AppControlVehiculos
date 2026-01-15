@@ -129,7 +129,7 @@ Screens:
             X: =232
             Y: =61+0
       - Video1:
-          Control: Video@2.4.1
+          Control: Video@2.4.2
           Properties:
             BorderColor: =RGBA(32, 54, 71, 1)
             Fill: =RGBA(100, 118, 132, 1)
@@ -1634,7 +1634,7 @@ Screens:
             X: =873
             Y: =61
       - Video1_5:
-          Control: Video@2.4.1
+          Control: Video@2.4.2
           Properties:
             BorderColor: =RGBA(32, 54, 71, 1)
             Fill: =RGBA(100, 118, 132, 1)
@@ -1762,7 +1762,7 @@ Screens:
             X: =272
             Y: =167
       - Container3:
-          Control: GroupContainer@1.3.0
+          Control: GroupContainer@1.4.0
           Variant: ManualLayout
           Properties:
             Height: =707

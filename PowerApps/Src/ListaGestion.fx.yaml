@@ -1263,7 +1263,10 @@ ListaGestion As screen:
         ZIndex: =39
 
     TextCanvas2 As Texto:
+        BorderColor: =
         DisplayMode: =DisplayMode.Edit
+        Fill: =
+        FontColor: =
         Height: =31
         Size: =10
         Text: |-
@@ -1275,7 +1278,10 @@ ListaGestion As screen:
         ZIndex: =40
 
     TextCanvas3 As Texto:
+        BorderColor: =
         DisplayMode: =DisplayMode.Edit
+        Fill: =
+        FontColor: =
         Height: =27
         Size: =10
         Text: |-
@@ -1289,6 +1295,8 @@ ListaGestion As screen:
     Container2 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
         Height: =707
+        LayoutGridColumns: =6
+        LayoutGridRows: =6
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4

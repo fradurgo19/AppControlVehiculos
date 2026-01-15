@@ -1842,6 +1842,8 @@
     Container3 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
         Height: =707
+        LayoutGridColumns: =6
+        LayoutGridRows: =6
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4
