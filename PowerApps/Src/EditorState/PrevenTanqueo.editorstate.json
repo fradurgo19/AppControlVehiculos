@@ -5782,7 +5782,14 @@
     "DatePickerFechaManteni": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "DefaultDate",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DateValue(TextCanvas1.Text)",
+          "InvariantPropertyName": "DefaultDate",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "HideCalendar",
         "IsEditable",
         "DateTimeZone",
@@ -5869,7 +5876,7 @@
         {
           "Category": "Data",
           "PropertyName": "DefaultDate",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Data",
@@ -6183,7 +6190,14 @@
     "DatePickerFechaProMatto": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "DefaultDate",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "DateValue(TextCanvas1_1.Text)",
+          "InvariantPropertyName": "DefaultDate",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "HideCalendar",
         "IsEditable",
         "DateTimeZone",
@@ -6270,7 +6284,7 @@
         {
           "Category": "Data",
           "PropertyName": "DefaultDate",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Data",
@@ -6904,14 +6918,7 @@
     "DatePickerTecnoMecanica": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Today()",
-          "InvariantPropertyName": "DefaultDate",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "DefaultDate",
         "DateTimeZone",
         "Format",
         "InputTextPlaceholder",

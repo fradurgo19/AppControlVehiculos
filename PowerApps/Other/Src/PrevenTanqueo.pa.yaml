@@ -623,7 +623,7 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
-                        DefaultDate: =DateValue(TextCanvas1.Text)
+                        DefaultDate: =DateValue(
                         Font: =Font.'Open Sans'
                         Height: =31
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -637,7 +637,6 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
-                        DefaultDate: =DateValue(TextCanvas1_1.Text)
                         Font: =Font.'Open Sans'
                         Height: =28
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -694,7 +693,6 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
-                        DefaultDate: =DateValue(TextCanvas1.Text)
                         Font: =Font.'Open Sans'
                         Height: =29
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -708,7 +706,6 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
-                        DefaultDate: =DateValue(TextCanvas1_1.Text)
                         Font: =Font.'Open Sans'
                         Height: =29
                         IconBackground: =RGBA(100, 118, 132, 1)
