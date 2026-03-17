@@ -21,30 +21,69 @@ Screens:
             ColeccionVehiculos,
             AddColumns(
                 Filter(
-                    'Lista de Vehiculos', 
-                    Placa = DataCardValue21.Selected.Value // Usamos DataCardValue21 para seleccionar la placa
+                    'Lista de Vehiculos',
+                    Placa = DataCardValue21.Selected.Value
                 ),
-                FechaVencimientoSOAT, 'Vencimiento SOAT', // Fecha de vencimiento SOAT de la lista 'Lista de Vehiculos'
-                FechaVencimientoTecnoMecanica, Tecnomecanica, // Fecha de vencimiento TecnoMecánica de la lista 'Lista de Vehiculos'
-                FechaSolicitud, LookUp(ListaPrestamoVehiculos, Placa.Value = DataCardValue21.Selected.Value, FechaSolicitud) // Fecha de préstamo de 'ListaPrestamoVehiculos'
+                FechaVencimientoSOAT, 'Vencimiento SOAT',
+                FechaVencimientoTecnoMecanica, Tecnomecanica,
+                FechaUltimoMttoVehiculo, FechaUltimoMtto,
+                FechaProxiMttoVehiculo, FechaProxiMtto,
+                FechaSolicitud,
+                    LookUp(
+                        ListaPrestamoVehiculos,
+                        Placa.Value = DataCardValue21.Selected.Value,
+                        FechaSolicitud
+                    )
             )
         );
 
-        If(
-            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoSOAT < Today(), 
-            Notify("El SOAT está vencido", NotificationType.Error), // Si la fecha es anterior a hoy, muestra "vencido"
-            If(
-                LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoSOAT <= Today() + 7, 
-                Notify("El SOAT está por vencer en 7 días", NotificationType.Warning) // Si está por vencer en 7 días, muestra "por vencer"
-            )
-        );
+        With(
+            {
+                veh: LookUp(
+                    ColeccionVehiculos,
+                    Placa = DataCardValue21.Selected.Value
+                )
+            },
 
-        If(
-            LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoTecnoMecanica < Today(), 
-            Notify("La TecnoMecánica está vencida", NotificationType.Error), // Si la fecha es anterior a hoy, muestra "vencido"
             If(
-                LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value).FechaVencimientoTecnoMecanica <= Today() + 7, 
-                Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning) // Si está por vencer en 7 días, muestra "por vencer"
+                !IsBlank(veh.FechaVencimientoSOAT),
+                If(
+                    veh.FechaVencimientoSOAT < Today(),
+                    Notify("El SOAT está vencido", NotificationType.Error),
+                    If(
+                        veh.FechaVencimientoSOAT <= DateAdd(Today(), 7),
+                        Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
+                    )
+                )
+            );
+
+            If(
+                !IsBlank(veh.FechaVencimientoTecnoMecanica),
+                If(
+                    veh.FechaVencimientoTecnoMecanica < Today(),
+                    Notify("La TecnoMecánica está vencida", NotificationType.Error),
+                    If(
+                        veh.FechaVencimientoTecnoMecanica <= DateAdd(Today(), 7),
+                        Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
+                    )
+                )
+            );
+
+            If(
+                !IsBlank(veh.FechaProxiMttoVehiculo),
+                If(
+                    veh.FechaProxiMttoVehiculo < Today(),
+                    Notify("El mantenimiento está vencido", NotificationType.Error),
+                    If(
+                        veh.FechaProxiMttoVehiculo <= DateAdd(Today(), 7),
+                        Notify(
+                            "El próximo mantenimiento vence en " &
+                            DateDiff(Today(), veh.FechaProxiMttoVehiculo) &
+                            " día(s)",
+                            NotificationType.Warning
+                        )
+                    )
+                )
             )
         )
 
@@ -220,7 +259,7 @@ Screens:
                         PressedFill: =PageTitle_5.Fill
                         Size: =15
                         Text: ="Equipo de Prevención y Seguridad:"
-                        Width: =365
+                        Width: =341
                         X: =29
                         Y: =13
                   - RectangleOverlay:
@@ -339,12 +378,12 @@ Screens:
                         BorderColor: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         FontWeight: =FontWeight.Bold
-                        Height: =29
+                        Height: =26
                         Size: =12
-                        Text: ="1. SOAT:"
-                        Width: =101
-                        X: =24
-                        Y: =80
+                        Text: ="1. SOAT Vence:"
+                        Width: =166
+                        X: =29
+                        Y: =54
                   - Dropdown2_20:
                       Control: Classic/DropDown@2.3.1
                       Properties:
@@ -364,22 +403,22 @@ Screens:
                         SelectionFill: =RGBA(100, 118, 132, 1)
                         Size: =11
                         Width: =163
-                        X: =23
-                        Y: =189
+                        X: =32
+                        Y: =144
                   - TextInput1_20:
                       Control: Classic/TextInput@2.3.2
                       Properties:
                         BorderColor: =Color.DarkSlateGray
                         Default: =""
                         Font: =Font.'Open Sans'
-                        Height: =30
+                        Height: =29
                         HintText: ="Observaciones"
                         HoverBorderColor: =RGBA(32, 54, 71, 1)
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Size: =11
-                        Width: =162
-                        X: =25
-                        Y: =234
+                        Width: =161
+                        X: =34
+                        Y: =177
                   - Dropdown2_21:
                       Control: Classic/DropDown@2.3.1
                       Properties:
@@ -389,7 +428,7 @@ Screens:
                         ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
                         ChevronHoverFill: =RGBA(255, 255, 255, 1)
                         Font: =Font.'Open Sans'
-                        Height: =32
+                        Height: =30
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Items: =Opciones
                         Items.Value: =Value
@@ -398,23 +437,23 @@ Screens:
                         SelectionColor: =RGBA(255, 255, 255, 1)
                         SelectionFill: =RGBA(100, 118, 132, 1)
                         Size: =11
-                        Width: =163
-                        X: =206
-                        Y: =188
+                        Width: =143
+                        X: =224
+                        Y: =146
                   - TextInput1_21:
                       Control: Classic/TextInput@2.3.2
                       Properties:
                         BorderColor: =Color.DarkSlateGray
                         Default: =""
                         Font: =Font.'Open Sans'
-                        Height: =30
+                        Height: =28
                         HintText: ="Observaciones"
                         HoverBorderColor: =RGBA(32, 54, 71, 1)
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Size: =11
-                        Width: =162
-                        X: =208
-                        Y: =233
+                        Width: =143
+                        X: =224
+                        Y: =178
                   - Dropdown2_22:
                       Control: Classic/DropDown@2.3.1
                       Properties:
@@ -433,23 +472,23 @@ Screens:
                         SelectionColor: =RGBA(255, 255, 255, 1)
                         SelectionFill: =RGBA(100, 118, 132, 1)
                         Size: =11
-                        Width: =163
-                        X: =394
-                        Y: =190
+                        Width: =140
+                        X: =468
+                        Y: =227
                   - TextInput1_22:
                       Control: Classic/TextInput@2.3.2
                       Properties:
                         BorderColor: =Color.DarkSlateGray
                         Default: =""
                         Font: =Font.'Open Sans'
-                        Height: =30
+                        Height: =32
                         HintText: ="Observaciones"
                         HoverBorderColor: =RGBA(32, 54, 71, 1)
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Size: =11
                         Width: =162
-                        X: =396
-                        Y: =235
+                        X: =608
+                        Y: =227
                   - Label3_21:
                       Control: Label@2.5.1
                       Properties:
@@ -458,33 +497,34 @@ Screens:
                         FontWeight: =FontWeight.Bold
                         Height: =30
                         Size: =12
-                        Text: ="2. Tecnomecánica:"
-                        Width: =163
-                        X: =227
-                        Y: =79
+                        Text: ="2. Tecno Vence:"
+                        Width: =143
+                        X: =224
+                        Y: =50
                   - Label3_22:
                       Control: Label@2.5.1
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         FontWeight: =FontWeight.Bold
-                        Height: =104
-                        Size: =12
+                        Height: =50
+                        Size: =11
                         Text: ="3. Extintor, Botiquín, Gato hidra, cruceta, triángulos y tacos:"
-                        Width: =168
-                        X: =415
-                        Y: =56
+                        Width: =201
+                        X: =266
+                        Y: =224
                   - Label3_23:
                       Control: Label@2.5.1
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         FontWeight: =FontWeight.Bold
-                        Height: =92
-                        Size: =12
+                        Height: =41
+                        Size: =11
                         Text: ="4. Cables de ignición, herramienta y linterna:"
-                        X: =596
-                        Y: =69
+                        Width: =202
+                        X: =266
+                        Y: =274
                   - Dropdown2_23:
                       Control: Classic/DropDown@2.3.1
                       Properties:
@@ -494,7 +534,7 @@ Screens:
                         ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
                         ChevronHoverFill: =RGBA(255, 255, 255, 1)
                         Font: =Font.'Open Sans'
-                        Height: =32
+                        Height: =29
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Items: =Opciones
                         Items.Value: =Value
@@ -503,9 +543,9 @@ Screens:
                         SelectionColor: =RGBA(255, 255, 255, 1)
                         SelectionFill: =RGBA(100, 118, 132, 1)
                         Size: =11
-                        Width: =163
-                        X: =573
-                        Y: =192
+                        Width: =140
+                        X: =468
+                        Y: =274
                   - TextInput1_23:
                       Control: Classic/TextInput@2.3.2
                       Properties:
@@ -518,8 +558,8 @@ Screens:
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Size: =11
                         Width: =162
-                        X: =575
-                        Y: =237
+                        X: =608
+                        Y: =274
                   - PageTitle_8:
                       Control: Label@2.5.1
                       Properties:
@@ -527,7 +567,7 @@ Screens:
                         FocusedBorderColor: =PageTitle_8.BorderColor
                         Font: =Font.'Segoe UI'
                         FontWeight: =FontWeight.Lighter
-                        Height: =43
+                        Height: =33
                         HoverBorderColor: =PageTitle_8.BorderColor
                         HoverColor: =PageTitle_8.Color
                         HoverFill: =PageTitle_8.Fill
@@ -536,62 +576,63 @@ Screens:
                         PressedFill: =PageTitle_8.Fill
                         Size: =15
                         Text: ="Tanqueo:"
-                        Width: =118
+                        Width: =100
                         X: =25
-                        Y: =276
+                        Y: =328
                   - PageTitle_15:
                       Control: Label@2.5.1
                       Properties:
+                        Align: =Align.Center
                         BorderColor: =RGBA(32, 54, 71, 1)
                         FocusedBorderColor: =PageTitle_15.BorderColor
                         Font: =Font.'Segoe UI'
                         FontWeight: =FontWeight.Bold
-                        Height: =45
+                        Height: =33
                         HoverBorderColor: =PageTitle_15.BorderColor
                         HoverColor: =PageTitle_15.Color
                         HoverFill: =PageTitle_15.Fill
                         PressedBorderColor: =PageTitle_15.BorderColor
                         PressedColor: =PageTitle_15.Color
                         PressedFill: =PageTitle_15.Fill
-                        Size: =10
-                        Text: ="Si son varios tanqueos, clic botón Rojo,Oprimir si Diligencia Tanqueo y volver a diligenciar"
-                        Width: =461
-                        X: =276
-                        Y: =276
+                        Size: =9
+                        Text: ="Si son varios tanqueos, clic botón Rojo en Oprimir si Diligencia Tanqueo y volver a diligenciar"
+                        Width: =509
+                        X: =285
+                        Y: =328
                   - TextCanvas1:
                       Control: Text@0.0.51
                       Properties:
                         Fill: =RGBA(255, 255, 0, 1)
                         FontColor: =RGBA(215, 58, 60, 1)
-                        Height: =26
+                        Height: =30
                         Text: =First(ColeccionVehiculos).FechaVencimientoSOAT
-                        Width: =176
-                        X: =18
-                        Y: =109
+                        Width: =163
+                        X: =32
+                        Y: =81
                   - TextCanvas1_1:
                       Control: Text@0.0.51
                       Properties:
                         Fill: =RGBA(255, 255, 0, 1)
                         FontColor: =RGBA(215, 58, 60, 1)
-                        Height: =25
+                        Height: =28
                         Text: =First(ColeccionVehiculos).FechaVencimientoTecnoMecanica
-                        Width: =163
-                        X: =227
-                        Y: =110
+                        Width: =143
+                        X: =224
+                        Y: =83
                   - DatePickerSOAT:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
                         DefaultDate: =DateValue(TextCanvas1.Text)
                         Font: =Font.'Open Sans'
-                        Height: =30
+                        Height: =31
                         IconBackground: =RGBA(100, 118, 132, 1)
                         IconFill: =RGBA(255, 255, 255, 1)
                         Reset: =ResetSOAT
                         Size: =9
-                        Width: =169
-                        X: =25
-                        Y: =142
+                        Width: =163
+                        X: =32
+                        Y: =111
                   - DatePickerTecnoMecanica:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
@@ -604,22 +645,23 @@ Screens:
                         Reset: =ResetTecnoMecanica
                         Size: =9
                         Width: =143
-                        X: =227
-                        Y: =143
+                        X: =224
+                        Y: =114
                   - Container1:
                       Control: GroupContainer@1.5.0
                       Variant: ManualLayout
                       Properties:
-                        Height: =29
-                        Width: =102
-                        X: =125
-                        Y: =80
+                        Height: =35
+                        Width: =106
+                        X: =145
+                        Y: =224
                       Children:
                         - ButtonCanvas1:
                             Control: Button@0.0.45
                             Properties:
                               BasePaletteColor: =RGBA(8, 222, 8, 1)
-                              Height: =29
+                              FontSize: =11
+                              Height: =30
                               OnSelect: |-
                                 =Patch(
                                     'Lista de Vehiculos',
@@ -636,8 +678,113 @@ Screens:
 
                                 // Mostrar notificación de éxito
                                 Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
-                              Text: ="Actualizar"
-                              Width: =102
+                              Text: ="Actualizar SOAT TECNO"
+                              Width: =105
+                  - TextCanvas1_2:
+                      Control: Text@0.0.51
+                      Properties:
+                        Fill: =RGBA(255, 255, 0, 1)
+                        FontColor: =RGBA(215, 58, 60, 1)
+                        Height: =30
+                        Text: =First(ColeccionVehiculos).FechaUltimoMttoVehiculo
+                        Width: =163
+                        X: =412
+                        Y: =84
+                  - DatePickerFechaManteni:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        DefaultDate: =DateValue(TextCanvas1.Text)
+                        Font: =Font.'Open Sans'
+                        Height: =31
+                        IconBackground: =RGBA(100, 118, 132, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        Reset: =ResetSOAT
+                        Size: =9
+                        Width: =163
+                        X: =412
+                        Y: =115
+                  - DatePickerFechaProMatto:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        DefaultDate: =DateValue(TextCanvas1_1.Text)
+                        Font: =Font.'Open Sans'
+                        Height: =28
+                        IconBackground: =RGBA(100, 118, 132, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        Reset: =ResetTecnoMecanica
+                        Size: =9
+                        Width: =143
+                        X: =629
+                        Y: =118
+                  - TextCanvas1_3:
+                      Control: Text@0.0.51
+                      Properties:
+                        Fill: =RGBA(255, 255, 0, 1)
+                        FontColor: =RGBA(215, 58, 60, 1)
+                        Height: =28
+                        Text: =First(ColeccionVehiculos).FechaProxiMttoVehiculo
+                        Width: =143
+                        X: =629
+                        Y: =91
+                  - Label3_24:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =26
+                        Size: =12
+                        Text: ="5. Último Mtto:"
+                        Width: =191
+                        X: =412
+                        Y: =55
+                  - Label3_25:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =27
+                        Size: =12
+                        Text: ="2. Proximo Mtto:"
+                        Width: =165
+                        X: =629
+                        Y: =57
+                  - Container1_1:
+                      Control: GroupContainer@1.5.0
+                      Variant: ManualLayout
+                      Properties:
+                        Height: =35
+                        Width: =106
+                        X: =533
+                        Y: =165
+                      Children:
+                        - ButtonCanvas1_1:
+                            Control: Button@0.0.45
+                            Properties:
+                              BasePaletteColor: =RGBA(8, 222, 8, 1)
+                              FontSize: =11
+                              Height: =30
+                              OnSelect: |-
+                                =Patch(
+                                    'Lista de Vehiculos',
+                                    LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value), 
+                                    {
+                                        'FechaUltimoMtto': DatePickerFechaManteni.SelectedDate, 
+                                        FechaProxiMtto: DatePickerFechaProMatto.SelectedDate
+                                    }
+                                );
+
+                                // Restablecer los DatePickers
+                                UpdateContext({ResetSOAT: true}); 
+                                UpdateContext({ResetTecnoMecanica: true});
+
+                                // Mostrar notificación de éxito
+                                Notify("Fechas de MANTENIMIENTOS actualizadas correctamente", NotificationType.Success)
+                              Text: ="Actualizar Mtto"
+                              Width: =105
       - Video1_4:
           Control: Video@2.4.2
           Properties:
@@ -722,11 +869,12 @@ Screens:
           Properties:
             BorderColor: =RGBA(32, 54, 71, 1)
             Color: =RGBA(0, 0, 0, 1)
-            Height: =49
+            Height: =33
             Icon: =Icon.Reload
             OnSelect: =Reset(Dropdown2_20); Reset(TextInput1_20); Reset(Dropdown2_21); Reset(TextInput1_21); Reset(Dropdown2_22); Reset(TextInput1_22); Reset(Dropdown2_23);Reset(TextInput1_23);ResetForm(Form3);
-            X: =886
-            Y: =70
+            Width: =41
+            X: =899
+            Y: =67
       - Form3:
           Control: Form@2.4.4
           Variant: Classic
@@ -737,11 +885,11 @@ Screens:
             BorderThickness: =1
             DataSource: =ListaTanqueos
             DefaultMode: =FormMode.New
-            Height: =362
+            Height: =334
             NumberOfColumns: =6
-            Width: =710
+            Width: =756
             X: =232
-            Y: =392
+            Y: =423
           Children:
             - Placa_DataCard2:
                 Control: TypedDataCard@1.0.7
@@ -753,7 +901,7 @@ Screens:
                   DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,Placa)
                   Required: =false
                   Update: =DataCardValue30.Selected
-                  Width: =354
+                  Width: =375
                   X: =0
                   Y: =0
                 Children:
@@ -848,7 +996,7 @@ Screens:
                   Height: =48
                   Required: =false
                   Update: =DataCardValue31.SelectedDate
-                  Width: =354
+                  Width: =374
                   X: =3
                   Y: =0
                 Children:
@@ -932,7 +1080,7 @@ Screens:
                   DisplayName: =DataSourceInfo([@ListaTanqueos],DataSourceInfo.DisplayName,CantidadTanqueoGalones1)
                   Required: =false
                   Update: =Value(DataCardValue32.Text)
-                  Width: =708
+                  Width: =749
                   X: =0
                   Y: =1
                 Children:
@@ -1020,7 +1168,7 @@ Screens:
                   Height: =61
                   Required: =false
                   Update: =Value(DataCardValue33.Text)
-                  Width: =708
+                  Width: =749
                   X: =0
                   Y: =2
                 Children:
@@ -1108,7 +1256,7 @@ Screens:
                   Height: =83
                   Required: =false
                   Update: =Value(DataCardValue34.Text)
-                  Width: =708
+                  Width: =749
                   X: =0
                   Y: =3
                 Children:
@@ -1196,7 +1344,7 @@ Screens:
                   Height: =90
                   Required: =false
                   Update: =Image11.Image
-                  Width: =708
+                  Width: =749
                   X: =0
                   Y: =4
                 Children:
@@ -1296,8 +1444,8 @@ Screens:
             Visible: |
               =User().Email <> "mensajeria@partequipos.com"
             Width: =151
-            X: =320
-            Y: =350
+            X: =328
+            Y: =391
       - Icon2_5:
           Control: Classic/Icon@2.5.0
           Properties:
@@ -1342,19 +1490,19 @@ Screens:
             Color: =RGBA(255, 0, 0, 1)
             Font: =Font.'Open Sans'
             FontWeight: =FontWeight.Bold
-            Height: =31
+            Height: =29
             Size: =12
             Text: ="Todos los campos son obligatorios:"
-            Width: =346
-            X: =231
-            Y: =114
+            Width: =287
+            X: =577
+            Y: =74
       - Container7:
           Control: GroupContainer@1.5.0
           Variant: ManualLayout
           Properties:
             Height: =693
-            Width: =420
-            X: =946
+            Width: =369
+            X: =997
             Y: =61
           Children:
             - RectangleDetailsBackground:
@@ -1366,7 +1514,8 @@ Screens:
                   Fill: =RGBA(255, 255, 255, 1)
                   FocusedBorderColor: =RectangleDetailsBackground.BorderColor
                   Height: =693
-                  Width: =420
+                  Width: =383
+                  X: =8
             - LabelDetalisTitle:
                 Control: Label@2.5.1
                 Group: GroupDetailsPanel
@@ -1383,7 +1532,8 @@ Screens:
                   PressedFill: =LabelDetalisTitle.Fill
                   Size: =15
                   Text: ="Detalles:"
-                  X: =29
+                  Width: =141
+                  X: =51
                   Y: =22
             - LabelDetailsSteps:
                 Control: Label@2.5.1
@@ -1405,8 +1555,8 @@ Screens:
                   Size: =10.5
                   TabIndex: =0
                   Text: ="Pasos"
-                  Width: =59
-                  X: =33
+                  Width: =56
+                  X: =55
                   Y: =70
             - LabelDetailsResources:
                 Control: Label@2.5.1
@@ -1429,8 +1579,8 @@ Screens:
                   Size: =10.5
                   TabIndex: =0
                   Text: ="Recursos"
-                  Width: =98
-                  X: =92
+                  Width: =92
+                  X: =111
                   Y: =70
             - RectangleTab1:
                 Control: Rectangle@2.3.0
@@ -1442,8 +1592,8 @@ Screens:
                   FocusedBorderColor: =RectangleTab1.BorderColor
                   Height: =2
                   Visible: =!IsShowResourcesTab
-                  Width: =LabelDetailsSteps.Width - 15
-                  X: =37
+                  Width: =41
+                  X: =59
                   Y: =108
             - RectangleTab2:
                 Control: Rectangle@2.3.0
@@ -1455,8 +1605,8 @@ Screens:
                   FocusedBorderColor: =RectangleTab2.BorderColor
                   Height: =2
                   Visible: =IsShowResourcesTab
-                  Width: =LabelDetailsResources.Width - 23
-                  X: =LabelDetailsResources.X + 13
+                  Width: =70
+                  X: =123
                   Y: =108
             - HtmlTextFunctionPanelSteps:
                 Control: HtmlViewer@2.1.0
@@ -1465,12 +1615,13 @@ Screens:
                   AutoHeight: =true
                   DisabledBorderColor: =RGBA(56, 56, 56, 1)
                   Font: =Font.'Segoe UI'
-                  Height: =596
+                  Height: =502
                   HoverBorderColor: =HtmlTextFunctionPanelSteps.BorderColor
                   HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 11pt !important; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n    <div style=\"\"width: 85%; margin: 10px 0 20px;\"\">Para diligenciar la verificación Recuerde:<strong> Estándar,</strong> el elemento opera de manera segura, <strong> Semiestándar,</strong>  Ofrece y manteniene un nivel aceptable de seguridad en el recorrido, <strong>Subestándar,</strong> compromete la seguridad del recorrido y <strong>NA:</strong></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >1</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> SOAT:</strong> Vigente/Buen estado.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >2</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Tecnicomecánica:</strong> Vigente/Buen estado.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n  \n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >3</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Botiquín, Gato hidra, cruceta, triángulos y tacos:</strong> En buen estado y completos. <br /><br />\n         </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >4</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong>Cables de ignición, herramienta y linterna:</strong> En buen estado y completos.<br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n    <div style=\"\"float: left; width: 20px; text-align: right; margin: 0 20px 0 0; font-weight: bold;\"\" >5</div>\n    <div style=\"\"float: left; width: 75%; \"\">\n        <strong> Placa, Fecha, Cantidad, Valor, Kms y Foto:</strong> Se debe dejar evidencia de cada tanqueo realizado con fotografia de recibo. Solo se debe diligenciar y enviar con el botón Rojo cuando se diligencie. <br /><br />\n    </div>\n    <div style=\"\"clear: both\"\"></div>\n\n\""
                   Size: =8
                   Visible: =!IsShowResourcesTab
-                  Width: =420
+                  Width: =383
+                  X: =8
                   Y: =112
             - HtmlTextFunctionPanelResources:
                 Control: HtmlViewer@2.1.0
@@ -1482,5 +1633,6 @@ Screens:
                   HoverBorderColor: =HtmlTextFunctionPanelResources.BorderColor
                   HtmlText: "=\"\n<div style='margin: 0 0 0 20px; font-size: 12pt; font-weight: normal; color: #444444; padding: 0 10px; width: 100%; overflow: hidden;'>\n  \n    <div style=\"\"margin: 20px 0; font-weight: bold;\"\">Soporte:</div>\n    <ul> \n      <li><a href='https://partequipos.com/'>PARTEQUIPOS</a></li>\n      <li><a href='https://www.youtube.com/@partequiposs.a.s3102/videos'>Canal de Youtube PARTEQUIPOS</a></li>\n      <li><a href=''>Add a data connection in PowerApps</a></li>\n      <li><a href=''>Connect to Office 365 Planner from PowerApps</a></li>\n    </ul>\n  </div>\""
                   Visible: =IsShowResourcesTab
-                  Width: =420
+                  Width: =383
+                  X: =8
                   Y: =498
