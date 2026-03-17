@@ -623,7 +623,6 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
-                        DefaultDate: =DateValue(
                         Font: =Font.'Open Sans'
                         Height: =31
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -662,19 +661,28 @@ Screens:
                               FontSize: =11
                               Height: =30
                               OnSelect: |-
-                                =IfError(
-                                    Patch(
-                                        'Lista de Vehiculos',
-                                        LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
-                                        {
-                                            'Vencimiento SOAT': DatePickerSOAT.SelectedDate,
-                                            Tecnomecanica: DatePickerTecnoMecanica.SelectedDate
-                                        }
-                                    ),
-                                    Notify("Error al actualizar las fechas de vencimiento", NotificationType.Error),
-                                    Reset(DatePickerSOAT);
-                                    Reset(DatePickerTecnoMecanica);
-                                    Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
+                                =With(
+                                    {
+                                        vehiculo: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value)
+                                    },
+                                    If(
+                                        IsBlank(vehiculo),
+                                        Notify("No se encontró la placa seleccionada", NotificationType.Warning),
+                                        IfError(
+                                            Patch(
+                                                'Lista de Vehiculos',
+                                                vehiculo,
+                                                {
+                                                    'Vencimiento SOAT': DatePickerSOAT.SelectedDate,
+                                                    Tecnomecanica: DatePickerTecnoMecanica.SelectedDate
+                                                }
+                                            ),
+                                            Notify("Error al actualizar las fechas de vencimiento", NotificationType.Error),
+                                            Reset(DatePickerSOAT);
+                                            Reset(DatePickerTecnoMecanica);
+                                            Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
+                                        )
+                                    )
                                 )
                               Text: ="Actualizar SOAT TECNO"
                               Width: =105
@@ -765,19 +773,28 @@ Screens:
                               FontSize: =11
                               Height: =30
                               OnSelect: |-
-                                =IfError(
-                                    Patch(
-                                        'Lista de Vehiculos',
-                                        LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
-                                        {
-                                            FechaUltimoMtto: DatePickerFechaManteni.SelectedDate,
-                                            FechaProxiMtto: DatePickerFechaProMatto.SelectedDate
-                                        }
-                                    ),
-                                    Notify("Error al actualizar las fechas de mantenimiento", NotificationType.Error),
-                                    Reset(DatePickerFechaManteni);
-                                    Reset(DatePickerFechaProMatto);
-                                    Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
+                                =With(
+                                    {
+                                        vehiculo: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value)
+                                    },
+                                    If(
+                                        IsBlank(vehiculo),
+                                        Notify("No se encontró la placa seleccionada", NotificationType.Warning),
+                                        IfError(
+                                            Patch(
+                                                'Lista de Vehiculos',
+                                                vehiculo,
+                                                {
+                                                    FechaUltimoMtto: DatePickerFechaManteni.SelectedDate,
+                                                    FechaProxiMtto: DatePickerFechaProMatto.SelectedDate
+                                                }
+                                            ),
+                                            Notify("Error al actualizar las fechas de mantenimiento", NotificationType.Error),
+                                            Reset(DatePickerFechaManteni);
+                                            Reset(DatePickerFechaProMatto);
+                                            Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
+                                        )
+                                    )
                                 )
                               Text: ="Actualizar Mtto"
                               Width: =105
