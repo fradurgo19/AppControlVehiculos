@@ -673,7 +673,7 @@ Screens:
                                 );
 
                                 // Restablecer los DatePickers
-                                UpdateContext({ResetSOAT: true}); 
+                                UpdateContext({Reset: true}); 
                                 UpdateContext({ResetTecnoMecanica: true});
 
                                 // Mostrar notificación de éxito

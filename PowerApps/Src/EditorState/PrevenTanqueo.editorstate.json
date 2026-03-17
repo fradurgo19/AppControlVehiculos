@@ -571,7 +571,14 @@
         "Height",
         "Visible",
         "DisplayMode",
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Patch(\n    'Lista de Vehiculos',\n    LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value), \n    {\n        'Vencimiento SOAT': DatePickerSOAT.SelectedDate, \n        Tecnomecanica: DatePickerTecnoMecanica.SelectedDate\n    }\n);\n\n// Restablecer los DatePickers\nUpdateContext({ResetSOAT: true}); \nUpdateContext({ResetTecnoMecanica: true});\n\n// Mostrar notificación de éxito\nNotify(\"Fechas de vencimiento actualizadas correctamente\", NotificationType.Success)",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "ContentLanguage",
         "ZIndex",
         "FontColor",
@@ -744,7 +751,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "",
