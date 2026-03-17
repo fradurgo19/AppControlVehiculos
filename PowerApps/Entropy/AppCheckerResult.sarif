@@ -10202,36 +10202,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "PrevenTanqueo.Reset"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "PrevenTanqueo.Reset",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Reset",
-                "module": "PrevenTanqueo",
-                "type": "PrevenTanqueo"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Imprimir1.FormViewer1.Item"
                 }
               ],

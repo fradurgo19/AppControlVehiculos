@@ -622,7 +622,7 @@ PrevenTanqueo As screen:
                         );
                         
                         // Restablecer los DatePickers
-                        UpdateContext({Reset: true}); 
+                        UpdateContext({ResetSOAT: true}); 
                         UpdateContext({ResetTecnoMecanica: true});
                         
                         // Mostrar notificación de éxito
@@ -650,7 +650,7 @@ PrevenTanqueo As screen:
                 FontItalic: =false
                 FontStrikethrough: =false
                 FontUnderline: =false
-                Height: =28
+                Height: =31
                 Size: =14
                 TabIndex: =0
                 Text: =First(ColeccionVehiculos).FechaUltimoMttoVehiculo
@@ -675,7 +675,7 @@ PrevenTanqueo As screen:
                 Height: =29
                 HoverDateFill: =App.Theme.Colors.Lighter70
                 IconBackground: =RGBA(100, 118, 132, 1)
-                Reset: =ResetSOAT
+                Reset: =ResetMtto
                 SelectedDateFill: =App.Theme.Colors.Primary
                 Size: =9
                 Width: =163
@@ -694,7 +694,7 @@ PrevenTanqueo As screen:
                 Height: =29
                 HoverDateFill: =App.Theme.Colors.Lighter70
                 IconBackground: =RGBA(100, 118, 132, 1)
-                Reset: =ResetTecnoMecanica
+                Reset: =ResetProMtto
                 SelectedDateFill: =App.Theme.Colors.Primary
                 Size: =9
                 Width: =163
@@ -806,8 +806,8 @@ PrevenTanqueo As screen:
                         );
                         
                         // Restablecer los DatePickers
-                        UpdateContext({ResetSOAT: true}); 
-                        UpdateContext({ResetTecnoMecanica: true});
+                        UpdateContext({ResetMtto: true}); 
+                        UpdateContext({ResetProMtto: true});
                         
                         // Mostrar notificación de éxito
                         Notify("Fechas de MANTENIMIENTOS actualizadas correctamente", NotificationType.Success)

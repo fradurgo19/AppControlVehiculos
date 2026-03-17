@@ -571,14 +571,7 @@
         "Height",
         "Visible",
         "DisplayMode",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Patch(\n    'Lista de Vehiculos',\n    LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value), \n    {\n        'Vencimiento SOAT': DatePickerSOAT.SelectedDate, \n        Tecnomecanica: DatePickerTecnoMecanica.SelectedDate\n    }\n);\n\n// Restablecer los DatePickers\nUpdateContext({ResetSOAT: true}); \nUpdateContext({ResetTecnoMecanica: true});\n\n// Mostrar notificación de éxito\nNotify(\"Fechas de vencimiento actualizadas correctamente\", NotificationType.Success)",
-          "InvariantPropertyName": "OnSelect",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "OnSelect",
         "ContentLanguage",
         "ZIndex",
         "FontColor",
@@ -5804,7 +5797,14 @@
         "MonthColor",
         "WeekColor",
         "DayColor",
-        "Reset",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "ResetSOAT",
+          "InvariantPropertyName": "Reset",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "AccessibleLabel",
         "Tooltip",
         "ContentLanguage",
@@ -5897,7 +5897,7 @@
         {
           "Category": "Data",
           "PropertyName": "Reset",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Data",
@@ -6198,7 +6198,14 @@
         "MonthColor",
         "WeekColor",
         "DayColor",
-        "Reset",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "ResetTecnoMecanica",
+          "InvariantPropertyName": "Reset",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "AccessibleLabel",
         "Tooltip",
         "ContentLanguage",
@@ -6291,7 +6298,7 @@
         {
           "Category": "Data",
           "PropertyName": "Reset",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Data",
