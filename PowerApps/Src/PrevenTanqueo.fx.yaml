@@ -546,7 +546,7 @@ PrevenTanqueo As screen:
                 Height: =31
                 HoverDateFill: =RGBA(205, 209, 213, 1)
                 IconBackground: =RGBA(100, 118, 132, 1)
-                Reset: =ResetSOAT
+                Reset: =
                 SelectedDateFill: =RGBA(100, 118, 132, 1)
                 Size: =9
                 Width: =163
@@ -565,7 +565,7 @@ PrevenTanqueo As screen:
                 Height: =28
                 HoverDateFill: =RGBA(205, 209, 213, 1)
                 IconBackground: =RGBA(100, 118, 132, 1)
-                Reset: =ResetTecnoMecanica
+                Reset: =
                 SelectedDateFill: =RGBA(100, 118, 132, 1)
                 Size: =9
                 Width: =143
@@ -612,21 +612,20 @@ PrevenTanqueo As screen:
                     IconStyle: ="Outline"
                     Layout: ="Icon before"
                     OnSelect: |-
-                        =Patch(
-                            'Lista de Vehiculos',
-                            LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value), 
-                            {
-                                'Vencimiento SOAT': DatePickerSOAT.SelectedDate, 
-                                Tecnomecanica: DatePickerTecnoMecanica.SelectedDate
-                            }
-                        );
-                        
-                        // Restablecer los DatePickers
-                        UpdateContext({ResetSOAT: true}); 
-                        UpdateContext({ResetTecnoMecanica: true});
-                        
-                        // Mostrar notificación de éxito
-                        Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
+                        =IfError(
+                            Patch(
+                                'Lista de Vehiculos',
+                                LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
+                                {
+                                    'Vencimiento SOAT': DatePickerSOAT.SelectedDate,
+                                    Tecnomecanica: DatePickerTecnoMecanica.SelectedDate
+                                }
+                            ),
+                            Notify("Error al actualizar las fechas de vencimiento", NotificationType.Error),
+                            Reset(DatePickerSOAT);
+                            Reset(DatePickerTecnoMecanica);
+                            Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
+                        )
                     TabIndex: =0
                     Text: ="Actualizar SOAT TECNO"
                     Tooltip: =""
@@ -675,7 +674,7 @@ PrevenTanqueo As screen:
                 Height: =29
                 HoverDateFill: =App.Theme.Colors.Lighter70
                 IconBackground: =RGBA(100, 118, 132, 1)
-                Reset: =ResetMtto
+                Reset: =
                 SelectedDateFill: =App.Theme.Colors.Primary
                 Size: =9
                 Width: =163
@@ -694,7 +693,7 @@ PrevenTanqueo As screen:
                 Height: =29
                 HoverDateFill: =App.Theme.Colors.Lighter70
                 IconBackground: =RGBA(100, 118, 132, 1)
-                Reset: =ResetProMtto
+                Reset: =
                 SelectedDateFill: =App.Theme.Colors.Primary
                 Size: =9
                 Width: =163
@@ -796,21 +795,20 @@ PrevenTanqueo As screen:
                     IconStyle: ="Outline"
                     Layout: ="Icon before"
                     OnSelect: |-
-                        =Patch(
-                            'Lista de Vehiculos',
-                            LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value), 
-                            {
-                                'FechaUltimoMtto': DatePickerFechaManteni.SelectedDate, 
-                                FechaProxiMtto: DatePickerFechaProMatto.SelectedDate
-                            }
-                        );
-                        
-                        // Restablecer los DatePickers
-                        UpdateContext({ResetMtto: true}); 
-                        UpdateContext({ResetProMtto: true});
-                        
-                        // Mostrar notificación de éxito
-                        Notify("Fechas de MANTENIMIENTOS actualizadas correctamente", NotificationType.Success)
+                        =IfError(
+                            Patch(
+                                'Lista de Vehiculos',
+                                LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
+                                {
+                                    FechaUltimoMtto: DatePickerFechaManteni.SelectedDate,
+                                    FechaProxiMtto: DatePickerFechaProMatto.SelectedDate
+                                }
+                            ),
+                            Notify("Error al actualizar las fechas de mantenimiento", NotificationType.Error),
+                            Reset(DatePickerFechaManteni);
+                            Reset(DatePickerFechaProMatto);
+                            Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
+                        )
                     TabIndex: =0
                     Text: ="Actualizar Mtto"
                     Tooltip: =""
