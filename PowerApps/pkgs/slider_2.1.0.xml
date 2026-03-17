@@ -128,8 +128,9 @@
       <appMagic:displayName>##slider_Default_DisplayName##</appMagic:displayName>
       <appMagic:tooltip>##slider_Default_Tooltip##</appMagic:tooltip>
     </property>
-    <property name="Value" localizedName="##slider_Value##" datatype="Number" direction="out" nullDefault="0" computeValue="Clamp(##slider_Default##, ##slider_Min##, ##slider_Max##)" isPrimaryOutputProperty="true" supportsAutomation="true">
+    <property name="Value" localizedName="##slider_Value##" datatype="Number" direction="out" nullDefault="0" isPrimaryOutputProperty="true" supportsAutomation="true">
       <appMagic:category>data</appMagic:category>
+      <appMagic:excludeFromReachability />
     </property>
     <property name="Layout" localizedName="##slider_Layout##" datatype="Layout" defaultValue="%Layout.RESERVED%.Horizontal" isExpr="true">
       <appMagic:category>design</appMagic:category>

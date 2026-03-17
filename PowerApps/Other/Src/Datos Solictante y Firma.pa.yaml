@@ -1762,7 +1762,7 @@ Screens:
             X: =272
             Y: =167
       - Container3:
-          Control: GroupContainer@1.4.0
+          Control: GroupContainer@1.5.0
           Variant: ManualLayout
           Properties:
             Height: =707

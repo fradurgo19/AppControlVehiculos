@@ -1234,7 +1234,7 @@ Screens:
             Width: =303
             X: =421
       - Container2:
-          Control: GroupContainer@1.4.0
+          Control: GroupContainer@1.5.0
           Variant: ManualLayout
           Properties:
             Height: =707
