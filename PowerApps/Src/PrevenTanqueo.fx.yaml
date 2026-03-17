@@ -357,8 +357,8 @@ PrevenTanqueo As screen:
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 Width: =140
-                X: =468
-                Y: =227
+                X: =236
+                Y: =224
                 ZIndex: =16
 
             TextInput1_22 As text:
@@ -376,9 +376,9 @@ PrevenTanqueo As screen:
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
                 Size: =11
-                Width: =162
-                X: =608
-                Y: =227
+                Width: =120
+                X: =376
+                Y: =224
                 ZIndex: =17
 
             Label3_21 As label:
@@ -405,8 +405,8 @@ PrevenTanqueo As screen:
                 Text: |-
                     ="3. Extintor, Botiquín, Gato hidra, cruceta, triángulos y tacos:"
                 Width: =201
-                X: =266
-                Y: =224
+                X: =34
+                Y: =221
                 ZIndex: =19
 
             Label3_23 As label:
@@ -419,8 +419,8 @@ PrevenTanqueo As screen:
                 Text: |-
                     ="4. Cables de ignición, herramienta y linterna:"
                 Width: =202
-                X: =266
-                Y: =274
+                X: =34
+                Y: =271
                 ZIndex: =20
 
             Dropdown2_23 As dropdown:
@@ -441,8 +441,8 @@ PrevenTanqueo As screen:
                 PressedFill: =RGBA(32, 54, 71, 1)
                 SelectionFill: =RGBA(100, 118, 132, 1)
                 Width: =140
-                X: =468
-                Y: =274
+                X: =236
+                Y: =271
                 ZIndex: =21
 
             TextInput1_23 As text:
@@ -454,15 +454,15 @@ PrevenTanqueo As screen:
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
                 FocusedBorderThickness: =4
-                Height: =30
+                Height: =29
                 HintText: ="Observaciones"
                 HoverBorderColor: =RGBA(32, 54, 71, 1)
                 HoverColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =RGBA(205, 209, 213, 1)
                 Size: =11
-                Width: =162
-                X: =608
-                Y: =274
+                Width: =120
+                X: =376
+                Y: =271
                 ZIndex: =22
 
             PageTitle_8 As label:
@@ -575,7 +575,7 @@ PrevenTanqueo As screen:
 
             Container1 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Light
-                Height: =35
+                Height: =32
                 LayoutGridColumnMinWidth: =0
                 LayoutGridColumns: =6
                 LayoutGridRowMinHeight: =0
@@ -584,9 +584,9 @@ PrevenTanqueo As screen:
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: =106
-                X: =145
-                Y: =224
+                Width: =109
+                X: =413
+                Y: =83
                 ZIndex: =44
 
                 ButtonCanvas1 As Botón:
@@ -633,7 +633,7 @@ PrevenTanqueo As screen:
                     VerticalAlign: =""
                     Visible: =true
                     Width: =105
-                    X: =0
+                    X: =1
                     Y: =0
                     ZIndex: =1
 
@@ -650,7 +650,7 @@ PrevenTanqueo As screen:
                 FontItalic: =false
                 FontStrikethrough: =false
                 FontUnderline: =false
-                Height: =30
+                Height: =28
                 Size: =14
                 TabIndex: =0
                 Text: =First(ColeccionVehiculos).FechaUltimoMttoVehiculo
@@ -660,8 +660,8 @@ PrevenTanqueo As screen:
                 Weight: ="Regular"
                 Width: =163
                 Wrap: =true
-                X: =412
-                Y: =84
+                X: =602
+                Y: =94
                 ZIndex: =45
 
             DatePickerFechaManteni As datepicker:
@@ -672,15 +672,15 @@ PrevenTanqueo As screen:
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
-                Height: =31
+                Height: =29
                 HoverDateFill: =App.Theme.Colors.Lighter70
                 IconBackground: =RGBA(100, 118, 132, 1)
                 Reset: =ResetSOAT
                 SelectedDateFill: =App.Theme.Colors.Primary
                 Size: =9
                 Width: =163
-                X: =412
-                Y: =115
+                X: =602
+                Y: =125
                 ZIndex: =46
 
             DatePickerFechaProMatto As datepicker:
@@ -691,15 +691,15 @@ PrevenTanqueo As screen:
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
-                Height: =28
+                Height: =29
                 HoverDateFill: =App.Theme.Colors.Lighter70
                 IconBackground: =RGBA(100, 118, 132, 1)
                 Reset: =ResetTecnoMecanica
                 SelectedDateFill: =App.Theme.Colors.Primary
                 Size: =9
-                Width: =143
-                X: =629
-                Y: =118
+                Width: =163
+                X: =602
+                Y: =228
                 ZIndex: =47
 
             TextCanvas1_3 As Texto:
@@ -715,7 +715,7 @@ PrevenTanqueo As screen:
                 FontItalic: =false
                 FontStrikethrough: =false
                 FontUnderline: =false
-                Height: =28
+                Height: =27
                 Size: =14
                 TabIndex: =0
                 Text: =First(ColeccionVehiculos).FechaProxiMttoVehiculo
@@ -723,10 +723,10 @@ PrevenTanqueo As screen:
                 VerticalAlign: =""
                 Visible: =true
                 Weight: ="Regular"
-                Width: =143
+                Width: =163
                 Wrap: =true
-                X: =629
-                Y: =91
+                X: =602
+                Y: =201
                 ZIndex: =48
 
             Label3_24 As label:
@@ -734,13 +734,13 @@ PrevenTanqueo As screen:
                 Color: =RGBA(0, 0, 0, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FontWeight: =FontWeight.Bold
-                Height: =26
+                Height: =29
                 Size: =12
                 Text: |-
                     ="5. Último Mtto:"
-                Width: =191
-                X: =412
-                Y: =55
+                Width: =163
+                X: =602
+                Y: =65
                 ZIndex: =49
 
             Label3_25 As label:
@@ -751,15 +751,15 @@ PrevenTanqueo As screen:
                 Height: =27
                 Size: =12
                 Text: |-
-                    ="2. Proximo Mtto:"
+                    ="6. Proximo Mtto:"
                 Width: =165
-                X: =629
-                Y: =57
+                X: =602
+                Y: =167
                 ZIndex: =50
 
             Container1_1 As groupContainer.manualLayoutContainer:
                 DropShadow: =DropShadow.Light
-                Height: =35
+                Height: =37
                 LayoutGridColumnMinWidth: =0
                 LayoutGridColumns: =6
                 LayoutGridRowMinHeight: =0
@@ -768,9 +768,9 @@ PrevenTanqueo As screen:
                 RadiusBottomRight: =4
                 RadiusTopLeft: =4
                 RadiusTopRight: =4
-                Width: =106
-                X: =533
-                Y: =165
+                Width: =104
+                X: =638
+                Y: =275
                 ZIndex: =51
 
                 ButtonCanvas1_1 As Botón:
@@ -817,7 +817,7 @@ PrevenTanqueo As screen:
                     VerticalAlign: =""
                     Visible: =true
                     Width: =105
-                    X: =0
+                    X: =1
                     Y: =0
                     ZIndex: =1
 

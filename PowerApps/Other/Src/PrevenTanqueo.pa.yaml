@@ -473,8 +473,8 @@ Screens:
                         SelectionFill: =RGBA(100, 118, 132, 1)
                         Size: =11
                         Width: =140
-                        X: =468
-                        Y: =227
+                        X: =236
+                        Y: =224
                   - TextInput1_22:
                       Control: Classic/TextInput@2.3.2
                       Properties:
@@ -486,9 +486,9 @@ Screens:
                         HoverBorderColor: =RGBA(32, 54, 71, 1)
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Size: =11
-                        Width: =162
-                        X: =608
-                        Y: =227
+                        Width: =120
+                        X: =376
+                        Y: =224
                   - Label3_21:
                       Control: Label@2.5.1
                       Properties:
@@ -511,8 +511,8 @@ Screens:
                         Size: =11
                         Text: ="3. Extintor, Botiquín, Gato hidra, cruceta, triángulos y tacos:"
                         Width: =201
-                        X: =266
-                        Y: =224
+                        X: =34
+                        Y: =221
                   - Label3_23:
                       Control: Label@2.5.1
                       Properties:
@@ -523,8 +523,8 @@ Screens:
                         Size: =11
                         Text: ="4. Cables de ignición, herramienta y linterna:"
                         Width: =202
-                        X: =266
-                        Y: =274
+                        X: =34
+                        Y: =271
                   - Dropdown2_23:
                       Control: Classic/DropDown@2.3.1
                       Properties:
@@ -544,22 +544,22 @@ Screens:
                         SelectionFill: =RGBA(100, 118, 132, 1)
                         Size: =11
                         Width: =140
-                        X: =468
-                        Y: =274
+                        X: =236
+                        Y: =271
                   - TextInput1_23:
                       Control: Classic/TextInput@2.3.2
                       Properties:
                         BorderColor: =Color.DarkSlateGray
                         Default: =""
                         Font: =Font.'Open Sans'
-                        Height: =30
+                        Height: =29
                         HintText: ="Observaciones"
                         HoverBorderColor: =RGBA(32, 54, 71, 1)
                         HoverFill: =RGBA(205, 209, 213, 1)
                         Size: =11
-                        Width: =162
-                        X: =608
-                        Y: =274
+                        Width: =120
+                        X: =376
+                        Y: =271
                   - PageTitle_8:
                       Control: Label@2.5.1
                       Properties:
@@ -651,10 +651,10 @@ Screens:
                       Control: GroupContainer@1.5.0
                       Variant: ManualLayout
                       Properties:
-                        Height: =35
-                        Width: =106
-                        X: =145
-                        Y: =224
+                        Height: =32
+                        Width: =109
+                        X: =413
+                        Y: =83
                       Children:
                         - ButtonCanvas1:
                             Control: Button@0.0.45
@@ -680,66 +680,67 @@ Screens:
                                 Notify("Fechas de vencimiento actualizadas correctamente", NotificationType.Success)
                               Text: ="Actualizar SOAT TECNO"
                               Width: =105
+                              X: =1
                   - TextCanvas1_2:
                       Control: Text@0.0.51
                       Properties:
                         Fill: =RGBA(255, 255, 0, 1)
                         FontColor: =RGBA(215, 58, 60, 1)
-                        Height: =30
+                        Height: =28
                         Text: =First(ColeccionVehiculos).FechaUltimoMttoVehiculo
                         Width: =163
-                        X: =412
-                        Y: =84
+                        X: =602
+                        Y: =94
                   - DatePickerFechaManteni:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
                         DefaultDate: =DateValue(TextCanvas1.Text)
                         Font: =Font.'Open Sans'
-                        Height: =31
+                        Height: =29
                         IconBackground: =RGBA(100, 118, 132, 1)
                         IconFill: =RGBA(255, 255, 255, 1)
                         Reset: =ResetSOAT
                         Size: =9
                         Width: =163
-                        X: =412
-                        Y: =115
+                        X: =602
+                        Y: =125
                   - DatePickerFechaProMatto:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
                         DefaultDate: =DateValue(TextCanvas1_1.Text)
                         Font: =Font.'Open Sans'
-                        Height: =28
+                        Height: =29
                         IconBackground: =RGBA(100, 118, 132, 1)
                         IconFill: =RGBA(255, 255, 255, 1)
                         Reset: =ResetTecnoMecanica
                         Size: =9
-                        Width: =143
-                        X: =629
-                        Y: =118
+                        Width: =163
+                        X: =602
+                        Y: =228
                   - TextCanvas1_3:
                       Control: Text@0.0.51
                       Properties:
                         Fill: =RGBA(255, 255, 0, 1)
                         FontColor: =RGBA(215, 58, 60, 1)
-                        Height: =28
+                        Height: =27
                         Text: =First(ColeccionVehiculos).FechaProxiMttoVehiculo
-                        Width: =143
-                        X: =629
-                        Y: =91
+                        Width: =163
+                        X: =602
+                        Y: =201
                   - Label3_24:
                       Control: Label@2.5.1
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
                         Font: =Font.'Open Sans'
                         FontWeight: =FontWeight.Bold
-                        Height: =26
+                        Height: =29
                         Size: =12
                         Text: ="5. Último Mtto:"
-                        Width: =191
-                        X: =412
-                        Y: =55
+                        Width: =163
+                        X: =602
+                        Y: =65
                   - Label3_25:
                       Control: Label@2.5.1
                       Properties:
@@ -748,18 +749,18 @@ Screens:
                         FontWeight: =FontWeight.Bold
                         Height: =27
                         Size: =12
-                        Text: ="2. Proximo Mtto:"
+                        Text: ="6. Proximo Mtto:"
                         Width: =165
-                        X: =629
-                        Y: =57
+                        X: =602
+                        Y: =167
                   - Container1_1:
                       Control: GroupContainer@1.5.0
                       Variant: ManualLayout
                       Properties:
-                        Height: =35
-                        Width: =106
-                        X: =533
-                        Y: =165
+                        Height: =37
+                        Width: =104
+                        X: =638
+                        Y: =275
                       Children:
                         - ButtonCanvas1_1:
                             Control: Button@0.0.45
@@ -785,6 +786,7 @@ Screens:
                                 Notify("Fechas de MANTENIMIENTOS actualizadas correctamente", NotificationType.Success)
                               Text: ="Actualizar Mtto"
                               Width: =105
+                              X: =1
       - Video1_4:
           Control: Video@2.4.2
           Properties:
