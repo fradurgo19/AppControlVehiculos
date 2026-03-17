@@ -586,7 +586,7 @@ PrevenTanqueo As screen:
                 RadiusTopRight: =4
                 Width: =109
                 X: =413
-                Y: =83
+                Y: =114
                 ZIndex: =44
 
                 ButtonCanvas1 As Botón:

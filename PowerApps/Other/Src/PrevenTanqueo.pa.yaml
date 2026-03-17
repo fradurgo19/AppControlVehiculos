@@ -654,7 +654,7 @@ Screens:
                         Height: =32
                         Width: =109
                         X: =413
-                        Y: =83
+                        Y: =114
                       Children:
                         - ButtonCanvas1:
                             Control: Button@0.0.45
