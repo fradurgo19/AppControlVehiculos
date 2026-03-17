@@ -5,6 +5,9 @@ PrevenTanqueo As screen:
     OnVisible: |+
         =Set(_selectedTutorial, {Row: 6, Title: "Adicional", Image: PopUpIcon});
         
+        Set(varDefaultFechaManteni, Today());
+        Set(varDefaultFechaProxiMtto, Today());
+        
         
         
         ClearCollect(
@@ -597,6 +600,11 @@ PrevenTanqueo As screen:
                 BorderColor: =RGBA(32, 54, 71, 1)
                 CalendarHeaderFill: =RGBA(100, 118, 132, 1)
                 Color: =RGBA(0, 0, 0, 1)
+                DefaultDate: |-
+                    =With(
+                        { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                        Coalesce(veh.FechaVencimientoSOAT, Blank())
+                    )
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -615,6 +623,11 @@ PrevenTanqueo As screen:
                 BorderColor: =RGBA(32, 54, 71, 1)
                 CalendarHeaderFill: =RGBA(100, 118, 132, 1)
                 Color: =RGBA(0, 0, 0, 1)
+                DefaultDate: |-
+                    =With(
+                        { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                        Coalesce(veh.FechaVencimientoTecnoMecanica, Blank())
+                    )
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -773,6 +786,11 @@ PrevenTanqueo As screen:
                 BorderColor: =RGBA(32, 54, 71, 1)
                 CalendarHeaderFill: =App.Theme.Colors.Primary
                 Color: =RGBA(0, 0, 0, 1)
+                DefaultDate: |-
+                    =With(
+                        { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                        Coalesce(veh.FechaUltimoMttoVehiculo, Blank())
+                    )
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -791,6 +809,11 @@ PrevenTanqueo As screen:
                 BorderColor: =RGBA(32, 54, 71, 1)
                 CalendarHeaderFill: =App.Theme.Colors.Primary
                 Color: =RGBA(0, 0, 0, 1)
+                DefaultDate: |-
+                    =With(
+                        { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                        Coalesce(veh.FechaProxiMttoVehiculo, Blank())
+                    )
                 DisabledBorderColor: =RGBA(166, 166, 166, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -962,8 +985,11 @@ PrevenTanqueo As screen:
                             )
                         );
                         
+                        Set(varDefaultFechaManteni, Today());
+                        Set(varDefaultFechaProxiMtto, Today());
                         Reset(DatePickerFechaManteni);
                         Reset(DatePickerFechaProMatto);
+                        Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
                     TabIndex: =0
                     Text: ="Actualizar Mtto"
                     Tooltip: =""

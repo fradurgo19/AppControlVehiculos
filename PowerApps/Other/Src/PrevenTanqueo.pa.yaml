@@ -15,6 +15,9 @@ Screens:
       OnVisible: |+
         =Set(_selectedTutorial, {Row: 6, Title: "Adicional", Image: PopUpIcon});
 
+        Set(varDefaultFechaManteni, Today());
+        Set(varDefaultFechaProxiMtto, Today());
+
 
 
         ClearCollect(
@@ -681,6 +684,11 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
+                        DefaultDate: |-
+                          =With(
+                              { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                              Coalesce(veh.FechaVencimientoSOAT, Blank())
+                          )
                         Font: =Font.'Open Sans'
                         Height: =31
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -694,6 +702,11 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
+                        DefaultDate: |-
+                          =With(
+                              { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                              Coalesce(veh.FechaVencimientoTecnoMecanica, Blank())
+                          )
                         Font: =Font.'Open Sans'
                         Height: =28
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -800,6 +813,11 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
+                        DefaultDate: |-
+                          =With(
+                              { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                              Coalesce(veh.FechaUltimoMttoVehiculo, Blank())
+                          )
                         Font: =Font.'Open Sans'
                         Height: =29
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -813,6 +831,11 @@ Screens:
                       Control: Classic/DatePicker@2.6.0
                       Properties:
                         BorderColor: =RGBA(32, 54, 71, 1)
+                        DefaultDate: |-
+                          =With(
+                              { veh: LookUp(ColeccionVehiculos, Placa = DataCardValue21.Selected.Value) },
+                              Coalesce(veh.FechaProxiMttoVehiculo, Blank())
+                          )
                         Font: =Font.'Open Sans'
                         Height: =29
                         IconBackground: =RGBA(100, 118, 132, 1)
@@ -935,8 +958,11 @@ Screens:
                                     )
                                 );
 
+                                Set(varDefaultFechaManteni, Today());
+                                Set(varDefaultFechaProxiMtto, Today());
                                 Reset(DatePickerFechaManteni);
                                 Reset(DatePickerFechaProMatto);
+                                Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
                               Text: ="Actualizar Mtto"
                               Width: =105
                               X: =1
