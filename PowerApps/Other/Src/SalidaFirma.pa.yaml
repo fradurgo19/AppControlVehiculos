@@ -553,6 +553,67 @@ Screens:
                   )
               );
 
+              With(
+                  {
+                      placaSel: DataCardValue21.Selected.Value,
+                      kmActual: Value(DataCardValue73.Text),
+                      veh: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
+                      movs: SortByColumns(
+                          Filter(
+                              ListaPrestamoVehiculos,
+                              Placa.Value = DataCardValue21.Selected.Value And !IsBlank(KMsSalida)
+                          ),
+                          "FechaSolicitud",
+                          SortOrder.Ascending
+                      ),
+                      intervaloKm: 5000
+                  },
+                  If(
+                      !IsBlank(veh) And !IsBlank(kmActual),
+                      With(
+                          {
+                              kmRestantes: (Coalesce(Value(veh.KmUltimoMtto), kmActual) + intervaloKm) - kmActual,
+                              diasHist: If(
+                                  CountRows(movs) > 1,
+                                  Max(1, DateDiff(First(movs).FechaSolicitud, Last(movs).FechaSolicitud)),
+                                  1
+                              ),
+                              kmHist: If(
+                                  CountRows(movs) > 1,
+                                  Max(0, Value(Last(movs).KMsSalida) - Value(First(movs).KMsSalida)),
+                                  0
+                              )
+                          },
+                          With(
+                              {
+                                  kmPorDia: If(kmHist > 0, kmHist / diasHist, 30)
+                              },
+                              With(
+                                  {
+                                      fechaProxCalc: If(
+                                          kmRestantes <= 0,
+                                          Today(),
+                                          DateAdd(Today(), RoundUp(kmRestantes / kmPorDia, 0))
+                                      )
+                                  },
+                                  Patch(
+                                      'Lista de Vehiculos',
+                                      veh,
+                                      { FechaProxiMtto: fechaProxCalc }
+                                  );
+                                  UpdateIf(
+                                      ColeccionVehiculos,
+                                      Placa = placaSel,
+                                      { FechaProxiMttoVehiculo: fechaProxCalc }
+                                  );
+                                  Set(varPlacaMttoUI, placaSel);
+                                  Set(varMttoUIActivo, true);
+                                  Set(varFechaProxiMttoUI, fechaProxCalc)
+                              )
+                          )
+                      )
+                  )
+              );
 
               Reset(Dropdown2);
               Reset(TextInput1);
