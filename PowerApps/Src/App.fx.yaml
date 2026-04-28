@@ -12,8 +12,10 @@ App As appinfo:
         
         Set(varMttoUIActivo, false);
         Set(varPlacaMttoUI, Blank());
+        Set(varFechaUltimoMttoUI, Today());
         Set(varFechaUltimoMttoUI, Blank());
-        Set(varFechaProxiMttoUI, Blank());
+        Set(varFechaProxiMttoUI, Today());
+        Set(varFechaProxiMttoUI, Blank())
     StartScreen: =
     Theme: =PlatinumTheme
 

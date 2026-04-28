@@ -836,9 +836,13 @@ Screens:
                               { placaSel: Text(DataCardValue21.Selected.Value) },
                               With(
                                   {
-                                      f: Coalesce(
-                                          LookUp('Lista de Vehiculos', Text(Placa) = placaSel).FechaUltimoMtto,
-                                          LookUp(ColeccionVehiculos, Text(Placa) = placaSel).FechaUltimoMttoVehiculo
+                                      f: If(
+                                          varMttoUIActivo And Text(varPlacaMttoUI) = placaSel And !IsBlank(varFechaUltimoMttoUI),
+                                          varFechaUltimoMttoUI,
+                                          Coalesce(
+                                              LookUp('Lista de Vehiculos', Text(Placa) = placaSel).FechaUltimoMtto,
+                                              LookUp(ColeccionVehiculos, Text(Placa) = placaSel).FechaUltimoMttoVehiculo
+                                          )
                                       )
                                   },
                                   If(
@@ -966,123 +970,108 @@ Screens:
                               BasePaletteColor: =RGBA(8, 222, 8, 1)
                               FontSize: =11
                               Height: =30
-                              OnSelect: |+
-                                =With(
-                                    {
-                                        placaSel: Text(DataCardValue21.Selected.Value),
-                                        kmActual: IfError(Value(Trim(DataCardValue73.Text)), Blank()),
-                                        veh: LookUp(
-                                            'Lista de Vehiculos',
-                                            Text(Placa) = Text(DataCardValue21.Selected.Value)
-                                        ),
-                                        intervaloKm: 5000
-                                    },
-                                    If(
-                                        !IsBlank(veh) And
-                                        !IsBlank(veh.FechaUltimoMtto) And
-                                        !IsBlank(veh.KmUltimoMtto) And
-                                        !IsBlank(kmActual),
+                              OnSelect: |
+                                =Refresh(ListaPrestamoVehiculos);
+
+                                With(
+                                    { placaSel: Text(DataCardValue21.Selected.Value) },
+                                    With(
+                                        {
+                                            vehiculo: LookUp(
+                                                'Lista de Vehiculos',
+                                                Placa = placaSel
+                                            ),
+                                            fUlt: DatePickerFechaManteni.SelectedDate,
+                                            fProx: DatePickerFechaProMatto.SelectedDate,
+                                            tKm: SortByColumns(
+                                                Filter(
+                                                    ListaPrestamoVehiculos,
+                                                    Placa.Value = placaSel And
+                                                    !IsBlank(Trim(KMsSalida))
+                                                ),
+                                                "FechaSolicitud",
+                                                SortOrder.Descending
+                                            )
+                                        },
                                         With(
                                             {
-                                                movs: SortByColumns(
-                                                    Filter(
-                                                        ListaPrestamoVehiculos,
-                                                        Text(Placa.Value) = placaSel And
-                                                        !IsBlank(Trim(KMsSalida)) And
-                                                        FechaSolicitud >= veh.FechaUltimoMtto
+                                                kmUlt: IfError(
+                                                    Coalesce(
+                                                        If(
+                                                            CountRows(tKm) = 0,
+                                                            Blank(),
+                                                            Value(Trim(First(tKm).KMsSalida))
+                                                        ),
+                                                        If(
+                                                            IsBlank(vehiculo),
+                                                            Blank(),
+                                                            IfError(
+                                                                Value(
+                                                                    Coalesce(
+                                                                        vehiculo.KmUltimoMtto,
+                                                                        Text(vehiculo.KmUltimoMtto)
+                                                                    )
+                                                                ),
+                                                                Blank()
+                                                            )
+                                                        )
                                                     ),
-                                                    "FechaSolicitud",
-                                                    SortOrder.Ascending
-                                                ),
-                                                kmRestantes: (Value(veh.KmUltimoMtto) + intervaloKm) - kmActual
+                                                    Blank()
+                                                )
                                             },
-                                            With(
-                                                {
-                                                    diasHist: If(
-                                                        CountRows(movs) > 1,
-                                                        Max(
-                                                            1,
-                                                            DateDiff(
-                                                                First(movs).FechaSolicitud,
-                                                                Last(movs).FechaSolicitud,
-                                                                TimeUnit.Days
-                                                            )
-                                                        ),
-                                                        Max(
-                                                            1,
-                                                            DateDiff(
-                                                                veh.FechaUltimoMtto,
-                                                                Today(),
-                                                                TimeUnit.Days
-                                                            )
-                                                        )
+                                            If(
+                                                IsBlank(vehiculo),
+                                                Notify("No se encontró la placa seleccionada", NotificationType.Warning),
+                                                If(
+                                                    IsBlank(kmUlt),
+                                                    Notify(
+                                                        "No hay km para guardar: no hay KMsSalida en préstamos ni KmUltimoMtto en el vehículo. Placa: " & placaSel,
+                                                        NotificationType.Warning
                                                     ),
-                                                    kmHist: If(
-                                                        CountRows(movs) > 1,
-                                                        Max(
-                                                            0,
-                                                            IfError(Value(Trim(Last(movs).KMsSalida)), 0) -
-                                                            IfError(Value(Trim(First(movs).KMsSalida)), 0)
-                                                        ),
-                                                        Max(
-                                                            0,
-                                                            kmActual - Value(veh.KmUltimoMtto)
-                                                        )
-                                                    )
-                                                },
-                                                With(
-                                                    {
-                                                        kmPorDia: If(kmHist > 0, kmHist / diasHist, 30)
-                                                    },
-                                                    With(
-                                                        {
-                                                            fechaProxCalc: If(
-                                                                kmRestantes <= 0,
-                                                                Today(),
-                                                                DateAdd(
-                                                                    Today(),
-                                                                    RoundUp(kmRestantes / kmPorDia, 0),
-                                                                    TimeUnit.Days
+                                                    If(
+                                                        IsBlank(fUlt),
+                                                        Notify("Indique la fecha del último mantenimiento.", NotificationType.Warning),
+                                                        If(
+                                                            IsBlank(fProx),
+                                                            Notify("Indique la fecha del próximo mantenimiento.", NotificationType.Warning),
+                                                            IfError(
+                                                                Patch(
+                                                                    'Lista de Vehiculos',
+                                                                    vehiculo,
+                                                                    {
+                                                                        FechaUltimoMtto: fUlt,
+                                                                        FechaProxiMtto: fProx,
+                                                                        KmUltimoMtto: kmUlt
+                                                                    }
+                                                                ),
+                                                                Notify("Error al actualizar mantenimiento", NotificationType.Error),
+                                                                Refresh('Lista de Vehiculos');
+                                                                UpdateIf(
+                                                                    ColeccionVehiculos,
+                                                                    Text(Placa) = placaSel,
+                                                                    {
+                                                                        FechaUltimoMttoVehiculo: fUlt,
+                                                                        FechaProxiMttoVehiculo: fProx
+                                                                    }
+                                                                );
+                                                                Set(varPlacaMttoUI, placaSel);
+                                                                Set(varMttoUIActivo, true);
+                                                                Set(varFechaUltimoMttoUI, fUlt);
+                                                                Set(varFechaProxiMttoUI, fProx);
+                                                                Reset(DatePickerFechaManteni);
+                                                                Reset(DatePickerFechaProMatto);
+                                                                Notify(
+                                                                    "Mantenimiento actualizado correctamente.",
+                                                                    NotificationType.Success
                                                                 )
                                                             )
-                                                        },
-                                                        Notify(
-                                                            "DEBUG Prestamo -> Placa: " & placaSel &
-                                                            " | Movs: " & Text(CountRows(movs)) &
-                                                            " | kmActual: " & Text(kmActual) &
-                                                            " | kmHist: " & Text(kmHist) &
-                                                            " | km/día: " & Text(Round(kmPorDia, 2)) &
-                                                            " | Próx: " & Text(fechaProxCalc, "dd/mm/yyyy"),
-                                                            NotificationType.Information
-                                                        );
-
-                                                        Patch(
-                                                            'Lista de Vehiculos',
-                                                            veh,
-                                                            { FechaProxiMtto: fechaProxCalc }
-                                                        );
-                                                        UpdateIf(
-                                                            ColeccionVehiculos,
-                                                            Text(Placa) = placaSel,
-                                                            { FechaProxiMttoVehiculo: fechaProxCalc }
-                                                        );
-                                                        Set(varPlacaMttoUI, placaSel);
-                                                        Set(varMttoUIActivo, true);
-                                                        Set(varFechaProxiMttoUI, fechaProxCalc)
+                                                        )
                                                     )
                                                 )
                                             )
-                                        ),
-                                        Notify(
-                                            "Se guardó el préstamo, pero falta FechaUltimoMtto o KmUltimoMtto para calcular próximo mantenimiento. " &
-                                            "Placa: " & placaSel &
-                                            " | kmActual: " & Coalesce(Text(kmActual), "BLANK"),
-                                            NotificationType.Warning
                                         )
                                     )
                                 )
-
-
                               Text: ="Actualizar Mtto"
                               Width: =105
                               X: =1
