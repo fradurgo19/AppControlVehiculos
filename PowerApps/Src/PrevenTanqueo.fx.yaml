@@ -2,7 +2,7 @@ PrevenTanqueo As screen:
     Fill: =RGBA(241, 241, 241, 1)
     Height: =Max(App.Height, App.DesignHeight)
     LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
-    OnVisible: |+
+    OnVisible: |-
         =Set(_selectedTutorial, {Row: 6, Title: "Adicional", Image: PopUpIcon});
         
         Set(varDefaultFechaManteni, Today());
@@ -31,56 +31,103 @@ PrevenTanqueo As screen:
         );
         
         With(
-            {
-                veh: LookUp(
-                    ColeccionVehiculos,
-                    Placa = DataCardValue21.Selected.Value
-                )
-            },
-        
-            If(
-                !IsBlank(veh.FechaVencimientoSOAT),
-                If(
-                    veh.FechaVencimientoSOAT < Today(),
-                    Notify("El SOAT está vencido", NotificationType.Error),
-                    If(
-                        veh.FechaVencimientoSOAT <= DateAdd(Today(), 7),
-                        Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
-                    )
+            { placaSel: Text(DataCardValue21.Selected.Value) },
+            ClearCollect(
+                ColeccionVehiculos,
+                AddColumns(
+                    Filter(
+                        'Lista de Vehiculos',
+                        Text(Placa) = placaSel
+                    ),
+                    FechaVencimientoSOAT, 'Vencimiento SOAT',
+                    FechaVencimientoTecnoMecanica, Tecnomecanica,
+                    FechaUltimoMttoVehiculo, FechaUltimoMtto,
+                    FechaProxiMttoVehiculo, FechaProxiMtto,
+                    FechaSolicitud,
+                        With(
+                            {
+                                ultPrestamo: First(
+                                    SortByColumns(
+                                        Filter(
+                                            ListaPrestamoVehiculos,
+                                            Text(Placa.Value) = placaSel
+                                        ),
+                                        "FechaSolicitud",
+                                        SortOrder.Descending
+                                    )
+                                )
+                            },
+                            If(
+                                IsBlank(ultPrestamo),
+                                Blank(),
+                                ultPrestamo.FechaSolicitud
+                            )
+                        )
                 )
             );
         
-            If(
-                !IsBlank(veh.FechaVencimientoTecnoMecanica),
-                If(
-                    veh.FechaVencimientoTecnoMecanica < Today(),
-                    Notify("La TecnoMecánica está vencida", NotificationType.Error),
-                    If(
-                        veh.FechaVencimientoTecnoMecanica <= DateAdd(Today(), 7),
-                        Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
+            With(
+                {
+                    veh: LookUp(
+                        ColeccionVehiculos,
+                        Text(Placa) = placaSel
                     )
-                )
-            );
-        
-            If(
-                !IsBlank(veh.FechaProxiMttoVehiculo),
+                },
                 If(
-                    veh.FechaProxiMttoVehiculo < Today(),
-                    Notify("El mantenimiento está vencido", NotificationType.Error),
+                    !IsBlank(veh),
                     If(
-                        veh.FechaProxiMttoVehiculo <= DateAdd(Today(), 7),
-                        Notify(
-                            "El próximo mantenimiento vence en " &
-                            DateDiff(Today(), veh.FechaProxiMttoVehiculo) &
-                            " día(s)",
-                            NotificationType.Warning
+                        !IsBlank(veh.FechaVencimientoSOAT),
+                        If(
+                            veh.FechaVencimientoSOAT < Today(),
+                            Notify("El SOAT está vencido", NotificationType.Error),
+                            If(
+                                veh.FechaVencimientoSOAT <= DateAdd(Today(), 7, TimeUnit.Days),
+                                Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
+                            )
+                        )
+                    );
+        
+                    If(
+                        !IsBlank(veh),
+                        If(
+                            !IsBlank(veh.FechaVencimientoTecnoMecanica),
+                            If(
+                                veh.FechaVencimientoTecnoMecanica < Today(),
+                                Notify("La TecnoMecánica está vencida", NotificationType.Error),
+                                If(
+                                    veh.FechaVencimientoTecnoMecanica <= DateAdd(Today(), 7, TimeUnit.Days),
+                                    Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
+                                )
+                            )
+                        )
+                    );
+        
+                    If(
+                        !IsBlank(veh),
+                        If(
+                            !IsBlank(veh.FechaProxiMttoVehiculo),
+                            If(
+                                veh.FechaProxiMttoVehiculo < Today(),
+                                Notify("El mantenimiento está vencido", NotificationType.Error),
+                                If(
+                                    veh.FechaProxiMttoVehiculo <= DateAdd(Today(), 7, TimeUnit.Days),
+                                    Notify(
+                                        "El próximo mantenimiento vence en " &
+                                        DateDiff(
+                                            Today(),
+                                            veh.FechaProxiMttoVehiculo,
+                                            TimeUnit.Days
+                                        ) &
+                                        " día(s)",
+                                        NotificationType.Warning
+                                    )
+                                )
+                            )
                         )
                     )
                 )
             )
         )
-        
-        
     Orientation: =If(PrevenTanqueo.Width < PrevenTanqueo.Height, Layout.Vertical, Layout.Horizontal)
     Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= PrevenTanqueo.Width)
     Width: =Max(App.Width, App.DesignWidth)
@@ -752,24 +799,26 @@ PrevenTanqueo As screen:
                 TabIndex: =0
                 Text: |-
                     =With(
-                        {
-                            f: If(
-                                varMttoUIActivo And varPlacaMttoUI = DataCardValue21.Selected.Value,
-                                varFechaUltimoMttoUI,
-                                First(ColeccionVehiculos).FechaUltimoMttoVehiculo
+                        { placaSel: Text(DataCardValue21.Selected.Value) },
+                        With(
+                            {
+                                f: Coalesce(
+                                    LookUp('Lista de Vehiculos', Text(Placa) = placaSel).FechaUltimoMtto,
+                                    LookUp(ColeccionVehiculos, Text(Placa) = placaSel).FechaUltimoMttoVehiculo
+                                )
+                            },
+                            If(
+                                IsBlank(f),
+                                "",
+                                Text(f, "dd") & " " &
+                                Switch(
+                                    Month(f),
+                                    1, "ENERO", 2, "FEBRERO", 3, "MARZO", 4, "ABRIL",
+                                    5, "MAYO", 6, "JUNIO", 7, "JULIO", 8, "AGOSTO",
+                                    9, "SEPTIEMBRE", 10, "OCTUBRE", 11, "NOVIEMBRE", 12, "DICIEMBRE"
+                                ) & " " &
+                                Text(f, "yyyy")
                             )
-                        },
-                        If(
-                            IsBlank(f),
-                            "",
-                            Text(f, "dd") & " " &
-                            Switch(
-                                Month(f),
-                                1, "ENERO", 2, "FEBRERO", 3, "MARZO", 4, "ABRIL",
-                                5, "MAYO", 6, "JUNIO", 7, "JULIO", 8, "AGOSTO",
-                                9, "SEPTIEMBRE", 10, "OCTUBRE", 11, "NOVIEMBRE", 12, "DICIEMBRE"
-                            ) & " " &
-                            Text(f, "yyyy")
                         )
                     )
                 Tooltip: =""
@@ -947,64 +996,115 @@ PrevenTanqueo As screen:
                     OnSelect: |+
                         =With(
                             {
-                                vehiculo: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
-                                fUlt: DatePickerFechaManteni.SelectedDate,
-                                fProx: DatePickerFechaProMatto.SelectedDate,
-                                kmActual: Value(
-                                    LookUp(
-                                        SortByColumns(
-                                            Filter(
-                                                ListaPrestamoVehiculos,
-                                                Placa.Value = DataCardValue21.Selected.Value And !IsBlank(KMsSalida)
-                                            ),
-                                            "FechaSolicitud",
-                                            SortOrder.Descending
-                                        ),
-                                        true,
-                                        KMsSalida
-                                    )
-                                )
+                                placaSel: Text(DataCardValue21.Selected.Value),
+                                kmActual: IfError(Value(Trim(DataCardValue73.Text)), Blank()),
+                                veh: LookUp(
+                                    'Lista de Vehiculos',
+                                    Text(Placa) = Text(DataCardValue21.Selected.Value)
+                                ),
+                                intervaloKm: 5000
                             },
                             If(
-                                IsBlank(vehiculo),
-                                Notify("No se encontró la placa seleccionada", NotificationType.Warning),
-                                If(
-                                    IsBlank(kmActual),
-                                    Notify("No hay KMsSalida para guardar KmUltimoMtto", NotificationType.Warning),
-                                    Set(varPlacaMttoUI, DataCardValue21.Selected.Value);
-                                    Set(varMttoUIActivo, true);
-                                    Set(varFechaUltimoMttoUI, fUlt);
-                                    Set(varFechaProxiMttoUI, fProx);
-                        
-                                    IfError(
-                                        Patch(
-                                            'Lista de Vehiculos',
-                                            vehiculo,
-                                            {
-                                                FechaUltimoMtto: fUlt,
-                                                FechaProxiMtto: fProx,
-                                                KmUltimoMtto: kmActual
-                                            }
+                                !IsBlank(veh) And
+                                !IsBlank(veh.FechaUltimoMtto) And
+                                !IsBlank(veh.KmUltimoMtto) And
+                                !IsBlank(kmActual),
+                                With(
+                                    {
+                                        movs: SortByColumns(
+                                            Filter(
+                                                ListaPrestamoVehiculos,
+                                                Text(Placa.Value) = placaSel And
+                                                !IsBlank(Trim(KMsSalida)) And
+                                                FechaSolicitud >= veh.FechaUltimoMtto
+                                            ),
+                                            "FechaSolicitud",
+                                            SortOrder.Ascending
                                         ),
-                                        Set(varMttoUIActivo, false);
-                                        Set(varFechaUltimoMttoUI, Blank());
-                                        Set(varFechaProxiMttoUI, Blank());
-                                        Notify("Error al actualizar las fechas de mantenimiento", NotificationType.Error),
-                                        UpdateIf(
-                                            ColeccionVehiculos,
-                                            Placa = DataCardValue21.Selected.Value,
+                                        kmRestantes: (Value(veh.KmUltimoMtto) + intervaloKm) - kmActual
+                                    },
+                                    With(
+                                        {
+                                            diasHist: If(
+                                                CountRows(movs) > 1,
+                                                Max(
+                                                    1,
+                                                    DateDiff(
+                                                        First(movs).FechaSolicitud,
+                                                        Last(movs).FechaSolicitud,
+                                                        TimeUnit.Days
+                                                    )
+                                                ),
+                                                Max(
+                                                    1,
+                                                    DateDiff(
+                                                        veh.FechaUltimoMtto,
+                                                        Today(),
+                                                        TimeUnit.Days
+                                                    )
+                                                )
+                                            ),
+                                            kmHist: If(
+                                                CountRows(movs) > 1,
+                                                Max(
+                                                    0,
+                                                    IfError(Value(Trim(Last(movs).KMsSalida)), 0) -
+                                                    IfError(Value(Trim(First(movs).KMsSalida)), 0)
+                                                ),
+                                                Max(
+                                                    0,
+                                                    kmActual - Value(veh.KmUltimoMtto)
+                                                )
+                                            )
+                                        },
+                                        With(
                                             {
-                                                FechaUltimoMttoVehiculo: fUlt,
-                                                FechaProxiMttoVehiculo: fProx
-                                            }
-                                        );
-                                        Set(varMttoUIActivo, false);
-                                        Set(varFechaUltimoMttoUI, Blank());
-                                        Set(varFechaProxiMttoUI, Blank());
-                                        Reset(DatePickerFechaManteni);
-                                        Reset(DatePickerFechaProMatto);
-                                        Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
+                                                kmPorDia: If(kmHist > 0, kmHist / diasHist, 30)
+                                            },
+                                            With(
+                                                {
+                                                    fechaProxCalc: If(
+                                                        kmRestantes <= 0,
+                                                        Today(),
+                                                        DateAdd(
+                                                            Today(),
+                                                            RoundUp(kmRestantes / kmPorDia, 0),
+                                                            TimeUnit.Days
+                                                        )
+                                                    )
+                                                },
+                                                Notify(
+                                                    "DEBUG Prestamo -> Placa: " & placaSel &
+                                                    " | Movs: " & Text(CountRows(movs)) &
+                                                    " | kmActual: " & Text(kmActual) &
+                                                    " | kmHist: " & Text(kmHist) &
+                                                    " | km/día: " & Text(Round(kmPorDia, 2)) &
+                                                    " | Próx: " & Text(fechaProxCalc, "dd/mm/yyyy"),
+                                                    NotificationType.Information
+                                                );
+                        
+                                                Patch(
+                                                    'Lista de Vehiculos',
+                                                    veh,
+                                                    { FechaProxiMtto: fechaProxCalc }
+                                                );
+                                                UpdateIf(
+                                                    ColeccionVehiculos,
+                                                    Text(Placa) = placaSel,
+                                                    { FechaProxiMttoVehiculo: fechaProxCalc }
+                                                );
+                                                Set(varPlacaMttoUI, placaSel);
+                                                Set(varMttoUIActivo, true);
+                                                Set(varFechaProxiMttoUI, fechaProxCalc)
+                                            )
+                                        )
                                     )
+                                ),
+                                Notify(
+                                    "Se guardó el préstamo, pero falta FechaUltimoMtto o KmUltimoMtto para calcular próximo mantenimiento. " &
+                                    "Placa: " & placaSel &
+                                    " | kmActual: " & Coalesce(Text(kmActual), "BLANK"),
+                                    NotificationType.Warning
                                 )
                             )
                         )

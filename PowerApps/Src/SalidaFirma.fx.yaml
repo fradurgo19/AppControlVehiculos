@@ -438,80 +438,122 @@ SalidaFirma As screen:
                 )
             );
             
+            Refresh(ListaPrestamoVehiculos);
+            
             With(
-                    {
-                        placaSel: DataCardValue21.Selected.Value,
-                        kmActual: Value(DataCardValue73.Text),
-                        veh: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
-                        intervaloKm: 5000
-                    },
-                    If(
-                        !IsBlank(veh) And
-                        !IsBlank(veh.FechaUltimoMtto) And
-                        !IsBlank(veh.KmUltimoMtto) And
-                        !IsBlank(kmActual),
+                {
+                    placaSel: Text(DataCardValue21.Selected.Value),
+                    kmActual: IfError(Value(Trim(DataCardValue73.Text)), Blank()),
+                    veh: LookUp(
+                        'Lista de Vehiculos',
+                        Text(Placa) = Text(DataCardValue21.Selected.Value)
+                    ),
+                    intervaloKm: 5000
+                },
+                If(
+                    !IsBlank(veh) And
+                    !IsBlank(veh.FechaUltimoMtto) And
+                    !IsBlank(veh.KmUltimoMtto) And
+                    !IsBlank(kmActual),
+                    With(
+                        {
+                            movs: SortByColumns(
+                                Filter(
+                                    ListaPrestamoVehiculos,
+                                    Text(Placa.Value) = placaSel And
+                                    !IsBlank(Trim(KMsSalida)) And
+                                    FechaSolicitud >= veh.FechaUltimoMtto
+                                ),
+                                "FechaSolicitud",
+                                SortOrder.Ascending
+                            ),
+                            kmRestantes: (Value(veh.KmUltimoMtto) + intervaloKm) - kmActual
+                        },
                         With(
                             {
-                                movs: SortByColumns(
-                                    Filter(
-                                        ListaPrestamoVehiculos,
-                                        Placa.Value = placaSel And
-                                        !IsBlank(KMsSalida) And
-                                        FechaSolicitud >= veh.FechaUltimoMtto
+                                diasHist: If(
+                                    CountRows(movs) > 1,
+                                    Max(
+                                        1,
+                                        DateDiff(
+                                            First(movs).FechaSolicitud,
+                                            Last(movs).FechaSolicitud,
+                                            TimeUnit.Days
+                                        )
                                     ),
-                                    "FechaSolicitud",
-                                    SortOrder.Ascending
+                                    Max(
+                                        1,
+                                        DateDiff(
+                                            veh.FechaUltimoMtto,
+                                            Today(),
+                                            TimeUnit.Days
+                                        )
+                                    )
                                 ),
-                                kmRestantes: (Value(veh.KmUltimoMtto) + intervaloKm) - kmActual
+                                kmHist: If(
+                                    CountRows(movs) > 1,
+                                    Max(
+                                        0,
+                                        IfError(Value(Trim(Last(movs).KMsSalida)), 0) -
+                                        IfError(Value(Trim(First(movs).KMsSalida)), 0)
+                                    ),
+                                    Max(
+                                        0,
+                                        kmActual - Value(veh.KmUltimoMtto)
+                                    )
+                                )
                             },
                             With(
                                 {
-                                    diasHist: If(
-                                        CountRows(movs) > 1,
-                                        Max(1, DateDiff(First(movs).FechaSolicitud, Last(movs).FechaSolicitud)),
-                                        Max(1, DateDiff(veh.FechaUltimoMtto, Today()))
-                                    ),
-                                    kmHist: If(
-                                        CountRows(movs) > 1,
-                                        Max(0, Value(Last(movs).KMsSalida) - Value(First(movs).KMsSalida)),
-                                        Max(0, kmActual - Value(veh.KmUltimoMtto))
-                                    )
+                                    kmPorDia: If(kmHist > 0, kmHist / diasHist, 30)
                                 },
                                 With(
                                     {
-                                        kmPorDia: If(kmHist > 0, kmHist / diasHist, 30)
-                                    },
-                                    With(
-                                        {
-                                            fechaProxCalc: If(
-                                                kmRestantes <= 0,
+                                        fechaProxCalc: If(
+                                            kmRestantes <= 0,
+                                            Today(),
+                                            DateAdd(
                                                 Today(),
-                                                DateAdd(Today(), RoundUp(kmRestantes / kmPorDia, 0))
+                                                RoundUp(kmRestantes / kmPorDia, 0),
+                                                TimeUnit.Days
                                             )
-                                        },
-                                        Patch(
-                                            'Lista de Vehiculos',
-                                            veh,
-                                            { FechaProxiMtto: fechaProxCalc }
-                                        );
-                                        UpdateIf(
-                                            ColeccionVehiculos,
-                                            Placa = placaSel,
-                                            { FechaProxiMttoVehiculo: fechaProxCalc }
-                                        );
-                                        Set(varPlacaMttoUI, placaSel);
-                                        Set(varMttoUIActivo, true);
-                                        Set(varFechaProxiMttoUI, fechaProxCalc)
-                                    )
+                                        )
+                                    },
+                                    Notify(
+                                        "DEBUG Prestamo -> Placa: " & placaSel &
+                                        " | Movs: " & Text(CountRows(movs)) &
+                                        " | kmActual: " & Text(kmActual) &
+                                        " | kmHist: " & Text(kmHist) &
+                                        " | km/día: " & Text(Round(kmPorDia, 2)) &
+                                        " | Próx: " & Text(fechaProxCalc, "dd/mm/yyyy"),
+                                        NotificationType.Information
+                                    );
+            
+                                    Patch(
+                                        'Lista de Vehiculos',
+                                        veh,
+                                        { FechaProxiMtto: fechaProxCalc }
+                                    );
+                                    UpdateIf(
+                                        ColeccionVehiculos,
+                                        Text(Placa) = placaSel,
+                                        { FechaProxiMttoVehiculo: fechaProxCalc }
+                                    );
+                                    Set(varPlacaMttoUI, placaSel);
+                                    Set(varMttoUIActivo, true);
+                                    Set(varFechaProxiMttoUI, fechaProxCalc) 
                                 )
                             )
-                        ),
-                        Notify(
-                            "Se guardó el préstamo, pero falta FechaUltimoMtto o KmUltimoMtto para calcular próximo mantenimiento.",
-                            NotificationType.Warning
                         )
+                    ),
+                    Notify(
+                        "Se guardó el préstamo, pero falta FechaUltimoMtto o KmUltimoMtto para calcular próximo mantenimiento. " &
+                        "Placa: " & placaSel &
+                        " | kmActual: " & Coalesce(Text(kmActual), "BLANK"),
+                        NotificationType.Warning
                     )
-                );
+                )
+            );
             
             Reset(Dropdown2);
             Reset(TextInput1);

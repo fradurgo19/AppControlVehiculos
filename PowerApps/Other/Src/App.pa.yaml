@@ -8,7 +8,7 @@
 # ************************************************************************************************
 App:
   Properties:
-    OnStart: |+
+    OnStart: |-
       =Concurrent(
           Set(StepsPanelCodeFontSize, 10),
           Set(_selectedTutorial, {Row: 1, Title: "Lista  Gestión Vehícular", Image: HomeIcon}),
@@ -18,4 +18,8 @@ App:
       ClearCollect(ListaPrestamoVehiculosLocal,ListaPrestamoVehiculos);
 
 
+      Set(varMttoUIActivo, false);
+      Set(varPlacaMttoUI, Blank());
+      Set(varFechaUltimoMttoUI, Blank());
+      Set(varFechaProxiMttoUI, Blank());
     Theme: =PlatinumTheme
