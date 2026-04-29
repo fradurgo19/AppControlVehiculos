@@ -7,88 +7,73 @@ PrevenTanqueo As screen:
         
         Set(varDefaultFechaManteni, Today());
         Set(varDefaultFechaProxiMtto, Today());
-        
-        
-        
-        ClearCollect(
-            ColeccionVehiculos,
-            AddColumns(
-                Filter(
-                    'Lista de Vehiculos',
-                    Placa = DataCardValue21.Selected.Value
-                ),
-                FechaVencimientoSOAT, 'Vencimiento SOAT',
-                FechaVencimientoTecnoMecanica, Tecnomecanica,
-                FechaUltimoMttoVehiculo, FechaUltimoMtto,
-                FechaProxiMttoVehiculo, FechaProxiMtto,
-                FechaSolicitud,
-                    LookUp(
-                        ListaPrestamoVehiculos,
-                        Placa.Value = DataCardValue21.Selected.Value,
-                        FechaSolicitud
-                    )
-            )
-        );
+        Set(varMttoUIActivo, false);
+        Set(varPlacaMttoUI, Blank());
+        Set(varFechaUltimoMttoUI, Blank());
+        Set(varFechaProxiMttoUI, Blank());
+        Set(varKmUltimoMttoUI, Blank());
         
         With(
             { placaSel: Text(DataCardValue21.Selected.Value) },
-            ClearCollect(
-                ColeccionVehiculos,
-                AddColumns(
-                    Filter(
-                        'Lista de Vehiculos',
-                        Text(Placa) = placaSel
-                    ),
-                    FechaVencimientoSOAT, 'Vencimiento SOAT',
-                    FechaVencimientoTecnoMecanica, Tecnomecanica,
-                    FechaUltimoMttoVehiculo, FechaUltimoMtto,
-                    FechaProxiMttoVehiculo, FechaProxiMtto,
-                    FechaSolicitud,
-                        With(
-                            {
-                                ultPrestamo: First(
-                                    SortByColumns(
-                                        Filter(
-                                            ListaPrestamoVehiculos,
-                                            Text(Placa.Value) = placaSel
-                                        ),
-                                        "FechaSolicitud",
-                                        SortOrder.Descending
+            If(
+                IsBlank(placaSel),
+                Notify("Seleccione una placa para cargar la información del vehículo", NotificationType.Warning),
+                ClearCollect(
+                    ColeccionVehiculos,
+                    AddColumns(
+                        Filter(
+                            'Lista de Vehiculos',
+                            Text(Placa) = placaSel
+                        ),
+                        FechaVencimientoSOAT, 'Vencimiento SOAT',
+                        FechaVencimientoTecnoMecanica, Tecnomecanica,
+                        FechaUltimoMttoVehiculo, FechaUltimoMtto,
+                        FechaProxiMttoVehiculo, FechaProxiMtto,
+                        KmUltimoMttoVehiculo, KmUltimoMtto,
+                        FechaSolicitud,
+                            With(
+                                {
+                                    ultPrestamo: First(
+                                        SortByColumns(
+                                            Filter(
+                                                ListaPrestamoVehiculos,
+                                                Text(Placa.Value) = placaSel
+                                            ),
+                                            "FechaSolicitud",
+                                            SortOrder.Descending
+                                        )
                                     )
+                                },
+                                If(
+                                    IsBlank(ultPrestamo),
+                                    Blank(),
+                                    ultPrestamo.FechaSolicitud
                                 )
-                            },
-                            If(
-                                IsBlank(ultPrestamo),
-                                Blank(),
-                                ultPrestamo.FechaSolicitud
                             )
-                        )
-                )
-            );
-        
-            With(
-                {
-                    veh: LookUp(
-                        ColeccionVehiculos,
-                        Text(Placa) = placaSel
                     )
-                },
-                If(
-                    !IsBlank(veh),
-                    If(
-                        !IsBlank(veh.FechaVencimientoSOAT),
-                        If(
-                            veh.FechaVencimientoSOAT < Today(),
-                            Notify("El SOAT está vencido", NotificationType.Error),
-                            If(
-                                veh.FechaVencimientoSOAT <= DateAdd(Today(), 7, TimeUnit.Days),
-                                Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
-                            )
-                        )
-                    );
+                );
         
+                With(
+                    {
+                        veh: LookUp(
+                            ColeccionVehiculos,
+                            Text(Placa) = placaSel
+                        )
+                    },
                     If(
                         !IsBlank(veh),
+                        If(
+                            !IsBlank(veh.FechaVencimientoSOAT),
+                            If(
+                                veh.FechaVencimientoSOAT < Today(),
+                                Notify("El SOAT está vencido", NotificationType.Error),
+                                If(
+                                    veh.FechaVencimientoSOAT <= DateAdd(Today(), 7, TimeUnit.Days),
+                                    Notify("El SOAT está por vencer en 7 días", NotificationType.Warning)
+                                )
+                            )
+                        );
+        
                         If(
                             !IsBlank(veh.FechaVencimientoTecnoMecanica),
                             If(
@@ -99,11 +84,8 @@ PrevenTanqueo As screen:
                                     Notify("La TecnoMecánica está por vencer en 7 días", NotificationType.Warning)
                                 )
                             )
-                        )
-                    );
+                        );
         
-                    If(
-                        !IsBlank(veh),
                         If(
                             !IsBlank(veh.FechaProxiMttoVehiculo),
                             If(
