@@ -100,7 +100,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 7,
+    "BindingErrorCount": 0,
     "ConnectionString": "",
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 2000,
@@ -119,7 +119,7 @@
     "ManualOfflineProfileId": "",
     "Name": "Control Transporte",
     "OriginatingVersion": "1.249",
-    "ParserErrorCount": 4,
+    "ParserErrorCount": 0,
     "ShowStatusBar": true
   },
   "PublishInfo": {
