@@ -980,16 +980,20 @@ PrevenTanqueo As screen:
                     IconStyle: ="Outline"
                     Layout: ="Icon before"
                     OnSelect: |-
-                        =Refresh(ListaPrestamoVehiculos);
+                        =Refresh('Lista de Vehiculos');
+                        Refresh(ListaPrestamoVehiculos);
                         
                         With(
                             {
+                                placaSel: DataCardValue21.Selected.Value,
                                 vehiculo: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
                                 fUlt: DatePickerFechaManteni.SelectedDate,
-                                fProx: DatePickerFechaProMatto.SelectedDate,
-                        
-                                kmManual: Value(TextInputKmUltimoMtto.Text),
-                        
+                                fProxInput: DatePickerFechaProMatto.SelectedDate,
+                                kmManual: If(
+                                    !IsBlank(Trim(TextInputKmUltimoMtto.Text)),
+                                    Value(Trim(TextInputKmUltimoMtto.Text)),
+                                    Blank()
+                                ),
                                 kmSalidaReciente: Value(
                                     LookUp(
                                         SortByColumns(
@@ -1008,33 +1012,36 @@ PrevenTanqueo As screen:
                             With(
                                 {
                                     kmFinal: Coalesce(
-                                        If(!IsBlank(TextInputKmUltimoMtto.Text), kmManual, Blank()),
+                                        kmManual,
                                         kmSalidaReciente,
-                                        Value(vehiculo.KmUltimoMtto)
+                                        If(!IsBlank(vehiculo), Value(vehiculo.KmUltimoMtto), Blank())
+                                    ),
+                                    fProxFinal: Coalesce(
+                                        fProxInput,
+                                        If(!IsBlank(vehiculo), vehiculo.FechaProxiMtto, Blank())
                                     )
                                 },
                                 If(
                                     IsBlank(vehiculo),
                                     Notify("No se encontró la placa seleccionada", NotificationType.Warning),
                                     If(
-                                        IsBlank(fUlt) Or IsBlank(fProx),
-                                        Notify("Debe seleccionar fecha último y próximo mantenimiento", NotificationType.Warning),
+                                        IsBlank(fUlt),
+                                        Notify("Debe seleccionar la fecha del último mantenimiento", NotificationType.Warning),
                                         If(
                                             IsBlank(kmFinal) Or kmFinal <= 0,
                                             Notify("Debe ingresar o tener un KmUltimoMtto válido", NotificationType.Warning),
-                                            Set(varPlacaMttoUI, DataCardValue21.Selected.Value);
+                                            Set(varPlacaMttoUI, placaSel);
                                             Set(varMttoUIActivo, true);
                                             Set(varFechaUltimoMttoUI, fUlt);
-                                            Set(varFechaProxiMttoUI, fProx);
+                                            Set(varFechaProxiMttoUI, fProxFinal);
                                             Set(varKmUltimoMttoUI, kmFinal);
-                        
                                             IfError(
                                                 Patch(
                                                     'Lista de Vehiculos',
                                                     vehiculo,
                                                     {
                                                         FechaUltimoMtto: fUlt,
-                                                        FechaProxiMtto: fProx,
+                                                        FechaProxiMtto: fProxFinal,
                                                         KmUltimoMtto: kmFinal
                                                     }
                                                 ),
@@ -1043,18 +1050,20 @@ PrevenTanqueo As screen:
                                                 Set(varFechaProxiMttoUI, Blank());
                                                 Set(varKmUltimoMttoUI, Blank());
                                                 Notify("Error al actualizar mantenimiento", NotificationType.Error),
+                                                Refresh('Lista de Vehiculos');
                                                 UpdateIf(
                                                     ColeccionVehiculos,
-                                                    Placa = DataCardValue21.Selected.Value,
+                                                    Text(Placa) = Text(placaSel),
                                                     {
                                                         FechaUltimoMttoVehiculo: fUlt,
-                                                        FechaProxiMttoVehiculo: fProx,
+                                                        FechaProxiMttoVehiculo: fProxFinal,
                                                         KmUltimoMttoVehiculo: kmFinal
                                                     }
                                                 );
                                                 Set(varMttoUIActivo, false);
                                                 Set(varFechaUltimoMttoUI, Blank());
                                                 Set(varFechaProxiMttoUI, Blank());
+                                                Set(varKmUltimoMttoUI, Blank());
                                                 Reset(DatePickerFechaManteni);
                                                 Reset(DatePickerFechaProMatto);
                                                 Reset(TextInputKmUltimoMtto);

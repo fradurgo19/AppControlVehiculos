@@ -553,6 +553,7 @@ Screens:
                   )
               );
 
+              Refresh('Lista de Vehiculos');
               Refresh(ListaPrestamoVehiculos);
 
               With(
