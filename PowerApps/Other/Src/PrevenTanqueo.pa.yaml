@@ -929,8 +929,8 @@ Screens:
                               )
                           )
                         Width: =163
-                        X: =602
-                        Y: =201
+                        X: =607
+                        Y: =253
                   - Label3_24:
                       Control: Label@2.5.1
                       Properties:
@@ -953,16 +953,16 @@ Screens:
                         Size: =12
                         Text: ="6. Proximo Mtto:"
                         Width: =165
-                        X: =602
-                        Y: =167
+                        X: =607
+                        Y: =223
                   - Container1_1:
                       Control: GroupContainer@1.5.0
                       Variant: ManualLayout
                       Properties:
-                        Height: =37
+                        Height: =32
                         Width: =104
                         X: =638
-                        Y: =275
+                        Y: =284
                       Children:
                         - ButtonCanvas1_1:
                             Control: Button@0.0.45
@@ -970,7 +970,7 @@ Screens:
                               BasePaletteColor: =RGBA(8, 222, 8, 1)
                               FontSize: =11
                               Height: =30
-                              OnSelect: |
+                              OnSelect: |-
                                 =Refresh(ListaPrestamoVehiculos);
 
                                 With(
@@ -978,7 +978,10 @@ Screens:
                                         vehiculo: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
                                         fUlt: DatePickerFechaManteni.SelectedDate,
                                         fProx: DatePickerFechaProMatto.SelectedDate,
-                                        kmActual: Value(
+
+                                        kmManual: Value(TextInputKmUltimoMtto.Text),
+
+                                        kmSalidaReciente: Value(
                                             LookUp(
                                                 SortByColumns(
                                                     Filter(
@@ -993,45 +996,62 @@ Screens:
                                             )
                                         )
                                     },
-                                    If(
-                                        IsBlank(vehiculo),
-                                        Notify("No se encontró la placa seleccionada", NotificationType.Warning),
+                                    With(
+                                        {
+                                            kmFinal: Coalesce(
+                                                If(!IsBlank(TextInputKmUltimoMtto.Text), kmManual, Blank()),
+                                                kmSalidaReciente,
+                                                Value(vehiculo.KmUltimoMtto)
+                                            )
+                                        },
                                         If(
-                                            IsBlank(kmActual),
-                                            Notify("No hay KMsSalida para guardar KmUltimoMtto", NotificationType.Warning),
-                                            Set(varPlacaMttoUI, DataCardValue21.Selected.Value);
-                                            Set(varMttoUIActivo, true);
-                                            Set(varFechaUltimoMttoUI, fUlt);
-                                            Set(varFechaProxiMttoUI, fProx);
+                                            IsBlank(vehiculo),
+                                            Notify("No se encontró la placa seleccionada", NotificationType.Warning),
+                                            If(
+                                                IsBlank(fUlt) Or IsBlank(fProx),
+                                                Notify("Debe seleccionar fecha último y próximo mantenimiento", NotificationType.Warning),
+                                                If(
+                                                    IsBlank(kmFinal) Or kmFinal <= 0,
+                                                    Notify("Debe ingresar o tener un KmUltimoMtto válido", NotificationType.Warning),
+                                                    Set(varPlacaMttoUI, DataCardValue21.Selected.Value);
+                                                    Set(varMttoUIActivo, true);
+                                                    Set(varFechaUltimoMttoUI, fUlt);
+                                                    Set(varFechaProxiMttoUI, fProx);
+                                                    Set(varKmUltimoMttoUI, kmFinal);
 
-                                            IfError(
-                                                Patch(
-                                                    'Lista de Vehiculos',
-                                                    vehiculo,
-                                                    {
-                                                        FechaUltimoMtto: fUlt,
-                                                        FechaProxiMtto: fProx,
-                                                        KmUltimoMtto: kmActual
-                                                    }
-                                                ),
-                                                Set(varMttoUIActivo, false);
-                                                Set(varFechaUltimoMttoUI, Blank());
-                                                Set(varFechaProxiMttoUI, Blank());
-                                                Notify("Error al actualizar las fechas de mantenimiento", NotificationType.Error),
-                                                UpdateIf(
-                                                    ColeccionVehiculos,
-                                                    Placa = DataCardValue21.Selected.Value,
-                                                    {
-                                                        FechaUltimoMttoVehiculo: fUlt,
-                                                        FechaProxiMttoVehiculo: fProx
-                                                    }
-                                                );
-                                                Set(varMttoUIActivo, false);
-                                                Set(varFechaUltimoMttoUI, Blank());
-                                                Set(varFechaProxiMttoUI, Blank());
-                                                Reset(DatePickerFechaManteni);
-                                                Reset(DatePickerFechaProMatto);
-                                                Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
+                                                    IfError(
+                                                        Patch(
+                                                            'Lista de Vehiculos',
+                                                            vehiculo,
+                                                            {
+                                                                FechaUltimoMtto: fUlt,
+                                                                FechaProxiMtto: fProx,
+                                                                KmUltimoMtto: kmFinal
+                                                            }
+                                                        ),
+                                                        Set(varMttoUIActivo, false);
+                                                        Set(varFechaUltimoMttoUI, Blank());
+                                                        Set(varFechaProxiMttoUI, Blank());
+                                                        Set(varKmUltimoMttoUI, Blank());
+                                                        Notify("Error al actualizar mantenimiento", NotificationType.Error),
+                                                        UpdateIf(
+                                                            ColeccionVehiculos,
+                                                            Placa = DataCardValue21.Selected.Value,
+                                                            {
+                                                                FechaUltimoMttoVehiculo: fUlt,
+                                                                FechaProxiMttoVehiculo: fProx,
+                                                                KmUltimoMttoVehiculo: kmFinal
+                                                            }
+                                                        );
+                                                        Set(varMttoUIActivo, false);
+                                                        Set(varFechaUltimoMttoUI, Blank());
+                                                        Set(varFechaProxiMttoUI, Blank());
+                                                        Reset(DatePickerFechaManteni);
+                                                        Reset(DatePickerFechaProMatto);
+                                                        Reset(TextInputKmUltimoMtto);
+                                                        Notify("Mantenimiento actualizado correctamente", NotificationType.Success)
+                                                    )
+                                                )
                                             )
                                         )
                                     )
@@ -1039,6 +1059,63 @@ Screens:
                               Text: ="Actualizar Mtto"
                               Width: =105
                               X: =1
+                  - TextInputKmUltimoMtto:
+                      Control: ModernTextInput@1.0.0
+                      Properties:
+                        Appearance: =Appearance.FilledLighter
+                        Default: |-
+                          =With(
+                              { placaSel: Text(DataCardValue21.Selected.Value) },
+                              With(
+                                  {
+                                      km: If(
+                                          varMttoUIActivo And Text(varPlacaMttoUI) = placaSel And !IsBlank(varKmUltimoMttoUI),
+                                          varKmUltimoMttoUI,
+                                          Coalesce(
+                                              Value(LookUp('Lista de Vehiculos', Text(Placa) = placaSel).KmUltimoMtto),
+                                              Value(LookUp(ColeccionVehiculos, Text(Placa) = placaSel).KmUltimoMttoVehiculo)
+                                          )
+                                      )
+                                  },
+                                  If(IsBlank(km), Blank(), Text(km, "[$-es-CO]#,##0"))
+                              )
+                          )
+                        Height: =33
+                        Placeholder: ="Km Ultimo Mtto"
+                        Width: =163
+                        X: =602
+                        Y: =188
+                  - TextCanvas1_4:
+                      Control: Text@0.0.51
+                      Properties:
+                        Fill: =RGBA(255, 255, 0, 1)
+                        FontColor: =RGBA(215, 58, 60, 1)
+                        Height: =31
+                        Text: |+
+                          =With(
+                              { placaSel: Text(DataCardValue21.Selected.Value) },
+                              With(
+                                  {
+                                      km: If(
+                                          varMttoUIActivo And Text(varPlacaMttoUI) = placaSel And !IsBlank(varKmUltimoMttoUI),
+                                          varKmUltimoMttoUI,
+                                          Coalesce(
+                                              Value(LookUp('Lista de Vehiculos', Text(Placa) = placaSel).KmUltimoMtto),
+                                              Value(LookUp(ColeccionVehiculos, Text(Placa) = placaSel).KmUltimoMttoVehiculo)
+                                          )
+                                      )
+                                  },
+                                  If(
+                                      IsBlank(km),
+                                      "",
+                                      Text(km, "[$-es-CO]#,##0") & " km"
+                                  )
+                              )
+                          )
+
+                        Width: =163
+                        X: =602
+                        Y: =161
       - Video1_4:
           Control: Video@2.4.2
           Properties:

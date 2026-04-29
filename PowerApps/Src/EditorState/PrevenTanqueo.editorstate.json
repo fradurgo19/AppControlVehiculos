@@ -1137,7 +1137,7 @@
       "MetaDataIDKey": "",
       "Name": "ButtonClose",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 32,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1669,7 +1669,7 @@
       "MetaDataIDKey": "",
       "Name": "Container1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1867,7 +1867,7 @@
       "MetaDataIDKey": "",
       "Name": "Container1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 28,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5870,7 +5870,7 @@
       "MetaDataIDKey": "",
       "Name": "DatePickerFechaManteni",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6292,7 +6292,7 @@
       "MetaDataIDKey": "",
       "Name": "DatePickerFechaProMatto",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 23,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6697,7 +6697,7 @@
       "MetaDataIDKey": "",
       "Name": "DatePickerSOAT",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7010,7 +7010,7 @@
       "MetaDataIDKey": "",
       "Name": "DatePickerTecnoMecanica",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7326,7 +7326,7 @@
       "MetaDataIDKey": "",
       "Name": "Dropdown2_20",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7623,7 +7623,7 @@
       "MetaDataIDKey": "",
       "Name": "Dropdown2_21",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7920,7 +7920,7 @@
       "MetaDataIDKey": "",
       "Name": "Dropdown2_22",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 21,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8217,7 +8217,7 @@
       "MetaDataIDKey": "",
       "Name": "Dropdown2_23",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 26,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11973,7 +11973,7 @@
       "MetaDataIDKey": "",
       "Name": "iconClose",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14540,7 +14540,7 @@
       "MetaDataIDKey": "",
       "Name": "Label3_20",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14829,7 +14829,7 @@
       "MetaDataIDKey": "",
       "Name": "Label3_21",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15107,7 +15107,7 @@
       "MetaDataIDKey": "",
       "Name": "Label3_22",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 20,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15390,7 +15390,7 @@
       "MetaDataIDKey": "",
       "Name": "Label3_23",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 25,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15670,7 +15670,7 @@
       "MetaDataIDKey": "",
       "Name": "Label3_24",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16005,7 +16005,7 @@
       "MetaDataIDKey": "",
       "Name": "Label3_25",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 15,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17233,7 +17233,7 @@
       "MetaDataIDKey": "",
       "Name": "LabelBoxContent",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 29,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17557,7 +17557,7 @@
       "MetaDataIDKey": "",
       "Name": "LabelBoxTitle",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 24,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18872,7 +18872,7 @@
       "MetaDataIDKey": "",
       "Name": "PageTitle_15",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 31,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19195,7 +19195,7 @@
       "MetaDataIDKey": "",
       "Name": "PageTitle_5",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19514,7 +19514,7 @@
       "MetaDataIDKey": "",
       "Name": "PageTitle_8",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 30,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19914,7 +19914,7 @@
       "MetaDataIDKey": "",
       "Name": "PopupLightboxControl",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 33,
+      "ParentIndex": 35,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20599,7 +20599,7 @@
       "MetaDataIDKey": "",
       "Name": "RectangleOverlay",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20799,7 +20799,7 @@
       "MetaDataIDKey": "",
       "Name": "RectanglePopupBox",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 14,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22991,7 +22991,7 @@
       "MetaDataIDKey": "",
       "Name": "TextCanvas1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23100,7 +23100,7 @@
       "MetaDataIDKey": "",
       "Name": "TextCanvas1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23209,7 +23209,7 @@
       "MetaDataIDKey": "",
       "Name": "TextCanvas1_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23388,7 +23388,186 @@
       "MetaDataIDKey": "",
       "Name": "TextCanvas1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 19,
+      "ParentIndex": 21,
+      "PersistMetaDataIDKey": false,
+      "Properties": [
+        {
+          "Category": "Data",
+          "PropertyName": "Text",
+          "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Size",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Weight",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Align",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "VerticalAlign",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "AutoHeight",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Font",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "FontColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "FontItalic",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "FontStrikethrough",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "FontUnderline",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Wrap",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Fill",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "ContentLanguage",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderColor",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Height",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "TabIndex",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Tooltip",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "X",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Y",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Width",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisplayMode",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ZIndex",
+          "RuleProviderType": "Unknown"
+        }
+      ],
+      "StyleName": "",
+      "Type": "ControlInfo"
+    },
+    "TextCanvas1_4": {
+      "AllowAccessToGlobals": true,
+      "ControlPropertyState": [
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "With(\n    { placaSel: Text(DataCardValue21.Selected.Value) },\n    With(\n        {\n            f: If(\n                varMttoUIActivo And Text(varPlacaMttoUI) = placaSel And !IsBlank(varFechaUltimoMttoUI),\n                varFechaUltimoMttoUI,\n                Coalesce(\n                    LookUp('Lista de Vehiculos', Text(Placa) = placaSel).FechaUltimoMtto,\n                    LookUp(ColeccionVehiculos, Text(Placa) = placaSel).FechaUltimoMttoVehiculo\n                )\n            )\n        },\n        If(\n            IsBlank(f),\n            \"\",\n            Text(f, \"dd\") & \" \" &\n            Switch(\n                Month(f),\n                1, \"ENERO\", 2, \"FEBRERO\", 3, \"MARZO\", 4, \"ABRIL\",\n                5, \"MAYO\", 6, \"JUNIO\", 7, \"JULIO\", 8, \"AGOSTO\",\n                9, \"SEPTIEMBRE\", 10, \"OCTUBRE\", 11, \"NOVIEMBRE\", 12, \"DICIEMBRE\"\n            ) & \" \" &\n            Text(f, \"yyyy\")\n        )\n    )\n)\n",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        "Size",
+        "Weight",
+        "Align",
+        "VerticalAlign",
+        "AutoHeight",
+        "Height",
+        "Font",
+        "FontColor",
+        "FontItalic",
+        "FontStrikethrough",
+        "FontUnderline",
+        "Wrap",
+        "Fill",
+        "BorderStyle",
+        "TabIndex",
+        "Tooltip",
+        "X",
+        "Y",
+        "Width",
+        "Visible",
+        "DisplayMode",
+        "ContentLanguage",
+        "BorderColor",
+        "ZIndex"
+      ],
+      "HasDynamicProperties": false,
+      "IsAutoGenerated": false,
+      "IsComponentDefinition": false,
+      "IsDataControl": false,
+      "IsFromScreenLayout": false,
+      "IsGroupControl": false,
+      "IsLocked": false,
+      "LayoutName": "",
+      "MetaDataIDKey": "",
+      "Name": "TextCanvas1_4",
+      "OptimizeForDevices": "Off",
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23602,7 +23781,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInput1_20",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 16,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23886,7 +24065,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInput1_21",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24177,7 +24356,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInput1_22",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 22,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24461,7 +24640,7 @@
       "MetaDataIDKey": "",
       "Name": "TextInput1_23",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 27,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24661,6 +24840,133 @@
         }
       ],
       "StyleName": "defaultTextStyle",
+      "Type": "ControlInfo"
+    },
+    "TextInputKmUltimoMtto": {
+      "AllowAccessToGlobals": true,
+      "ControlPropertyState": [
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"\"",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Placeholder",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        "Type",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Appearance",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        "FontWeight",
+        "Align",
+        "X",
+        "Y",
+        "Width",
+        "Height",
+        "DisplayMode",
+        "TriggerOutput",
+        "ValidationState",
+        "ZIndex"
+      ],
+      "HasDynamicProperties": false,
+      "IsAutoGenerated": false,
+      "IsComponentDefinition": false,
+      "IsDataControl": false,
+      "IsFromScreenLayout": false,
+      "IsGroupControl": false,
+      "IsLocked": false,
+      "LayoutName": "",
+      "MetaDataIDKey": "",
+      "Name": "TextInputKmUltimoMtto",
+      "OptimizeForDevices": "Off",
+      "ParentIndex": 0,
+      "PersistMetaDataIDKey": false,
+      "Properties": [
+        {
+          "Category": "Data",
+          "PropertyName": "Default",
+          "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Placeholder",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "Type",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "TriggerOutput",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "ValidationState",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Appearance",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "FontWeight",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Align",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "X",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Y",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Width",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Height",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "DisplayMode",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "ZIndex",
+          "RuleProviderType": "Unknown"
+        }
+      ],
+      "StyleName": "",
       "Type": "ControlInfo"
     },
     "ValorTanqueo1_DataCard2": {

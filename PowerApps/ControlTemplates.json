@@ -323,6 +323,20 @@
     "OverridableProperties": {},
     "Version": "2.5.1"
   },
+  "modernTextInput": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/modernTextInput",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "modernTextInput",
+    "OverridableProperties": {},
+    "Version": "1.0.0"
+  },
   "rectangle": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
