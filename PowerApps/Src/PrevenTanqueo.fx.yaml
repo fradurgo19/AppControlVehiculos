@@ -797,7 +797,7 @@ PrevenTanqueo As screen:
                 Height: =31
                 Size: =14
                 TabIndex: =0
-                Text: |-
+                Text: |
                     =With(
                         { placaSel: Text(DataCardValue21.Selected.Value) },
                         With(
@@ -899,7 +899,7 @@ PrevenTanqueo As screen:
                 Height: =27
                 Size: =14
                 TabIndex: =0
-                Text: |-
+                Text: |
                     =With(
                         {
                             f: If(
