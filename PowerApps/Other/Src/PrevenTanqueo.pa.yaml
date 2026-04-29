@@ -1075,7 +1075,7 @@ Screens:
                                           )
                                       )
                                   },
-                                  If(IsBlank(km), Blank(), Text(km, "[$-es-CO]#,##0"))
+                                  If(IsBlank(km), Blank(), Text(km, "#,##0"))
                               )
                           )
                         Height: =33
