@@ -883,24 +883,30 @@ PrevenTanqueo As screen:
                 TabIndex: =0
                 Text: |
                     =With(
-                        {
-                            f: If(
-                                varMttoUIActivo And varPlacaMttoUI = DataCardValue21.Selected.Value,
-                                varFechaProxiMttoUI,
-                                First(ColeccionVehiculos).FechaProxiMttoVehiculo
+                        { placaSel: Text(DataCardValue21.Selected.Value) },
+                        With(
+                            {
+                                f: If(
+                                    varMttoUIActivo And Text(varPlacaMttoUI) = placaSel And !IsBlank(varFechaProxiMttoUI),
+                                    varFechaProxiMttoUI,
+                                    Coalesce(
+                                        LookUp('Lista de Vehiculos', Text(Placa) = placaSel).FechaProxiMtto,
+                                        LookUp(ColeccionVehiculos, Text(Placa) = placaSel).FechaProxiMttoVehiculo
+                                    )
+                                )
+                            },
+                            If(
+                                IsBlank(f),
+                                "",
+                                Text(f, "dd") & " " &
+                                Switch(
+                                    Month(f),
+                                    1, "ENERO", 2, "FEBRERO", 3, "MARZO", 4, "ABRIL",
+                                    5, "MAYO", 6, "JUNIO", 7, "JULIO", 8, "AGOSTO",
+                                    9, "SEPTIEMBRE", 10, "OCTUBRE", 11, "NOVIEMBRE", 12, "DICIEMBRE"
+                                ) & " " &
+                                Text(f, "yyyy")
                             )
-                        },
-                        If(
-                            IsBlank(f),
-                            "",
-                            Text(f, "dd") & " " &
-                            Switch(
-                                Month(f),
-                                1, "ENERO", 2, "FEBRERO", 3, "MARZO", 4, "ABRIL",
-                                5, "MAYO", 6, "JUNIO", 7, "JULIO", 8, "AGOSTO",
-                                9, "SEPTIEMBRE", 10, "OCTUBRE", 11, "NOVIEMBRE", 12, "DICIEMBRE"
-                            ) & " " &
-                            Text(f, "yyyy")
                         )
                     )
                 Tooltip: =""
@@ -979,7 +985,7 @@ PrevenTanqueo As screen:
                     IconRotation: =0
                     IconStyle: ="Outline"
                     Layout: ="Icon before"
-                    OnSelect: |-
+                    OnSelect: |+
                         =Refresh('Lista de Vehiculos');
                         Refresh(ListaPrestamoVehiculos);
                         
@@ -1073,7 +1079,8 @@ PrevenTanqueo As screen:
                                     )
                                 )
                             )
-                        )
+                        );
+                        
                     TabIndex: =0
                     Text: ="Actualizar Mtto"
                     Tooltip: =""
@@ -1104,7 +1111,7 @@ PrevenTanqueo As screen:
                         )
                     )
                 Height: =33
-                Placeholder: ="Km Ultimo Mtto"
+                Placeholder: ="Actualiza Km Último Mtto"
                 TriggerOutput: =TriggerOutput.Keypress
                 ValidationState: =ValidationState.None
                 Width: =163
@@ -1145,7 +1152,7 @@ PrevenTanqueo As screen:
                             If(
                                 IsBlank(km),
                                 "",
-                                Text(km, "[$-es-CO]#,##0") & " km"
+                                Text(km, "#,##0") & " km"
                             )
                         )
                     )

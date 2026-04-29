@@ -890,24 +890,30 @@ Screens:
                         Height: =27
                         Text: |
                           =With(
-                              {
-                                  f: If(
-                                      varMttoUIActivo And varPlacaMttoUI = DataCardValue21.Selected.Value,
-                                      varFechaProxiMttoUI,
-                                      First(ColeccionVehiculos).FechaProxiMttoVehiculo
+                              { placaSel: Text(DataCardValue21.Selected.Value) },
+                              With(
+                                  {
+                                      f: If(
+                                          varMttoUIActivo And Text(varPlacaMttoUI) = placaSel And !IsBlank(varFechaProxiMttoUI),
+                                          varFechaProxiMttoUI,
+                                          Coalesce(
+                                              LookUp('Lista de Vehiculos', Text(Placa) = placaSel).FechaProxiMtto,
+                                              LookUp(ColeccionVehiculos, Text(Placa) = placaSel).FechaProxiMttoVehiculo
+                                          )
+                                      )
+                                  },
+                                  If(
+                                      IsBlank(f),
+                                      "",
+                                      Text(f, "dd") & " " &
+                                      Switch(
+                                          Month(f),
+                                          1, "ENERO", 2, "FEBRERO", 3, "MARZO", 4, "ABRIL",
+                                          5, "MAYO", 6, "JUNIO", 7, "JULIO", 8, "AGOSTO",
+                                          9, "SEPTIEMBRE", 10, "OCTUBRE", 11, "NOVIEMBRE", 12, "DICIEMBRE"
+                                      ) & " " &
+                                      Text(f, "yyyy")
                                   )
-                              },
-                              If(
-                                  IsBlank(f),
-                                  "",
-                                  Text(f, "dd") & " " &
-                                  Switch(
-                                      Month(f),
-                                      1, "ENERO", 2, "FEBRERO", 3, "MARZO", 4, "ABRIL",
-                                      5, "MAYO", 6, "JUNIO", 7, "JULIO", 8, "AGOSTO",
-                                      9, "SEPTIEMBRE", 10, "OCTUBRE", 11, "NOVIEMBRE", 12, "DICIEMBRE"
-                                  ) & " " &
-                                  Text(f, "yyyy")
                               )
                           )
                         Width: =163
@@ -952,7 +958,7 @@ Screens:
                               BasePaletteColor: =RGBA(8, 222, 8, 1)
                               FontSize: =11
                               Height: =30
-                              OnSelect: |-
+                              OnSelect: |+
                                 =Refresh('Lista de Vehiculos');
                                 Refresh(ListaPrestamoVehiculos);
 
@@ -1046,7 +1052,8 @@ Screens:
                                             )
                                         )
                                     )
-                                )
+                                );
+
                               Text: ="Actualizar Mtto"
                               Width: =105
                               X: =1
@@ -1072,7 +1079,7 @@ Screens:
                               )
                           )
                         Height: =33
-                        Placeholder: ="Km Ultimo Mtto"
+                        Placeholder: ="Actualiza Km Último Mtto"
                         Width: =163
                         X: =602
                         Y: =188
@@ -1099,7 +1106,7 @@ Screens:
                                   If(
                                       IsBlank(km),
                                       "",
-                                      Text(km, "[$-es-CO]#,##0") & " km"
+                                      Text(km, "#,##0") & " km"
                                   )
                               )
                           )
