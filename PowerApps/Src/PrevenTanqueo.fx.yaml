@@ -1001,100 +1001,64 @@ PrevenTanqueo As screen:
                         =Refresh(ListaPrestamoVehiculos);
                         
                         With(
-                            { placaSel: Text(DataCardValue21.Selected.Value) },
-                            With(
-                                {
-                                    vehiculo: LookUp(
-                                        'Lista de Vehiculos',
-                                        Placa = placaSel
-                                    ),
-                                    fUlt: DatePickerFechaManteni.SelectedDate,
-                                    fProx: DatePickerFechaProMatto.SelectedDate,
-                                    tKm: SortByColumns(
-                                        Filter(
-                                            ListaPrestamoVehiculos,
-                                            Placa.Value = placaSel And
-                                            !IsBlank(Trim(KMsSalida))
+                            {
+                                vehiculo: LookUp('Lista de Vehiculos', Placa = DataCardValue21.Selected.Value),
+                                fUlt: DatePickerFechaManteni.SelectedDate,
+                                fProx: DatePickerFechaProMatto.SelectedDate,
+                                kmActual: Value(
+                                    LookUp(
+                                        SortByColumns(
+                                            Filter(
+                                                ListaPrestamoVehiculos,
+                                                Placa.Value = DataCardValue21.Selected.Value And !IsBlank(KMsSalida)
+                                            ),
+                                            "FechaSolicitud",
+                                            SortOrder.Descending
                                         ),
-                                        "FechaSolicitud",
-                                        SortOrder.Descending
+                                        true,
+                                        KMsSalida
                                     )
-                                },
-                                With(
-                                    {
-                                        kmUlt: IfError(
-                                            Coalesce(
-                                                If(
-                                                    CountRows(tKm) = 0,
-                                                    Blank(),
-                                                    Value(Trim(First(tKm).KMsSalida))
-                                                ),
-                                                If(
-                                                    IsBlank(vehiculo),
-                                                    Blank(),
-                                                    IfError(
-                                                        Value(
-                                                            Coalesce(
-                                                                vehiculo.KmUltimoMtto,
-                                                                Text(vehiculo.KmUltimoMtto)
-                                                            )
-                                                        ),
-                                                        Blank()
-                                                    )
-                                                )
-                                            ),
-                                            Blank()
-                                        )
-                                    },
-                                    If(
-                                        IsBlank(vehiculo),
-                                        Notify("No se encontró la placa seleccionada", NotificationType.Warning),
-                                        If(
-                                            IsBlank(kmUlt),
-                                            Notify(
-                                                "No hay km para guardar: no hay KMsSalida en préstamos ni KmUltimoMtto en el vehículo. Placa: " & placaSel,
-                                                NotificationType.Warning
-                                            ),
-                                            If(
-                                                IsBlank(fUlt),
-                                                Notify("Indique la fecha del último mantenimiento.", NotificationType.Warning),
-                                                If(
-                                                    IsBlank(fProx),
-                                                    Notify("Indique la fecha del próximo mantenimiento.", NotificationType.Warning),
-                                                    IfError(
-                                                        Patch(
-                                                            'Lista de Vehiculos',
-                                                            vehiculo,
-                                                            {
-                                                                FechaUltimoMtto: fUlt,
-                                                                FechaProxiMtto: fProx,
-                                                                KmUltimoMtto: kmUlt
-                                                            }
-                                                        ),
-                                                        Notify("Error al actualizar mantenimiento", NotificationType.Error),
-                                                        Refresh('Lista de Vehiculos');
-                                                        UpdateIf(
-                                                            ColeccionVehiculos,
-                                                            Text(Placa) = placaSel,
-                                                            {
-                                                                FechaUltimoMttoVehiculo: fUlt,
-                                                                FechaProxiMttoVehiculo: fProx
-                                                            }
-                                                        );
-                                                        Set(varPlacaMttoUI, placaSel);
-                                                        Set(varMttoUIActivo, true);
-                                                        Set(varFechaUltimoMttoUI, fUlt);
-                                                        Set(varFechaProxiMttoUI, fProx);
-                                                        Reset(DatePickerFechaManteni);
-                                                        Reset(DatePickerFechaProMatto);
-                                                        Notify(
-                                                            "Mantenimiento actualizado correctamente.",
-                                                            NotificationType.Success
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
+                                )
+                            },
+                            If(
+                                IsBlank(vehiculo),
+                                Notify("No se encontró la placa seleccionada", NotificationType.Warning),
+                                If(
+                                    IsBlank(kmActual),
+                                    Notify("No hay KMsSalida para guardar KmUltimoMtto", NotificationType.Warning),
+                                    Set(varPlacaMttoUI, DataCardValue21.Selected.Value);
+                                    Set(varMttoUIActivo, true);
+                                    Set(varFechaUltimoMttoUI, fUlt);
+                                    Set(varFechaProxiMttoUI, fProx);
+                        
+                                    IfError(
+                                        Patch(
+                                            'Lista de Vehiculos',
+                                            vehiculo,
+                                            {
+                                                FechaUltimoMtto: fUlt,
+                                                FechaProxiMtto: fProx,
+                                                KmUltimoMtto: kmActual
+                                            }
+                                        ),
+                                        Set(varMttoUIActivo, false);
+                                        Set(varFechaUltimoMttoUI, Blank());
+                                        Set(varFechaProxiMttoUI, Blank());
+                                        Notify("Error al actualizar las fechas de mantenimiento", NotificationType.Error),
+                                        UpdateIf(
+                                            ColeccionVehiculos,
+                                            Placa = DataCardValue21.Selected.Value,
+                                            {
+                                                FechaUltimoMttoVehiculo: fUlt,
+                                                FechaProxiMttoVehiculo: fProx
+                                            }
+                                        );
+                                        Set(varMttoUIActivo, false);
+                                        Set(varFechaUltimoMttoUI, Blank());
+                                        Set(varFechaProxiMttoUI, Blank());
+                                        Reset(DatePickerFechaManteni);
+                                        Reset(DatePickerFechaProMatto);
+                                        Notify("Fechas de mantenimientos actualizadas correctamente", NotificationType.Success)
                                     )
                                 )
                             )
